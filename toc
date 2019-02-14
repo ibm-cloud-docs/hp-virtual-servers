@@ -1,0 +1,24 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="hp-virtual-servers" audience="service" href="/docs/services/hp-virtual-servers?topic=hp-virtual-servers-getting-started-with-hp-virtual-servers" path="services/hp-virtual-servers"}
+IBM Cloud Hyper Protect Virtual Servers
+
+    {: .navgroup id="learn"}
+    index.md
+    overview.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    provision.md
+    remove_vs.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [IBM Cloud Hyper Protect Crypto Services](/services/hs-crypto/hs-crypto-get-started)
+    [IBM Cloud Hyper Protect DBaaS](/services/hyper-protect-dbaas/hyper-protect-dbaas-gettingstarted)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    get_help.md
+    {: .navgroup-end}
