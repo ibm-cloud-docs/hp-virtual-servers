@@ -15,8 +15,8 @@ IBM Cloud Hyper Protect Virtual Servers
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [IBM Cloud Hyper Protect Crypto Services](/services/hs-crypto/hs-crypto-get-started)
-    [IBM Cloud Hyper Protect DBaaS](/services/hyper-protect-dbaas/hyper-protect-dbaas-gettingstarted)
+    [IBM Cloud Hyper Protect Crypto Services](/services/hs-crypto/index.html#get-started)
+    [IBM Cloud Hyper Protect DBaaS](/services/hyper-protect-dbaas/index.html#gettingstarted)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
