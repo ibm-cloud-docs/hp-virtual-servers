@@ -32,7 +32,7 @@ You must create an instance of Hyper Protect Virtual Servers from the {{site.dat
   - You can leave the tags field unchanged.
 6. Select the free plan from the pricing table and click **Create** to provision an instance of Hyper Protect Virtual Servers in the region, organization, and space where you are logged in.
 
-You need to sign-up via the [Hyper Protect info page](https://www.ibm.com/cloud/hyper-protect-services) and request to be added to the entitlement list before you can see this service in the Cloud Experimental catalog. The virtual server that you create with Hyper Protect Virtual Servers will be deleted after 30 days.
+You need to sign-up via the [Hyper Protect info page](https://www.ibm.com/cloud/hyper-protect-services){:new_window} and request to be added to the entitlement list before you can see this service in the Cloud Experimental catalog. The virtual server that you create with Hyper Protect Virtual Servers will be deleted after 30 days.
 {:important}
 
 <!--
