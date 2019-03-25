@@ -42,7 +42,7 @@ The following summarize the benefits of using Hyper Protect Virtual Servers:
 -  **No IBM Z skills required**
   By deploying Hyper Protect Virtual Servers, you are able to access Z technology without having to purchase, install, and maintain unique hardware.
 
-
+<!--
 ## How Hyper Protect Virtual Servers works
 {: #hp-virtual-servers-how-it-works}
 
@@ -50,6 +50,7 @@ The following architectural diagram shows how Hyper Protect Virtual Servers work
 
 ![Hyper Protect Virtual Servers architecture diagram](image/hpvs-architecture-diagram.png "Hyper Protect Virtual Servers architecture diagram")
 *Figure 1. Hyper Protect Virtual Servers architecture diagram*  
+-->
 
 ## Key features
 {: #hp-virtual-servers-key-features}
