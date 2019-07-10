@@ -4,7 +4,7 @@
 {: .toc subcollection="hp-virtual-servers" audience="service" href="/docs/services/hp-virtual-servers?topic=hp-virtual-servers-getting-started-with-hp-virtual-servers" path="services/hp-virtual-servers"}
 IBM Cloud Hyper Protect Virtual Servers
 
-    {: .navgroup id="get_started"}
+    {: .navgroup id="learn"}
     getting-started.md
     overview.md
     {: .navgroup-end}
