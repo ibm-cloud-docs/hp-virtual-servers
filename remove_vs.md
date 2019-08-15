@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-08-16"
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -16,10 +16,13 @@ lastupdated: "2019-02-01"
 {:pre: .pre}
 
 # Removing a virtual server
-{: #remove-vs}
+{: #remove_vs}
 
-If you want to delete your virtual server, you can delete the service instance from your {{site.data.keyword.cloud_notm}} dashboard.
+Go to the **Resource list** (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)) to delete a virtual server instance. Select the instance from the **Services** list and apply the **Delete** action from the server's pull-down choice menu.
 {:shortdesc}
 
-When you delete a virtual server, your data in the virtual server will be deleted too.
+![Deleting a virtual server instance](image/hpvs_delete_instance.gif "Deleting a virtual server instance")
+*Figure 1. Deleting a virtual server instance
+
+When you delete a virtual server, the attached storage is deleted, too. Therefore, it is necessary to backup all important data that you will need for future use. There is no possibility to recover data after the deletion of the virtual server.
 {:important}

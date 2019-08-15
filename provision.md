@@ -2,11 +2,13 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-08-16"
+
+subcollection: hp-virtual-servers
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -15,28 +17,27 @@ lastupdated: "2019-02-01"
 {:tip: .tip}
 {:pre: .pre}
 
-#Provisioning Hyper Protect Virtual Servers
+#Provisioning a virtual server
 {: #provision}
 
-You must create an instance of Hyper Protect Virtual Servers from the {{site.data.keyword.cloud_notm}} console.
+You can create an instance of {{site.data.keyword.hpvs}} from the {{site.data.keyword.cloud_notm}} console.
 {:shortdesc}
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/){: new_window}.
-2. Click **Catalog**, scroll down to the bottom of the page, and click **{{site.data.keyword.cloud_notm}} Experimental Services**.
-3. From the All Categories navigation pane, click the **Compute** category.
-4. From the list of services, click the **Hyper Protect Virtual Servers** tile.
-5. On the service catalog page, complete the settings:
-  - You can optionally rename the service name for your instance so that you can recognize it easily in the future.
-  - For Experimental, **Dallas** is the only available region and it cannot be changed.
-  - Choose the cloud organization and space, which you want to provision the service.
-  - You can leave the tags field unchanged.
-6. Select the free plan from the pricing table and click **Create** to provision an instance of Hyper Protect Virtual Servers in the region, organization, and space where you are logged in.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com){: external}.
+2. Click **Catalog** from the menu bar. Scroll down to the bottom of the page, and click **{{site.data.keyword.cloud_notm}} Experimental Services**.
+3. In the displayed selection of services, look for the **{{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}** tile. If you do not see the tile, enter `virtual servers` in the search field. Then, click the tile. The {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} page opens.
+![Creating a **{{site.data.keyword.hpvs}}** instance](image/hpvs_create_instance.jpg "Creating a **{{site.data.keyword.hpvs}}** instance")
+*Figure 1. Creating a **{{site.data.keyword.hpvs}}** instance*
+4. The **Service name** field offers a name proposal for your server instance. You can change this name according to your conventions.
+5. In the **Tags** field, optionally add tags to organize your resources.
+6. Enter your SSH public key into the **SSH Public Key** field. For more information about SSH keys, see [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh).
+7. Select the **Free Standard Plan - S** from the **Pricing Plans**. This is the preselected default plan. You may only create one virtual server with this plan, which is deleted after 30 days.  
+8. Click **Create** to provision an instance of {{site.data.keyword.hpvs}}.
 
-You need to sign-up via the [Hyper Protect info page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/hyper-protect-services){:new_window} and request to be added to the entitlement list before you can see this service in the Cloud Experimental catalog. The virtual server that you create with Hyper Protect Virtual Servers will be deleted after 30 days.
-{:important}
+{:note}
+You can create only one virtual server instance in your {{site.data.keyword.cloud_notm}} account.
 
-<!--
 
-![Provisioning the service](image/provisioning.gif "Provisioning the service")  
-*Figure 1. Provisioning the service*
--->
+The server instance appears in the **Resource list**. Using your browser's refresh function, you can check whether the instance's status has switched from **Provision in Progress** to **Provisioned** when ready. Due to configuration processes, you need to wait up to 30 minutes until you can connect to your new HP-VS instance.
+![Resource list with virtual server instances](image/hpvs_resource_list.jpg "Resource list with virtual server instances")
+*Figure 2. Resource list with a virtual server instance<!-- virtual server instances -->*

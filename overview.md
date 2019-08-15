@@ -2,11 +2,12 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-08-16"
 
+subcollection: hp-virtual-servers
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -15,61 +16,53 @@ lastupdated: "2019-01-31"
 {:tip: .tip}
 {:pre: .pre}
 
-# {{site.data.keyword.cloud_notm}} Hyper Protect Virtual Servers overview
-{: #hp-virtual-servers-overview}
+# {{site.data.keyword.hpvs}} overview
+{: #overview}
 
-{{site.data.keyword.cloud}} Hyper Protect Virtual Servers is in the **Experimental** phase and is for tryout and test purpose only. You need to sign-up via the [Hyper Protect info page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/hyper-protect-services){:new_window} and request to be added to the entitlement list before you can see this service in the Cloud Experimental catalog. The virtual server that you create with Hyper Protect Virtual Servers will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using Hyper Protect Virtual Servers with other {{site.data.keyword.cloud_notm}} services.
+{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Experimental** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
 {:important}
 
-{{site.data.keyword.cloud_notm}} Hyper Protect Virtual Servers is an {{site.data.keyword.cloud_notm}} service that provides highly secure virtual servers that can run Linux and Docker workloads on demand. It offers a flexible and scalable platform that allows you to quickly and easily provision and manage the virtual server of your choice, which allows for a range of capacity sizes to meet various demands of applications that run in the server.
+{{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud_notm}} service that provides highly secure virtual servers that can run Linux and Docker workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual server. <!-- **** You can select from a range of capacity sizes to meet various demands of applications that run on the server. **** -->
 {:shortdesc}
 
 
-## Why Hyper Protect Virtual Servers  
+## Why {{site.data.keyword.hpvs}}?  
 {: #hp-virtual-servers-benefits}
 
-The following summarize the benefits of using Hyper Protect Virtual Servers:
+{{site.data.keyword.hpvs}} offers the following benefits:
 
-- **Security**
-  By using Hyper Protect Virtual Servers, you can deploy a virtual server in a **Secure Service Container**, which ensures confidentiality of your data and code that you run within the virtual server. No external access is allowed, including privileged users such as cloud administrators, to your data.
+- **Security** -
+  Using {{site.data.keyword.hpvs}}, you can deploy a virtual server in a **Secure Service Container**, which ensures confidentiality of your data and code that you run within the virtual server. No external access to your data is allowed, including privileged users such as cloud administrators.
 
-- **{{site.data.keyword.IBM_notm}} Z capabilities on the cloud**
-  Hyper Protect Virtual Servers bring IBM Z capabilities on the cloud, which enables you to deploy workload into the most secure, highly performant Linux virtual server with extreme vertical scale.
+- **{{site.data.keyword.IBM_notm}} Z capabilities on the cloud** -
+  {{site.data.keyword.hpvs}} bring IBM Z capabilities into the cloud, from where you can use them to deploy workload into the most secure, highly performant Linux virtual server. 
 
-- **Easy to use, open, and flexible**
-  Embracing the openness and flexibility of a public cloud, Hyper Protect Virtual Servers offers user experience at parity with market leaders both when buying and using the virtual machine.
+- **No IBM Z hardware and skills required** -
+  By deploying {{site.data.keyword.hpvs}}, you can access IBM Z technology without having to purchase, install, and maintain the required hardware.
 
--  **No IBM Z skills required**
-  By deploying Hyper Protect Virtual Servers, you are able to access Z technology without having to purchase, install, and maintain unique hardware.
+- **Easy to use, open, and flexible** -
+  Embracing the openness and flexibility of a public cloud, {{site.data.keyword.hpvs}} offers user experience at parity with market leaders who apply IBM Z capabilities in an enterprise environment.
 
-<!--
-## How Hyper Protect Virtual Servers works
-{: #hp-virtual-servers-how-it-works}
-
-The following architectural diagram shows how Hyper Protect Virtual Servers works.
-
-![Hyper Protect Virtual Servers architecture diagram](image/hpvs-architecture-diagram.png "Hyper Protect Virtual Servers architecture diagram")
-*Figure 1. Hyper Protect Virtual Servers architecture diagram*  
--->
 
 ## Key features
 {: #hp-virtual-servers-key-features}
 
-{{site.data.keyword.cloud_notm}} Hyper Protect Virtual Servers makes it possible to bring {{site.data.keyword.IBM_notm}} Z into {{site.data.keyword.IBM_notm}}’s global public cloud data centers. Through the {{site.data.keyword.cloud_notm}} catalog, you can gain easy access to industry-leading security capabilities to modernize their applications in the {{site.data.keyword.cloud_notm}}. This includes:
+{{site.data.keyword.hpvs}} makes it possible to bring {{site.data.keyword.IBM_notm}} Z into {{site.data.keyword.IBM_notm}}’s global public cloud data centers. Through the {{site.data.keyword.cloud_notm}} catalog, you can gain easy access to industry-leading security capabilities to modernize your applications in the {{site.data.keyword.cloud_notm}}.
 
-- Run both core and non-core workloads in a public cloud setting with all security and compliance readiness of on-premise, protecting the assets of business while maintaining enhanced business service levels.
-- Instantiate Linux virtual servers with your own public SSH key, and be the only one to access code and data, not even IBM has access to data.
-- Deploy any supported workload into the most secure, highly performant Linux machine with extreme vertical scale, taking advantage of strengths of LinuxONE platform.
+- You can run both core and non-core workloads in a public cloud, observing all security and compliance policies of your enterprise.
+- You can protect the assets of business while you simultaneously maintain enhanced business service levels.
+- You can instantiate Linux virtual servers with your own public SSH key. Thus, only you can access your code and data. Not even an {{site.data.keyword.cloud_notm}} administrator has access to your data.
+- You can deploy any supported workload into the most secure, highly performant Linux system, taking advantage of strengths of the LinuxONE system.
 
 
-## Roles and responsibilities
+<!-- ***** ## Roles and responsibilities
 
-The following table shows the roles that Hyper Protect Virtual Servers supports.
+The following table shows the roles that {{site.data.keyword.hpvs}} supports.
 
 
 | Roles | Responsibilities |
 |-------|------------------|
-| Solution and software architect | Design the architecture of the entire solution and software. The architect must ensure SLA while keeping flexibility, vendor prevention, and integration with existing service ecosystem. |
-| Application developer | Develop and roll out applications on a reliable platform while keeping data safe. |
+| Solution and software architect | Design the architecture of the entire solution and software. The architect must ensure the service level agreement (SLA) while keeping flexibility, vendor prevention, and integration with the existing service environment. |
+| Application developer | Develop and roll out applications on a reliable system and keeping the data safe. |
 
-*Table 1. Roles and responsibilities*
+*Table 1. Roles and responsibilities*    *****  -->

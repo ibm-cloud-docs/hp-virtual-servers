@@ -7,18 +7,32 @@ IBM Cloud Hyper Protect Virtual Servers
     {: .navgroup id="learn"}
     getting-started.md
     overview.md
+    whats_new.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    generate_ssh.md
     provision.md
+    retrieve_info_vs.md
+    connect_vs.md
+    security_vs.md
     remove_vs.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [IBM Cloud Hyper Protect Crypto Services](/services/hs-crypto/hs-crypto-get-started)
-    [IBM Cloud Hyper Protect DBaaS](/services/hyper-protect-dbaas/hyper-protect-dbaas-gettingstarted)
+    [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
+    [Hyper Protect Crypto Services](/services/hs-crypto/hs-crypto-get-started)
+    [Hyper Protect DBaaS for MongoDB](/services/hyper-protect-dbaas-for-mongodb/hyper-protect-dbaas-for-mongodb-gettingstarted)
+    [Hyper Protect DBaaS for PostgreSQL](/services/hyper-protect-dbaas-for-postgresql/hyper-protect-dbaas-for-postgresql-gettingstarted)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     get_help.md
+
+    {: .topicgroup}
+    Troubleshooting
+        troubleshooting.md
+        supported_browsers.md
+    
+    FAQs.md
     {: .navgroup-end}
