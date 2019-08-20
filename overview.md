@@ -19,7 +19,7 @@ subcollection: hp-virtual-servers
 # {{site.data.keyword.hpvs}} overview
 {: #overview}
 
-{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Experimental** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
+{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Beta** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
 {:important}
 
 {{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud_notm}} service that provides highly secure virtual servers that can run Linux and Docker workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual server. <!-- **** You can select from a range of capacity sizes to meet various demands of applications that run on the server. **** -->
@@ -35,7 +35,7 @@ subcollection: hp-virtual-servers
   Using {{site.data.keyword.hpvs}}, you can deploy a virtual server in a **Secure Service Container**, which ensures confidentiality of your data and code that you run within the virtual server. No external access to your data is allowed, including privileged users such as cloud administrators.
 
 - **{{site.data.keyword.IBM_notm}} Z capabilities on the cloud** -
-  {{site.data.keyword.hpvs}} bring IBM Z capabilities into the cloud, from where you can use them to deploy workload into the most secure, highly performant Linux virtual server. 
+  {{site.data.keyword.hpvs}} bring IBM Z capabilities into the cloud, from where you can use them to deploy workload into the most secure, highly performant Linux virtual server.
 
 - **No IBM Z hardware and skills required** -
   By deploying {{site.data.keyword.hpvs}}, you can access IBM Z technology without having to purchase, install, and maintain the required hardware.

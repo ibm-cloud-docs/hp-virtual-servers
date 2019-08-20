@@ -18,7 +18,7 @@ lastupdated: "2019-08-16"
 # Getting started tutorial  <!-- ******** with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} ****** -->
 {: #getting-started}
 
-{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Experimental** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
+{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Beta** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
 {:important}
 
 <!-- ******** {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud_notm}} service that provides highly secure virtual servers that can run Linux and Docker workloads on demand. It offers a flexible and scalable platform that allows you to quickly and easily provision and manage the virtual server of your choice, which allows for a range of capacity sizes to meet various demands of applications that run in the server.-->
