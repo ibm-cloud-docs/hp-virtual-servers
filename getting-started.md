@@ -39,7 +39,7 @@ Before you start, check whether you are using the [required browser software](/d
 
 ## Provisioning a {{site.data.keyword.hpvs}} instance
 
-You create a virtual server instance in a few simple steps from the user interface on the {{site.data.keyword.hpvs}} page.
+You create a virtual server instance in a few steps from the user interface on the {{site.data.keyword.hpvs}} page.
 Read [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-provision) for detailed information.
 A virtual server instance is also called HP-VS instance for short.
 
