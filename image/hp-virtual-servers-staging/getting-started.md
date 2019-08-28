@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-08-16"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-08-28"
 # Getting started tutorial  <!-- ******** with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} ****** -->
 {: #getting-started}
 
-{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Experimental** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
+{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Beta** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
 {:important}
 
 The {{site.data.keyword.hpvs}} service provides a virtual server on a highly secure stack with an Ubuntu Linux operating system. On such a server, you can run a myriad of Linux applications and Docker workloads.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-08-16"
 
 subcollection: hp-virtual-servers
 
@@ -48,22 +48,11 @@ The method of creating an SSH key pair from the command line of the listed opera
 
 If you need or want to use a new authentication key pair for SSH, run the **ssh-keygen** tool from the command line. You are prompted to optionally choose a key file name and a passphrase.
 
-The shown sample instructions can be entered from either
-- a Git Bash session under Windows
-- Windows 10 session
-- a Linux session
+The shown sample instructions are entered from a Git Bash session under Windows:
 
 ```
 ssh-keygen
-```
-{: codeblock}
-
-```
 ssh-keygen -t rsa
-```
-{: codeblock}
-
-```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 {: codeblock}
@@ -75,33 +64,12 @@ The `-t`, `-b`, and  `-C` parameters are optional.
 So if you invoke `ssh-keygen` without any arguments, the command generates an	RSA key pair with a size of 2048 bits for both keys.  
 
 You can select from the supported cryptographic algorithms by using the `-t` parameter in the **ssh-keygen** tool:
-
-```
-ssh-rsa                --> ssh-keygen -t rsa    (the default)
-```
-{: codeblock}
-
-```
-ssh-dsa                --> ssh-keygen -t dsa
-```
-{: codeblock}
-
 ```
 ssh-ed25519            --> ssh-keygen -t ed25519
-```
-{: codeblock}
-
-```
+ssh-rsa                --> ssh-keygen -t rsa    (the default)
+ssh-dsa                --> ssh-keygen -t dsa
 ecdsa-sha2-nistp256    --> ssh-keygen -t ecdsa -b 256
-```
-{: codeblock}
-
-```
 ecdsa-sha2-nistp384    --> ssh-keygen -t ecdsa -b 384
-```
-{: codeblock}
-
-```
 ecdsa-sha2-nistp521    --> ssh-keygen -t ecdsa -b 521
 ```
 {: codeblock}
@@ -156,11 +124,15 @@ To create an HP-VS instance with a **PuTTY** public SSH key, you have the follow
 Imagine you have an existing HP-VS instance which you want to configure in the **PuTTY Configuration** utility for a convenient log-in to this instance. You created this instance using an existing OpenSSH key pair. This scenario describes how to reuse the existing OpenSSH private key for a comfortable logging-in to this HP-VS instance from **PuTTY Configuration**. For this purpose, you learn how to convert the pertaining OpenSSH private key into the  **PuTTY** format.
 
 1. Select **Import key** from **Conversions** to import the OpenSSH private key file.
+
 <img src="image/hpvs_convert_privkey.jpg" alt="Import OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>
 
 *Figure 3. Import OpenSSH private key to **PuTTY***
+
 2. Save the private key in the **PuTTY** format using the file type `.ppk`.
+
 <img src="image/hpvs_convert_privkey_save.jpg" alt="Convert OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>
 
 *Figure 4. Convert OpenSSH private key to **PuTTY***
-3. Configure your HP-VS instance in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs-connect_vs_with_putty).
+
+3- Configure your HP-VS instance in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs-connect_vs_with_putty).

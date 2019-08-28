@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-08-16"
 
 ---
 
@@ -21,11 +21,10 @@ lastupdated: "2019-08-28"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
-<!-- ********************************************************************
 ## 30 August 2019
 {: #Aug30-2019}
 
-The service offering moved from the **Experimental** to the **Beta** phase. ***** -->
+The service offering moved from the **Experimental** to the **Beta** phase.
 
 ## 16 August 2019
 {: #Aug16-2019}
