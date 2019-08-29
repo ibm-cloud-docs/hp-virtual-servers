@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-08-29"
 
 subcollection: hp-virtual-servers
 
@@ -113,7 +113,9 @@ The generated keys can vary in format when generated with different methods or o
 
 ###Saving the SSH private key to the SSH agent
 
-If you created your SSH key pair with a passphrase, you can add your SSH private key to the SSH agent so that you need not enter the passphrase every time. This task is optional.
+If you created your SSH key pair with a passphrase, you can add your SSH private key to the SSH agent. With the help of the SSH agent, you can then use your private key without the need to enter the passphrase again.
+
+This task is optional.
 
 * Run the following command: eval "$(ssh-agent -s)"
 * Note: If your system is macOS Sierra 10.12.2 or later, you need to modify your `~/.ssh/config` file to enable adding keys to the agent and that uses your keychain to store passphrases:
@@ -155,12 +157,23 @@ To create an HP-VS instance with a **PuTTY** public SSH key, you have the follow
 
 Imagine you have an existing HP-VS instance which you want to configure in the **PuTTY Configuration** utility for a convenient log-in to this instance. You created this instance using an existing OpenSSH key pair. This scenario describes how to reuse the existing OpenSSH private key for a comfortable logging-in to this HP-VS instance from **PuTTY Configuration**. For this purpose, you learn how to convert the pertaining OpenSSH private key into the  **PuTTY** format.
 
-1. Select **Import key** from **Conversions** to import the OpenSSH private key file.
-<img src="image/hpvs_convert_privkey.jpg" alt="Import OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>
+<ol>
+<li>Select **Import key** from **Conversions** to import the OpenSSH private key file.   
 
-*Figure 3. Import OpenSSH private key to **PuTTY***
-2. Save the private key in the **PuTTY** format using the file type `.ppk`.
-<img src="image/hpvs_convert_privkey_save.jpg" alt="Convert OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>
+
+<img src="image/hpvs_convert_privkey.jpg" alt="Import OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>   
+
+
+Figure 3. Import OpenSSH private key to **PuTTY**
+</li>
+<li>Save the private key in the **PuTTY** format using the file type `.ppk`.   
+
+
+<img src="image/hpvs_convert_privkey_save.jpg" alt="Convert OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>   
+
 
 *Figure 4. Convert OpenSSH private key to **PuTTY***
-3. Configure your HP-VS instance in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs-connect_vs_with_putty).
+</li>
+<li>Configure your HP-VS instance in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
+</li>
+</ol>
