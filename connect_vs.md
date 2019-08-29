@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-08-29"
 
 ---
 
@@ -34,8 +34,8 @@ Examples for Unix-like operating systems are:
 * macOS
 
 For example, in Windows, you can open a Git Bash session and log-in as *root* user with the following additional information:
-* Specify the public IP address of the created instance (see \ref{f_retrieve_info_1}). You can find it on the {{site.data.keyword.hpvs}} dashboard as described in [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs). In the shown command example, `198.51.100.21` is used as IP address.
-* Specify the file that contains your private key with the `-i` parameter. In the command example, `/c/cloud_keys/id_rsa` is used as file name and location of the private key.  
+* Specify the public IP address of the created instance. You can find it on the {{site.data.keyword.hpvs}} dashboard as shown in Figure 1 of [Retrieving information about a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs). In the shown command example, `198.51.100.21` is used as IP address.
+* Specify the file that contains your private key with the `-i` parameter. In the command example, `/c/cloud_keys/id_rsa` is used as location and file name of the private key.  
 
 `$ ssh root@<public_ip_address> -i <path_to_priv_key_file>`
 
@@ -55,9 +55,8 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 Answer `yes` to allow SSH to add your server to the list of known hosts:
 
-`Warning: Permanently added '169.63.213.157' (ECDSA) to the list of known hosts.`
+`Warning: Permanently added '198.51.100.21' (ECDSA) to the list of known hosts.`
 `Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-47-generic s390x)`
-<!-- test comment -->
 
 
 ## Logging-in from Windows by using **PuTTY Configuration**
