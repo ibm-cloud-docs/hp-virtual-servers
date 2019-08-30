@@ -36,7 +36,7 @@ selectable in the provisioning UI as soon as there are multiple available.  -->
 
 ## Is a virtual server instance available 24 / 7?
 * The virtual server is running on infrastructure that needs to be maintained. Before maintenance, the virtual servers must be stopped. Customers are notified about
-maintenance schedules in advance. Service availability is defined within the [Terms](https://www-03.ibm.com//software/sla/sladb.nsf/sla/bm-6605-15){: external} of the {{site.data.keyword.hpvs}} offering.
+maintenance schedules in advance. Service availability is defined within the [IBM Cloud Terms and Notices](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}. <!-- of the {{site.data.keyword.hpvs}} offering. --> 
 
 ## Can I create more than one virtual server instance within my {{site.data.keyword.cloud_notm}} account?
 * In the Free Standard pricing plan, you can create exactly one virtual server instance in your {{site.data.keyword.cloud_notm}} account.
