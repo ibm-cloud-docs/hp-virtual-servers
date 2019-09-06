@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-09-06"
 
 ---
 
@@ -24,7 +24,7 @@ After you created an instance of {{site.data.keyword.hpvs}}, you can check the d
 2. Click your server instance to open the {{site.data.keyword.hpvs}} dashboard.
 
 In this dashboard, you can find the public IP address, which you use to connect to the virtual server.
-You must use the private IP address when you connect to a virtual server from another virtual server. You must also use it when you connect from another cloud service that is running in the same data center.   
+You must use the internal IP address when you connect to a virtual server from another virtual server. You must also use it when you connect from another cloud service that is running in the same data center.   
 
 ![**{{site.data.keyword.hpvs}}** dashboard\label{f_retrieve_info_1}](image/hpvs_instance.jpg "**{{site.data.keyword.hpvs}}** dashboard")
 *Figure 1. **{{site.data.keyword.hpvs}}** dashboard*
