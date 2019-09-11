@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-09-05"
 
 subcollection: hp-virtual-servers
 
@@ -30,9 +30,9 @@ This pair of SSH keys is then used for authentication between your client and yo
 
 The following cryptographic algorithms are supported by {{site.data.keyword.hpvs}} for generating SSH keys:
 
-* `ssh-ed25519`            
 * `ssh-rsa`   (this is the default)             
-* `ssh-dsa`                
+* `ssh-dsa`  
+* `ssh-ed25519`            
 * `ecdsa-sha2-nistp256`    
 * `ecdsa-sha2-nistp384`    
 * `ecdsa-sha2-nistp521`
@@ -50,7 +50,7 @@ If you need or want to use a new authentication key pair for SSH, run the **ssh-
 
 The shown sample instructions can be entered from either
 - a Git Bash session under Windows
-- Windows 10 session
+- a Windows 10 session
 - a Linux session
 
 ```
@@ -68,43 +68,23 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 {: codeblock}
 
-The `-t`, `-b`, and  `-C` parameters are optional.  
-`-t` specifies the key type. `-t rsa` is the default.
-`-b` designates the key size in bits. The default size is 2048 bits.
-`-C` adds a comment.
+The `-t`, `-b`, and  `-C` parameters are optional.
+- `-t` specifies the key type. `-t rsa` is the default.
+- `-b` designates the key size in bits. The default size is 2048 bits.
+- `-C` adds a comment.
+
 So if you invoke `ssh-keygen` without any arguments, the command generates an	RSA key pair with a size of 2048 bits for both keys.  
 
 You can select from the supported cryptographic algorithms by using the `-t` parameter in the **ssh-keygen** tool:
 
-```
-ssh-rsa                --> ssh-keygen -t rsa    (the default)
-```
-{: codeblock}
-
-```
-ssh-dsa                --> ssh-keygen -t dsa
-```
-{: codeblock}
-
-```
-ssh-ed25519            --> ssh-keygen -t ed25519
-```
-{: codeblock}
-
-```
-ecdsa-sha2-nistp256    --> ssh-keygen -t ecdsa -b 256
-```
-{: codeblock}
-
-```
-ecdsa-sha2-nistp384    --> ssh-keygen -t ecdsa -b 384
-```
-{: codeblock}
-
-```
-ecdsa-sha2-nistp521    --> ssh-keygen -t ecdsa -b 521
-```
-{: codeblock}
+| Algorithm | Command |
+|-------|------------------|
+|`ssh-rsa`|`ssh-keygen -t rsa`   (this is the default)|
+|`ssh-dsa`|`ssh-keygen -t dsa`|
+|`ssh-ed25519`|`ssh-keygen -t ed25519`|
+|`ecdsa-sha2-nistp256`|`ssh-keygen -t ecdsa -b 256`|
+|`ecdsa-sha2-nistp384`|`ssh-keygen -t ecdsa -b 384`|
+|`ecdsa-sha2-nistp521`|`ssh-keygen -t ecdsa -b 521`|
 
 {:note}
 If you do not specify a file name to save the key, a default name is used.
@@ -117,7 +97,7 @@ If you created your SSH key pair with a passphrase, you can add your SSH private
 
 This task is optional.
 
-* Run the following command: eval "$(ssh-agent -s)"
+* Run the following command: `eval "$(ssh-agent -s)"`
 * Note: If your system is macOS Sierra 10.12.2 or later, you need to modify your `~/.ssh/config` file to enable adding keys to the agent and that uses your keychain to store passphrases:
 
  ```
