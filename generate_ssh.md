@@ -31,7 +31,6 @@ This pair of SSH keys is then used for authentication between your client and yo
 The following cryptographic algorithms are supported by {{site.data.keyword.hpvs}} for generating SSH keys:
 
 * `ssh-rsa`   (this is the default)             
-* `ssh-dsa`  
 * `ssh-ed25519`            
 * `ecdsa-sha2-nistp256`    
 * `ecdsa-sha2-nistp384`    
@@ -80,7 +79,6 @@ You can select from the supported cryptographic algorithms by using the `-t` par
 | Algorithm | Command |
 |-------|------------------|
 |`ssh-rsa`|`ssh-keygen -t rsa`   (this is the default)|
-|`ssh-dsa`|`ssh-keygen -t dsa`|
 |`ssh-ed25519`|`ssh-keygen -t ed25519`|
 |`ecdsa-sha2-nistp256`|`ssh-keygen -t ecdsa -b 256`|
 |`ecdsa-sha2-nistp384`|`ssh-keygen -t ecdsa -b 384`|
