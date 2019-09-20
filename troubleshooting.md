@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-19"
+lastupdated: "2019-09-20"
 
 subcollection: hp-virtual-servers
 
@@ -48,10 +48,8 @@ Verify that you are using a supported browser. Delete your browser cache, log ou
 I have just created an instance and trying to connect for the first time.
 {: troubleshoot}
 
-You cannot access your recently created virtual server.  Connection fails with the following message:
-
+You cannot access your recently created virtual server.  Connection fails with message:
 `Connection refused`
-{: codeblock}
 {: tsSymptoms}
 
 Network configuration might take up to 30 minutes, even after the status switched to ´Provisioned´ in the **Resource list**.
