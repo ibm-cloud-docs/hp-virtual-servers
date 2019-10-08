@@ -31,7 +31,7 @@ You can create an instance of {{site.data.keyword.hpvs}} from the {{site.data.ke
 4. The **Service name** field offers a name proposal for your server instance. You can change this name according to your conventions.
 5. In the **Tags** field, you can optionally add tags to organize your resources.
 6. Enter your SSH public key into the **SSH Public Key** field. For more information about SSH keys, see [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh).
-7. Select the **Free Standard Plan - S** from the **Pricing Plans**. This plan is the preselected default. You can create only one virtual server with this plan, which is deleted after 30 days.  
+7. Select the **Free Standard Plan - S** from the **Pricing Plans**. This plan is the preselected default. You can create only one virtual server with this plan.  
 8. Click **Create** to provision an instance of {{site.data.keyword.hpvs}}.
 
 {:note}
