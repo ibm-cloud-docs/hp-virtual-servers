@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-10-23"
 
 subcollection: hp-virtual-servers
 
@@ -35,7 +35,7 @@ You can create an instance of {{site.data.keyword.hpvs}} from the {{site.data.ke
 8. Click **Create** to provision an instance of {{site.data.keyword.hpvs}}.
 
 {:note}
-You can create only one virtual server instance in your {{site.data.keyword.cloud_notm}} account.
+As soon as you create a virtual server instance, a virtual LAN (VLAN) is created or assigned. This VLAN is used within one availability zone for one account and may contain up to five instances. The VLAN is deleted as soon as you delete the last instance from your account.
 
 
 The server instance appears in the **Resource list**. Using your browser's refresh function, you can check whether the instance's status switched from **Provision in progress** to **Provisioned** when ready. Due to configuration processes, you need to wait up to 30 minutes until you can connect to your new virtual server (HP-VS instance).
