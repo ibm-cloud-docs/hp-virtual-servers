@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-25"
 
 ---
 
@@ -18,11 +18,11 @@ lastupdated: "2019-10-24"
 # Logging-in to a virtual server
 {: #connect_vs}
 
-For a successfully provisioned instance, you can log in to this server by using your preferred method.
+For a successfully provisioned HP-VS instance, you can log in to this server by using your preferred method.
 {:shortdesc}
 
 {:note}
-Due to configuration processes, you need to wait up to 30 minutes until you can connect to a new virtual server (HP-VS instance) for the first time.
+Due to configuration processes, you need to wait up to 30 minutes until you can connect to a new virtual server instance for the first time.
 
 ## Logging-in from a Unix-like operating system
 
@@ -68,7 +68,7 @@ You can ease the logon and authentication to your server with your private SSH k
 
 1. Define the virtual server in the **Session** category of **PuTTY Configuration**.
    * Enter the server's host name or public IP address as shown.
-   * Enter a name into the **Saved Sessions** field. In the shown example, this session name is the name as proposed during provisioning.
+   * Enter a name into the **Saved Sessions** field. In the shown example, this session name is the service name as specified during provisioning.
    * Click **Save**.
 
    ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance")

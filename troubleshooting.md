@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-25"
 
 subcollection: hp-virtual-servers
 
@@ -24,7 +24,7 @@ subcollection: hp-virtual-servers
 # Solving problems
 {: #troubleshooting}
 
-If you run into problems while you are using {{site.data.keyword.hpvs}}, you can recover from these problems in many cases by following a few easy steps.
+If you run into problems while you are using {{site.data.keyword.hpvs}}, you can recover from these problems in many cases by following a few steps.
 {:shortdesc}
 
 ## You cannot see the details of your virtual server instance on its dashboard - or the dashboard seems to display incorrectly
@@ -45,7 +45,7 @@ Verify that you are using a supported browser. Delete your browser cache, log ou
 ## Why can't I log in to my recently provisioned server instance?
 {: #no_connection_hpvs}
 
-I have just created an instance and trying to connect for the first time.
+I have just created an instance and now I am trying to connect for the first time.
 {: troubleshoot}
 
 You cannot access your recently created virtual server.  Connection fails with message:

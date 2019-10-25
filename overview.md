@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-25"
 
 subcollection: hp-virtual-servers
 ---
@@ -35,7 +35,7 @@ subcollection: hp-virtual-servers
   Using {{site.data.keyword.hpvs}}, you can deploy a virtual server in a **Secure Service Container**, which ensures confidentiality of your data and code that you run within the virtual server. No external access to your data is allowed, including privileged users such as cloud administrators.
 
 - **{{site.data.keyword.IBM_notm}} Z capabilities on the cloud** -
-  {{site.data.keyword.hpvs}} bring IBM Z capabilities into the cloud, from where you can use them to deploy workload into the most secure, highly performant Linux virtual server.
+  {{site.data.keyword.hpvs}} brings IBM Z capabilities into the cloud, from where you can use them to deploy workload into the most secure, highly performant Linux virtual server.
 
 - **No IBM Z hardware and skills required** -
   By deploying {{site.data.keyword.hpvs}}, you can access IBM Z technology without having to purchase, install, and maintain the required hardware.
@@ -53,16 +53,3 @@ subcollection: hp-virtual-servers
 - You can protect the assets of business while you simultaneously maintain enhanced business service levels.
 - You can instantiate Linux virtual servers with your own public SSH key. Thus, only you can access your code and data. Not even an {{site.data.keyword.cloud_notm}} administrator has access to your data.
 - You can deploy any supported workload into the most secure, highly performant Linux system, taking advantage of strengths of the LinuxONE system.
-
-
-<!-- ***** ## Roles and responsibilities
-
-The following table shows the roles that {{site.data.keyword.hpvs}} supports.
-
-
-| Roles | Responsibilities |
-|-------|------------------|
-| Solution and software architect | Design the architecture of the entire solution and software. The architect must ensure the service level agreement (SLA) while keeping flexibility, vendor prevention, and integration with the existing service environment. |
-| Application developer | Develop and roll out applications on a reliable system and keeping the data safe. |
-
-*Table 1. Roles and responsibilities*    *****  -->

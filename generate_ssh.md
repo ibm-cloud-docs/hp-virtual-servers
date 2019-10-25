@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-25"
 
 subcollection: hp-virtual-servers
 
@@ -106,11 +106,11 @@ This task is optional.
  ```
  {: codeblock}
 
-* Enter `ssh-add ~/.ssh/id_rsa` (for mac systems, enter `ssh-add -K ~/.ssh/id_rsa`) to add your SSH private key to the ssh-agent. If your private key file has a different name, replace `id_rsa` with the file name.
+* Enter `ssh-add ~/.ssh/id_rsa` (for mac systems, enter `ssh-add -K ~/.ssh/id_rsa`) to add your SSH private key to the SSH agent. If your private key file has a different name, replace `id_rsa` with the file name.
 
 ## Generating SSH keys from Windows by using the **PuTTY Key Generator**
 
-To generate an SSH key pair by using the **PuTTY Key Generator**, select the type of key and the key size (for example, 2048 or 4096).
+In the **PuTTY Key Generator**, select the type of key and the key size (for example, 2048 or 4096).
 
 
 <img src="image/hpvs_puttygen.gif" alt="Generating an SSH key pair with the PuTTY Key Generator" width="450" style="width: 450px; border-style: none"/>
@@ -136,7 +136,7 @@ To create an HP-VS instance with a **PuTTY** public SSH key, you have the follow
 Imagine you have an existing HP-VS instance which you want to configure in the **PuTTY Configuration** utility for a convenient log-in to this instance. You created this instance using an existing OpenSSH key pair. This scenario describes how to reuse the existing OpenSSH private key for a comfortable logging-in to this HP-VS instance from **PuTTY Configuration**. For this purpose, you learn how to convert the pertaining OpenSSH private key into the  **PuTTY** format.
 
 <ol>
-<li>Select **Import key** from **Conversions** to import the OpenSSH private key file.   
+<li>Select **Import key** from **Conversions**. Browse for and open the existing OpenSSH private key file.   
 
 
 <img src="image/hpvs_convert_privkey.jpg" alt="Import OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>   
