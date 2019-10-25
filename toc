@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="hp-virtual-servers" audience="service" href="/docs/services/hp-virtual-servers?topic=hp-virtual-servers-getting-started" path="services/hp-virtual-servers"}
-IBM Cloud Hyper Protect Virtual Servers
+IBM Cloud Hyper Protect Virtual Server
 
     {: .navgroup id="learn"}
     getting-started.md
