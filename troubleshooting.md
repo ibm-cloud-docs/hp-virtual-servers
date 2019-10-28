@@ -61,14 +61,14 @@ Wait about 30 minutes to allow the configuration completion and then retry to ac
 ## Status 'Provision failure' is displayed in the **Resource list** when creating multiple instances
 {: #provision_failure}
 
-Creating multiple instances at once or within a very short period of time, in one availability zone which did not have any instances before, results in the creation of one more instances with status 'Provisioning failure' within the **Resource list**.
+Creating more than five instances at once or within a very short period of time in one availability zone which did not have any instances before, results in the creation of one more instances with status 'Provisioning failure' within the **Resource list**.
 {: troubleshoot}
 
-You either try to create more than five instances within a very short period of time. This can happen in an availability zone even without any existing instances, if do not need to create a new public SSH key, but reuse the same public key for all of the instances you want to create. Or you already have some instances ready, and you want to create a few more instances, so that the sum of all instances will exceed the maximum number of five.  
+You try to create more than five instances within a very short period of time in an availability zone without any existing instances. This can happen, if do not want to create a new public SSH key for each new instance, but reuse the same public key for all of the instances you want to create.   
 {: tsSymptoms}
 
-The amount of instances per account and per availability zone is limited to five. Creating more than five instances in one zone will lead to a provisioning failure.
+The amount of instances per account and per availability zone is limited to five. Creating more than five instances nearly at the same time in one zone will lead to status 'Provisioning failure' for the sixth and all subsequent instances.
 {: tsCauses}
 
 {: tsResolve}
-You can either provision more than five instances in different availability Zones. Or you can provision more than fice instances using different {{site.data.keyword.cloud_notm}} accounts.
+You can either provision more than five instances in different availability zones. Or you can provision more than five instances using different {{site.data.keyword.cloud_notm}} accounts.
