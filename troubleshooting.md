@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-10-28"
 
 subcollection: hp-virtual-servers
 
@@ -70,5 +70,5 @@ You try to create more than five instances within a very short period of time in
 The amount of instances per account and per availability zone is limited to five. Creating more than five instances nearly at the same time in one zone will lead to status 'Provisioning failure' for the sixth and all subsequent instances.
 {: tsCauses}
 
-{: tsResolve}
 You can either provision more than five instances in different availability zones. Or you can provision more than five instances using different {{site.data.keyword.cloud_notm}} accounts.
+{: tsResolve}
