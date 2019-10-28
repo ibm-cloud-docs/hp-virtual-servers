@@ -40,8 +40,8 @@ Ideally, these instances are spread across multiple regions and availability zon
 * The virtual server is running on infrastructure that needs to be maintained. Before maintenance, the virtual servers must be stopped. Customers are notified about
 maintenance schedules in advance. Service availability is defined within the [{{site.data.keyword.cloud}} Service Description](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-17/$file/i126-6605-17_06-2019_en_US.pdf){: external}.
 
-## Can I create more than one virtual server instance within my {{site.data.keyword.cloud_notm}} account?
-* In the Free Standard pricing plan, you can create exactly one virtual server instance in your {{site.data.keyword.cloud_notm}} account.
+## Can I create more than five virtual server instances within one availability zone?
+* ´Currently you are limited to five instances per account and availability zone. You can either choose to use multiple availability zones or accounts. 
 
 ## Can I provide a custom image, derive a custom image from a virtual server instance (HP-VS instance), or clone an HP-VS instance?
 * Currently, you are not able to provide a custom image. Also, you cannot create a custom image from an existing HP-VS instance, nor clone an instance.

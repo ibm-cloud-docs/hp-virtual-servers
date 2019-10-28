@@ -21,6 +21,12 @@ lastupdated: "2019-10-25"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 21 October 2019
+{: #Oct21-2019}
+
+Your virtual server instances are now isolated in one virtual LAN (VLAN) per account and availability zone.
+
+
 ## 30 August 2019
 {: #Aug30-2019}
 
