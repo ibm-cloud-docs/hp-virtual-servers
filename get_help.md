@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-11-13"
 
 subcollection: hp-virtual-servers
 
@@ -35,7 +35,7 @@ If you have problems or questions when you use {{site.data.keyword.hpvs}}, you c
   {:note}   
 
 - If your problem still exists, open an {{site.data.keyword.IBM_notm}} support case (ticket).
-  Include the server name and the cloud resource name (CRN) of your virtual server instance into the description of your issue.
+  Include the server name and the cloud resource name (CRN) of your virtual server into the description of your issue.
   You retrieve this CRN from your server entry in the **Resource list** (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)). Click any of the columns (except **Name** or **Tags**) to display a view from where you copy the CRN into the clipboard, as shown:
 
   <img src="image/hpvs_crn.jpg" alt="Retrieving the cloud resource name (CRN)" height="400" style="height: 400px; border-style: none"/>

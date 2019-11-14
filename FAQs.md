@@ -2,7 +2,10 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-11-13"
+
+subcollection: hp-virtual-servers
+
 
 ---
 
@@ -21,31 +24,52 @@ lastupdated: "2019-10-25"
 You can read the following FAQs to help you with {{site.data.keyword.hpvs}}.
 
 ## Are there any backup functions provided for a virtual server?
-
-* {{site.data.keyword.hpvs}} does not provide any backup functions for your server instance. If you require backup capabilities, you need to configure your virtual server backup in your own responsibility.
+{: #faq1}
+{{site.data.keyword.hpvs}} does not provide any backup functions for your virtual server instances. If you require backup capabilities, you need to configure your virtual server backup in your own responsibility.
 
 ## What is the purpose of the internal IP address?
-* You must use the internal IP address when you connect to a virtual server from another virtual server, which is in the same virtual LAN (VLAN).
-
-
+{: #faq2}
+You must use the internal IP address when you connect to a virtual server from another virtual server, which is in the same virtual LAN (VLAN).
 
 ## How do I provide my applications in high availability?
-* Do not rely on just one virtual server instance. Instead, run your application on multiple instances in combination with a load balancer to ensure high availability.
-Ideally, these instances are spread across multiple regions and availability zones. With {{site.data.keyword.hpvs}}, virtual servers are provided within one region (us-south) and one availability zone (dal10-01).
+{: #faq3}
+Do not rely on just one virtual server instance. Instead, run your application on multiple instances in combination with a load balancer to ensure high availability.
+Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within one region (`us-south`) and three data centers (`Dallas 10`,`Dallas 12`, and `Dallas 13`).
 
-## Can I have more than five instances within one availability zone?
-* Currently {{site.data.keyword.hpvs}} only supports five instances per account in each availbility zone. To provision more instances, you can use multiple accounts.
+## Can I have more than five virtual servers within one data center?
+{: #faq4}
+Currently, {{site.data.keyword.hpvs}} supports only five virtual server instances per account in each data center. To provision more instances, you can use multiple accounts or data centers, or both.
 
-## Is a virtual server instance available 24 / 7?
-* The virtual server is running on infrastructure that needs to be maintained. Before maintenance, the virtual servers must be stopped. Customers are notified about
+## Is a virtual server available 24 / 7?
+{: #faq5}
+The virtual server is running on infrastructure that needs to be maintained. Before maintenance, the virtual servers must be stopped. Customers are notified about
 maintenance schedules in advance. Service availability is defined within the [{{site.data.keyword.cloud}} Service Description](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-17/$file/i126-6605-17_06-2019_en_US.pdf){: external}.
 
-## Can I create more than five virtual server instances within one availability zone?
-* ´Currently you are limited to five instances per account and availability zone. You can either choose to use multiple availability zones or accounts. 
+## Does the data center have an impact on performance and reliability of a virtual server?
+{: #faq6}
+No, all of the data centers are of the same quality. For best availability, follow the hints in question [How do I provide my applications in high availability?](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-faqs#faq3)
 
-## Can I provide a custom image, derive a custom image from a virtual server instance (HP-VS instance), or clone an HP-VS instance?
-* Currently, you are not able to provide a custom image. Also, you cannot create a custom image from an existing HP-VS instance, nor clone an instance.
-These limitations are due to the fact that IBM system administrators are very restricted in accessing your HP-VS instance.
+## How can I figure out in which data center a virtual server is located?    
+{: #faq7}
+This information is visible on both the **{{site.data.keyword.hpvs}} dashboard** and the **Resource list (**see [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-provision) and [Retrieving information about a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)).
 
-## Can IBM system administrators provide me access to my HP-VS instance, if I loose my private key?
-* IBM system administrators cannot recover access to your instance, as they do not have the required privileges.  Therefore, establish a business continuity and disaster recovery plan (BCDR plan). This enables you to delete the lost instance, create a new instance, and restore the data of the old instance to the new one.
+## Can I rearrange a server to another data center?    
+{: #faq7a}
+This action is not possible.  
+
+## Can I provide a custom image, derive a custom image from a virtual server, or clone a virtual server?
+{: #faq8}
+Currently, you are not able to provide a custom image. Also, you cannot create a custom image from an existing virtual server instance, nor clone an instance.
+The reason for these limitations is that IBM system administrators are restricted in accessing your virtual servers.
+
+## Can IBM system administrators provide me access to my virtual server instance, if I lose my private key?
+{: #faq9}
+IBM system administrators cannot recover access to your virtual server, as they do not have the required privileges. Therefore, establish a business continuity and disaster recovery plan (BCDR plan). This plan enables you to delete the lost virtual server, create a new one, and restore the data of the old instance to the new one.
+
+## How can I install software?
+{: #faq10}
+The virtual servers that are created with the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service are currently provided with an Ubuntu Linux operating system. Investigate how to install software and applications in Ubuntu by using the command line and select the way that is most appropriate for your use case.
+
+## How can I adjust the firewall of my virtual server?
+{: #faq11}
+A newly generated {{site.data.keyword.cloud}} virtual server, which is provided with an Ubuntu Linux operating system, has **iptables**, the Linux firewall utility," preinstalled. Investigate, what firewall tool you want or need to use in your environment.

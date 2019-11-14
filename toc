@@ -16,6 +16,7 @@ IBM Cloud Hyper Protect Virtual Server
     retrieve_info_vs.md
     connect_vs.md
     security_vs.md
+    manage_access.md
     remove_vs.md
     {: .navgroup-end}
 
@@ -33,6 +34,6 @@ IBM Cloud Hyper Protect Virtual Server
     Troubleshooting
         troubleshooting.md
         supported_browsers.md
-    
+
     FAQs.md
     {: .navgroup-end}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-11-13"
 
 ---
 
@@ -21,10 +21,15 @@ lastupdated: "2019-10-25"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 12 November 2019
+{: #Nov12-2019}
+
+You can now order virtual servers in different data centers: Dallas 10, Dallas 12, and Dallas 13.
+
 ## 21 October 2019
 {: #Oct21-2019}
 
-Your virtual server instances are now isolated in one virtual LAN (VLAN) per account and availability zone.
+Your virtual server instances are now isolated in one virtual LAN (VLAN) per account and region.
 
 
 ## 30 August 2019
