@@ -18,9 +18,6 @@ lastupdated: "2019-11-13"
 # Getting started tutorial  
 {: #getting-started}
 
-{{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Beta** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
-{:important}
-
 Using the {{site.data.keyword.hpvs}} service, you can provision virtual servers on a highly secure stack with an Ubuntu Linux operating system. On such a virtual server instance, you can run a myriad of Linux applications and containerized workloads.
 
 This introduction informs you about the prerequisites for using this service. It points you to the process for provisioning a virtual server and informs you how to retrieve information about a created virtual server.
