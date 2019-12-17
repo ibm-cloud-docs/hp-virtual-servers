@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-12-05"
 
 subcollection: hp-virtual-servers
 
@@ -22,7 +22,7 @@ subcollection: hp-virtual-servers
 
 Before you can create a virtual server, you must have a pair of private and public SSH keys available. You can either reuse an existing SSH key pair or generate a new one. You can also reuse an existing OpenSSH key pair for use in **PuTTY**.
 
-* You need the public key as input during the creation of a new virtual server instance.
+* You need the public key as input during the creation of a new virtual server.
 * You need the private key when you log in to the virtual server. Keep it as a secret on your client workstation.
 
 This pair of SSH keys is then used for authentication between your client and your new server.
@@ -69,7 +69,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 {: codeblock}
 
 The `-t`, `-b`, and  `-C` parameters are optional.
-- `-t` Specifies the key type. The default is `-t rsa`. 
+- `-t` Specifies the key type. The default is `-t rsa`.
 - `-b` Designates the key size in bits. The default size is 2048 bits.
 - `-C` Adds a comment.
 
@@ -125,19 +125,19 @@ You can select one of the supported cryptographic algorithms from the **PuTTY Ke
 You must then save the private, and optionally the public key, into separate files by pressing the appropriate buttons (**Save public key**, **Save private key**). To reuse the public key saved this way for creating a virtual server, ensure that you use the OpenSSH public key format that is recognized by {{site.data.keyword.hpvs}}.
 {:important}
 
-To create a virtual server instance with a **PuTTY** public SSH key, you have the following choices:
+To create a virtual server with a **PuTTY** public SSH key, you have the following choices:
 
 - To create the virtual server directly after the key pair generation, copy the public key from the **Key** box. Include the string 'ssh-rsa' at the beginning, but delete the key comment at the end as shown in Figure 2.
-- To create the virtual server instance after the **PuTTY Key Generator** dialog is already closed, you can use the public key from a saved file in the OpenSSH public key format.
+- To create the virtual server after the **PuTTY Key Generator** dialog is already closed, you can use the public key from a saved file in the OpenSSH public key format.
 
 <img src="image/hpvs_putty_pubkey.gif" alt="SSH key pair from the PuTTY Key Generator ready for use" width="450" style="width: 450px; border-style: none"/>
 
 *Figure 2. SSH key pair from the **PuTTY Key Generator** ready for use*
 
-## Reusing an OpenSSH key pair for logging-in to a virtual server from **PuTTY**
+## Converting an OpenSSH key pair for logging-in to a virtual server from **PuTTY**
 {: #reusing_ssh_keypair_putty}
 
-Imagine you have an existing virtual server instance which you want to configure in the **PuTTY Configuration** utility for a convenient log-in to this instance. You created this instance using an existing OpenSSH key pair. This scenario describes how to reuse the existing OpenSSH private key for a comfortable logging-in to this virtual server from **PuTTY Configuration**. For this purpose, you learn how to convert the pertaining OpenSSH private key into the  **PuTTY** format.
+Imagine you have an existing virtual server, which you want to configure in the **PuTTY Configuration** utility for a convenient log-in to this server. You created this virtual server by using an existing OpenSSH key pair. This scenario describes how to convert the existing OpenSSH private key for a comfortable logging-in to this virtual server from **PuTTY Configuration**. For this purpose, you learn how to convert the pertaining OpenSSH private key into the  **PuTTY** format.
 
 <ol>
 <li>Select **Import key** from **Conversions**. Browse for and open the existing OpenSSH private key file.   
@@ -148,7 +148,7 @@ Imagine you have an existing virtual server instance which you want to configure
 
 Figure 3. Import OpenSSH private key to **PuTTY**
 </li>
-<li>Save the private key in the **PuTTY** format using the file type `.ppk`.   
+<li>Save the private key in the **PuTTY** format by using the file type `.ppk`.   
 
 
 <img src="image/hpvs_convert_privkey_save.jpg" alt="Convert OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>   
@@ -156,6 +156,6 @@ Figure 3. Import OpenSSH private key to **PuTTY**
 
 *Figure 4. Convert OpenSSH private key to **PuTTY***
 </li>
-<li>Configure your virtual server instance in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
+<li>Configure your virtual server in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
 </li>
 </ol>

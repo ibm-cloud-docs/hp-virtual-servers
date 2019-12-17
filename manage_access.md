@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-12-05"
 
 ---
 
@@ -42,7 +42,7 @@ grant the **Reader** role for {{site.data.keyword.hpvs}} to the user for that re
 group.
 
 * **Regularly audit who has access and what permissions are provided.** -
-Granting too much permissions might unintentionally allow someone else to
+Granting too many permissions might unintentionally allow someone else to
 provide access to other users, or to delete and create resources.
 
 ## Roles and permissions
@@ -58,6 +58,6 @@ permissions:
 
 | Service access role | Description | Action |
 |-------|-----------------------|-------------|
-| Reader | A reader can perform actions required to retrieve information only. | Retrieve information about virtual servers |
+| Reader | A reader can perform actions that are required to retrieve information only. | Retrieve information about virtual servers |
 | Writer | A writer can perform the same actions as a reader – plus updating virtual servers. | Retrieve information about virtual servers |
 | Manager | A manager can perform the same actions as a writer. | Retrieve information about virtual servers |

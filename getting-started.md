@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-13"
+lastupdated: "2019-12-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-12-13"
 # Getting started tutorial  
 {: #getting-started}
 
-Using the {{site.data.keyword.hpvs}} service, you can provision virtual servers on a highly secure stack with an Ubuntu Linux operating system. On such a virtual server instance, you can run a myriad of Linux applications and containerized workloads.
+Using the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service, you can provision virtual servers on a highly secure stack with an Ubuntu Linux operating system. On such a virtual server instance, you can run a myriad of Linux applications and containerized workloads.
 
 This introduction informs you about the prerequisites for using this service. It points you to the process for provisioning a virtual server and informs you how to retrieve information about a created virtual server.
 
@@ -46,7 +46,7 @@ After you created an instance of {{site.data.keyword.hpvs}}, you can check the d
 Read [Retrieving information about a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs) for more information.
 
 
-## Logging-in to a new virtual server
+## Connecting to a new virtual server
 {: #gs_logging}
 
-From your client workstation, you can connect to a virtual server that exists on {{site.data.keyword.cloud_notm}} with its public IP address and your corresponding private SSH key. Read the information in [Logging-in to a new virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs).
+From your client workstation, you can connect to a virtual server that exists on {{site.data.keyword.cloud_notm}} with its public IP address and your corresponding private SSH key. Read the information in [Connecting to a new virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs).

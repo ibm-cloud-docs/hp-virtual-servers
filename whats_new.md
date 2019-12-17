@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-12-13"
 
 ---
 
@@ -20,6 +20,22 @@ lastupdated: "2019-11-13"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 17 December 2019
+{: #Dec17-2019}
+
+The provided Ubuntu operating system is now partwisely hardened according to CIS Ubuntu Linux 18.04 LTS Benchmark, Level 1 - Server profile.
+This operating system update will only be provided to new instances.
+
+## 12 December 2019
+{: #Dec12-2019}
+
+The service offering moved from the **Beta** to the **GA** phase. Additionally, new pricing plans are available: **Medium** and **Small**.
+
+## 6 December 2019
+{: #Dec6-2019}
+
+Three new data centers are available for creating virtual servers: Sydney 1, Sydney 4, and Sydney 5.
 
 ## 12 November 2019
 {: #Nov12-2019}

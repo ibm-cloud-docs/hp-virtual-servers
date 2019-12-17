@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-12-12"
 
 subcollection: hp-virtual-servers
 
@@ -64,7 +64,7 @@ The reason for these limitations is that IBM system administrators are restricte
 
 ## Can IBM system administrators provide me access to my virtual server instance, if I lose my private key?
 {: #faq9}
-IBM system administrators cannot recover access to your virtual server, as they do not have the required privileges. Therefore, establish a business continuity and disaster recovery plan (BCDR plan). This plan enables you to delete the lost virtual server, create a new one, and restore the data of the old instance to the new one.
+IBM system administrators cannot recover access to your virtual server, as they do not have the required privileges. Therefore, establish a business continuity and disaster recovery plan (BCDR plan). With a BCDR plan available, you can delete the lost virtual server, create a new one, and restore the data of the old instance to the new one.
 
 ## How can I install software?
 {: #faq10}
@@ -72,4 +72,17 @@ The virtual servers that are created with the {{site.data.keyword.cloud}} {{site
 
 ## How can I adjust the firewall of my virtual server?
 {: #faq11}
-A newly generated {{site.data.keyword.cloud}} virtual server, which is provided with an Ubuntu Linux operating system, has **iptables**, the Linux firewall utility," preinstalled. Investigate, what firewall tool you want or need to use in your environment.
+A newly generated {{site.data.keyword.cloud}} virtual server, which runs with an Ubuntu Linux operating system, has **iptables**, the Linux firewall utility, preinstalled. Investigate, what firewall tool you want or need to use in your environment.
+
+IBM provided adjustments for **iptables** on a virtual server.
+You can apply your own adjustments on a default configuration for **iptables** as described in
+[Protecting a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+
+## How do I authorize more SSH public keys for my virtual server?
+{: #faq12}
+With the OpenSSH Server component running in its standard configuration on your virtual server, you can manage authorized keys in a file that is by default located in a user's home directory:
+`<user_home>/.ssh/authorized_keys`. Add an SSH public key in a new line into this file. Then, the user can connect to the virtual server with the pertaining SSH private key. For more information, read the OpenSSH documentation.
+
+## Can I load or unload a kernel module?
+{: #faq13}
+These actions are not supported.

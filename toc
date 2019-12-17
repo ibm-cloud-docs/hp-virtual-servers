@@ -7,6 +7,9 @@ IBM Cloud Hyper Protect Virtual Server
     {: .navgroup id="learn"}
     getting-started.md
     overview.md
+    net_architecture.md
+    responsibilities.md
+    ha_disaster_recov.md
     whats_new.md
     {: .navgroup-end}
 

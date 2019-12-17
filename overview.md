@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-12-13"
 
 subcollection: hp-virtual-servers
 ---
@@ -19,11 +19,14 @@ subcollection: hp-virtual-servers
 # {{site.data.keyword.hpvs}} overview
 {: #overview}
 
-{{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud_notm}} service that provides highly secure virtual servers that can run Linux applications and containerized workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual servers.
+<!-- {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Beta** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
+{:important} -->
+
+{{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud}} service that provides highly secure virtual servers that can run Linux applications and containerized workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual servers.
 {:shortdesc}
 
 
-## Why {{site.data.keyword.hpvs}}?  
+## Why {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}?  
 {: #hp-virtual-servers-benefits}
 
 {{site.data.keyword.hpvs}} offers the following benefits:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-12-05"
 
 subcollection: hp-virtual-servers
 
@@ -71,4 +71,20 @@ The resources for the selected data center are exhausted.
 {: tsCauses}
 
 Retry the action and select a different data center.
+{: tsResolve}
+
+
+## Issues when connecting to {{site.data.keyword.ihsdbaas_mongodb_full}} within the same region
+{: #connect_mongodb}
+
+I get a connection failed message or warnings regarding connections within my logs, while trying to connect to an instance of {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}} within the same region.
+{: troubleshoot}
+
+The provided connection string contains host names that are mapping to public IP addresses, which cannot be used while connecting from within the same data enter.
+{: tsSymptoms}
+
+The domain names are resolved incorrectly to the public IP address, which cannot be used to connect from within the same data center.
+{: tsCauses}
+
+The Hyper Protect DBaaS team is working on a long term solution. Currently, you can select different regions for your virtual servers and the MongoDB instances.
 {: tsResolve}
