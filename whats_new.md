@@ -21,6 +21,11 @@ lastupdated: "2019-12-13"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 19 December 2019
+{: #Dec19-2019}
+
+Instances of the "Free" plan can now be provisioned in Dallas 10 and Dallas 12.
+
 ## 17 December 2019
 {: #Dec17-2019}
 
