@@ -34,7 +34,7 @@ You must use the internal IP address when you connect to a virtual server from a
 ## How do I provide my applications in high availability?
 {: #faq3}
 Do not rely on just one virtual server instance. Instead, run your application on multiple instances in combination with a load balancer to ensure high availability.
-Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within two region (`us-south`, `au-syd`) and six data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Sydney-01`, `Sydney-04` and `Sydney-05`).
+Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within two region (`us-south`, `au-syd`) and six data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Sydney 01`, `Sydney 04` and `Sydney 05`).
 
 ## Can I have more than five virtual servers within one data center?
 {: #faq4}

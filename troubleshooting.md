@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-05"
+lastupdated: "2019-01-28"
 
 subcollection: hp-virtual-servers
 
@@ -86,5 +86,21 @@ The provided connection string contains host names that are mapping to public IP
 The domain names are resolved incorrectly to the public IP address, which cannot be used to connect from within the same data center.
 {: tsCauses}
 
-The Hyper Protect DBaaS team is working on a long term solution. Currently, you can select different regions for your virtual servers and the MongoDB instances.
+The Hyper Protect DBaaS team is working on a long term solution. Currently, you can select different regions for your virtual servers and the MongoDB instances. This means that if you have multiple servers in `us-south` (for example, one server in each of Dallas 10, Dallas 12 and Dallas 13), then your Hyper Protect DBaaS MongoDB instance needs to be located in either `eu-de` (Frankfurt) or `au-syd` (Sydney).
+{: tsResolve}
+
+## Cannot connect to free virtual server anymore
+{: #connect_freevs}
+
+I cannot connect to a server (for example, via SSH) which is in the free plan although it is visible in the {{site.data.keyword.cloud_notm}} resource list.
+{: troubleshoot}
+
+You cannot connect to a server in the free plan anymore.
+The server is still visible in the resource list, but the dashboard shows an error message. The message indicates that the server expired. This means that the server and all data that was stored on the server have been deleted.
+{: tsSymptoms}
+
+All virtual servers in free plans are deleted after 30 days.
+{: tsCauses}
+
+Virtual servers in paid plans are not deleted. You can remove the server from the resource list by deleting the server from the resource list.
 {: tsResolve}

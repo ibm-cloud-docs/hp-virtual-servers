@@ -40,7 +40,7 @@ The service offering moved from the **Beta** to the **GA** phase. Additionally, 
 ## 6 December 2019
 {: #Dec6-2019}
 
-Three new data centers are available for creating virtual servers: Sydney 1, Sydney 4, and Sydney 5.
+Three new data centers are available for creating virtual servers: Sydney 01, Sydney 04, and Sydney 05.
 
 ## 12 November 2019
 {: #Nov12-2019}
