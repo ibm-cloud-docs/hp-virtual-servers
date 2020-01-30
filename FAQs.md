@@ -34,7 +34,8 @@ You must use the internal IP address when you connect to a virtual server from a
 ## How do I provide my applications in high availability?
 {: #faq3}
 Do not rely on just one virtual server instance. Instead, run your application on multiple instances in combination with a load balancer to ensure high availability.
-Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within two region (`us-south`, `au-syd`) and six data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Sydney 01`, `Sydney 04` and `Sydney 05`).
+
+Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within three regions (`us-south`, `eu-de`, `au-syd`) and nine data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Frankfurt 02`, `Frankfurt 04`, `Frankfurt 05`,`Sydney 01`, `Sydney 04` and `Sydney 05`).
 
 ## Can I have more than five virtual servers within one data center?
 {: #faq4}
@@ -86,3 +87,7 @@ With the OpenSSH Server component running in its standard configuration on your 
 ## Can I load or unload a kernel module?
 {: #faq13}
 These actions are not supported.
+
+## What IBM catalog offerings work with Hyper Protect Virtual Servers?
+{: #faq14}
+In general, all offerings should work with Hyper Protect Virtual Servers except for offerings working explicitly only with classic infrastructure or VPC infrastructure. These offerings do not work with Hyper Protect Virtual Servers.

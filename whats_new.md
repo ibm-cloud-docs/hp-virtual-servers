@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-13"
+lastupdated: "2019-12-19"
 
 ---
 
@@ -20,6 +20,12 @@ lastupdated: "2019-12-13"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+
+## 30 January 2020
+{: #Jan30-2020}
+
+Three new data centers are available for creating virtual servers: Frankfurt 02, Frankfurt 04, and Frankfurt 05.
 
 ## 19 December 2019
 {: #Dec19-2019}
