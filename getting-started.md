@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-10"
+lastupdated: "2020-01-31"
 
 ---
 
@@ -32,6 +32,9 @@ For an overview of the features and advantages of this service, read [{{site.dat
 
 Before you start, check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}. Also, have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
 
+Watch the following video to find how to get started with Hyper Protect Virtual Server:
+
+<iframe width="737" height="415" src="https://www.youtube.com/embed/GlP-w-vsPmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Provisioning a {{site.data.keyword.hpvs}} instance
 {: #gs_provisioning}
@@ -44,7 +47,6 @@ Read [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-
 
 After you created an instance of {{site.data.keyword.hpvs}}, you can check the detailed information of your virtual server.
 Read [Retrieving information about a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs) for more information.
-
 
 ## Connecting to a new virtual server
 {: #gs_logging}
