@@ -23,20 +23,20 @@ subcollection: hp-virtual-servers
 If you have problems or questions when you use {{site.data.keyword.hpvs}}, you can check the {{site.data.keyword.cloud_notm}} status, or you can search for information or ask questions in a forum. You can also open a support ticket.
 {:shortdesc}
 
-- You can check the {{site.data.keyword.cloud_notm}} availability on the [status page](https://cloud.ibm.com/status?selected=status){: external}.
+- Check the {{site.data.keyword.cloud_notm}} availability on the [status page](https://cloud.ibm.com/status?selected=status){: external}.
 
-- You can review the forums to see whether other users ran into the same problem.
+- Review the forums to see whether other users ran into the same problem.
   - If you have technical questions about {{site.data.keyword.hpvs}}, post your question on
     [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external}.
   - For questions about the service and getting started instructions, use the
     [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/ibm-cloud/){: external} forum.
 
-  In both cases, tag your question with **HP-VS** so that the {{site.data.keyword.hpvs}} team can notice it.
+  In both cases, tag your question with **HP-VS** so that the {{site.data.keyword.hpvs}} team can identify it.
   {:note}   
 
 - If your problem still exists, open an {{site.data.keyword.IBM_notm}} support case (ticket).
-  Include the server name and the cloud resource name (CRN) of your virtual server into the description of your issue.
-  You retrieve this CRN from your server entry in the **Resource list** (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)). Click any of the columns (except **Name** or **Tags**) to display a view from where you copy the CRN into the clipboard, as shown:
+  Include the your virtual server name and the cloud resource name (CRN) in the description of your issue.
+  You can retrieve the CRN from your server entry in the **Resource list** (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)). Click any of the columns (except **Name** or **Tags**) to display a view from where you can  copy the CRN into the clipboard, as shown:
 
   <img src="image/hpvs_crn.jpg" alt="Retrieving the cloud resource name (CRN)" height="400" style="height: 400px; border-style: none"/>
 

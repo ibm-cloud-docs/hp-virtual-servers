@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-28"
+lastupdated: "2019-12-05"
 
 subcollection: hp-virtual-servers
 
@@ -42,16 +42,16 @@ This issue can have multiple causes. Most probable, there is either a caching is
 Verify that you are using a supported browser. Delete your browser cache, log out of the {{site.data.keyword.cloud_notm}}, and log in again.
 {: tsResolve}
 
-## Status 'Provision failure' is displayed in the **Resource list** when you create multiple virtual servers
+## Status 'Inactive' is displayed in the **Resource list** when you create multiple virtual servers
 {: #provision_failure}
 
-Creating more than five virtual server instances nearly simultaneously in one data center without any existing instances, results in the creation of one or more virtual servers with status 'Provisioning failure' within the **Resource list**.
+Creating more than five virtual server instances almost simultaneously in one data center without any existing instances, results in the creation of one or more virtual servers with the status 'Inactive' (provisioning failed) within the **Resource list**, and when you click the 'Inactive' server in **Name** field, an error message is displayed to indicate that provisioning has failed.
 {: troubleshoot}
 
 You try to create more than five virtual servers within a short period in one data center without any existing virtual server instances.
 {: tsSymptoms}
 
-The number of virtual servers per data center is limited to five. Creating more than five virtual servers nearly at the same time in one data center leads to status 'Provisioning failure' for the sixth and all subsequent instances.
+The number of virtual servers per data center is limited to five. Creating more than five virtual servers almost all at the same time in one data center leads to the status 'Inactive' (provisioning failed) for the sixth and all subsequent instances.
 {: tsCauses}
 
 You can either provision more than five virtual servers in different data centers. Or you can provision more than five instances by using different {{site.data.keyword.cloud_notm}} accounts.
@@ -102,5 +102,5 @@ The server is still visible in the resource list, but the dashboard shows an err
 All virtual servers in free plans are deleted after 30 days.
 {: tsCauses}
 
-Virtual servers in paid plans are not deleted. You can remove the server from the resource list by deleting the server from the resource list.
+Virtual servers in paid plans are not deleted. You can remove the server from the resource list by deleting it from the resource list.
 {: tsResolve}
