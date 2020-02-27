@@ -36,10 +36,9 @@ If you have problems or questions when you use {{site.data.keyword.hpvs}}, you c
 
 - If your problem still exists, open an {{site.data.keyword.IBM_notm}} support case (ticket).
   Include the your virtual server name and the cloud resource name (CRN) in the description of your issue.
-  You can retrieve the CRN from your server entry in the **Resource list** (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)). Click any of the columns (except **Name** or **Tags**) to display a view from where you can  copy the CRN into the clipboard, as shown:
+  You can retrieve the CRN from your server entry in the **Resource list** (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)). Click any of the columns (except **Name**, **Tags** or **Status**) to display a view from where you can  copy the CRN into the clipboard, as shown:
 
-  <img src="image/hpvs_crn.jpg" alt="Retrieving the cloud resource name (CRN)" height="400" style="height: 400px; border-style: none"/>
-
+![Retrieving the cloud resource name (CRN)](image/hpvs_crn.jpg "Retrieving the cloud resource name (CRN)")
   *Figure 1. Retrieving the cloud resource name (CRN)*
 
 For more information about {{site.data.keyword.IBM_notm}} support cases, or about support levels and severities, and for information about how to use the forums, access the Support Center:

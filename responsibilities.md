@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-05"
+lastupdated: "2020-02-25"
 
 ---
 
@@ -40,6 +40,7 @@ Your responsibilities:
 
 IBM's responsibilities:
 - Set up virtual servers as requested.
+- Update the OS kernel.
 
 Your responsibilities:
 - Maintain OS patches, version updates, and security updates.

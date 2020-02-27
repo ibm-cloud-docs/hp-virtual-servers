@@ -21,6 +21,10 @@ lastupdated: "2019-12-19"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 27 February 2020
+{: #Feb27-2020}
+
+A new pricing plan is available: **Entry**.
 
 ## 30 January 2020
 {: #Jan30-2020}

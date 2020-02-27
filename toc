@@ -24,6 +24,7 @@ IBM Cloud Hyper Protect Virtual Server
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    hpvs_responsibilities.md
     [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
     [Hyper Protect Crypto Services](/services/hs-crypto/hs-crypto-get-started)
     [Hyper Protect DBaaS for MongoDB](/services/hyper-protect-dbaas-for-mongodb/hyper-protect-dbaas-for-mongodb-gettingstarted)
