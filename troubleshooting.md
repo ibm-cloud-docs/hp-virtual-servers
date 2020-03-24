@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-05"
+  years: 2019, 2020
+lastupdated: "2020-03-20"
 
 subcollection: hp-virtual-servers
 
@@ -103,4 +103,21 @@ All virtual servers in free plans are deleted after 30 days.
 {: tsCauses}
 
 Virtual servers in paid plans are not deleted. You can remove the server from the resource list by deleting it from the resource list.
+{: tsResolve}
+
+
+## Cannot create new virtual servers due to exhausted resources or plan limitations
+{: #connect_newvs}
+
+You cannot create new virtual servers due to exhausted resources or plan limitations, although you have less than the described limits.
+{: troubleshoot}
+
+Whilst creating a new server you get either a message informing you that the maximum number of servers has been reached in the selected data center for this account, or that you have reached the maximum number of free plans for this account. When you look in the resource list, you see that you have not reached the limit.
+{: tsSymptoms}
+
+The resource list does not reflect the complete list of all the servers that you have. If you “delete” a server from the resource list, it is made inaccessible and marked for deletion, but it is still available for you within the [resource reclamations](https://cloud.ibm.com/docs/resources?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external} for a limited amount of time, as described in [Deleting a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-remove_vs).
+{: tsCauses}
+
+Depending on your requirements you should either delete the resource from the resource reclamations, or select a different data center (maximum number of servers has been reached), or select the appropriate paid plan that meets your requirements if you have reached the maximum number of free plans.
+For more information, see [resource reclamations](https://cloud.ibm.com/docs/resources?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external}.
 {: tsResolve}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-19"
+  years: 2019, 2020
+lastupdated: "2020-03-24"
 
 ---
 
@@ -20,6 +20,11 @@ lastupdated: "2019-12-19"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 24 March 2020
+{: #Mar24-2020}
+
+A virtual server now has a seven day reclamation period after you "delete" it from the resource list. During the reclamation period you can restore the virtual server or manually trigger a deletion via resource reclamations.
 
 ## 27 February 2020
 {: #Feb27-2020}
