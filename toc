@@ -17,6 +17,7 @@ IBM Cloud Hyper Protect Virtual Server
     generate_ssh.md
     provision.md
     retrieve_info_vs.md
+    cli_hpvs.md
     connect_vs.md
     security_vs.md
     manage_access.md
