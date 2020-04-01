@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-26"
 
 ---
 
@@ -20,6 +20,13 @@ lastupdated: "2020-03-24"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+
+## 26 March 2020
+{: #Mar26-2020}
+
+The {{site.data.keyword.cloud_notm}} command line interface can be used to list, create, or delete your {{site.data.keyword.hpvs}} instances.
+
 
 ## 24 March 2020
 {: #Mar24-2020}
