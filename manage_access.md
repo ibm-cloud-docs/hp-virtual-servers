@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-05"
+  years: 2019, 2020
+lastupdated: "2020-04-08"
 
 ---
 
@@ -28,36 +28,4 @@ Another good practice is to add users to your {{site.data.keyword.cloud}} accoun
 them. This method provides the added users with capabilities within {{site.data.keyword.cloud}}. For example, with specially granted permissions, a user can view the virtual server dashboards or manage (for example, delete)
 virtual servers in specific resource groups or within your account.
 
-Detailed guidelines and tutorials for handling users and permissions are documented in topic
-[Managing identity and access](https://cloud.ibm.com/docs/iam?topic=iam-getstarted).
-Consider following guidelines:
-
-* **Enable user access to the resources in your account by assigning Cloud IAM roles.** -
-Rather than sharing your administrator credentials, create new policies for users who
-need access to virtual servers in your accounts within IBM.
-
-* **Grant roles and permissions at the smallest scope needed.** -
-For example, if a user needs to access only information about virtual servers within one resource group,
-grant the **Reader** role for {{site.data.keyword.hpvs}} to the user for that resource
-group.
-
-* **Regularly audit who has access and what permissions are provided.** -
-Granting too many permissions might unintentionally allow someone else to
-provide access to other users, or to delete and create resources.
-
-## Roles and permissions
-
-With {{site.data.keyword.cloud}} Identity and Access Management (IAM), you can manage and define access for
-users and resources in your account.
-
-To simplify access, {{site.data.keyword.hpvs}} aligns with Cloud IAM roles so that each user
-has a different view of the service, according to the role the user is assigned.
-
-The following table shows how identity and access roles map to {{site.data.keyword.hpvs}}
-permissions:
-
-| Service access role | Description | Action |
-|-------|-----------------------|-------------|
-| Reader | A reader can perform actions that are required to retrieve information only. | Retrieve information about virtual servers |
-| Writer | A writer can perform the same actions as a reader – plus updating virtual servers. | Retrieve information about virtual servers |
-| Manager | A manager can perform the same actions as a writer. | Retrieve information about virtual servers |
+Access to {{site.data.keyword.hpvs}} service instances for users in your account is controlled by {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM) as described [here](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-iam-hpvs).

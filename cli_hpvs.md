@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 202ß
-lastupdated: "2020-03-26"
+  years: 2020
+lastupdated: "2020-04-14"
 
-subcollection: hp-virtual-servers
+subcollection: hpvs
+
+keywords: CLI, command line interface
 
 ---
 
@@ -17,10 +19,10 @@ subcollection: hp-virtual-servers
 {:tip: .tip}
 {:pre: .pre}
 
-# Using the IBM Cloud CLI with {{site.data.keyword.hpvs}}
+# Using the {{site.data.keyword.cloud_notm}} CLI with {{site.data.keyword.hpvs}}
 {: #clihpvs}
 
-You can use the {{site.data.keyword.cloud_notm}} CLI to list, create, or delete your {{site.data.keyword.hpvs}} instances.
+You can use the {{site.data.keyword.cloud}} CLI to list, create, or delete your {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} instances.
 {:shortdesc}
 
 ## Prerequisites
@@ -34,7 +36,7 @@ Not all of the data is available through the CLI. For example, you still need to
 ## Setting up the {{site.data.keyword.cloud_notm}} CLI
 {: #ibmcloudcli}
 
-Follow these [instructions](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) to install and configure the {{site.data.keyword.cloud_notm}} CLI.
+Follow these [instructions](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started){: external} to install and configure the {{site.data.keyword.cloud_notm}} CLI.
 
 ## Listing instances with the {{site.data.keyword.cloud_notm}} CLI
 {: #clilist}
@@ -55,32 +57,56 @@ MyHPVS dal13    active service_instance
 {: codeblock}
 
 If you have no instances, a no instance found message is displayed.
-You can find more information about the list command [here](https://cloud.ibm.com/docs/cli?topic=cloud-cliibmcloud_commands_resource#ibmcloud_resource_service_instances).
+You can find more information about the list command [here](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instances){: external}.
 
-## Creating an {{site.data.keyword.hpvs}} instance with I{{site.data.keyword.cloud_notm}} CLI
+## Listing resource groups with the {{site.data.keyword.cloud_notm}} CLI
+{: #cliresource}
+
+To list all of your [resource groups](https://cloud.ibm.com/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups), enter:
+
+```
+ibmcloud resource groups
+```
+{: codeblock}
+
+Example output:
+
+```
+Name      ID                                 Default Group   State   
+Default   c4c083abbf134886883546ac03bddb5b   true            ACTIVE
+```
+{: codeblock}
+
+You can find more information about the resource groups command [here](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_groups){: external}
+
+
+## Creating an {{site.data.keyword.hpvs}} instance with the {{site.data.keyword.cloud_notm}} CLI
 {: #clicreate}
 
 To create a new {{site.data.keyword.hpvs}} instance, use the `ibmcloud service-instance-create` command and specify the required options:
 
 ```
-ibmcloud resource service-instance-create NAME (SERVICE_NAME | SERVICE_ID) SERVICE_PLAN_NAME LOCATION -p, --parameters (@JSON_FILE | JSON_STRING )
+ibmcloud resource service-instance-create NAME (SERVICE_NAME | SERVICE_ID) SERVICE_PLAN_NAME LOCATION -g, --resource group -p, --parameters (@JSON_FILE | JSON_STRING )
 ```
 {: codeblock}
 
 where:
 - NAME: The name your instance.
-- SERVICE_NAME or SERVICE_ID: The name of the service is hpvs and the id is 986f2197-9f9a-44f4-9463-f17ec64c6729.
-- SERVICE_PLAN_NAME or SERVICE_PLAN_ID: The service plan name or ID. To list the plans use the [ibmcloud catalog service hpvs command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line).
-- LOCATION: The target location to create the service instance. You can list all plans and the available locations for the plans via [ibmcloud catalog service hpvs command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line).
+- SERVICE_NAME or SERVICE_ID: The name of the service is `hpvs` and the ID is `986f2197-9f9a-44f4-9463-f17ec64c6729`.
+- SERVICE_PLAN_NAME or SERVICE_PLAN_ID: The service plan name or ID. To list the plans use the `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
+- LOCATION: The target location to create the service instance. You can list all plans and the available locations for the plans via `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
+- g, --resource group:  The [resource group](https://cloud.ibm.com/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups) to which your {{site.data.keyword.hpvs}} instance belongs  
+for access control and billing purposes.
 - p, --parameters @JSONFILE or JSON_STRING: The JSON file or JSON string of parameters to create service instance. To create a new {{site.data.keyword.hpvs}} instance you need to provide your public SSH key. The parameter name is `sshPublicKey`.
 
 For example:
 ```
-ibmcloud resource service-instance-create MyHPVS hpvs lite-s dal13 -p '{"sshPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCu77Csf9kDmfaeiShCxwvL2/JUYhBZ2tP9KuvCU+z9xzewb230TfOlHSLYejEaJ/TMohnHHnlaX9fsvkRjVmpC0IUWELi6ywpNKkOmLfJ21QzNDfnP8YczliyQd1c230x5RlZ CDF6ZEOULbVmCijsrCbVlOw1OKGdWOu1U4fP5tw=="}
+ibmcloud resource service-instance-create MyHPVS hpvs lite-s dal13 -g Default -p "{\"sshPublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCgguQtzV39LpP/iHAtjwo+4Z5QdASG73dwBlFIsTn5kPOaVYFHhzhvA/xMbLqDpxfYP/YzwU4rXNXMhCr4hlsruPXt5Ak4y83GmnNL8e+oq8lxU/afymje4PcYLnkm8WQvkreIEBaB73VOUKiLSSbdVljUk6a1LB347bCf72Oob8JpY4Pb3N4idrigSoCc+V4JVkz4pXD2Hoyar4J5I2527Ho+vUqdf5FoK9mFRUqtI8NTLKynL2/qVsCgTeUxnOknDjPE0+nqwyNI4toYozcISYb63K9Je6UBT4JaIQXMbdMhDH00wVH7R26SamKqS2iazcUBnZgN4//Vnic+US90ybsqvTuP/OQpHXwfdjshOEsz5PULZKbWgidsfA7aW3pjv1uijCPIrTFOsaAPktMCzhfJzaeFC0VIXweN7/2PT/Zl7U9Ys36CmmLaXfLotXxPWmbGUyRfavPN1Znhqph7v9w94E7JcngQ7sn+l+nkpYg5qdcBFZZ3kNhT4PVRbXE="}"
+
 ```
 {: codeblock}
 
-You can find more information about the create command [here](https://cloud.ibm.com/docs/cli?topic=cloud-cliibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
+You can find more information about the create command [here](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create){: external}.
 
 If the service instance is created successfully, a message is displayed informing you together with some other details, such as ID, current state and so on.
 
@@ -104,7 +130,7 @@ ibmcloud resource service-instance-delete MyHPVS
 ```
 {: codeblock}
 
-You can find more information about the delete command [here](https://cloud.ibm.com/docs/cli?topic=cloud-cliibmcloud_commands_resource#ibmcloud_resource_service_instance_delete).
+You can find more information about the delete command [here](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete){: external}.
 
 Enter `y` to confirm that you want to delete the instance. The {{site.data.keyword.cloud_notm}} CLI notifies you that the instance was successfully deleted.
 

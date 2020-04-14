@@ -4,6 +4,9 @@ copyright:
   years: 2019
 lastupdated: "2019-12-05"
 
+subcollection: hpvs
+
+keywords: connect, logging in, OpenSSH
 ---
 
 {:external: target="_blank" .external}

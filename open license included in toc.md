@@ -46,5 +46,4 @@ IBM Cloud Hyper Protect Virtual Server
         supported_browsers.md
 
     FAQs.md
-    open-source-licenses.md
     {: .navgroup-end}

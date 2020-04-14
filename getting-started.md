@@ -4,6 +4,10 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-03-20"
 
+subcollection: hpvs
+
+keywords: hyper protect virtual servers, Hyper Protect Virtual Servers, getting started
+
 ---
 
 {:external: target="_blank" .external}
@@ -32,9 +36,9 @@ For an overview of the features and advantages of this service, read [{{site.dat
 
 Before you start, check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}. Also, have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
 
-Watch the following video to find how to get started with Hyper Protect Virtual Server:
+Watch the following video to find how to get started with {{site.data.keyword.hpvs}}:
 
-<iframe width="737" height="415" src="https://www.youtube.com/embed/GlP-w-vsPmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="737" height="415" title="Getting Started with IBM Cloud Hyper Protect Virtual Servers" src="https://www.youtube.com/embed/GlP-w-vsPmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Provisioning a {{site.data.keyword.hpvs}} instance
 {: #gs_provisioning}

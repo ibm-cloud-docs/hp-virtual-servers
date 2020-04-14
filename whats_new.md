@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-04-14"
 
 ---
 
@@ -21,6 +21,9 @@ lastupdated: "2020-03-26"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 14 April 2020
+{: #Apr14-2020}
+Detailed information about enhancing security for {{site.data.keyword.hpvs}} is now available.
 
 ## 26 March 2020
 {: #Mar26-2020}
