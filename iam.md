@@ -4,6 +4,8 @@ copyright:
   years:  2017, 2020
 lastupdated: "2020-04-14"
 
+subcollection: hpvs
+
 keywords: IAM access for {{site.data.keyword.hpvs}}, permissions for {{site.data.keyword.hpvs}}, identity and access management for {{site.data.keyword.hpvs}}, roles for {{site.data.keyword.hpvs}}, actions for {{site.data.keyword.hpvs}}, assigning access for {{site.data.keyword.hpvs}}
 
 ---

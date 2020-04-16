@@ -4,9 +4,9 @@ copyright:
   years: 2019
 lastupdated: "2019-12-19"
 
-subcollection: hp-virtual-servers
+subcollection: hpvs
 
-
+keywords: {{site.data.keyword.hpvs}} faq, troubleshooting, support, {{site.data.keyword.hpvs}} help, virtual servers help, availability, data center, backup, ip address, custom image, ssh public keys, kernel, firewall
 ---
 
 {:external: target="_blank" .external}
@@ -88,6 +88,6 @@ With the OpenSSH Server component running in its standard configuration on your 
 {: #faq13}
 These actions are not supported.
 
-## What IBM catalog offerings work with Hyper Protect Virtual Servers?
+## What IBM catalog offerings work with {{site.data.keyword.hpvs}}?
 {: #faq14}
 In general, all offerings should work with Hyper Protect Virtual Servers except for offerings working explicitly only with classic infrastructure or VPC infrastructure. These offerings do not work with Hyper Protect Virtual Servers.

@@ -4,6 +4,8 @@ copyright:
   years: 2020
 lastupdated: "2020-04-14"
 
+subcollection: hpvs
+
 keywords: data encryption in {{site.data.keyword.hpvs}}, data storage for {{site.data.keyword.hpvs}}, bring your own keys for {{site.data.keyword.hpvs}}, BYOK for{{site.data.keyword.hpvs}}, key management for {{site.data.keyword.hpvs}}, key encryption for {{site.data.keyword.hpvs}}, personal data in {{site.data.keyword.hpvs}}, data deletion for {{site.data.keyword.hpvs}}, data in {{site.data.keyword.hpvs}}, data security in {{site.data.keyword.hpvs}}
 
 ---
@@ -16,30 +18,30 @@ keywords: data encryption in {{site.data.keyword.hpvs}}, data storage for {{site
 {:codeblock: .codeblock}
 {:tip: .tip}
 
-# Securing your data in {{site.data.keyword.hpvs}}s
+# Securing your data in {{site.data.keyword.hpvs}}
 {: #mng-data}
 
-To ensure that you can securely manage your data when you use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}, it is important to know exactly what data is stored and encrypted and how you can delete any stored personal data. All data stored on {{site.data.keyword.hpvs}}s disks is automatically encrypted and the encryption key is stored on a secure enclave.
+To ensure that you can securely manage your data when you use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}, it is important to know exactly what data is stored and encrypted and how you can delete any stored personal data. All data stored on {{site.data.keyword.hpvs}} disks is automatically encrypted and the encryption key is stored on a secure enclave.
 {: shortdesc}
 
 
-## How your data is stored and encrypted in {{site.data.keyword.hpvs}}s
+## How your data is stored and encrypted in {{site.data.keyword.hpvs}}
 {: #data-storage}
 
-{{site.data.keyword.hpvs}}s uses the following methods to protect your data:
+{{site.data.keyword.hpvs}} uses the following methods to protect your data:
 
-- {{site.data.keyword.hpvs}}s is built on [IBM Secure Service Container technology](https://www.ibm.com/us-en/marketplace/secure-service-container){: external}, and provides workload isolation, restricted administrator access and tamper protection for the underlying host system.
+- {{site.data.keyword.hpvs}} is built on [IBM Secure Service Container technology](https://www.ibm.com/us-en/marketplace/secure-service-container){: external}, and provides workload isolation, restricted administrator access and tamper protection for the underlying host system.
 - The default SSH connection uses your private/public keypair for authentication and the connection is encrypted automatically.
-- The [Identity and Access Management (IAM)](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-iam) secures access to the {{site.data.keyword.cloud_notm}} account, the {{site.data.keyword.hpvs}}s management Web user interface and CLI .
+- The [Identity and Access Management (IAM)](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-iam) secures access to the {{site.data.keyword.cloud_notm}} account, the {{site.data.keyword.hpvs}} management Web user interface and CLI .
 - All disks attached to a {{site.data.keyword.hpvs}} are provided on storage encrypted with LUKS using AES-256. The default keys are managed by the underlying [IBM Secure Service Container technology](https://www.ibm.com/us-en/marketplace/secure-service-container){: external}.
 
-## Protecting your sensitive data in {{site.data.keyword.hpvs}}s
+## Protecting your sensitive data in {{site.data.keyword.hpvs}}
 {: #data-encryption}
 
 ### Data at rest
 {: #data-atrest}
 
-The data that you store in {{site.data.keyword.hpvs}}s is encrypted securely at rest by using a randomly generated key, which the underlying [IBM Secure Service Container technology](https://www.ibm.com/us-en/marketplace/secure-service-container){: external} manages. Use the Linux command line tools to delete data in a virtual server.
+The data that you store in {{site.data.keyword.hpvs}} is encrypted securely at rest by using a randomly generated key, which the underlying [IBM Secure Service Container technology](https://www.ibm.com/us-en/marketplace/secure-service-container){: external} manages. Use the Linux command line tools to delete data in a virtual server.
 
 ### Data in flight
 {: #data-inflight}
@@ -60,4 +62,4 @@ It is your responsibility to protect the connection of any application running i
 
 Use the [web user interface](https://cloud.ibm.com/docs/services/hp-virtual-servers?topic=hp-virtual-servers-remove_vs) or the [ibmcloud CLI](https://cloud.ibm.com/docs/services/hp-virtual-servers?topic=hp-virtual-servers-clihpvs#clidelete) to delete your instance. The virtual server including all the data stored in it is deleted after the 7 day reclamation period, as described [here](https://cloud.ibm.com/docs/services/hp-virtual-servers?topic=hp-virtual-servers-remove_vs).
 
-The {{site.data.keyword.hpvs}}s data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the IBM Cloud Hyper Protect Virtual Servers service description, which you can find in the [Terms and Notices](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8680-01).
+The {{site.data.keyword.hpvs}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the IBM Cloud Hyper Protect Virtual Servers service description, which you can find in the [Terms and Notices](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8680-01).
