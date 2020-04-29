@@ -15,6 +15,7 @@ IBM Cloud Hyper Protect Virtual Servers
     {: .navgroup id="howto"}
     generate_ssh.md
     provision.md
+    byoi.md
     retrieve_info_vs.md
     cli_hpvs.md
     connect_vs.md
@@ -46,5 +47,5 @@ IBM Cloud Hyper Protect Virtual Servers
         supported_browsers.md
 
     FAQs.md
-    
+    open-source-licenses.md
     {: .navgroup-end}
