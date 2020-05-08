@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-04-14"
 
-subcollection: hpvs
+subcollection: hp-virtual-servers
 
 keywords: data encryption in {{site.data.keyword.hpvs}}, data storage for {{site.data.keyword.hpvs}}, bring your own keys for {{site.data.keyword.hpvs}}, BYOK for{{site.data.keyword.hpvs}}, key management for {{site.data.keyword.hpvs}}, key encryption for {{site.data.keyword.hpvs}}, personal data in {{site.data.keyword.hpvs}}, data deletion for {{site.data.keyword.hpvs}}, data in {{site.data.keyword.hpvs}}, data security in {{site.data.keyword.hpvs}}
 

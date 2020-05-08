@@ -4,6 +4,9 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-03-19"
 
+subcollection: hp-virtual-servers
+
+keywords: deleting virtual server, resource reclamations
 ---
 
 {:external: target="_blank" .external}

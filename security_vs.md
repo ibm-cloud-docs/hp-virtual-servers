@@ -1,8 +1,10 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-12"
+  years: 2019, 2020
+lastupdated: "2020-05-06"
+
+subcollection: hp-virtual-servers
 
 ---
 
@@ -37,12 +39,11 @@ As part of the hardening, IBM installed and configured AIDE (Advanced Intrusion 
 Environment), which is a file and directory integrity checker. With the implemented configuration, AIDE is
 run as a `cron job` every 5 minutes while the server is running.
 
-The firewall accepts all outgoing TCP, UDP and ICMP traffic.
-Incoming traffic is only accepted on ports 22 (TCP), 80 (TCP), 443 (TCP), 8080(TCP), 53(TCP and UDP), and with protocol ICMP.
+The firewall allows all outgoing TCP, UDP and ICMP traffic. Incoming traffic is only accepted on ports 22 (TCP) and with protocol ICMP.
 
-For firewall configurations based on **iptables**, IBM provided an
-`init.d`-service which is located within `/etc/init.d/firewall`. In order to adjust the firewall,
-configure your **iptables** and override the existing configuration file by using the following command:
+For firewall configurations based on **iptables**, IBM provided an `systemd-service` which is located within `/usr/lib/systemd/system/iptables.service` and added to the multi-user target.
+
+To adjust the firewall, configure your **iptables** and override the existing configuration file by using the following command:
 
 ```
 iptables-save > /etc/iptables/iptables.conf

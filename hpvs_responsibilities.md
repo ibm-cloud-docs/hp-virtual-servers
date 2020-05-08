@@ -4,6 +4,9 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-02-24"
 
+subcollection: hp-virtual-servers
+
+keywords: disaster recovery
 ---
 
 {:new_window: target="_blank"}

@@ -4,7 +4,7 @@ copyright:
   years: 2019
 lastupdated: "2019-12-05"
 
-subcollection: hpvs
+subcollection: hp-virtual-servers
 
 keywords: ssh public keys, OpenSSH, add ssh key, ssh key, manage ssh key, virtual server instance, instance, virtual server
 

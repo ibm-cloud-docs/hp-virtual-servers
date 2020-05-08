@@ -3,7 +3,7 @@ copyright:
   years:  2017, 2020
 lastupdated: "2020-04-14"
 
-subcollection: hpvs
+subcollection: hp-virtual-servers
 
 keywords: public isolation for {{site.data.keyword.hpvs}}, compute isolation for {{site.data.keyword.hpvs}}, {{site.data.keyword.hpvs}} architecture, workload isolation in {{site.data.keyword.hpvs}}
 

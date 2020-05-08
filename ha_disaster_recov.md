@@ -4,6 +4,10 @@ copyright:
   years: 2019
 lastupdated: "2019-12-11"
 
+subcollection: hp-virtual-servers
+
+keywords: high availability, disaster, recovery
+
 ---
 
 {:external: target="_blank" .external}

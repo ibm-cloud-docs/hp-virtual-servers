@@ -4,9 +4,9 @@ copyright:
   years: 2020
 lastupdated: "2020-04-14"
 
-subcollection: hpvs
+subcollection: hp-virtual-servers
 
-keywords: CLI, command line interface
+keywords: CLI, command line interface, cli
 
 ---
 

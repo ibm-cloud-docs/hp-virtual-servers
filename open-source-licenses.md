@@ -6,7 +6,7 @@ lastupdated: "2020-04-09"
 
 keywords: open source licenses
 
-subcollection: hpvs
+subcollection: hp-virtual-servers
 
 ---
 

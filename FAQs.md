@@ -4,7 +4,7 @@ copyright:
   years: 2019
 lastupdated: "2019-12-19"
 
-subcollection: hpvs
+subcollection: hp-virtual-servers
 
 keywords: {{site.data.keyword.hpvs}} faq, troubleshooting, support, {{site.data.keyword.hpvs}} help, virtual servers help, availability, data center, backup, ip address, custom image, ssh public keys, kernel, firewall
 ---

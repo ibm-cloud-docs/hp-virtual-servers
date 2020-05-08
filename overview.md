@@ -26,7 +26,7 @@ subcollection: hp-virtual-servers
 {:shortdesc}
 
 
-## Why {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}?  
+## Why {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}?  
 {: #hp-virtual-servers-benefits}
 
 {{site.data.keyword.hpvs}} offers the following benefits:

@@ -4,6 +4,8 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-04-08"
 
+subcollection: hp-virtual-servers
+
 ---
 
 {:external: target="_blank" .external}
