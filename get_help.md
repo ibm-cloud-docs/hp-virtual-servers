@@ -6,7 +6,6 @@ lastupdated: "2019-12-05"
 
 subcollection: hp-virtual-servers
 
-keywords: {{site.data.keyword.hpvs}} support, {{site.data.keyword.hpvs}} help, {{site.data.keyword.hpvs}} ticket
 ---
 
 {:external: target="_blank" .external}

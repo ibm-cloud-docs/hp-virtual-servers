@@ -24,7 +24,7 @@ keywords: image, virtual server instance, instance, virtual server
 Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.
 {: shortdesc}
 
-This feature is for test purposes only, it is currently not supported in production environments.
+This feature is for technical preview (experimental) only, it is currently not supported by IBM and should not be used in production environments.
 {:important}
 
 Before you provision a new server, check the [prerequisites](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_pre), then complete the following steps:
@@ -34,7 +34,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 3. [Provision a Hyper Protect Virtual Server using your OCI Image](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_provision)
 
 
-## Prerequisites
+## Prerequisites 
 {: #byoi_pre}
 
 Your custom Linux-based image must be:

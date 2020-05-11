@@ -45,7 +45,6 @@ IBM Cloud Hyper Protect Virtual Servers
     Troubleshooting
         troubleshooting.md
         supported_browsers.md
-
     FAQs.md
     open-source-licenses.md
     {: .navgroup-end}
