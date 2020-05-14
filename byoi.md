@@ -34,33 +34,40 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 3. [Provision a Hyper Protect Virtual Server using your OCI Image](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_provision)
 
 
-## Prerequisites 
+## Prerequisites
 {: #byoi_pre}
 
-Your custom Linux-based image must be:
-- In the OCI Image format. {{site.data.keyword.hpvs}} supports only Linux-based OCI Images which are built for the IBM LinuxONE and IBM Z platform (s390x architecture)
-- Available either in the [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry) or [Docker Hub](https://hub.docker.com/) and signed using [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/).
+- Your custom Linux-based image must be:
+  - In the OCI Image format. {{site.data.keyword.hpvs}} supports only Linux-based OCI Images which are built for the IBM LinuxONE and IBM Z platform (s390x architecture)
+  - Available either in the [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry) or [Docker Hub](https://hub.docker.com/) and signed using [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/).
+- You must install the {{site.data.keyword.cloud_notm}} CLI. Follow these [instructions](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) to install and configure the {{site.data.keyword.cloud_notm}} CLI.
 
 ## Creating a custom image
 {: #byoi_create}
 1. Choose a base for your OCI Image. Either use one of the [publicly available images from Docker Hub](https://hub.docker.com/search?q=&type=image&image_filter=&architecture=s390x) or build one from scratch.
-1. Use a build tool such as `docker build` or `buildah` to make your required modifications to the base. These tools can be installed on a Hyper Protect Virtual Server using Ubuntu if you don't have access to a system running on the IBM Z platform (s390x architecture) or can't cross build your image. Be aware of these [hints](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_hints) while building your image.
-1. After you have finished creating your image, push it to either the {{site.data.keyword.cloud_notm}} Registry or Docker Hub with Docker Content Trust enabled. Follow these [instructions](https://cloud.ibm.com/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent_dct_notary) to do this using the {{site.data.keyword.cloud}} Container Registry. If you are using a virtual server you don't need to install the ibmcloud CLI. You can also log in to the {{site.data.keyword.cloud}} Container registry by using:
-  ```
-  echo  "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io
-  ```
-  {:pre}
+1. Use a build tool such as `docker build` or `buildah` to make your required modifications to the base. These tools can be installed on a Hyper Protect Virtual Server using Ubuntu if you don't have access to a system running on the IBM Z platform (s390x architecture) or can't cross build your image. Be aware of these hints when you build your image:
+    - The maximum allowed image size is 5 GB.
+    - Set the entrypoint and command used to start the OCI image during the image build because these parameters can’t be configured afterwards to provision your virtual server.
+    - {{site.data.keyword.cloud}} Registry Namespaces and Docker Hub organizations with a `-` in the name are not permitted.
+    - The OCI image content is available on the virtual server boot disk mounted as `/`. If you need to use persistent storage use the `/data` mountpoint.
+    - If you want to use `systemd` in your image, make sure you set the start command to `/sbin/init` and configure the environment variable `RUNQ_SYSTEMD=1`.
+    - The virtual server gets its own IP address which means that all open ports are automatically mapped on the internal and public network. Make sure you restrict network access in your image to only the ports you require. `EXPOSE` rules from the image build don't have any effect.
+1. After you have created your image, check that there are no vulnerable components. Most containers are built using a collection of open source components that can suffer from known vulnerabilities. It is your responsibility to use scanning tools to identify if any of the components you have included in the build are vulnerable. Scan the components before you distribute the image, for example, with [Vulnerability Advisor](https://cloud.ibm.com/docs/Registry?topic=va-va_index).
+1. Push the image to either the {{site.data.keyword.cloud_notm}} Registry or Docker Hub with Docker Content Trust enabled. To do this using the {{site.data.keyword.cloud}} Container Registry, either:
+    - Follow these [instructions to sign images for trusted content](https://cloud.ibm.com/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent_dct_notary) by using Docker Content Trust and Notary, or
+    - Follow the [instructions to create an API key](https://cloud.ibm.com/docs/iam?topic=iam-userapikey#create_user_key), and then:
+      - To log in, run:
+      ```
+      echo  "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io .
+      ```
+
+      - Push the image by running:
+      ```
+      DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://<registry_region>.icr.io:4443 docker push <image>
+      ```
 
 1. Follow these [back up instructions](https://cloud.ibm.com/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_backupkeys) to back up your keys after you have pushed the image.
 
-### General hints for building your own Linux-based OCI image for {{site.data.keyword.hpvs}}
-{: #byoi_hints}
-* Set the entrypoint and command used to start the OCI image during the image build because these parameters can’t be configured afterwards to provision your virtual server.
-* Most containers are built using a collection of open source components that can suffer from known vulnerabilities. It is your responsibility to use scanning tools to identify if any of the components you have included in the build are vulnerable. Scan the components before you  distribute the image, for example, with [Vulnerability Advisor](https://cloud.ibm.com/docs/Registry?topic=va-va_index).
-* The maximum allowed image size is 5 GB.
-* The OCI image content is available on the virtual server boot disk mounted as `/`. If you need to use persistent storage use the `/data` mountpoint.
-* If you want to use `systemd` in your image, make sure you set the start command to `/sbin/init` and configure the environment variable `RUNQ_SYSTEMD=1`.
-* The virtual server gets its own IP address which means that all open ports are automatically mapped on the internal and public network. Make sure you restrict network access in your image to only the ports you require. `EXPOSE` rules from the image build don't have any effect.
 
 ## Creating a registration definition file
 {: #byoi_regdef}
@@ -230,7 +237,7 @@ The registration definition file contains metadata about the OCI image you want 
 
 ## Provisioning a Hyper Protect Virtual Server using your OCI Image
 {: #byoi_provision}
-You must use the ibmcloud cli to provision a Hyper Protect Virtual Server using your own OCI image. Follow these [instructions](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) to install and configure the {{site.data.keyword.cloud}} CLI.
+You must use the [ibmcloud cli]https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) to provision a Hyper Protect Virtual Server using your own OCI image.
 
 To provision a virtual server using your own OCI Image, run this command:
 ```
@@ -244,14 +251,3 @@ Set the parameters:
 * **LOCATION:** Choose the location to where you want to deploy your Hyper Protect Virtual Server. Possible values are: `dal10`, `dal12`, `dal13`, `fra02`, `fra04`, `fra05`, `syd01`, `syd04`, `syd05`.
 * **REGISTRATION_DEFINITION:** Replace all newlines from the encrypted and signed registration definition file with `\n` and paste the result in this parameter. In vim you can do the replacement by running `:%s/\n/\\n/g`.
 * **IMAGE_TAG:** The tag of the OCI Image to be used.
-
-## Limitations
-{: #byoi_limit}
-* Images can only be stored on {{site.data.keyword.cloud}} Container Registry or Docker Hub.
-* Upgrading a running virtual server with a new OCI Image is not possible.
-* Logs for the running virtual server cannot be retrieved.
-* You can retrieve virtual server information via the UI only.
-* You can provision a virtual server via the CLI only.
-* It is not possible to configure startup parameters for the provisioning process.
-* {{site.data.keyword.cloud}} Registry Namespaces and Docker Hub organizations with a `-` in the name are not permitted.
-* It is not possible to install firewall solutions, for example, iptables / ufw, during the OCI image build.
