@@ -91,7 +91,7 @@ ibmcloud resource service-instance-create NAME (SERVICE_NAME | SERVICE_ID) SERVI
 {: codeblock}
 
 where:
-- NAME: The name your instance.
+- NAME: The name of your instance.
 - SERVICE_NAME or SERVICE_ID: The name of the service is `hpvs` and the ID is `986f2197-9f9a-44f4-9463-f17ec64c6729`.
 - SERVICE_PLAN_NAME or SERVICE_PLAN_ID: The service plan name or ID. To list the plans use the `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
 - LOCATION: The target location to create the service instance. You can list all plans and the available locations for the plans via `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.

@@ -45,7 +45,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 ## Creating a custom image
 {: #byoi_create}
 1. Choose a base for your OCI Image. Either use one of the [publicly available images from Docker Hub](https://hub.docker.com/search?q=&type=image&image_filter=&architecture=s390x) or build one from scratch.
-1. Use a build tool such as `docker build` or `buildah` to make your required modifications to the base. These tools can be installed on a Hyper Protect Virtual Server using Ubuntu if you don't have access to a system running on the IBM Z platform (s390x architecture) or can't cross build your image. Be aware of these hints when you build your image:
+1. Use a build tool such as `docker build` to make your required modifications to the base. These tools can be installed on a Hyper Protect Virtual Server using Ubuntu if you don't have access to a system running on the IBM Z platform (s390x architecture) or can't cross build your image. To install Docker on your Hyper Protect Virtual Server run `apt update && apt install -y docker.io`. Be aware of these hints when you build your image:
     - The maximum allowed image size is 5 GB.
     - Set the entrypoint and command used to start the OCI image during the image build because these parameters can’t be configured afterwards to provision your virtual server.
     - {{site.data.keyword.cloud}} Registry Namespaces and Docker Hub organizations with a `-` in the name are not permitted.
@@ -53,18 +53,19 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
     - If you want to use `systemd` in your image, make sure you set the start command to `/sbin/init` and configure the environment variable `RUNQ_SYSTEMD=1`.
     - The virtual server gets its own IP address which means that all open ports are automatically mapped on the internal and public network. Make sure you restrict network access in your image to only the ports you require. `EXPOSE` rules from the image build don't have any effect.
 1. After you have created your image, check that there are no vulnerable components. Most containers are built using a collection of open source components that can suffer from known vulnerabilities. It is your responsibility to use scanning tools to identify if any of the components you have included in the build are vulnerable. Scan the components before you distribute the image, for example, with [Vulnerability Advisor](https://cloud.ibm.com/docs/Registry?topic=va-va_index).
-1. Push the image to either the {{site.data.keyword.cloud_notm}} Registry or Docker Hub with Docker Content Trust enabled. To do this using the {{site.data.keyword.cloud}} Container Registry, either:
-    - Follow these [instructions to sign images for trusted content](https://cloud.ibm.com/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent_dct_notary) by using Docker Content Trust and Notary, or
-    - Follow the [instructions to create an API key](https://cloud.ibm.com/docs/iam?topic=iam-userapikey#create_user_key), and then:
-      - To log in, run:
+1. Push the image to either the {{site.data.keyword.cloud_notm}} Registry or Docker Hub with Docker Content Trust enabled. To do this using the {{site.data.keyword.cloud_notm}} Container Registry follow these steps:
+    - Follow the [instructions to create an API key](https://cloud.ibm.com/docs/iam?topic=iam-userapikey#create_user_key)
+    - Follow the [instructions to create a namespace](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in {{site.data.keyword.cloud_notm}} Container Registry.
+    - To log in to the registry on your terminal, run:
       ```
-      echo  "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io .
+      echo  "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io
       ```
-
-      - Push the image by running:
+      {: pre}
+    - Push the image by running:
       ```
       DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://<registry_region>.icr.io:4443 docker push <image>
       ```
+      {: pre}
 
 1. Follow these [back up instructions](https://cloud.ibm.com/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_backupkeys) to back up your keys after you have pushed the image.
 
@@ -85,7 +86,7 @@ The registration definition file contains metadata about the OCI image you want 
         "vendor_key": ""
   }
   ```
-  {: pre}
+  {: codeblock}
 1. Enter the values for the repository name and the credentials for the authentication on the registry in the `repository_name`, `docker_username` and `docker_password` fields in the template. The `repository_name` parameters requires the full path to the OCI image without the tag, for example, `docker.io/library/ubuntu/` or `de.icr.io/hpvs/ubuntu`. If your image does not require authentication leave the values for `docker_username` and `docker_password`  empty.
 1. Run `docker trust inspect <image>` and copy the Root key ID from the AdministrativeKeys that was used to sign the Docker Image on your build system. Paste the ID into the `public_key_id` value field in the template. For example:
   ```
@@ -142,7 +143,7 @@ The registration definition file contains metadata about the OCI image you want 
   %commit
   %echo done
   ```
-  {: pre}
+  {: codeblock}
 
 1. Run `gpg -a --batch --generate-key <batchfile>` to create a new keypair as the `isv_user` identity which will be used for signing the registration file in a later step:
   ```
@@ -220,6 +221,7 @@ The registration definition file contains metadata about the OCI image you want 
   =DsnN
   -----END PGP PUBLIC KEY BLOCK-----
   ```
+  {: codeblock}
 1. To import the public key from the previous step, run:  
   ```
   gpg --import <filename>
@@ -237,11 +239,11 @@ The registration definition file contains metadata about the OCI image you want 
 
 ## Provisioning a Hyper Protect Virtual Server using your OCI Image
 {: #byoi_provision}
-You must use the [ibmcloud cli]https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) to provision a Hyper Protect Virtual Server using your own OCI image.
+You must use the [ibmcloud cli](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) to provision a Hyper Protect Virtual Server using your own OCI image.
 
 To provision a virtual server using your own OCI Image, run this command:
 ```
-ibmcloud resource service-instance-create NAME hpvs PLAN LOCATION -p "{\"registrationDefinition\": \"<REGISTRATION_DEFINITION>\", \"imageTag\": \"<IMAGE_TAG>\"}
+ibmcloud resource service-instance-create NAME hpvs PLAN LOCATION -p "{\"registrationDefinition\": \"<REGISTRATION_DEFINITION>\", \"imageTag\": \"<IMAGE_TAG>\"}"
 ```
 {: pre}
 
