@@ -58,7 +58,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
     - Follow the [instructions to create a namespace](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in {{site.data.keyword.cloud_notm}} Container Registry.
     - To log in to the registry on your terminal, run:
       ```
-      echo  "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io
+      echo "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io
       ```
       {: pre}
     - Push the image by running:
@@ -87,10 +87,11 @@ The registration definition file contains metadata about the OCI image you want 
   }
   ```
   {: codeblock}
-1. Enter the values for the repository name and the credentials for the authentication on the registry in the `repository_name`, `docker_username` and `docker_password` fields in the template. The `repository_name` parameters requires the full path to the OCI image without the tag, for example, `docker.io/library/ubuntu/` or `de.icr.io/hpvs/ubuntu`. If your image does not require authentication leave the values for `docker_username` and `docker_password`  empty.
+1. Enter the value for the repository name in the `repository_name` field in the template. This parameter requires the full path to the OCI image without the tag, for example, `docker.io/library/ubuntu/` or `de.icr.io/hpvs/ubuntu`. 
+1. Enter your credentials to authenticate on the registry in the `docker_username` and `docker_password` fields. If you use {{site.data.keyword.cloud_notm}} Container Registry your user name is `iamapikey` and the password is your API key. If your image does not require authentication leave the values for `docker_username` and `docker_password` empty.
 1. Run `docker trust inspect <image>` and copy the Root key ID from the AdministrativeKeys that was used to sign the Docker Image on your build system. Paste the ID into the `public_key_id` value field in the template. For example:
   ```
-  docker trust inspect <image>
+  DOCKER_CONTENT_TRUST_SERVER=https://<registry_region>.icr.io:4443 docker trust inspect <image>
   ```
   {: pre}
   ```
