@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="hp-virtual-servers" category="compute" audience="service" href="/docs/services/hp-virtual-servers?topic=hp-virtual-servers-getting-started" path="services/hp-virtual-servers"}
+{: .toc subcollection="hp-virtual-servers" category="virtualservers" audience="service" href="/docs/services/hp-virtual-servers?topic=hp-virtual-servers-getting-started" path="services/hp-virtual-servers"}
 IBM Cloud Hyper Protect Virtual Servers
 
     {: .navgroup id="learn"}
@@ -33,6 +33,7 @@ IBM Cloud Hyper Protect Virtual Servers
     {: .navgroup id="reference"}
     hpvs_responsibilities.md
     [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
+    [Hyper Protect Services tutorials and other resources](https://ibm-hyper-protect.github.io/)
     [Hyper Protect Crypto Services](/services/hs-crypto/hs-crypto-get-started)
     [Hyper Protect DBaaS for MongoDB](/services/hyper-protect-dbaas-for-mongodb/hyper-protect-dbaas-for-mongodb-gettingstarted)
     [Hyper Protect DBaaS for PostgreSQL](/services/hyper-protect-dbaas-for-postgresql/hyper-protect-dbaas-for-postgresql-gettingstarted)
