@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-09"
+lastupdated: "2020-06-23"
 
 keywords: open source licenses
 
@@ -36,7 +36,7 @@ Please note: This Notices file may identify information that is not used by, or 
 {: #hpvs-notice}
 
 ```
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 NOTICES AND INFORMATION
 
 Hyper Protect Virtual Servers
@@ -67,6 +67,7 @@ CONCURRENT [JSR305] (http://registry.npmjs.org/jsr305/-/jsr305-3.0.2.tgz),
 ANNOTATIONS [MongoDB-Driver]
 (https://repo1.maven.org/maven2/org/mongodb/mongo-java-driver/3.8.2/)
 
+
 END OF CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -83,6 +84,10 @@ SPDX STANDARD [spdx-expression-parse]
 (https://github.com/jslicense/spdx-expression-parse.js/releases/tag/v3.0.0),
 REGULAR_EXPRESSIONS [posix-character-classes]
 (http://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz)
+HTTP2/H2DEMO/TMPL.GO [net]
+(https://github.com/golang/net/archive/eb5bcb51f2a31c7d5141d810b70815c05d9c9146.zip)
+SPDX standard [spdx-ranges]
+http://registry.npmjs.org/spdx-ranges/-/spdx-ranges-2.1.1.tgz
 
 END OF CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -101,6 +106,17 @@ FOOTER.JS [React-Router] (https://github.com/ReactTraining/react-router)
 
 
 END OF CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC NOTICES AND INFORMATION
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 2.5 GENERIC
+
+The Program includes some or all of the following works licensed under
+the Creative Commons.
+The url to the license is https://creativecommons.org/licenses/by-sa/2.5/legalcode
+
+Template:CSSData [postcss-reduce-initial]
+(http://registry.npmjs.org/postcss-reduce-initial/-/postcss-reduce-initial-4.0.3.tgz)
+
+END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 2.5 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 3.0 GENERIC
