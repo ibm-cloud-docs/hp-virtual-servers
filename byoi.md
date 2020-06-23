@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-19"
 
 subcollection: hp-virtual-servers
 
@@ -52,6 +52,14 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
     - The OCI image content is available on the virtual server boot disk mounted as `/`. If you need to use persistent storage use the `/data` mountpoint.
     - If you want to use `systemd` in your image, make sure you set the start command to `/sbin/init` and configure the environment variable `RUNQ_SYSTEMD=1`.
     - The virtual server gets its own IP address which means that all open ports are automatically mapped on the internal and public network. Make sure you restrict network access in your image to only the ports you require. `EXPOSE` rules from the image build don't have any effect.
+    - The image must be tagged according to the following format to later “push” the image to the registry:
+     ` <registry url>/<namespace>/<name>:<tag>`
+     where:
+      - registry url: Within ICR: it could be, for example `de.icr.io`, for DockerHub: `docker.io`.
+      - namespace: Is the [namespace created](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in the {{site.data.keyword.cloud_notm}} Container Registry, see also step 4 of this procedure.
+      - name: Is the unique name for the repository (one repository can have multiple images, that differ by the tag).
+      - tag: Is the unique tag for the image.
+
 1. After you have created your image, check that there are no vulnerable components. Most containers are built using a collection of open source components that can suffer from known vulnerabilities. It is your responsibility to use scanning tools to identify if any of the components you have included in the build are vulnerable. Scan the components before you distribute the image, for example, with [Vulnerability Advisor](https://cloud.ibm.com/docs/Registry?topic=va-va_index).
 1. Push the image to either the {{site.data.keyword.cloud_notm}} Registry or Docker Hub with Docker Content Trust enabled. To do this using the {{site.data.keyword.cloud_notm}} Container Registry follow these steps:
     - Follow the [instructions to create an API key](https://cloud.ibm.com/docs/iam?topic=iam-userapikey#create_user_key)
