@@ -34,9 +34,9 @@ IBM Cloud Hyper Protect Virtual Servers
     hpvs_responsibilities.md
     [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
     [Hyper Protect Services tutorials and other resources](https://ibm-hyper-protect.github.io/)
-    [Hyper Protect Crypto Services](/services/hs-crypto/hs-crypto-get-started)
-    [Hyper Protect DBaaS for MongoDB](/services/hyper-protect-dbaas-for-mongodb/hyper-protect-dbaas-for-mongodb-gettingstarted)
-    [Hyper Protect DBaaS for PostgreSQL](/services/hyper-protect-dbaas-for-postgresql/hyper-protect-dbaas-for-postgresql-gettingstarted)
+    [Hyper Protect Crypto Services](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started)
+    [Hyper Protect DBaaS for MongoDB](https://cloud.ibm.com/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted)
+    [Hyper Protect DBaaS for PostgreSQL](https://cloud.ibm.com/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted)
     {: .navgroup-end}
 
     {: .navgroup id="help"}

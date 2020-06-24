@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-06-23"
 
 subcollection: hp-virtual-servers
 
@@ -83,25 +83,26 @@ You can find more information about the resource groups command [here](https://c
 ## Creating an {{site.data.keyword.hpvs}} instance with the {{site.data.keyword.cloud_notm}} CLI
 {: #clicreate}
 
-To create a new {{site.data.keyword.hpvs}} instance, use the `ibmcloud service-instance-create` command and specify the required options:
+Before you create a new {{site.data.keyword.hpvs}} instance, make sure you have the following information available for your new instance:
+
+- NAME: A name of your new instance.
+- SERVICE_NAME or SERVICE_ID: The name of the service is `hpvs` and the ID is `986f2197-9f9a-44f4-9463-f17ec64c6729`.
+- SERVICE_PLAN_NAME or SERVICE_PLAN_ID: The service plan name or ID, for example, the plan name for a free plan is `lite-s`. To list the plans use the `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
+- LOCATION: The target location to create the service instance, for example, `dal13`. You can list all plans and the available locations for the plans via `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
+- Resource group:  The [resource group](https://cloud.ibm.com/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups) to which your {{site.data.keyword.hpvs}} instance belongs for access control and billing purposes, for example, `default`.
+- Parameters @JSONFILE or JSON_STRING: The JSON file or JSON string of parameters to create service instance. To create a new {{site.data.keyword.hpvs}} instance you need to provide your public SSH key. The parameter name is `sshPublicKey`.
+
+Use the `ibmcloud service-instance-create` command and specify the required options:
 
 ```
 ibmcloud resource service-instance-create NAME (SERVICE_NAME | SERVICE_ID) SERVICE_PLAN_NAME LOCATION -g, --resource group -p, --parameters (@JSON_FILE | JSON_STRING )
 ```
 {: codeblock}
 
-where:
-- NAME: The name of your instance.
-- SERVICE_NAME or SERVICE_ID: The name of the service is `hpvs` and the ID is `986f2197-9f9a-44f4-9463-f17ec64c6729`.
-- SERVICE_PLAN_NAME or SERVICE_PLAN_ID: The service plan name or ID. To list the plans use the `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
-- LOCATION: The target location to create the service instance. You can list all plans and the available locations for the plans via `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
-- g, --resource group:  The [resource group](https://cloud.ibm.com/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups) to which your {{site.data.keyword.hpvs}} instance belongs  
-for access control and billing purposes.
-- p, --parameters @JSONFILE or JSON_STRING: The JSON file or JSON string of parameters to create service instance. To create a new {{site.data.keyword.hpvs}} instance you need to provide your public SSH key. The parameter name is `sshPublicKey`.
 
 For example:
 ```
-ibmcloud resource service-instance-create MyHPVS hpvs lite-s dal13 -g Default -p "{\"sshPublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCgguQtzV39LpP/iHAtjwo+4Z5QdASG73dwBlFIsTn5kPOaVYFHhzhvA/xMbLqDpxfYP/YzwU4rXNXMhCr4hlsruPXt5Ak4y83GmnNL8e+oq8lxU/afymje4PcYLnkm8WQvkreIEBaB73VOUKiLSSbdVljUk6a1LB347bCf72Oob8JpY4Pb3N4idrigSoCc+V4JVkz4pXD2Hoyar4J5I2527Ho+vUqdf5FoK9mFRUqtI8NTLKynL2/qVsCgTeUxnOknDjPE0+nqwyNI4toYozcISYb63K9Je6UBT4JaIQXMbdMhDH00wVH7R26SamKqS2iazcUBnZgN4//Vnic+US90ybsqvTuP/OQpHXwfdjshOEsz5PULZKbWgidsfA7aW3pjv1uijCPIrTFOsaAPktMCzhfJzaeFC0VIXweN7/2PT/Zl7U9Ys36CmmLaXfLotXxPWmbGUyRfavPN1Znhqph7v9w94E7JcngQ7sn+l+nkpYg5qdcBFZZ3kNhT4PVRbXE="}"
+ibmcloud resource service-instance-create MyHPVS hpvs lite-s dal13 -g Default -p "{\"sshPublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCgguQtzV39LpP/iHAtjwo+4Z5QdASG73dwBlFIsTn5kPOaVYFHhzhvA/xMbLqDpxfYP/YzwU4rXNXMhCr4hlsruPXt5Ak4y83GmnNL8e+oq8lxU/afymje4PcYLnkm8WQvkreIEBaB73VOUKiLSSbdVljUk6a1LB347bCf72Oob8JpY4Pb3N4idrigSoCc+V4JVkz4pXD2Hoyar4J5I2527Ho+vUqdf5FoK9mFRUqtI8NTLKynL2/qVsCgTeUxnOknDjPE0+nqwyNI4toYozcISYb63K9Je6UBT4JaIQXMbdMhDH00wVH7R26SamKqS2iazcUBnZgN4//Vnic+US90ybsqvTuP/OQpHXwfdjshOEsz5PULZKbWgidsfA7aW3pjv1uijCPIrTFOsaAPktMCzhfJzaeFC0VIXweN7/2PT/Zl7U9Ys36CmmLaXfLotXxPWmbGUyRfavPN1Znhqph7v9w94E7JcngQ7sn+l+nkpYg5qdcBFZZ3kNhT4PVRbXE=\"}"
 
 ```
 {: codeblock}
@@ -113,7 +114,7 @@ If the service instance is created successfully, a message is displayed informin
 The newly created instance is marked as provisioning until provisioning has completed. Use the `ibmcloud resource service-instances` command to list your new instance and check its current state. After provisioning has completed, the instance is marked as active.
 
 {:note}
-You can't retrieve the IP addresses of the newly created instance via the {{site.data.keyword.cloud_notm}} CLI. You need to log in to the I{{site.data.keyword.cloud_notm}} UI and navigate to the resource details page and get the IP addresses as described [here](https://cloud.ibm.com/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieveinfo-vs).
+You can't retrieve the IP addresses of the newly created instance via the {{site.data.keyword.cloud_notm}} CLI. You need to log in to the {{site.data.keyword.cloud_notm}} UI and navigate to the resource details page and get the IP addresses as described [here](https://cloud.ibm.com/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs).
 
 
 ## Deleting an {{site.data.keyword.hpvs}} instance with {{site.data.keyword.cloud_notm}} CLI
@@ -126,7 +127,7 @@ where:
 
 For example:
 ```
-ibmcloud resource service-instance-delete MyHPVS
+ibmcloud resources service-instance-delete MyHPVS
 ```
 {: codeblock}
 
