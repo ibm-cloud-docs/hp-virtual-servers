@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-07-06"
 
 ---
 
@@ -20,6 +20,12 @@ lastupdated: "2020-04-14"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 06 July 2020
+{: #Jul06-2020}
+Three new data centers are available for creating virtual servers: Washington 04, Washington 06, and Washington 07.
+
+
 
 ## 14 April 2020
 {: #Apr14-2020}
