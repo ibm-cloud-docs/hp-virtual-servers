@@ -25,6 +25,9 @@ keywords: CLI, command line interface, cli
 You can use the {{site.data.keyword.cloud}} CLI to list, create, or delete your {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} instances.
 {:shortdesc}
 
+The {{site.data.keyword.cloud}} CLI can only be used on the officially supported operating systems or architectures. If your system is not supported, you could consider using IBM Cloud Shell.
+{:note}
+
 ## Prerequisites
 {: #prerequisitecli}
 - The {{site.data.keyword.cloud_notm}} CLI must be installed and configured, and you must be logged in via the ibmcloud login.
@@ -87,8 +90,8 @@ Before you create a new {{site.data.keyword.hpvs}} instance, make sure you have 
 
 - NAME: A name of your new instance.
 - SERVICE_NAME or SERVICE_ID: The name of the service is `hpvs` and the ID is `986f2197-9f9a-44f4-9463-f17ec64c6729`.
-- SERVICE_PLAN_NAME or SERVICE_PLAN_ID: The service plan name or ID, for example, the plan name for a free plan is `lite-s`. To list the plans use the `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
-- LOCATION: The target location to create the service instance, for example, `dal13`. You can list all plans and the available locations for the plans via `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
+- SERVICE_PLAN_NAME or SERVICE_PLAN_ID: The service plan name or ID, for example, the plan name for a free plan is `lite-s`. Possible values are: `lite-s`, `entry`, `small` and `medium`. To list the plan IDs use the `ibmcloud catalog service hpvs` [command](https://cloud.ibm.com/docs/resources?topic=resources-changing#changing_command_line){: external}.
+- LOCATION:   The target location to create the service instance, for example, `dal13`. Possible values are: `dal10`, `dal12`, `dal13`, `fra02`, `fra04`, `fra05`, `syd01`, `syd04`, `syd05`, `wdc04`, `wdc06`, `wdc07`.
 - Resource group:  The [resource group](https://cloud.ibm.com/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups) to which your {{site.data.keyword.hpvs}} instance belongs for access control and billing purposes, for example, `default`.
 - Parameters @JSONFILE or JSON_STRING: The JSON file or JSON string of parameters to create service instance. To create a new {{site.data.keyword.hpvs}} instance you need to provide your public SSH key. The parameter name is `sshPublicKey`.
 
@@ -120,14 +123,14 @@ You can't retrieve the IP addresses of the newly created instance via the {{site
 ## Deleting an {{site.data.keyword.hpvs}} instance with {{site.data.keyword.cloud_notm}} CLI
 {: #clidelete}
 
-You can delete an {{site.data.keyword.hpvs}} instance via the `ibmcloud resources service-instance-delete (NAME | ID) command`.
+You can delete an {{site.data.keyword.hpvs}} instance via the `ibmcloud resource service-instance-delete (NAME | ID) command`.
 
 where:
-- Name or ID: The name or ID of the service instance. You can get the name via `ibmcloud resource service-instances` and the ID via `ibmcloud resources service-instances --long`.
+- Name or ID: The name or ID of the service instance. You can get the name via `ibmcloud resource service-instances` and the ID via `ibmcloud resource service-instances --long`.
 
 For example:
 ```
-ibmcloud resources service-instance-delete MyHPVS
+ibmcloud resource service-instance-delete MyHPVS
 ```
 {: codeblock}
 
@@ -136,4 +139,4 @@ You can find more information about the delete command [here](https://cloud.ibm.
 Enter `y` to confirm that you want to delete the instance. The {{site.data.keyword.cloud_notm}} CLI notifies you that the instance was successfully deleted.
 
 {:note}
-When you delete a virtual server from the resource list, the server is not deleted immediately, it is stopped and marked for deletion after a reclamation period of seven days. During this seven day reclamation period you can restore the virtual server or manually trigger a deletion via [resource reclamations](https://cloud.ibm.com/docs/resources?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external}.
+When you delete a virtual server from the resource list, the server is not deleted immediately, it is stopped and marked for deletion after a reclamation period of seven days. During this seven day reclamation period you can restore the virtual server or manually trigger a deletion via [resource reclamations](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external}.
