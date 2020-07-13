@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-07-09"
 
 subcollection: hp-virtual-servers
 
@@ -29,12 +29,17 @@ This introduction informs you about the prerequisites for using this service. It
 Finally, you find a reference to a description how to log in to your new virtual server.
 {:shortdesc}
 
+
 ## Prerequisites
 {: #gs_prerequisites}
 
 For an overview of the features and advantages of this service, read [{{site.data.keyword.hpvs}} overview](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-overview).
 
-Before you start, check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}. Also, have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
+Before you start:
+- Make sure you have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/docs/account?topic=account-signup){: external}.
+- If you want to use a {{site.data.keyword.hpvs}} paid plan, you require a [Pay-As-You-Go account](https://cloud.ibm.com/docs/account?topic=account-upgrading-account){: external}. To check your account type, go to [{{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/login){: external} and click **Management** > **Account** > **Account settings**.
+- Check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}.
+- Have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
 
 Watch the following video to find how to get started with Hyper Protect Virtual Server:
 
@@ -56,3 +61,6 @@ Read [Retrieving information about a virtual server](/docs/services/hp-virtual-s
 {: #gs_logging}
 
 From your client workstation, you can connect to a virtual server that exists on {{site.data.keyword.cloud_notm}} with its public IP address and your corresponding private SSH key. Read the information in [Connecting to a new virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs).
+
+## Managing user access
+Access to the management of {{site.data.keyword.hpvs}} service instances is controlled by IBM Cloud Identity and Access Management (IAM) whereas the servers use standard Ubuntu user-access management. You can find more information  [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-manage_access){: external}.
