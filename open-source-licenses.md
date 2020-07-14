@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-14"
 
 keywords: open source licenses
 
@@ -87,7 +87,7 @@ REGULAR_EXPRESSIONS [posix-character-classes]
 HTTP2/H2DEMO/TMPL.GO [net]
 (https://github.com/golang/net/archive/eb5bcb51f2a31c7d5141d810b70815c05d9c9146.zip)
 SPDX standard [spdx-ranges]
-http://registry.npmjs.org/spdx-ranges/-/spdx-ranges-2.1.1.tgz
+(http://registry.npmjs.org/spdx-ranges/-/spdx-ranges-2.1.1.tgz)
 
 END OF CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -126,7 +126,7 @@ the Creative Commons.
 The url to the license is https://creativecommons.org/licenses/by-sa/3.0/legalcode
 
 REGULAR_EXPRESSIONS [posix-character-classes]
-http://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz)
+(http://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz)
 
 END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 3.0 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -161,8 +161,7 @@ The Program includes some or all of the following that IBM obtained
 under the Creative Commons BY SA 2.5 License.
 
 howto.diveintomark
-
-https://creativecommons.org/licenses/by-sa/2.5/
+(https://creativecommons.org/licenses/by-sa/2.5/)
 
 END OF CREATIVE COMMONS BY SA 2.5 NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -173,8 +172,7 @@ The Program includes some or all of the following that IBM obtained
 under the Creative Commons BY 3.0 License.
 
 distribute-0.6.34/docs/build/html/_sources/index.txt
-
-https://creativecommons.org/licenses/by/3.0/
+(https://creativecommons.org/licenses/by/3.0/)
 
 END OF CREATIVE COMMONS 3.0 NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -187,6 +185,7 @@ The url to the license is
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 GO-METRICS [containerd]
+(http://archive.ubuntu.com/ubuntu/pool/universe/c/containerd_1.3.3-0ubuntu-18.04.2.debian.tar.xz)
 
 END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 4.0 GENERIC NOTICES AND
 INFORMATION
