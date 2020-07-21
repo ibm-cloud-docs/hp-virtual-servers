@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-15"
 
 subcollection: hp-virtual-servers
 
@@ -18,7 +18,7 @@ keywords: image, virtual server instance, instance, virtual server
 {:tip: .tip}
 {:important: .important}
 
-# Using your own image to provision a virtual server
+# Using your own image
 {: #byoi}
 
 Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.
@@ -26,6 +26,9 @@ Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.
 
 This feature is for technical preview (experimental) only, it is currently not supported by IBM and should not be used in production environments.
 {:important}
+
+The {{site.data.keyword.cloud}} CLI can only be used on the officially supported operating systems or architectures. If your system is not supported, you could consider using IBM Cloud Shell.
+{:note}
 
 Before you provision a new server, check the [prerequisites](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_pre), then complete the following steps:
 
@@ -248,17 +251,11 @@ The registration definition file contains metadata about the OCI image you want 
 
 ## Provisioning a Hyper Protect Virtual Server using your OCI Image
 {: #byoi_provision}
-You must use the [ibmcloud cli](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) to provision a Hyper Protect Virtual Server using your own OCI image.
+You must use the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin) `ibmcloud hpvs instance-create` command to provision a Hyper Protect Virtual Server using your own OCI image, as described [here](https://test.cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-provision#provision-cli).
 
-To provision a virtual server using your own OCI Image, run this command:
-```
-ibmcloud resource service-instance-create NAME hpvs PLAN LOCATION -p "{\"registrationDefinition\": \"<REGISTRATION_DEFINITION>\", \"imageTag\": \"<IMAGE_TAG>\"}"
-```
-{: pre}
+### Example
+{: #byoi_example}
 
-Set the parameters:
-* **NAME:** Choose a name for the Hyper Protect Virtual Server.
-* **PLAN:** Choose the plan you want to use. Possible values are: `lite-s`, `entry`, `small` and `medium`.
-* **LOCATION:** Choose the location to where you want to deploy your Hyper Protect Virtual Server. Possible values are: `dal10`, `dal12`, `dal13`, `fra02`, `fra04`, `fra05`, `syd01`, `syd04`, `syd05`.
-* **REGISTRATION_DEFINITION:** Replace all newlines from the encrypted and signed registration definition file with `\n` and paste the result in this parameter. In vim you can do the replacement by running `:%s/\n/\\n/g`.
-* **IMAGE_TAG:** The tag of the OCI Image to be used.
+```
+ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path "C:\MyRegistrationDefinitions\registration-def.json.asc" -i latest
+```

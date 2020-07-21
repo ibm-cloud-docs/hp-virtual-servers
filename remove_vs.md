@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-07-15"
 
 subcollection: hp-virtual-servers
 
@@ -21,13 +21,41 @@ keywords: deleting virtual server, resource reclamations
 # Deleting a virtual server
 {: #remove_vs}
 
-Go to the [Resource list](https://cloud.ibm.com/resources){: external} (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)) to delete a virtual server. Select the instance from the **Services** list and apply the **Delete** action from its pull-down choice. Alternatively, you can delete the server using the {{site.data.keyword.cloud_notm}} cli.
+You can use the {{site.data.keyword.hpvs}} UI or the CLI to delete virtual servers. Deleted servers that belong to paid plans can also be restored before the reclamation period expires.
 {:shortdesc}
+
+## Deleting a virtual server in the UI
+
+1. Go to the [Resource list](https://cloud.ibm.com/resources){: external} (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)) to delete a virtual server.
+2. Select the instance from the **Services** list and apply the **Delete** action from its pull-down choice.
+
 
 ![Deleting a virtual server instance](image/hpvs_delete_instance.gif "Deleting a virtual server instance")
 *Figure 1. Deleting a virtual server instance*
 
+## Deleting a virtual server from the CLI
 
+To delete {{site.data.keyword.hpvs}} from the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin):
+
+1. Make sure you know the Cloud resource name (CRN) of the server you want to delete. To find this out, run:
+
+```
+ibmcloud hpvs instances
+```
+{:pre}
+
+2. To delete the server, run the following command:
+
+```
+ibmcloud hpvs instance-delete CRN --force
+```
+{:pre}
+where `CRN` is Cloud resource name of the server you want to delete. Use `--force` to force the deletion of the {{site.data.keyword.hpvs}} instance without showing a confirmation prompt
+
+
+For more information and example output, see [here](https://test.cloud.ibm.com/docs/hpvs-cli-plugin#hpvs-instance-delete).
+
+## What happens during the reclamation period
 When you delete a virtual server from the resource list, the server is not deleted immediately, it is stopped and marked for deletion, and at this point a reclamation period of seven days starts. The server is deleted after the reclamation period ends. During this seven day reclamation period you can restore the virtual server or manually trigger a deletion via [resource reclamations](https://cloud.ibm.com/docs/resources?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external}. Resource reclamations lists the Hyper Protect virtual servers that are marked for deletion together with the time (Target time) when the actual deletion will be triggered.
 
 ## Deleting servers belonging to the free plan

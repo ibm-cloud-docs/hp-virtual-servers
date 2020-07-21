@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-09"
+  years: 2019, 2020
+lastupdated: "2020-07-14"
 
 subcollection: hp-virtual-servers
 
@@ -21,6 +21,11 @@ subcollection: hp-virtual-servers
 {: #retrieve-info-vs}
 
 After you created a virtual server by using the {{site.data.keyword.hpvs}} service, you can check the detailed information of your new instance.
+{: shortdesc}
+
+
+## Retrieving information in the UI
+{: #retrieve-UI}
 
 1. Go to the [Resource list](https://cloud.ibm.com/resources){: external} and look for your virtual server instance under the **Services** entry in the **Name** column. You can open the **Resource list** either from the {{site.data.keyword.cloud_notm}} **Navigation Menu** or from the {{site.data.keyword.cloud_notm}} Dashboard by selecting **View resources** within the **Resource summary** area. The **Locate** map shows you in which region your instance was created, and column **Location** displays the data center where your instance was created. Use the filter to search for virtual server instances in certain regions or data centers. See also Figure 2 from [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-provision).
 2. Click your virtual server instance to open the **{{site.data.keyword.hpvs}} dashboard**.
@@ -42,9 +47,6 @@ In the **Connect** area, the dashboard offers a comfortable feature to log-in to
 This method works, if you produced the private key by using the default settings (file name and location).
 It also works, if you have configured your SSH client to automatically use the private key corresponding to the virtual server's public key.
 
-
-
-
 The dashboard also displays the fingerprint of the SSH public key, with which the virtual server was created.
 This fingerprint is displayed with the `ssh-keygen` command when you generate a pair of SSH keys. Or you can reproduce the fingerprint of a public SSH key by entering a command similar to the following one:
 
@@ -55,3 +57,33 @@ ssh-keygen -E sha256 -lf id_rsa.pub
 
 - Parameter `-E` specifies the hash algorithm used to produce the fingerprint.
 - Parameter `-lf` specifies the file (name and location, if necessary) of the public SSH key half, which you want to check.
+
+## Retrieving information from the CLI
+{: #retrieve-UI}
+
+To list all of your {{site.data.keyword.hpvs}} service instances in your resource list from the CLI, enter:
+
+```
+ibmcloud hpvs instances
+```
+
+The output displays a list of details for each instance. If you have no instances, a no instance found message is displayed.
+
+To display details about a server instance, you need the cloud resource name (CRN) for the server instance. To get the CRN, run  `ibmcloud hpvs service-instances`. Then run the following command:
+
+```
+ibmcloud hpvs instance CRN [--output json]
+```
+{: pre}
+
+where:
+<dl>
+<dt>`CRN`</dt>
+<dd>Is the server's cloud resource name (CRN). </dd>
+<dt>`--output`</dt>
+<dd>Displays results as JSON. Only valid value: `json`</dd>
+</dl>
+
+{: codeblock}
+
+You can find example output [here](https://test.cloud.ibm.com/docs/hpvs-cli-plugin#details_list).

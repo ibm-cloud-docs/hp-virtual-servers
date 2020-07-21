@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-15"
 
 subcollection: hp-virtual-servers
 
@@ -20,8 +20,16 @@ subcollection: hp-virtual-servers
 #Provisioning a virtual server
 {: #provision}
 
-You can create a virtual server by using the {{site.data.keyword.hpvs}} service from the {{site.data.keyword.cloud_notm}}.
+You can create a virtual server by using the {{site.data.keyword.hpvs}} service from the {{site.data.keyword.cloud_notm}} UI or from the CLI.
 {:shortdesc}
+
+You can provision a server using an image provided by IBM or you can use your own image. If you want to use your own image, you need to create a image file and registration definition file as described [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
+
+{:note}
+As soon as you create a virtual server instance, a virtual LAN (VLAN) is transparently created or assigned. One VLAN is used within one region for one account. Each VLAN can contain up to five virtual servers per data center. A VLAN is deleted as soon as you delete the last virtual server instance that is assigned to this VLAN.
+
+## Creating a virtual server in the UI
+{: #provision-ui}
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com){: external}.
 2. Click **Catalog** from the menu bar and browse for the **Compute** category.
@@ -35,12 +43,9 @@ You can create a virtual server by using the {{site.data.keyword.hpvs}} service 
 8. Select one of the available pricing plans. For initial tests, select the **Free** plan. With this plan you can have a maximum of two virtual servers at the same time (excluding expired servers). Selecting a different plan leads to fees charged by IBM.   
 ![Available pricing plans](image/hpvs_plans.jpg "Available pricing plans")
 *Figure 2. Available pricing plans*  
-{:note}
-Virtual servers that are created with the **Free** plan are automatically deleted after 30 days without warning. Therefore, make sure you regularly back up important data. Deleted **Free** instances are not removed from the **Resource list**. You must delete them manually.
+
 9. Click **Create** to provision a virtual server instance.
 
-{:note}
-As soon as you create a virtual server instance, a virtual LAN (VLAN) is transparently created or assigned. One VLAN is used within one region for one account. Each VLAN can contain up to five virtual servers per data center. A VLAN is deleted as soon as you delete the last virtual server instance that is assigned to this VLAN.
 
 The virtual server instance appears in the **Resource list**. Using your browser's refresh function, you can check whether the instance's status has switched from **Inactive** (the server is in the process of being provisioned) to **Active** (the server is provisioned).  Due to the configuration process, provisioning can take from 5 to 30 minutes.
 When your instance has a status of **Active** (provisioned), click the instance in the **Name** field to open the dashboard.
@@ -51,9 +56,61 @@ If the configuration fails, the instance status stays as **Inactive**, and if yo
 ![Resource list with a virtual server](image/hpvs_resource_list.jpg "Resource list with a virtual server")
 *Figure 3. Resource list with a virtual server showing one server being provisioned (Inactive) and one server that is already provisioned (Active)*
 
-##Billing information
+## Creating a virtual server from the CLI
+{: #provision-cli}
+
+To create a virtual server from the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin), run the following command:
+
+```
+ibmcloud hpvs instance-create NAME PLAN LOCATION [(--ssh SSH-KEY | --ssh-path SSH-KEY-PATH)] [(--rd REGISTRATION-DEFINITION | --rd-path REGISTRATION-DEFINITION-PATH)] [-i IMAGE-TAG] [-g RESOURCE-GROUP-ID] [-t TAG]
+```
+{: codeblock}
+
+where:
+<dl>
+<dt>`NAME`</dt>
+<dd>Is the name of your new instance.</dd>
+<dt>`PLAN`</dt>
+<dd>Is the name or ID of your service plan, for example, the plan name for a free plan is `lite-s`. Possible values for plan name are: `lite-s`, `entry`, `small` and `medium`.</dd>
+<dt>`LOCATION`</dt>
+<dd>Is the target location to create the service instance. Possible values are: `dal10`, `dal12`, `dal13`, `fra02`, `fra04`, `fra05`, `syd01`, `syd04`, `syd05`, `wdc04`, `wdc06`, `wdc07`.</dd>
+</dl>
+
+### Command options
+<dl>
+<dt>`--ssh SSH-KEY` </dt>
+<dd>Public half of the SSH key to access the virtual server later. `--ssh` or `--ssh-path` is required when using an IBM-provided image.</dd>
+<dt>`--ssh-path SSH-KEY-PATH` </dt>
+<dd>File path to the file containing the public half of the SSH key to access the virtual server later. `--ssh` or `--ssh-path` is required when using an IBM-provided image.</dd>
+<dt>`--rd REGISTRATION-DEFINITION`</dt>
+<dd>The encrypted and signed registration definition used for [Bring your own server image (BYOI)](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi). `--rd` or `--rd-path` is required when using a self-provided image.</dd>
+<dt>`--rd-path REGISTRATION-DEFINITION-PATH`</dt>
+<dd>File path to the file containing the encrypted and signed registration definition used for BYOI. `--rd` or `--rd-path` is required when using a self-provided image.</dd>
+<dt>`-i IMAGE-TAG`</dt>
+<dd>The image tag for the BYOI server image. Optional.</dd>
+<dt>`-g RESOURCE-GROUP-ID | RESOURCE-GROUP-NAME` </dt>
+<dd>The resource group to which your {{site.data.keyword.hpvs}} instance belongs for access control and billing purposes, for example, `Default`. To list all of your resource groups, run `ibmcloud resource groups`. Optional.</dd>
+<dt>`-t TAG` </dt>
+<dd>Use tags to organize your resources. Tags are visible account-wide. Optional. Multiple tags are permitted, for example, `-t tag1 -t tag2`.</dd>
+</dl>
+
+For example:
+```
+ibmcloud hpvs instance-create MyHPVS lite-s dal13 -g Default -p "{\"sshPublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCgguQtzV39LpP/iHAtjwo+4Z5QdASG73dwBlFIsTn5kPOaVYFHhzhvA/xMbLqDpxfYP/YzwU4rXNXMhCr4hlsruPXt5Ak4y83GmnNL8e+oq8lxU/afymje4PcYLnkm8WQvkreIEBaB73VOUKiLSSbdVljUk6a1LB347bCf72Oob8JpY4Pb3N4idrigSoCc+V4JVkz4pXD2Hoyar4J5I2527Ho+vUqdf5FoK9mFRUqtI8NTLKynL2/qVsCgTeUxnOknDjPE0+nqwyNI4toYozcISYb63K9Je6UBT4JaIQXMbdMhDH00wVH7R26SamKqS2iazcUBnZgN4//Vnic+US90ybsqvTuP/OQpHXwfdjshOEsz5PULZKbWgidsfA7aW3pjv1uijCPIrTFOsaAPktMCzhfJzaeFC0VIXweN7/2PT/Zl7U9Ys36CmmLaXfLotXxPWmbGUyRfavPN1Znhqph7v9w94E7JcngQ7sn+l+nkpYg5qdcBFZZ3kNhT4PVRbXE=\"}"
+
+```
+{: codeblock}
+
+You can find more information about the create command [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance){: external}.
+
+The newly created instance is marked as `provisioning` until provisioning has completed. Use the `ibmcloud hpvs instance <CRN>` [command](https://test.cloud.ibm.com/docs/hpvs-cli-plugin#details_list) to list your new instance and check its current state. After provisioning has completed, the instance is marked as active.
+
+## Billing information
 {: #billing}
 
 When creating virtual servers by selecting a priced plan, IBM bills you on a monthly basis for each instance, independently from how long an instance exists within one month. If you delete a virtual server before the end of a month, IBM charges the fee for the complete month and then automatically stops the billing.  
 
  For example, if you create three instances with the Medium plan at the beginning of February 2020, and delete all of them mid of May 2020, then you are charged with 4 x 3 x 720,00 USD = 8.640,00 USD.
+
+ ## Free plan
+ Virtual servers that are created with the **Free** plan are automatically deleted after 30 days without warning. Therefore, make sure you regularly back up important data. Deleted **Free** instances are not removed from the **Resource list**. You must delete them manually.

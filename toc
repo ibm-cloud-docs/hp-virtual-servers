@@ -1,7 +1,8 @@
+
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="hp-virtual-servers" category="virtualservers" audience="service" href="/docs/services/hp-virtual-servers?topic=hp-virtual-servers-getting-started" path="services/hp-virtual-servers"}
+{: .toc subcollection="hp-virtual-servers" category="compute" audience="service" href="/docs/hp-virtual-servers?topic=hp-virtual-servers-getting-started" console-page="/catalog/services/hyper-protect-virtual-servers" product-page="https://www.ibm.com/cloud/hyper-protect-virtual-servers" path="hp-virtual-servers"}
 IBM Cloud Hyper Protect Virtual Servers
 
     {: .navgroup id="learn"}
@@ -14,10 +15,12 @@ IBM Cloud Hyper Protect Virtual Servers
 
     {: .navgroup id="howto"}
     generate_ssh.md
+
+    {: .topicgroup}
     provision.md
+        byoi.md
     byoi.md
     retrieve_info_vs.md
-    cli_hpvs.md
     connect_vs.md
     security_vs.md
     manage_access.md
@@ -32,6 +35,7 @@ IBM Cloud Hyper Protect Virtual Servers
 
     {: .navgroup id="reference"}
     hpvs_responsibilities.md
+    /hpvs-cli-plugin/hpvs-cli-plugin-hpvs_cli_plugin
     [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
     [Hyper Protect Services tutorials and other resources](https://ibm-hyper-protect.github.io/)
     [Hyper Protect Crypto Services](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started)
