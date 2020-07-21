@@ -87,7 +87,7 @@ where:
 <dt>`--rd-path REGISTRATION-DEFINITION-PATH`</dt>
 <dd>File path to the file containing the encrypted and signed registration definition used for BYOI. `--rd` or `--rd-path` is required when using a self-provided image.</dd>
 <dt>`-i IMAGE-TAG`</dt>
-<dd>The image tag for the BYOI server image. Required.</dd>
+<dd>The image tag for the BYOI server image. Required if you are using your own image.</dd>
 <dt>`-g RESOURCE-GROUP-ID | RESOURCE-GROUP-NAME` </dt>
 <dd>The resource group to which your {{site.data.keyword.hpvs}} instance belongs for access control and billing purposes, for example, `Default`. To list all of your resource groups, run `ibmcloud resource groups`. Optional.</dd>
 <dt>`-t TAG` </dt>
