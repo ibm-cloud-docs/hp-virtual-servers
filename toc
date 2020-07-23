@@ -17,9 +17,10 @@ IBM Cloud Hyper Protect Virtual Servers
     generate_ssh.md
 
     {: .topicgroup}
-    provision.md
+    Provisioning
+        provision.md
         byoi.md
-    byoi.md
+
     retrieve_info_vs.md
     connect_vs.md
     security_vs.md
