@@ -6,7 +6,8 @@ lastupdated: "2019-12-19"
 
 subcollection: hp-virtual-servers
 
-keywords: {{site.data.keyword.hpvs}} faq, troubleshooting, support, {{site.data.keyword.hpvs}} help, virtual servers help, availability, data center, backup, ip address, custom image, ssh public keys, kernel, firewall
+keywords: faq, troubleshooting, support, help, virtual servers help
+
 ---
 
 {:external: target="_blank" .external}

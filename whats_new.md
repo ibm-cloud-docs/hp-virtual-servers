@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-27"
 
 ---
 
@@ -20,6 +20,11 @@ lastupdated: "2020-07-06"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 27 July 2020
+{: #Jul27-2020}
+The new {{site.data.keyword.hpvs}} command line interface is now available. 
+
 
 ## 06 July 2020
 {: #Jul06-2020}

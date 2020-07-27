@@ -59,7 +59,7 @@ If the configuration fails, the instance status stays as **Inactive**, and if yo
 ## Creating a virtual server from the CLI
 {: #provision-cli}
 
-To create a virtual server from the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin), run the following command:
+To create a virtual server from the CLI, you must first install the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin), and then run the following command:
 
 ```
 ibmcloud hpvs instance-create NAME PLAN LOCATION [(--ssh SSH-KEY | --ssh-path SSH-KEY-PATH)] [(--rd REGISTRATION-DEFINITION | --rd-path REGISTRATION-DEFINITION-PATH)] [-i IMAGE-TAG] [-g RESOURCE-GROUP-ID] [-t TAG]
@@ -103,7 +103,7 @@ ibmcloud hpvs instance-create MyHPVS lite-s dal13 -g Default -p "{\"sshPublicKey
 
 You can find more information about the create command [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance){: external}.
 
-The newly created instance is marked as `provisioning` until provisioning has completed. Use the `ibmcloud hpvs instance <CRN>` [command](https://test.cloud.ibm.com/docs/hpvs-cli-plugin#details_list) to list your new instance and check its current state. After provisioning has completed, the instance is marked as active.
+The newly created instance is marked as `provisioning` until provisioning has completed. Use the `ibmcloud hpvs instance <CRN>` [command](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_list) to list your new instance and check its current state. After provisioning has completed, the instance is marked as active.
 
 ## Billing information
 {: #billing}

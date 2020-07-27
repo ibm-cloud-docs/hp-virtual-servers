@@ -86,4 +86,4 @@ where:
 
 {: codeblock}
 
-You can find example output [here](https://test.cloud.ibm.com/docs/hpvs-cli-plugin#details_list).
+You can find example output [here](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_list).

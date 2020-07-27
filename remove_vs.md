@@ -53,10 +53,10 @@ ibmcloud hpvs instance-delete CRN --force
 where `CRN` is Cloud resource name of the server you want to delete. Use `--force` to force the deletion of the {{site.data.keyword.hpvs}} instance without showing a confirmation prompt
 
 
-For more information and example output, see [here](https://test.cloud.ibm.com/docs/hpvs-cli-plugin#hpvs-instance-delete).
+For more information and example output, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvs-instance-delete).
 
 ## What happens during the reclamation period
-When you delete a virtual server from the resource list, the server is not deleted immediately, it is stopped and marked for deletion, and at this point a reclamation period of seven days starts. The server is deleted after the reclamation period ends. During this seven day reclamation period you can restore the virtual server or manually trigger a deletion via [resource reclamations](https://cloud.ibm.com/docs/resources?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external}. Resource reclamations lists the Hyper Protect virtual servers that are marked for deletion together with the time (Target time) when the actual deletion will be triggered.
+When you delete a virtual server from the resource list, the server is not deleted immediately, it is stopped and marked for deletion, and at this point a reclamation period of seven days starts. The server is deleted after the reclamation period ends. During this seven day reclamation period you can restore the virtual server or manually trigger a deletion via [resource reclamations](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external}. Resource reclamations lists the Hyper Protect virtual servers that are marked for deletion together with the time (Target time) when the actual deletion will be triggered.
 
 ## Deleting servers belonging to the free plan
 The free plan servers expire 30 days after they have been created. When a server expires, it is immediately be deleted at the backend. This also applies if the server expires during the seven-day reclamation period. However, the server is still displayed in the resource list or in the resource reclamations as if it still existed even though it has already been deleted at the backend.

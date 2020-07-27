@@ -19,7 +19,7 @@ keywords: ssh public keys, OpenSSH, add ssh key, ssh key, manage ssh key, virtua
 {:tip: .tip}
 {:pre: .pre}
 
-#Generating SSH keys
+# Generating SSH keys
 {: #generate_ssh}
 
 Before you can create a virtual server, you must have a pair of private and public SSH keys available. You can either reuse an existing SSH key pair or generate a new one. You can also reuse an existing OpenSSH key pair for use in **PuTTY**.
@@ -92,7 +92,7 @@ If you do not specify a file name to save the key, a default name is used.
 The private and public SSH key pair is stored in two files with the same name. The public SSH key, which is required for creating a virtual server is saved in the file with extension `.pub`.
 The generated keys can vary in format when generated with different methods or on different operating systems. Valid formats are recognized when entered as input during the creation of a virtual server.
 
-###Saving the SSH private key to the SSH agent
+### Saving the SSH private key to the SSH agent
 {: #saving_ssh_agent}
 
 If you created your SSH key pair with a passphrase, you can add your SSH private key to the SSH agent. With the help of the SSH agent, you can then use your private key without the need to enter the passphrase again.
