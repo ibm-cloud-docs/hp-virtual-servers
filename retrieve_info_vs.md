@@ -23,6 +23,8 @@ subcollection: hp-virtual-servers
 After you created a virtual server by using the {{site.data.keyword.hpvs}} service, you can check the detailed information of your new instance.
 {: shortdesc}
 
+{:note}
+The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. If the user password has expired, it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 
 ## Retrieving information in the UI
 {: #retrieve-UI}

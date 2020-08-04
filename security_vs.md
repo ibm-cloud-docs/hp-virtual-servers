@@ -62,3 +62,5 @@ The following commands open the firewall for incoming traffic on a specified pro
 
 In order to make the configuration persistent, save your changes as described.
 Otherwise, all configuration updates are lost after a reboot.
+
+Another part of the hardening is that the server is configured in such a way that the password expires after 90 days. If the user password has expired, it is no longer possible to log in via SSH even if you are using SSH-keys. This also includes system-accounts, for example, accounts created using the command, `useradd --system`.
