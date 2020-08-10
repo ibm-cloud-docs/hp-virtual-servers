@@ -6,7 +6,7 @@ lastupdated: "2019-12-19"
 
 subcollection: hp-virtual-servers
 
-keywords: faq, troubleshooting, support, help, virtual servers help
+keywords: troubleshooting, support, help, virtual servers help
 
 ---
 
@@ -36,7 +36,7 @@ You must use the internal IP address when you connect to a virtual server from a
 {: #faq3}
 Do not rely on just one virtual server instance. Instead, run your application on multiple instances in combination with a load balancer to ensure high availability.
 
-Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within three regions (`us-south`, `eu-de`, `au-syd`) and nine data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Frankfurt 02`, `Frankfurt 04`, `Frankfurt 05`,`Sydney 01`, `Sydney 04` and `Sydney 05`).
+Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within three regions (`us-south`, `eu-de`, `au-syd`) and nine data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Frankfurt 02`, `Frankfurt 04`, `Frankfurt 05`,`Sydney 01`, `Sydney 04`, and `Sydney 05`).
 
 ## Can I have more than five virtual servers within one data center?
 {: #faq4}
@@ -44,12 +44,12 @@ Currently, {{site.data.keyword.hpvs}} supports only five virtual server instance
 
 ## Is a virtual server available 24 / 7?
 {: #faq5}
-The virtual server is running on infrastructure that needs to be maintained. Before maintenance, the virtual servers must be stopped. Customers are notified about
+The virtual server is running on infrastructure that needs to be maintained. Before maintenance, stop the virtual servers. You are notified about
 maintenance schedules in advance. Service availability is defined within the [{{site.data.keyword.cloud}} Service Description](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-17/$file/i126-6605-17_06-2019_en_US.pdf){: external}.
 
 ## Does the data center have an impact on performance and reliability of a virtual server?
 {: #faq6}
-No, all of the data centers are of the same quality. For best availability, follow the hints in question [How do I provide my applications in high availability?](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-faqs#faq3)
+No, all of the data centers are of the same quality. For best availability, follow the hints in question [How do I provide my applications in high availability?](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-faqs#faq3).
 
 ## How can I figure out in which data center a virtual server is located?    
 {: #faq7}
@@ -74,15 +74,15 @@ The virtual servers that are created with the {{site.data.keyword.cloud}} {{site
 
 ## How can I adjust the firewall of my virtual server?
 {: #faq11}
-A newly generated {{site.data.keyword.cloud}} virtual server, which runs with an Ubuntu Linux operating system, has **iptables**, the Linux firewall utility, preinstalled. Investigate, what firewall tool you want or need to use in your environment.
+A newly generated {{site.data.keyword.cloud}} virtual server, which runs with an Ubuntu Linux operating system, has **question**, the Linux firewall utility, preinstalled. Investigate, what firewall tool you want or need to use in your environment.
 
-IBM provided adjustments for **iptables** on a virtual server.
-You can apply your own adjustments on a default configuration for **iptables** as described in
+IBM provided adjustments for **IPtables** on a virtual server.
+You can apply your own adjustments on a default configuration for **IPtables** as described in
 [Protecting a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 
 ## How do I authorize more SSH public keys for my virtual server?
 {: #faq12}
-With the OpenSSH Server component running in its standard configuration on your virtual server, you can manage authorized keys in a file that is by default located in a user's home directory:
+With the OpenSSH Server component that is running in its standard configuration on your virtual server, you can manage authorized keys in a file. This file is located by default in a user's home directory:
 `<user_home>/.ssh/authorized_keys`. Add an SSH public key in a new line into this file. Then, the user can connect to the virtual server with the pertaining SSH private key. For more information, read the OpenSSH documentation.
 
 ## Can I load or unload a kernel module?
@@ -91,4 +91,4 @@ These actions are not supported.
 
 ## What IBM catalog offerings work with {{site.data.keyword.hpvs}}?
 {: #faq14}
-In general, all offerings should work with Hyper Protect Virtual Servers except for offerings working explicitly only with classic infrastructure or VPC infrastructure. These offerings do not work with Hyper Protect Virtual Servers.
+In general, all offerings work with Hyper Protect Virtual Servers except for offerings that work explicitly only with classic infrastructure or VPC infrastructure. These offerings do not work with Hyper Protect Virtual Servers.

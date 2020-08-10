@@ -61,7 +61,7 @@ ssh-keygen -E sha256 -lf id_rsa.pub
 - Parameter `-lf` specifies the file (name and location, if necessary) of the public SSH key half, which you want to check.
 
 ## Retrieving information from the CLI
-{: #retrieve-UI}
+{: #retrieve-cli}
 
 To list all of your {{site.data.keyword.hpvs}} service instances in your resource list from the CLI, enter:
 

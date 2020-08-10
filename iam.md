@@ -27,7 +27,7 @@ The {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service provides you 
 secure stack with an Ubuntu Linux operating system.
 {:shortdesc}
 
-Access to {{site.data.keyword.hpvs}} service instances for users in your account is controlled by {{site.data.keyword.Bluemix_notm}} [Identity and Access Management (IAM)](https://cloud.ibm.com/docs/iam?topic=iam-getstarted){: external}. Every user that accesses the {{site.data.keyword.hpvs}} service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.Bluemix_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
+Access to {{site.data.keyword.hpvs}} service instances for users in your account is controlled by {{site.data.keyword.Bluemix_notm}} [Identity and Access Management (IAM)](https://cloud.ibm.com/docs/account?topic=account-iamoverview){: external}. Every user that accesses the {{site.data.keyword.hpvs}} service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.Bluemix_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
 
 Policies enable access to be granted at different levels. Some of the options include the following:
 
