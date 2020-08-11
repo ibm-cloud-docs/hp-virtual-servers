@@ -60,4 +60,4 @@ group.
 Granting too many permissions might unintentionally allow someone else to
 provide access to other users, or to delete and create resources.
 
-For information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
+For information about assigning user roles in the console, see [Managing access to resources](https://cloud.ibm.com/docs/account?topic=account-assign-access-resources#iammanidaccser).

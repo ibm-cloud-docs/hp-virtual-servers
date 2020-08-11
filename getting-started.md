@@ -36,7 +36,7 @@ Finally, you find a reference to a description how to log in to your new virtual
 For an overview of the features and advantages of this service, read [{{site.data.keyword.hpvs}} overview](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-overview).
 
 Before you start:
-- Make sure you have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/docs/account?topic=account-signup){: external}.
+- Make sure you have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/docs/account?topic=account-account-getting-started){: external}.
 - If you want to use a {{site.data.keyword.hpvs}} paid plan, you require a [Pay-As-You-Go account](https://cloud.ibm.com/docs/account?topic=account-upgrading-account){: external}. To check your account type, go to [{{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/login){: external} and click **Management** > **Account** > **Account settings**.
 - Check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}.
 - Have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
