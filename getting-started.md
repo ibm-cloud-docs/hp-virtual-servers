@@ -64,12 +64,12 @@ From your client workstation, you can connect to a virtual server that exists on
 
 ## Managing user access
 {: #gs_useraccess}
-Access to the management of {{site.data.keyword.hpvs}} service instances is controlled by IBM Cloud Identity and Access Management (IAM) whereas the servers use standard Ubuntu user-access management. You can find more information  [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-manage_access.
+Access to the management of {{site.data.keyword.hpvs}} service instances is controlled by IBM Cloud Identity and Access Management (IAM) but the servers use standard Ubuntu user-access management. You can find more information [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-manage_access.
 
 ## Securing your data
 {: #gs_secure}
-To ensure that you can securely manage your data when you use {{site.data.keyword.hpvs}}, it is important to know exactly what data is stored and encrypted and how you can delete any stored personal data. More information about protecting your data and the {{site.data.keyword.cloud_notm}} network architecture can be found [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-mng-data).
+To ensure that you securely manage your data when you use {{site.data.keyword.hpvs}}, you must know what data is stored and encrypted and how to delete any personal data. You can find more information about how to protect your data and the {{site.data.keyword.cloud_notm}} network architecture [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-mng-data).
 
 ## Protecting your {{site.data.keyword.hpvs}}
 {: #gs_protect}
-A {{site.data.keyword.hpvs}} server has two disks, "boot" and "data". The boot disk is always 25 GB, the size of the data disk varies and depends on your plan. Important data should always be persisted on the data disc. The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. If the user password has expired, it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+A {{site.data.keyword.hpvs}} server has two disks, "boot" and "data". The boot disk is always 25 GB. The size of the data disk varies, and depends on your plan. Make sure important data is persisted on the data disk. The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. If the user password  expires, it's no longer possible to log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
