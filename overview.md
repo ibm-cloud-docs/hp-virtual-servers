@@ -47,7 +47,7 @@ subcollection: hp-virtual-servers
 ## Key features
 {: #hp-virtual-servers-key-features}
 
-{{site.data.keyword.hpvs}} makes it possible to bring {{site.data.keyword.IBM_notm}} Z into {{site.data.keyword.IBM_notm}}’s global public cloud data centers. Through the {{site.data.keyword.cloud_notm}} catalog, you can gain easy access to industry-leading security capabilities to modernize your applications in the {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.hpvs}} makes it possible to bring {{site.data.keyword.IBM_notm}} Z into {{site.data.keyword.IBM_notm}}’s global public cloud data centers. Through the {{site.data.keyword.cloud_notm}} catalog, you can gain access to industry-leading security capabilities to modernize your applications in the {{site.data.keyword.cloud_notm}}.
 
 - You can run both core and non-core workloads in a public cloud, observing all security and compliance policies of your enterprise.
 - You can protect the assets of business while you simultaneously maintain enhanced business service levels.

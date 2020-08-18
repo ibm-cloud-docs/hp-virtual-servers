@@ -78,7 +78,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
       ```
       {: pre}
 
-1. Follow the [back up instructions](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_backupkeys) to back up your keys after you push the image.
+1. Follow the [backup instructions](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_backupkeys) to back up your keys after you push the image.
 
 
 ## Creating a registration definition file
@@ -181,7 +181,7 @@ The registration definition file contains metadata about the OCI image you want 
   ```
   {: pre}
 1. Open the isv_user.pub and replace all newlines with `\n`. You can do this in vim, by running `:%s/\n/\\n/g`. Copy the complete content of the file and paste it in the `vendor_key` value in the template.
-1. Copy the following public key, which will be used for encrypting the registration file, into a file:
+1. Copy the following public key, which is used for encrypting the registration file, into a file:
   ```
   -----BEGIN PGP PUBLIC KEY BLOCK-----
   mQINBF5q0TYBEACx5qWOp9JuiK7qKInYuBiqQp8Ac29e27XqGRtlk5UWbK0XP4wz

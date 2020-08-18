@@ -22,14 +22,14 @@ subcollection: hp-virtual-servers
 # Open source licenses
 {: #open-source-licenses}
 
-The {{site.data.keyword.IBM}} license agreement and any applicable information on the web download page for {{site.data.keyword.IBM_notm}} products refers Licensee to this file for details concerning notices applicable to code included in {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}.
+The {{site.data.keyword.IBM}} license agreement and any applicable information on the web download page for {{site.data.keyword.IBM_notm}} products refers Licensee to this file for details that concern notices applicable to code, which is included in {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
-Notwithstanding the terms and conditions of any other agreement Licensee may have with {{site.data.keyword.IBM_notm}} or any of its related or affiliated entities (collectively "{{site.data.keyword.IBM_notm}}"), the third party code identified below is subject to the terms and conditions of the {{site.data.keyword.IBM_notm}} license agreement for the Program and not the license terms that may be contained in the notices below. The notices are provided for informational purposes.
+Notwithstanding the terms and conditions of any other agreement Licensee may have with {{site.data.keyword.IBM_notm}} or any of its related or affiliated entities (collectively "{{site.data.keyword.IBM_notm}}"), the third-party code that is identified below is subject to the terms and conditions of the {{site.data.keyword.IBM_notm}} license agreement for the Program and not the license terms that may be contained in the notices below. The notices are provided for informational purposes.
 
-Please note: This Notices file may identify information that is not used by, or that was not shipped with, the Program as Licensee installed it.
+Note: This Notices file may identify information that is not used by, or that was not shipped with, the Program as Licensee installed it.
 
-{{site.data.keyword.IBM_notm}} does not represent or warrant that the information in this NOTICES file is accurate. Third party websites are independent of {{site.data.keyword.IBM_notm}} and {{site.data.keyword.IBM_notm}} does not represent or warrant that the information on any third party website referenced in this NOTICES file is accurate. {{site.data.keyword.IBM_notm}} disclaims any and all liability for errors and omissions or for any damages accruing from the use of this NOTICES file or its contents, including without limitation URLs or references to any third party websites.
+{{site.data.keyword.IBM_notm}} does not represent or warrant that the information in this NOTICES file is accurate. Third-party websites are independent of {{site.data.keyword.IBM_notm}} and {{site.data.keyword.IBM_notm}} does not represent or warrant that the information on any third-party website that is referenced in this NOTICES file is accurate. {{site.data.keyword.IBM_notm}} disclaims any and all liability for errors and omissions or for any damages that accrue from the use of this NOTICES file or its contents, including without limitation URLs or references to any third-party websites.
 {: important}
 
 ## {{site.data.keyword.hpvs}} notices and information

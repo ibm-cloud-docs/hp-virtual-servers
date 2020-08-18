@@ -35,8 +35,8 @@ Finally, you find a reference to a description how to log in to your new virtual
 
 For an overview of the features and advantages of this service, read [{{site.data.keyword.hpvs}} overview](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-overview).
 
-Before you start:
-- Make sure you have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/docs/account?topic=account-account-getting-started){: external}.
+Before you start with {{site.data.keyword.hpvs}}:
+- Make sure that you have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/docs/account?topic=account-account-getting-started){: external}.
 - If you want to use a {{site.data.keyword.hpvs}} paid plan, you require a [Pay-As-You-Go account](https://cloud.ibm.com/docs/account?topic=account-upgrading-account){: external}. To check your account type, go to [{{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/login){: external} and click **Management** > **Account** > **Account settings**.
 - Check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}.
 - Have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
@@ -68,7 +68,7 @@ Access to the management of {{site.data.keyword.hpvs}} service instances is cont
 
 ## Securing your data
 {: #gs_secure}
-To ensure that you securely manage your data when you use {{site.data.keyword.hpvs}}, you must know what data is stored and encrypted and how to delete any personal data. You can find more information about how to protect your data and the {{site.data.keyword.cloud_notm}} network architecture [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-mng-data).
+To securely manage your data when you use {{site.data.keyword.hpvs}}, you must know what data is stored and encrypted and how to delete any personal data. You can find more information about how to protect your data and the {{site.data.keyword.cloud_notm}} network architecture [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-mng-data).
 
 ## Protecting your {{site.data.keyword.hpvs}}
 {: #gs_protect}
