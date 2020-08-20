@@ -42,4 +42,4 @@ If you have problems or questions when you use {{site.data.keyword.hpvs}}, you c
   *Figure 1. Retrieving the cloud resource name (CRN)*
 
 For more information about {{site.data.keyword.IBM_notm}} support cases, or about support levels and severities, and for information about how to use the forums, access the Support Center:
-[Contacting support](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support){: external}.
+[Contacting support](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-27"
+lastupdated: "2020-08-05"
 
 ---
 
@@ -21,9 +21,13 @@ lastupdated: "2020-07-27"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 08 August 2020
+{: #Aug08-2020}
+The {{site.data.keyword.hpvs}} command line interface is upgraded to v1.0.1. to include security and other minor fixes together with improved error messages.
+
 ## 27 July 2020
 {: #Jul27-2020}
-The new {{site.data.keyword.hpvs}} command line interface is now available. 
+The new {{site.data.keyword.hpvs}} command line interface is now available.
 
 
 ## 06 July 2020
