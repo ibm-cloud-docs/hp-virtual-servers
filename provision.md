@@ -27,7 +27,7 @@ You can use the {{site.data.keyword.hpvs}} service to create a virtual server fr
 You can provision a server that uses an image that is provided by IBM or you can use your own image. If you want to use your own image, you need to create an image file and registration definition file as described [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
 
 {:note}
-The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. If the user password expires, it's no longer possible to log in by way of SSH even if you use SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 
 {:note}
 As soon as you create a virtual server instance, a virtual LAN (VLAN) is transparently created or assigned. One VLAN is used within one region for one account. Each VLAN can contain up to five virtual servers per data center. A VLAN is deleted as soon as you delete the last virtual server instance that is assigned to this VLAN.

@@ -27,7 +27,7 @@ For a successfully provisioned virtual server, you can log in to this instance b
 {:note}
 - Due to configuration processes, you need to wait up to 30 minutes until you can connect to a new virtual server for the first time.
 
-- The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. If the user password has expired, it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+- The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 
 ## Logging-in from an OpenSSH client
 {: #logging_ssh_client}

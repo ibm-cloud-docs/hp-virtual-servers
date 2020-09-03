@@ -24,7 +24,7 @@ After you create a virtual server instance by using the {{site.data.keyword.hpvs
 {: shortdesc}
 
 {:note}
-The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. If the user password expires, you can't to log in by way of SSH even if you use SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 
 ## Retrieving information in the UI
 {: #retrieve-UI}
