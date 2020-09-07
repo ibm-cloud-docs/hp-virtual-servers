@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-09-07"
 
 subcollection: hp-virtual-servers
 
@@ -41,9 +41,14 @@ Before you start with {{site.data.keyword.hpvs}}:
 - Check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}.
 - Have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
 
-Watch the following video to find how to get started with Hyper Protect Virtual Server:
+Watch the following video to find how to get started with {{site.data.keyword.hpvs}}, and to learn how to:
+- [Create a public key](/docs/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh).
+- [Create a Hyper Protect virtual server](/docs/hp-virtual-servers?topic=hp-virtual-servers-provision).
+- [Connect to a Hyper Protect virtual server](/docs/hp-virtual-servers?topic=hp-virtual-servers-connect_vs).
 
 <iframe width="737" height="415" title="Getting Started with IBM Cloud Hyper Protect Virtual Servers" src="https://www.youtube.com/embed/GlP-w-vsPmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 ## Provisioning a {{site.data.keyword.hpvs}} instance
 {: #gs_provisioning}
@@ -72,4 +77,5 @@ To securely manage your data when you use {{site.data.keyword.hpvs}}, you must k
 
 ## Protecting your {{site.data.keyword.hpvs}}
 {: #gs_protect}
-A {{site.data.keyword.hpvs}} server has two disks, "boot" and "data". The boot disk is always 25 GB. The size of the data disk varies, and depends on your plan. Make sure important data is persisted on the data disk. The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. If the user password  expires, it's no longer possible to log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+A {{site.data.keyword.hpvs}} server has two disks, "boot" and "data". The boot disk is always 25 GB. If your boot disk is full, the server can't start. You can't recover your instance because your boot disk can't be resized.
+The size of the data disk varies, and depends on your plan. Make sure that important data is persisted on the data disk. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and you can't log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).

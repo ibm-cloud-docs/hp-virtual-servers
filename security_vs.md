@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-13"
+lastupdated: "2020-09-07"
 
 subcollection: hp-virtual-servers
 
@@ -62,3 +62,7 @@ To make the configuration persistent, save your changes as described.
 Otherwise, all configuration updates are lost after a restart.
 
 Another part of the hardening is that the server is configured in such a way that the password expires after 90 days. After your password expires, you have 30 days to change it. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in via SSH even if you are using SSH-keys. This also includes system-accounts, for example, accounts created by using the command, `useradd --system`.
+
+## Monitoring a virtual server
+{: #monitor_a_vs}
+It is best practice to monitor your virtual server instance resource usage, such as CPU, memory, and storage, and to configure alerts that warn you if a resource is exhausted or almost exhausted. Monitoring your server ensures that it has sufficient resources available to keep it running. For example, if you have no storage alerts configured and your boot disk (25GB) is full, you can't restart your server. You can't recover your server because your boot disk can't be resized.

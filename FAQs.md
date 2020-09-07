@@ -92,3 +92,6 @@ These actions are not supported.
 ## What IBM catalog offerings work with {{site.data.keyword.hpvs}}?
 {: #faq14}
 In general, all offerings work with Hyper Protect Virtual Servers except for offerings that work explicitly only with classic infrastructure or VPC infrastructure. These offerings do not work with Hyper Protect Virtual Servers.
+
+## I cannot access my server after a restart because the boot disk is almost full. How can I recover the server?
+You can't recover your server because the boot disk is not resizable. You need to create a new server and restore your backups to them. Consider monitoring your server resource usage to avoid the same problem in the future.
