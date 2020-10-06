@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-10-06"
 
 subcollection: hp-virtual-servers
 
@@ -105,4 +105,20 @@ The resource list is not a complete list of your servers. If you “delete” a 
 
 Depending on your requirements, you must either delete the resource from the resource reclamations, or select a different data center (maximum number of servers is reached), or select the appropriate paid plan that meets your requirements if you reach the maximum number of free plans.
 For more information, see [resource reclamations](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations){: external}.
+{: tsResolve}
+
+
+##VoiceOver on MacOS does not announce all information on the dashboard in Firefox
+{: #macos_voiceover}
+
+VoiceOver on MacOS does not announce information presented on the dashboard in Firefox. It does not announce the public IP address, the internal IP address, the command how to connect to a virtual server, the initial SSH public key fingerprint, the image name, the image type, the operating system.
+{: troubleshoot}
+
+You try to announce the information presented on the dashboard using VoiceOver on MacOS in Firefox. No information is announced.
+{: tsSymptoms}
+
+Firefox does not fully support assistive technology. For more information, see [Proper voiceover support coming soon](https://blog.mozilla.org/accessibility/proper-voiceover-support-coming-soon-to-firefox-on-macos/).
+{: tsCauses}
+
+Use VoiceOver with either Safari or Chrome.
 {: tsResolve}

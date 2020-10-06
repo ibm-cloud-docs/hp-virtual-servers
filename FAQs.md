@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-19"
+  years: 2019, 2020
+lastupdated: "2020-10-06"
 
 subcollection: hp-virtual-servers
 
@@ -36,7 +36,7 @@ You must use the internal IP address when you connect to a virtual server from a
 {: #faq3}
 Do not rely on just one virtual server instance. Instead, run your application on multiple instances in combination with a load balancer to ensure high availability.
 
-Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within three regions (`us-south`, `eu-de`, `au-syd`) and nine data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Frankfurt 02`, `Frankfurt 04`, `Frankfurt 05`,`Sydney 01`, `Sydney 04`, and `Sydney 05`).
+Ideally, these virtual servers are spread across multiple regions and data centers. With {{site.data.keyword.hpvs}}, virtual servers are provided within three regions (`us-south`, `eu-de`, `au-syd`) and nine data centers (`Dallas 10`, `Dallas 12`, `Dallas 13`, `Frankfurt 02`, `Frankfurt 04`, `Frankfurt 05`,`Sydney 01`, `Sydney 04`, `Sydney 05`, `Washington 04`, `Washington 06`, and `Washington 07`).
 
 ## Can I have more than five virtual servers within one data center?
 {: #faq4}
