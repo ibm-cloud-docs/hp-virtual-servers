@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-10-02"
 
 ---
 
@@ -20,6 +20,15 @@ lastupdated: "2020-08-05"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+
+##12 October 2020
+{: #Oct12-2020}
+You can provide environment variables when you provision and update servers using a custom OCI image.
+
+##15 September 2020
+{: #Sep15-2020}
+You can now update the OCI image that's used for your virtual server.
 
 ## 08 August 2020
 {: #Aug08-2020}
