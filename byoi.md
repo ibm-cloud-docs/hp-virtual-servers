@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-10-12"
 
 subcollection: hp-virtual-servers
 
@@ -259,3 +259,64 @@ You must use the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin) `ibmcloud hpv
 ```
 ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path "C:\MyRegistrationDefinitions\registration-def.json.asc" -i latest
 ```
+<!--
+{:note}
+The following describes how you can configure your server. Be aware that the description may only be used for configurations that are not considered credentials.
+
+Commonly, instance-specific configurations for applications that run in OCI containers are provided during the creation of a container as environment variables.
+Either the application itself consumes these variables, or a script - that runs prior to the actual application - configures the application.
+Using environment variables must be allowed by the registration definition, before you can set them.
+You can provide environment variables by passing them via the ‘-e’ or ‘--environment’ option. Note that environment variables must not contain a comma (“,”).
+
+You can allow the use of an environment variable by adding its name to “envs_whitelist” array within the registration definition.
+Following variable names cannot be used: “RUNQ_ROOTDISK”, `RUNQ_RUNQENV`, “RUNQ_SYSTEMD”, “IMAGE_TAG”, “REGION”, “PHASE”, “LPAR_NAME”, “CPC”, “RUNQ_CPU”, “RUNQ_MEM”, “POD”.
+
+### Example with one environment variable:
+
+```
+ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration-def.json.asc” -i latest -e name=value
+```
+{: codeblock}
+
+
+### Example with multiple environment variables:
+
+```
+ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration-def.json.asc” -i latest -e name1=value1,name2=value2
+```
+{: codeblock}
+
+Within the container, the initial user then must set the corresponding environment variable accordingly.
+-->
+
+## Configuring your server
+{: #byoi_config}
+
+
+The following describes how you can configure your server. Use this description only for configurations that are not considered credentials or personal data.
+
+{:note}
+In this description "environment variables" are not set as environment variables, instead they provided within `/.runqenv`.
+
+Instance-specific configurations for applications that run in OCI containers are generally provided as environment variables when a container is created.
+Either the application consumes the variables, or a script, that runs prior to the actual application,   configures the application.
+Before you can set environment variables, the registration definition must allow them.
+You can provide environment variables by way of the  `e` or `--environment` option (cannot contain “,”). The environment variables are written to `/.runqenv`.
+
+You can allow environment variables by name to `envs_whitelist` array within the registration definition.
+
+The following variables cannot be set: “RUNQ_ROOTDISK”, “RUNQ_RUNQENV”, “RUNQ_SYSTEMD”, “IMAGE_TAG”, “REGION”, “PHASE”, “LPAR_NAME”, “CPC”, “RUNQ_CPU”, “RUNQ_MEM”, “POD”.
+
+Variable names can have up to 64 characters and may consist of numbers, chars, and underscore. Variable values may have up to 2048 characters and may consist of base64 character set characters (uppercase letters, lowercase letters, and +, /).
+
+**Example with one environment variable:**
+```
+ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration-def.json.asc” -i latest -e name=value
+```
+
+**Example with multiple environment variables:**
+```
+ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration-def.json.asc” -i latest -e name1=value1 -e name2=value2
+```
+
+The initial user has the corresponding environment variable set within the container.
