@@ -25,6 +25,7 @@ Hyper Protect Virtual Servers
     connect_vs.md
     security_vs.md
     manage_access.md
+    update_vs.md
     remove_vs.md
 
     {: .topicgroup}
