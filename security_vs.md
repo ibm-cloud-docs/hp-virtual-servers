@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-07"
+lastupdated: "2020-10-13"
 
 subcollection: hp-virtual-servers
 
@@ -66,3 +66,18 @@ Another part of the hardening is that the server is configured in such a way tha
 ## Monitoring a virtual server
 {: #monitor_a_vs}
 It is best practice to monitor your virtual server instance resource usage, such as CPU, memory, and storage, and to configure alerts that warn you if a resource is exhausted or almost exhausted. Monitoring your server ensures that it has sufficient resources available to keep it running. For example, if you have no storage alerts configured and your boot disk (25GB) is full, you can't restart your server. You can't recover your server because your boot disk can't be resized.
+
+## File system characteristics
+{: #hpvs_fs}
+
+The {{site.data.keyword.hpvs}} file system layout consists of one file system for the root and one file system for the /data mountpoints.
+
+If the file system is full, your instance can break, which means you can no longer log on to your instance.
+The {{site.data.keyword.hpvs}} do not come with swapspace configured, and it is not supported to add swap to the system.
+
+Within `/tmp` is a `tmpfs`, which can use a large volume of RAM. Use `/var/tmp` for your applications when you need large volumes of temporary storage. Insufficient RAM can cause your system to behave unpredictably.
+
+### Configuring logging for the Ubuntu server
+You must manually configure `logrotate` and `journald` to leave a small percentage of the file systems free. To do this, configure `SystemKeepFree=15%` in `/etc/systemd/journald.conf`.
+
+Check regularly that a percentage of the file system is still free. For the `logrotatation` configuration, make sure that your log files do not get too big. Compress and remove log files (or move them to your data volume) before they break your system.
