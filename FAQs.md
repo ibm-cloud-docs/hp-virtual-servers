@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-13"
 
 subcollection: hp-virtual-servers
 
@@ -94,4 +94,4 @@ These actions are not supported.
 In general, all offerings work with Hyper Protect Virtual Servers except for offerings that work explicitly only with classic infrastructure or VPC infrastructure. These offerings do not work with Hyper Protect Virtual Servers.
 
 ## I cannot access my server after a restart because the boot disk is almost full. How can I recover the server?
-You can't recover your server because the boot disk is not resizable. You need to create a new server and restore your backups to them. Consider monitoring your server resource usage to avoid the same problem in the future.
+You can't recover your server because the boot disk is not resizable. You need to create a new server and restore your backups to them. Consider monitoring your server resource usage to prevent the same problem in the future. Verify that your file system usage is according to the recommendations in [{{site.data.keyword.hpvs}} file system characteristics](https://test.cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs#hpvs_fs).
