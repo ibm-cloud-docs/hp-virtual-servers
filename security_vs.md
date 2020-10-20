@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-20"
 
 subcollection: hp-virtual-servers
 
@@ -81,3 +81,7 @@ Within `/tmp` is a `tmpfs`, which can use a large volume of RAM. Use `/var/tmp` 
 You must manually configure `logrotate` and `journald` to leave a small percentage of the file systems free. To do this, configure `SystemKeepFree=15%` in `/etc/systemd/journald.conf`.
 
 Check regularly that a percentage of the file system is still free. For the `logrotatation` configuration, make sure that your log files do not get too big. Compress and remove log files (or move them to your data volume) before they break your system.
+
+Logging configuration recommendations:
+- Create a non-root user for each application and run each application with that non-root user.
+- Configure the application's logging and logrotation as the user who runs the application.

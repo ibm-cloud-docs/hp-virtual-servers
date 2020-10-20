@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-10-20"
 
 keywords: open source licenses
 
@@ -25,7 +25,7 @@ subcollection: hp-virtual-servers
 The {{site.data.keyword.IBM}} license agreement and any applicable information on the web download page for {{site.data.keyword.IBM_notm}} products refers Licensee to this file for details that concern notices applicable to code, which is included in {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
-Notwithstanding the terms and conditions of any other agreement Licensee may have with {{site.data.keyword.IBM_notm}} or any of its related or affiliated entities (collectively "{{site.data.keyword.IBM_notm}}"), the third-party code that is identified below is subject to the terms and conditions of the {{site.data.keyword.IBM_notm}} license agreement for the Program and not the license terms that may be contained in the notices below. The notices are provided for informational purposes.
+Notwithstanding the terms and conditions of any other agreement Licensee may have with {{site.data.keyword.IBM_notm}} or any of its related or affiliated entities (collectively "{{site.data.keyword.IBM_notm}}"), the third-party code that is identified later in this document is subject to the terms and conditions of the {{site.data.keyword.IBM_notm}} license agreement for the Program and not the license terms that may be contained in the subsequent notices. The notices are provided for informational purposes.
 
 Note: This Notices file may identify information that is not used by, or that was not shipped with, the Program as Licensee installed it.
 
@@ -64,9 +64,8 @@ The url to the license is https://creativecommons.org/licenses/by/2.5/legalcode
 GUARDEDBY-JAVA [checker-qual]
 (https://mvnrepository.com/artifact/org.checkerframework/checker-qual),
 CONCURRENT [JSR305] (http://registry.npmjs.org/jsr305/-/jsr305-3.0.2.tgz),
-ANNOTATIONS [MongoDB-Driver]
-(https://repo1.maven.org/maven2/org/mongodb/mongo-java-driver/3.8.2/)
-
+ANNOTATIONS [MongoDB-driver-core]
+(https://search.maven.org/remotecontent?filepath=org/mongodb/mongodb-driver-core/4.0.5/mongodb-driver-core-4.0.5-sources.jar)
 
 END OF CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -83,11 +82,14 @@ SPDX-EXCEPTIONS
 SPDX STANDARD [spdx-expression-parse]
 (https://github.com/jslicense/spdx-expression-parse.js/releases/tag/v3.0.0),
 REGULAR_EXPRESSIONS [posix-character-classes]
-(http://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz)
+(http://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz),
 HTTP2/H2DEMO/TMPL.GO [net]
-(https://github.com/golang/net/archive/eb5bcb51f2a31c7d5141d810b70815c05d9c9146.zip)
+(https://github.com/golang/net/archive/eb5bcb51f2a31c7d5141d810b70815c05d9c9146.zip),
 SPDX standard [spdx-ranges]
-(http://registry.npmjs.org/spdx-ranges/-/spdx-ranges-2.1.1.tgz)
+(http://registry.npmjs.org/spdx-ranges/-/spdx-ranges-2.1.1.tgz),
+GO GOPHER [Go] ( https://golang.org/dl/go1.14.6.src.tar.gz),
+TEMPLATES - PAGE CONTENT [tools] (https://github.com/golang/tools/tree/2d16b83)
+
 
 END OF CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
