@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-22"
 
 subcollection: hp-virtual-servers
 
@@ -23,9 +23,6 @@ keywords: image, virtual server instance, instance, virtual server
 
 Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.
 {: shortdesc}
-
-This feature is for technical preview (experimental) only, it is not supported by IBM. Do not use this feature in production environments.
-{:important}
 
 The {{site.data.keyword.cloud}} CLI can be used only on the officially supported operating systems or architectures. It is recommended that you use the {{site.data.keyword.cloud}} Shell if your system is not supported.
 {:note}
