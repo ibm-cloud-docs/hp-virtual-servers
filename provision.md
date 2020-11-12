@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-11-11"
 
 subcollection: hp-virtual-servers
 
@@ -66,7 +66,7 @@ If the configuration fails, the instance status stays as **Inactive**, and if yo
 To create a virtual server from the CLI, you must first install the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin), then then run the following command:
 
 ```
-ibmcloud hpvs instance-create NAME PLAN LOCATION [(--ssh SSH-KEY | --ssh-path SSH-KEY-PATH)] [(--rd REGISTRATION-DEFINITION | --rd-path REGISTRATION-DEFINITION-PATH)] [-i IMAGE-TAG] [-e ENV-CONFIG] [-g RESOURCE-GROUP-ID] [-t TAG]
+ibmcloud hpvs instance-create NAME PLAN LOCATION [(--ssh SSH-KEY | --ssh-path SSH-KEY-PATH)] [(--rd REGISTRATION-DEFINITION | --rd-path REGISTRATION-DEFINITION-PATH)] [-i IMAGE-TAG] [-e ENV-CONFIG1 -e ENV-CONFIG2 ...] [-g RESOURCE-GROUP-ID] [-t TAG1 -t TAG2 ...]
 ```
 {: codeblock}
 
