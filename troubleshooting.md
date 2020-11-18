@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-11-17"
 
 subcollection: hp-virtual-servers
 
@@ -20,6 +20,7 @@ subcollection: hp-virtual-servers
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+{:support: data-reuse='support'}
 
 # Solving problems
 {: #troubleshooting}
@@ -29,6 +30,8 @@ If you run into problems while you're using {{site.data.keyword.hpvs}}, you can 
 
 ## You can't see the details of your virtual server instance on its dashboard - or the dashboard seems to display incorrectly
 {: #no_details_hpvs}
+{: troubleshoot}
+{: support}
 
 Though a new virtual server was successfully created, the details of the system are displayed incorrectly or aren't displayed at all.
 {: troubleshoot}
@@ -44,6 +47,8 @@ Verify that you're using a supported browser. Delete your browser cache, log out
 
 ## Status 'Inactive' is displayed in the **Resource list** when you create multiple virtual servers
 {: #provision_failure}
+{: troubleshoot}
+{: support}
 
 If you create more than five virtual server instances almost simultaneously in one data center that has no  existing instances, one or more virtual servers displays with the status 'Inactive' (provisioning failed) within the **Resource list**. When you click the 'Inactive' server in **Name** field, an error message is displayed to indicate that provisioning has failed.
 {: troubleshoot}
@@ -60,6 +65,8 @@ You can either provision more than five virtual servers in different data center
 
 ##  Generating a new virtual server fails because of exhausted resources
 {: #max_number_resources}
+{: troubleshoot}
+{: support}
 
 You can only create a limited number of virtual server instances in each data center.
 {: troubleshoot}
@@ -76,6 +83,8 @@ Retry the action and select a different data center.
 
 ## Can't connect to free virtual server anymore
 {: #connect_freevs}
+{: troubleshoot}
+{: support}
 
 I can't connect to a server (for example, via SSH), which is in the free plan although it's visible in the {{site.data.keyword.cloud_notm}} resource list.
 {: troubleshoot}
@@ -93,6 +102,8 @@ Virtual servers in paid plans aren't deleted. You can remove the server from the
 
 ## Can't create new virtual servers because of exhausted resources or plan limitations
 {: #connect_newvs}
+{: troubleshoot}
+{: support}
 
 You can't create new virtual servers because of exhausted resources or plan limitations, although you've less than the described limits.
 {: troubleshoot}
@@ -108,8 +119,10 @@ For more information, see [resource reclamations](https://cloud.ibm.com/docs/cli
 {: tsResolve}
 
 
-##VoiceOver on MacOS does not announce all information on the dashboard in Firefox
+## VoiceOver on MacOS does not announce all information on the dashboard in Firefox
 {: #macos_voiceover}
+{: troubleshoot}
+{: support}
 
 VoiceOver on MacOS does not announce information presented on the dashboard in Firefox. It does not announce the public IP address, the internal IP address, the command how to connect to a virtual server, the initial SSH public key fingerprint, the image name, the image type, the operating system.
 {: troubleshoot}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-11-17"
 
 subcollection: hp-virtual-servers
 
@@ -16,9 +16,13 @@ subcollection: hp-virtual-servers
 {:important: .important}
 {:tip: .tip}
 {:pre: .pre}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 #Provisioning a virtual server
 {: #provision}
+{: help}
+{: support}
 
 You can use the {{site.data.keyword.hpvs}} service to create a virtual server from the {{site.data.keyword.cloud_notm}} UI or from the CLI.
 {:shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-07"
+lastupdated: "2020-11-17"
 
 subcollection: hp-virtual-servers
 
@@ -18,6 +18,8 @@ keywords: hyper protect virtual servers, Hyper Protect Virtual Servers, getting 
 {:important: .important}
 {:tip: .tip}
 {:pre: .pre}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Getting started tutorial  
 {: #getting-started}
@@ -69,6 +71,8 @@ From your client workstation, you can connect to a virtual server that exists on
 
 ## Managing user access
 {: #gs_useraccess}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 Access to the management of {{site.data.keyword.hpvs}} service instances is controlled by IBM Cloud Identity and Access Management (IAM) but the servers use standard Ubuntu user-access management. You can find more information [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-manage_access.
 
 ## Securing your data
