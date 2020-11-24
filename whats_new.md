@@ -22,11 +22,11 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 {: shortdesc}
 
 
-##12 October 2020
+## 12 October 2020
 {: #Oct12-2020}
 You can provide environment variables when you provision and update servers using a custom OCI image.
 
-##15 September 2020
+## 15 September 2020
 {: #Sep15-2020}
 You can now update the OCI image that's used for your virtual server.
 
