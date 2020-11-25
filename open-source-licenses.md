@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-11-25"
 
 keywords: open source licenses
 
@@ -187,7 +187,7 @@ The url to the license is
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 GO-METRICS [containerd]
-(http://archive.ubuntu.com/ubuntu/pool/universe/c/containerd_1.3.3-0ubuntu-18.04.2.debian.tar.xz)
+(http://archive.ubuntu.com/ubuntu/pool/universe/c/containerd/containerd_1.3.3-0ubuntu1~18.04.2.debian.tar.xz)
 
 END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 4.0 GENERIC NOTICES AND
 INFORMATION
