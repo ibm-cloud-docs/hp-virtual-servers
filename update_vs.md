@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-10-07"
+  years: 2019, 2020, 2021
+lastupdated: "2021-01-14"
 
 subcollection: hp-virtual-servers
 
@@ -27,9 +27,6 @@ To trigger an update, you must have the IAM editor role (platform access) on the
 You can only update the server by way of the {{site.data.keyword.hpvs}} [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin).
 Before you update a server, back up all your data and make sure you can restore the data from your backups. IBM can't restore any data for you.
 
-<!--
-{:note}
-When updating an image, you must provide all environment variables, including the previously set. -->
 
 ## Updating the IBM-provided image
 {: #update_ibmimage}
@@ -61,7 +58,7 @@ Host key verification failed.
 
 To update your image, run:
 ```
-ibmcloud hpvs instance-update CRN
+ibmcloud hpvs instance-update (NAME | CRN)
 ```
 For more information about the update command, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvsinstanceupdate).
 
@@ -106,12 +103,12 @@ Updating the server enables you to update the installed packages.
 The update resets everything to the state of a new server except for the content within `/data`. Before you update your server, copy any data you want to be available after the update to `/data`.
 To update a self-provided server, run the following command and include the image tag (`-i mytag`).
 ```
-ibmcloud hpvs instance-update CRN -i mytag
+ibmcloud hpvs instance-update (NAME | CRN) -i mytag
 ```
 You can also update the registration definition:
 
 ```
-ibmcloud hpvs instance-update CRN -i mytag --rd-path my-rd
+ibmcloud hpvs instance-update (NAME | CRN) -i mytag --rd-path my-rd
 ```
 
 Updating the registration definition does not allow you to update `repository_name`.
@@ -127,42 +124,18 @@ When you update an image, you must provide all environment variables (including 
 
 {:note}
 In this description "environment variables" are not set as environment variables, instead they provided within `/.runqenv`.
-
 For information about environment variables, see [Configuring your server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_config).
 
 **Example with one environment variable:**
 
 ```
-ibmcloud hpvs instance-update CRN -i latest -e name=value
+ibmcloud hpvs instance-update (NAME | CRN) -i latest -e name=value
 ```
 {:pre}
 
 **Example with multiple environment variables:**
 
 ```
-ibmcloud hpvs instance-update CRN -i latest -e name1=value1 -e name2=value2`
+ibmcloud hpvs instance-update (NAME | CRN) -i latest -e name1=value1 -e name2=value2`
 ```
 {:pre}
-<!--
-### Setting environment variables
-{: #update_own_image_environment_variables}
-
-{:note}
-The following describes how you can configure your server. Be aware that the description may only be used for configurations that are not considered credentials.
-
-For details see [Using your own server](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_iu).    the section within Provisioning > Using your own image
-Environment variables need to be allowed by the registration definition, before you can set them.
-You can provide environment variable by passing them via the ‘-e’ or ‘--environment’ option (cannot contain “,” at the moment).
-
-You can allow environment variables by the name to “envs_whitelist” array within the registration definition.
-Following variables cannot be set: “RUNQ_ROOTDISK”, “RUNQ_RUNQENV”, “RUNQ_SYSTEMD”, “IMAGE_TAG”, “REGION”, “PHASE”, “LPAR_NAME”, “CPC”, “RUNQ_CPU”, “RUNQ_MEM”, “POD”.
-
-Example with one environment variable:
-
-ibmcloud hpvs instance-update CRN -i latest -e name=value
-
-Example with multiple environment variables:
-
-ibmcloud hpvs instance-update CRN -i latest -e name1=value1,name2=value2
-
--->
