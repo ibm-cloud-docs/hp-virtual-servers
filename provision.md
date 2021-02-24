@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2021-01-20"
+  years: 2019, 2020, 2021
+lastupdated: "2021-02-26"
 
 subcollection: hp-virtual-servers
 
@@ -25,8 +25,15 @@ subcollection: hp-virtual-servers
 You can use the {{site.data.keyword.hpvs}} service to create a virtual server from the {{site.data.keyword.cloud_notm}} UI or from the CLI.
 {:shortdesc}
 
+You can use an IBM-provided image or your own image to provision a server.
 
-You can provision a server that uses an image that is provided by IBM or you can use your own image. If you want to use your own image, you need to create an image file and registration definition file as described [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
+Use the CLI to provision a server if you want to:
+- [Use your own image](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi). You need to create an image file and registration definition file as described [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
+-  [Create servers](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance) without a public inbound address.
+
+{:note}
+Do not use personal information, for example, your name, as the instance name or as part of the instance name. The data that you provide when you provision an instance or interact with the hpvs cli is not considered to be personal data or credentials.
+Learn more about IBM Cloud Hyper Protect Virtual Servers' Data usage and Certifications [here](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=165C6EF0FFDA11E8BABD512A6952EE1F).
 
 {:note}
 The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
@@ -68,9 +75,10 @@ If the configuration fails, the instance status stays as **Inactive**, and if yo
 To create a virtual server from the CLI, you must first install the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin), then then run the following command:
 
 ```
-ibmcloud hpvs instance-create NAME PLAN LOCATION [(--ssh SSH-KEY | --ssh-path SSH-KEY-PATH)] [(--rd REGISTRATION-DEFINITION | --rd-path REGISTRATION-DEFINITION-PATH)] [-i IMAGE-TAG] [-e ENV-CONFIG1 -e ENV-CONFIG2 ...] [-g RESOURCE-GROUP-ID] [-t TAG1 -t TAG2 ...]
+ibmcloud hpvs instance-create NAME PLAN LOCATION [(--ssh SSH-KEY | --ssh-path SSH-KEY-PATH)] [(--rd REGISTRATION-DEFINITION | --rd-path REGISTRATION-DEFINITION-PATH)] [-i IMAGE-TAG] [-e ENV-CONFIG1 -e ENV-CONFIG2 ...] [-g RESOURCE-GROUP-ID] [-t TAG1 -t TAG2 ...] [--outbound-only]
 ```
 {: codeblock}
+
 
 Where:
 <dl>
@@ -101,6 +109,8 @@ Where:
 <dt>`-e ENV-CONFIG`</dt>
 <dd>Specify environment variables if you are using a self-provided image. You must specify the variables in your registration definition first. You can set one or more environment variables as key value pairs by using the `-e` flag, for example, `-ibmcloud hpvs instance-update CRN -i latest -e k1=v1 -e k2='v2 v3'`. Environment variable `names` can have a maximum length of 64 characters and can be numbers, chars and underscore. Environment variable `values` can have a maximum length of 4096.
 </dd>
+<dt>`--outbound-only`</dt>
+<dd>If this parameter is set, only outbound connections are allowed from your Hyper Protect Virtual Server instance. Use the internal IP address to connect to this Virtual Server from other Virtual Servers created by the same {{site.data.keyword.cloud_notm}} account in the same region.</dd>
 </dl>
 
 For example:
