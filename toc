@@ -21,12 +21,14 @@ Hyper Protect Virtual Servers
         provision.md
         byoi.md
 
+    protect_build.md
     retrieve_info_vs.md
     connect_vs.md
     security_vs.md
     manage_access.md
     update_vs.md
     remove_vs.md
+
 
     {: .topicgroup}
     Enhancing security for Hyper Protect Virtual Servers
@@ -38,6 +40,7 @@ Hyper Protect Virtual Servers
     {: .navgroup id="reference"}
     hpvs_responsibilities.md
     /hpvs-cli-plugin/hpvs-cli-plugin-hpvs_cli_plugin
+    tutorial-secure-build-server.md
     [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
     [Hyper Protect Services tutorials and other resources](https://ibm-hyper-protect.github.io/)
     [Hyper Protect Crypto Services](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started)
