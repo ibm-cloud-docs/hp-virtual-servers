@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-10-02"
+  years: 2019, 2020, 2021
+lastupdated: "2021-26-02"
 
 ---
 
@@ -20,6 +20,17 @@ lastupdated: "2020-10-02"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+
+## 26 February 2021
+{: #Feb26-2021}
+You can now use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to securely build an image, which you then can use to provision a virtual server.
+
+The tutorial "Using Secure Build Server with a digital wallet" is available.
+
+## 24 February 2021
+{: #Feb24-2021}
+The new parameter `outbound` is now available when you provision a server.
 
 
 ## 12 October 2020

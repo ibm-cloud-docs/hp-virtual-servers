@@ -1,0 +1,157 @@
+---
+
+copyright:
+  years: 2021
+lastupdated: "2021-02-26"
+
+subcollection: hp-virtual-servers
+
+keywords: image, virtual server instance, instance, virtual server
+---
+
+{:external: target="_blank" .external}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:codeblock: .codeblock}
+{:note: .note}
+{:important: .important}
+{:tip: .tip}
+{:pre: .pre}
+
+# Protecting your image build
+{: #imagebuild}
+
+You can securely build your own image, which you can then use with [bring your own image](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
+{:shortdesc}
+
+To do this you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server (SBS) functionality to sign your applications and also to sign and
+encrypt the registration definition for the deployment.
+
+When you build your image securely, you can validate the code your build code and reassure your users of the integrity level of their applications.
+
+## Deploying the Secure Build Server as a Hyper Protect Virtual Server
+{: #deploysecurebuild}
+
+To deploy the SBS:
+
+1. Install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
+2. Copy the following registration definition for the SBS into a file named `secure_build.asc`:
+	```
+	-----BEGIN PGP MESSAGE-----
+
+	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
+	=aq7v
+	-----END PGP MESSAGE-----
+	```
+	{: codeblock}
+3. Follow the steps in these [instructions](https://github.com/ibm-hyper-protect/secure-build-cli) to provision a Hyper Protect Virtual Server that uses the SBS and to perform your first build.
