@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-04"
 
 subcollection: hp-virtual-servers
 
@@ -193,7 +193,7 @@ Notes:
 - The property `DOCKER_REPO` identifies the namespace (which you created in step 1) and the container image name to be used. Specify a value that is not used or allocated in your container registry.
 - Specify the value of the API key created in step 1 for both properties `DOCKER_PASSWORD` and `DOCKER_RO_PASSWORD`
 
-For a list of properties, see [here]((https://github.com/ibm-hyper-protect/secure-build-cli).
+For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure-build-cli).
 
 ### 5. Create the client certificate and client CA by running the following command:
 ```
