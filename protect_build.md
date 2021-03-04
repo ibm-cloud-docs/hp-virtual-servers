@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-04"
 
 subcollection: hp-virtual-servers
 
@@ -27,7 +27,7 @@ You can securely build your own image, which you can then use with [bring your o
 To do this you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server (SBS) functionality to sign your applications and also to sign and
 encrypt the registration definition for the deployment.
 
-When you build your image securely, you can validate the code your build code and reassure your users of the integrity level of their applications.
+When you build your image securely, you can validate your build code and reassure your users of the integrity level of their applications.
 
 ## Deploying the Secure Build Server as a Hyper Protect Virtual Server
 {: #deploysecurebuild}
