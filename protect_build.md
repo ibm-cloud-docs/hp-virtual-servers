@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-05"
 
 subcollection: hp-virtual-servers
 
@@ -35,7 +35,7 @@ When you build your image securely, you can validate your build code and reassur
 To deploy the SBS:
 
 1. Install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
-2. Copy the following registration definition for the SBS into a file named `secure_build.asc`:
+2. Copy the following registration definition for the SBS into a file named `secure_build.asc`. This file is an encrypted and signed registration definition file. It contains metadata such as the repository name and the credentials to pull and deploy the SBS image on a {{site.data.keyword.hpvs}} instance:
 	```
 	-----BEGIN PGP MESSAGE-----
 
