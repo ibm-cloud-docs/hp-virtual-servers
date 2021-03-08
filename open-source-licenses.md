@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-25"
+  years: 2020, 2021
+lastupdated: "2021-03-08"
 
 keywords: open source licenses
 
@@ -61,10 +61,11 @@ The Program includes some or all of the following works licensed under
 the Creative Commons.
 The url to the license is https://creativecommons.org/licenses/by/2.5/legalcode
 
-GUARDEDBY-JAVA [checker-qual]
-(https://mvnrepository.com/artifact/org.checkerframework/checker-qual),
-CONCURRENT [JSR305] (http://registry.npmjs.org/jsr305/-/jsr305-3.0.2.tgz),
-ANNOTATIONS [MongoDB-driver-core]
+GUARDEDBY.JAVA [checker-qual]
+(https://mvnrepository.com/artifact/org.checkerframework/checker-qual/2.5.2),
+CONCURRENT [JSR305]
+(https://search.maven.org/remotecontent?filepath=com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar),
+ANNOTATIONS [MongoDB-Driver]
 (https://search.maven.org/remotecontent?filepath=org/mongodb/mongodb-driver-core/4.0.5/mongodb-driver-core-4.0.5-sources.jar)
 
 END OF CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC NOTICES AND INFORMATION
@@ -76,19 +77,16 @@ The Program includes some or all of the following works licensed under
 the Creative Commons.
 The url to the license is https://creativecommons.org/licenses/by/3.0/legalcode
 
+GO GOPHER [Go] (https://golang.org/dl/go1.16.src.tar.gz),
+TEMPLATES - PAGE CONTENT
+[tools] (https://github.com/golang/tools/tree/2d16b83),
 DOCUMENTATION [Atob] (http://registry.npmjs.org/atob/-/atob-2.1.2.tgz),
+HTTP2/H2DEMO/TMPL.GO [net]
+(https://github.com/golang/net/archive/eb5bcb51f2a31c7d5141d810b70815c05d9c9146.zip),
 SPDX-EXCEPTIONS
 (http://registry.npmjs.org/spdx-exceptions/-/spdx-exceptions-2.2.0.tgz),
 SPDX STANDARD [spdx-expression-parse]
-(https://github.com/jslicense/spdx-expression-parse.js/releases/tag/v3.0.0),
-REGULAR_EXPRESSIONS [posix-character-classes]
-(http://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz),
-HTTP2/H2DEMO/TMPL.GO [net]
-(https://github.com/golang/net/archive/eb5bcb51f2a31c7d5141d810b70815c05d9c9146.zip),
-SPDX standard [spdx-ranges]
-(http://registry.npmjs.org/spdx-ranges/-/spdx-ranges-2.1.1.tgz),
-GO GOPHER [Go] ( https://golang.org/dl/go1.14.6.src.tar.gz),
-TEMPLATES - PAGE CONTENT [tools] (https://github.com/golang/tools/tree/2d16b83)
+(https://github.com/jslicense/spdx-expression-parse.js/releases/tag/v3.0.0)
 
 
 END OF CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC NOTICES AND INFORMATION
@@ -138,7 +136,7 @@ The Program includes some or all of the following works licensed under
 the Creative Commons.
 The url to the license is https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
-LOGO [Glob] (http://registry.npmjs.org/glob/-/glob-7.1.4.tgz)
+GLOB-LOGO [Glob] (http://registry.npmjs.org/glob/-/glob-7.1.4.tgz)
 
 END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 4.0 GENERIC NOTICES AND INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -187,7 +185,7 @@ The url to the license is
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 GO-METRICS [containerd]
-(http://archive.ubuntu.com/ubuntu/pool/universe/c/containerd/containerd_1.3.3-0ubuntu1~18.04.2.debian.tar.xz)
+(http://archive.ubuntu.com/ubuntu/pool/universe/c/containerd/containerd_1.3.3-0ubuntu1~18.04.4.debian.tar.xz)
 
 END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 4.0 GENERIC NOTICES AND
 INFORMATION
