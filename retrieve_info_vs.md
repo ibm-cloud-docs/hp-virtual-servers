@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-07"
+lastupdated: "2021-03-17"
 
 subcollection: hp-virtual-servers
 
@@ -24,16 +24,19 @@ After you create a virtual server instance by using the {{site.data.keyword.hpvs
 {: shortdesc}
 
 {:note}
-The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in via SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in with SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 
 ## Retrieving information in the UI
 {: #retrieve-UI}
 
-1. Go to the [Resource list](https://cloud.ibm.com/resources){: external} and look for your virtual server instance under the **Services** entry in the **Name** column.
-2. Select **View resources** within the **Resource summary** area to open the **Resource list** either from the {{site.data.keyword.cloud_notm}} **Navigation Menu**, or from the {{site.data.keyword.cloud_notm}} dashboard. The **Locate** map shows you in which region your instance was created, and the column **Location** displays the data center where your instance was created. Use the filter to search for virtual server instances in certain regions or data centers. See also Figure 2 from [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-provision).
+1. To select the {{site.data.keyword.hpvs}} resource, either:
+  - Go to the [Resource list](https://cloud.ibm.com/resources){: external}, then look for your virtual server instance under the **Services** entry in the **Name** column.
+  - From the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} **Navigation Menu**, select **View all** within the **Resource summary** area to open the **Resource list**.
+    The column **Location** displays the data center where your instance was created. Use the filter to search for virtual server instances in certain regions or data centers. See also Figure 2 from [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-provision).
 2. Click your virtual server instance to open the **{{site.data.keyword.hpvs}} dashboard**.
-
-In this dashboard, you can find the public IP address, which you use to connect to the virtual server.
+In this dashboard:
+   - The **Locate** map shows you in which region your instance was created.
+   - You can find the public IP address, which you use to connect to the virtual server.
 You must use the internal IP address when you connect to a virtual server from another virtual server, which is in the same virtual LAN (VLAN). VLANs span across all data centers within their region.
 
 You must also work with the internal IP addresses, when you connect to other {{site.data.keyword.cloud_notm}} Cloud services that are located within the same data center.
@@ -72,7 +75,7 @@ ibmcloud hpvs instances
 
 The output displays a list of details for each instance. If you have no instances, a no instance found message is displayed.
 
-To display details about a server instance, you need the cloud resource name (CRN) for the server instance. To get the CRN, run  `ibmcloud hpvs service-instances`. Then run the following command:
+To display details about a server instance, you need the cloud resource name (CRN) for the server instance. To get the CRN, run  `ibmcloud hpvs service instances`. Then, run the following command:
 
 ```
 ibmcloud hpvs instance CRN [--output json]
@@ -84,7 +87,7 @@ Where:
 <dt>`CRN`</dt>
 <dd>Is the server's cloud resource name (CRN). </dd>
 <dt>`--output`</dt>
-<dd>Displays results as JSON. The only valid value is `json`</dd>
+<dd>Displays results as JSON. The only valid value is `json`.</dd>
 </dl>
 
 {: codeblock}
