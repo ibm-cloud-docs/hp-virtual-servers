@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-03-19"
 
 subcollection: hp-virtual-servers
 
@@ -31,14 +31,14 @@ Before you update a server, back up all your data and make sure you can restore 
 ## Updating the IBM-provided image
 {: #update_ibmimage}
 
-The IBM-provided Ubuntu image is generally updated via the standard Ubuntu package manager. Use the Ubuntu image provided to replace everything within your server with the new version. The Ubuntu image resets everything to the state of a new server except for the content within `/data`.
+The IBM-provided Ubuntu image is generally updated thru the standard Ubuntu package manager. Use the Ubuntu image provided to replace everything within your server with the new version. The Ubuntu image resets everything to the state of a new server except for the content within `/data`.
 
-Older instances did set the public SSH key in a way which is not compatible with the image update.
-Check the information in [Updating the authorized_keys file](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-update_vs#update_authkey) to ensure that your configuration is compatible with the image update. Otherwise you will irretrievably lose access to the virtual server.  
+Older instances did set the public SSH key in a way, which is not compatible with the image update.
+Check the information in [Updating the authorized_keys file](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-update_vs#update_authkey) to ensure that your configuration is compatible with the image update. Otherwise, you  irretrievably lose access to the virtual server.  
 
 When you update your image, the server settings are updated, for example, the [hardening configuration](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs). The update also creates a new SSH host key (the old key is deleted).
 
-Because there is a new SSH host key, the message below is displayed the first time to you connect after the update.
+The following message is displayed the first time to you connect after the update because there is a new SSH host key..
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
@@ -60,14 +60,14 @@ To update your image, run:
 ```
 ibmcloud hpvs instance-update (NAME | CRN)
 ```
-For more information about the update command, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvsinstanceupdate).
+For information about the update command, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvsinstanceupdate).
 
 ### Updating the authorized_keys file
 {: #update_authkey}
 
 Before you update your IBM-provided image, make sure that the root users' `authorized_keys` file is located within `/data/.ssh` and the correct file permissions are in place.
 
-If you update your virtual server and the file is not in the correct directory, you will lose access to your virtual server forever as recovery is not possible. Instances newer than 10 September 2020 are preconfigured correctly.
+If you update your virtual server and the file is not in the correct directory, you lose access to your virtual server forever as recovery is not possible. Instances newer than 10 September 2020 are preconfigured correctly.
 {: note}
 
 To place the `authorized_keys` file images in the `data/.ssh` directory, complete the following steps:
@@ -91,16 +91,16 @@ mv /home/root/.ssh/authorized_keys /home/root/.ssh/authorized_keys.backup
 ```
 ln -s /data/.ssh/authorized_keys /home/root/.ssh/authorized_keys
 ```
-8. Important: Don't disconnect unless you have verified that you can connect with the new setup.
-9. Open a new terminal and verify that you can connect with your private key (close the new terminal afterwards and continue in the old one).
+8. Important: Don't disconnect unless you verified that you can connect with the new setup.
+9. Open a new terminal and verify that you can connect with your private key (close the new terminal afterward and continue in the old one).
 10. Optionally delete `/home/root/.ssh/authorized_keys.backup`.
 
 ## Updating your own server
 {: #update_ownimage}
 
-If you use a self-provided server, you generally don't have access to the virtual server itself (via SSH).
-Updating the server enables you to update the installed packages.
-The update resets everything to the state of a new server except for the content within `/data`. Before you update your server, copy any data you want to be available after the update to `/data`.
+If you use a self-provided server, you generally don't have access to the virtual server itself (thru SSH).
+When you update the server you can update the installed packages.
+The update resets everything to the state of a new server except for the content within `/data`. Before you update your server, copy any data that you want to be available after the update to `/data`.
 To update a self-provided server, run the following command and include the image tag (`-i mytag`).
 ```
 ibmcloud hpvs instance-update (NAME | CRN) -i mytag
@@ -111,14 +111,14 @@ You can also update the registration definition:
 ibmcloud hpvs instance-update (NAME | CRN) -i mytag --rd-path my-rd
 ```
 
-Updating the registration definition does not allow you to update `repository_name`.
+An update the registration definition does not allow you to update `repository_name`.
 
-For more information about the update command options, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_iu).
+For information about the update command options, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_iu).
 
 ### Setting environment variables
 {: #envvar_update}
 
-Use this description only for configurations that are not considered credentials or personal data.
+Use this description for configurations that are not considered credentials or personal data only.
 
 When you update an image, you must provide all environment variables (including the variables that you set previously).
 

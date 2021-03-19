@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2017, 2020
-lastupdated: "2020-04-14"
+  years:  2019, 2020
+lastupdated: "2021-03-19"
 
 subcollection: hp-virtual-servers
 
@@ -29,7 +29,7 @@ secure stack with an Ubuntu Linux operating system.
 
 Access to {{site.data.keyword.hpvs}} service instances for users in your account is controlled by {{site.data.keyword.Bluemix_notm}} [Identity and Access Management (IAM)](https://cloud.ibm.com/docs/account?topic=account-iamoverview){: external}. Every user that accesses the {{site.data.keyword.hpvs}} service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.Bluemix_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
 
-Policies enable access to be granted at different levels. Some of the options include the following:
+Policies enable access to be granted at different levels. The options include the following policies:
 
 * Access across all instances of the service in your account
 * Access to an individual service instance in your account
@@ -40,9 +40,9 @@ The following table details actions that are mapped to service access roles. Ser
 
 | Service access role | Description | Action |
 |-------|-----------------------|-------------|
-| Reader | A reader can perform actions that are required to retrieve information only. | Retrieve information about virtual servers |
-| Writer | A writer can perform the same actions as a reader – plus updating virtual servers. | Retrieve information about virtual servers |
-| Manager | A manager can perform the same actions as a writer. | Retrieve information about virtual servers |
+| Reader | A reader can perform actions that are required to retrieve information only. | Retrieve information about virtual servers. |
+| Writer | A writer can perform the same actions as a reader – plus updating virtual servers. | Retrieve information about virtual servers. |
+| Manager | A manager can perform the same actions as a writer. | Retrieve information about virtual servers. |
 {: caption="Table 2. IAM service access roles and actions" caption-side="top"}
 
 Consider the following guidelines:

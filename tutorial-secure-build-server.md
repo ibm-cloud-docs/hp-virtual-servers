@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-19"
 
 subcollection: hp-virtual-servers
 
@@ -43,45 +43,45 @@ In this tutorial, you use the {{site.data.keyword.cloud}} {{site.data.keyword.hp
 ## Secure Build Server basic concepts
 {: #basicconcept_sbs}
 
-You use the Secure Build Server to build a trusted container image within a secure enclave, which is provided by IBM Cloud {{site.data.keyword.hpvs}}. The enclave is highly isolated, which means that software developers must use a specific API to access the Secure Build Server. Neither cloud administrators nor the cloud provider can access the Secure Build Server in the secure enclave or its contents, such as built container images and so on. The application image created by the Secure Build Server (together with the other relevant build output such as the manifest file and the encrypted registration file) is highly trusted. This is because the Secure Build Server cryptographically signs the application image and the manifest file and the signing keys are kept inside the secure enclaves.
+You use the Secure Build Server to build a trusted container image within a secure enclave, which is provided by IBM Cloud {{site.data.keyword.hpvs}}. The enclave is highly isolated, which means that software developers must use a specific API to access the Secure Build Server. Cloud administrators and the cloud provider do not have access to the Secure Build Server in the secure enclave or its contents, such as built container images. The application image created by the Secure Build Server (together with the other relevant build output such as the manifest file and the encrypted registration file) is highly trusted. It is highly trusted because the Secure Build Server cryptographically signs the application image and the manifest file and the signing keys are kept inside the secure enclaves.
 
-Building a container image with Secure Build Server works as follows:
+To build a container image with Secure Build Server, you must complete these steps:
 - Set up a Secure Build Server instance, then use the CLI to start the build on this instance.
 - Secure Build Server pulls the source code from a GitHub repository, in this case from the Digital Wallet repository.
 - Secure Build Server uses the source code's Dockerfile to build a container image.
 - Secure Build Server signs the container image and pushes the container image to a container registry, such as IBM Container Registry or Docker Hub.
 - Secure Build Server creates a manifest file and signs it. The manifest file is used to verify the source of the image and the integrity of the build. It contains the source code from which the image was built as well as the build log. You can download the manifest file from the Secure Build Server, and, for example, use it for audit purposes or pass it to an auditor. The manifest file is signed by signing keys that are kept inside the secure enclave.
--	Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} using Bring Your Own Image (BYOI).
+-	Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
 
-![The Secure Build Server](image/securebuild.jpg "The Secure Build Server")
-*Figure 1: The Secure Build Server*
+![The Secure Build Server](image/secure-build.png "The Secure Build Server")
+*Figure 1. The Secure Build Server*
 
-The registration file specifies the container registry, the application image and the credentials required to access the container registry. The registration file is encrypted and can be decrypted by {{site.data.keyword.hpvs}} only.
+The registration file specifies the container registry, the application image, and the credentials that are required to access the container registry. The registration file is encrypted and can be decrypted by {{site.data.keyword.hpvs}} only.
 
-You can download and use the encrypted registration file yourself, or you can pass it to a cloud administrator who uses the registration file and the {{site.data.keyword.hpvs}} CLI to provision a {{site.data.keyword.hpvs}} server instance with your image. The cloud administrator cannot access the information included in the registration file, namely the container registry credentials because the registration file is encrypted. In consequence – given access control is correctly setup for the container registry and the credentials are not exposed otherwise - the cloud administration cannot download or access the application image and any secrets contained in the image.
+You can download and use the encrypted registration file yourself, or you can pass it to a cloud administrator who uses the registration file and the {{site.data.keyword.hpvs}} CLI to provision a {{site.data.keyword.hpvs}} server instance with your image. The cloud administrator cannot access the information that is included in the registration file, namely the container registry credentials because the registration file is encrypted. In consequence – given access control is correctly set up for the container registry and the credentials are not exposed, the cloud administration cannot download or access the application image and any secrets that are contained in the image.
 
 
 ## Digital wallets
 {: #digwall_sbs}
 
-As digital wallets are targeted by hackers, it is important that the digital assets be protected in an environment that is also easily accessible by the user - also known as a "hot wallet". This includes having an environment where neither privileged admins nor external threats can compromise the data, via encryption and other mechanisms. In addition, the application must be built in a secure environment using a Secure Build process that prevents malicious actors from tampering the application code and application image. Without a Secure Build process a malicious insider or external actor could try to manipulate the build process or the build environment.
+As digital wallets are targeted by hackers, it is important that the digital assets be protected in an environment that is also easily accessible by the user (known as a "hot wallet"). A protected environment is an environment where both privileged admins and external threats cannot compromise the data, thru encryption and other mechanisms. In addition, the application must be built in a secure environment that uses a Secure Build process that prevents malicious actors from tampering the application code and application image. Without a Secure Build process, a malicious insider or external actor could try to manipulate the build process or the build environment.
 
-The Digital Wallet application, Secure Bitcoin Wallet, is available [here](https://github.com/IBM/secure-bitcoin-wallet), refer the `README.md` in the repository for more detailed information. The application consists of an Electrum Bitcoin Client backend and a web frontend. The backend, a modified version of Electrum, runs as a JSON RPC server to maintain a bitcoin wallet by interacting with the bitcoin network. The frontend runs as a Web frontend to interact with bitcoin users in a Web browser.
+The Digital Wallet application, Secure Bitcoin Wallet, is available [here](https://github.com/IBM/secure-bitcoin-wallet), refer the `README.md` in the repository for more information. The application consists of an Electrum Bitcoin Client backend and a web front end. The backend, a modified version of Electrum, runs as a JSON RPC server to maintain a bitcoin wallet by interacting with the bitcoin network. The front end runs as a web front end to interact with bitcoin users in a web browser.
 
 
 ## Before you begin
 {: #prerequisites_sbs}
 
 To complete this tutorial, you need to meet the following prerequisites:
-- Create an IBM Cloud account
-- Download and install the IBM Cloud CLI on your workstation
+- Create an IBM Cloud account.
+- Download and install the IBM Cloud CLI on your workstation.
 
 ## Task flow
 To complete this solution, you walk through the following steps:
-1. [Set up the IBM Container Registry](#setupconreg_sbs)
-2. [Set up the Secure Build Server](#setupsbs_sbs)
-3. [Build the application image using the Secure Build Server](#buildimage_sbs)
-4. [Deploy the image using {{site.data.keyword.hpvs}} BYOI and run the application in a secure environment](#deploy_sbs)
+1. [Set up the IBM Container Registry](#setupconreg_sbs).
+2. [Set up the Secure Build Server](#setupsbs_sbs).
+3. [Build the application image by using the Secure Build Server](#buildimage_sbs).
+4. [Deploy the image by using {{site.data.keyword.hpvs}} BYOI and run the application in a secure environment](#deploy_sbs).
 
 During this task flow, you create two {{site.data.keyword.hpvs}} instances: One instance for the Secure Build Server and one instance for your application.
 
@@ -118,7 +118,7 @@ API Key       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Locked        false
 ```
 
-### 3. Run the following commands to install the container registry CLI plugin and to create a new namespace `secureimages` in your container registry.
+### 3. Run the following commands to install the container registry CLI plug-in and to create a new namespace `secureimages` in your container registry.
 ```
 ibmcloud plugin install container-registry
 ibmcloud cr region-set us-south
@@ -131,12 +131,12 @@ ibmcloud cr namespace-add secureimages
 
 Complete the steps in this procedure to set up the Secure Build Server.
 
-### 1. Install the IBM Cloud CLI HPVS plugin by running the following command:
+### 1. Install the IBM Cloud CLI HPVS plug-in by running the following command:
 ```
 ibmcloud plugin install hpvs
 ```
 
-The Secure Build Server is written in Python and has been tested with Python 3.6.9. To set up the Secure Build Server, you need to install python3, pip3 and the Secure Build Server on your workstation.
+The Secure Build Server is written in Python and is tested with Python 3.6.9. To set up the Secure Build Server, you need to install python3, pip3, and the Secure Build Server on your workstation.
 
 ### 2. Install python3 and pip3, by running the following commands:
 ```
@@ -155,7 +155,7 @@ pip3 install -r requirements.txt
 ```
 
 ### 4. Create the Secure Build Server configuration.
-Create file `sbs-config.json` in your current working directory (this is the directory you created in the previous step, `secure-build-cli`), then add the following content:
+Create file `sbs-config.json` in your current working directory (this is the directory that you created in the previous step, `secure-build-cli`), then add the following content:
 
 ```
 {
@@ -191,7 +191,7 @@ Notes:
 - The property `CICD_PUBLIC_IP` is intentionally empty. This property is added later.
 - The property `GITHUB_KEY_FILE` specifies the key file (on your workstation) that contains the SSH key for your GitHub account.
 - The property `DOCKER_REPO` identifies the namespace (which you created in step 1) and the container image name to be used. Specify a value that is not used or allocated in your container registry.
-- Specify the value of the API key created in step 1 for both properties `DOCKER_PASSWORD` and `DOCKER_RO_PASSWORD`
+- Specify the value of the API key that is created in step 1 for both properties `DOCKER_PASSWORD` and `DOCKER_RO_PASSWORD`.
 
 For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure-build-cli).
 
@@ -210,7 +210,7 @@ The client certificate and CA are used for secure communication between the Secu
 
 This command does the following:
 - It updates the file `sbs-config.json` by adding two properties: `UUID` and `SECRET`.
-- It creates a directory named `.SBContainer-<uuid>.d`. This directory contains the created certificates and keys.
+- It creates a directory that is named `.SBContainer-<uuid>.d`. This directory contains the created certificates and keys.
 
 If the file `sbs-config.json` is open in an editor when you run this command, reload the updated file. Do not modify the new properties `UUID` and `SECRET`.
 
@@ -229,23 +229,23 @@ INFO:__main__:env="-e CLIENT_CRT=...  -e CLIENT_CA=..."
 
 First, copy the encrypted registration definition for the Secure Build image into a new file named `secure_build.asc`. The content of the encrypted registration definition is located [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
-Then use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA` taken from the output of the preceding command.
+Then, use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA` taken from the output of the preceding command.
 ```
 # ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0 -e CLIENT_CRT=... -e CLIENT_CA=...
 ```
 
-`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Be sure to use the image tag `1.3.0` as this references the up-to-date version of the Secure Build Server.
-For more information about available pricing plans and regions and datacenters see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
+`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Be sure to use the image tag `1.3.0` because this tag references the up-to-date version of the Secure Build Server.
+For more information about available pricing plans and regions and datacenters, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
 
 ### 8. Display your Secure Build Server instance.
 
-To view information about the Secure Build Server instance and other {{site.data.keyword.hpvs}} instances you have provisioned, use the following command line:
+To view information about the Secure Build Server instance and other {{site.data.keyword.hpvs}} instances that you have provisioned, use the following command line:
 ```
 # ibmcloud hpvs instances
 ```
 The command displays detailed information about the {{site.data.keyword.hpvs}} instances you have provisioned.
 
-The following snippet shows example output for a Secure Build Server instance that is currently being provisioned:
+The following snippet shows example output for a Secure Build Server instance that is being provisioned:
 ```
 Name                     SBContainer
 CRN                      crn:v1:bluemix:public:hpvs:dal13:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx::
@@ -290,7 +290,7 @@ Edit the configuration file `sbs-config.json` to add the public IP address of yo
 "CICD_PUBLIC_IP": "<public IP Address>"
 ```
 
-## Step 3: Build the application image using the Secure Build Server
+## Step 3: Build the application image by using the Secure Build Server
 {: #buildimage_sbs}
 {: step}
 
@@ -322,7 +322,7 @@ Run the following command to get the server CSR:
 # ./build.py get-server-csr --env sbs-config.json --noverify
 ```
 
-The following snippet shows example output including the server CSR:
+The following snippet shows example output that includes the server CSR:
 ```
 INFO:__main__:get-server-csr: response={
     "csr": "-----BEGIN CERTIFICATE REQUEST-----\n...\n-----END CERTIFICATE REQUEST-----\n"
@@ -403,7 +403,7 @@ Use the following command to display the status of your build:
 
 You can repeat this command to update the latest build status.
 
-Here is example output that is displayed for a build, which is in progress:
+The following example output is displayed for a build that is in progress:
 ```
 INFO:__main__:status: response={
     "build_image_tag": "1.3.0",
@@ -414,7 +414,7 @@ INFO:__main__:status: response={
     "status": "github cloned"
 }
 ```
-Below is example output for a build, which failed due to a container registry login problem:
+The following example output is for a build, which failed due to a container registry login problem:
 ```
 INFO:__main__:status: response={
     "build_image_tag": "1.3.0",
@@ -443,7 +443,7 @@ Run the following command again to display the status of your build:
 # ./build.py status --env sbs-config.json
 ```
 
-Here is example output for a build which completed successfully (indicated by the `success` status):
+The following is example output for a build that completed successfully (indicated by the `success` status):
 ```
 INFO:__main__:status: response={
     "build_image_tag": "1.3.0",
@@ -457,10 +457,10 @@ INFO:__main__:status: response={
 
 Make a note of the `image_tag` property. The image tag that was generated by the build based on the image tag prefix you defined in the configuration file. You use this image tag later to provision your application instance.
 
-The Secure Build Server has now built successfully, signed your application's container image, and pushed it to the container registry (you can see the image with the image tag in your container registry `secureimages`). The Secure Build Server has also created a manifest file and an encrypted registration file, which you can use to provision the application instance.
+The Secure Build Server builds successfully, signed your application's container image, and pushed it to the container registry (you can see the image with the image tag in your container registry `secureimages`). The Secure Build Server has also created a manifest file and an encrypted registration file, which you can use to provision the application instance.
 
 ### The manifest file
-The Secure Build Server creates a signed manifest file for each successful build for audit purposes. You can verify the source and integrity of the build and the built image or can pass the manifest file to an auditor to do so. For the purposes of this tutorial this is discretionary, and the next two steps are optional and can be skipped.
+The Secure Build Server creates a signed manifest file for each successful build for audit purposes. You can verify the source and integrity of the build and the built image or can pass the manifest file to an auditor to do so. For the purposes of this tutorial,  this is discretionary, and the next two steps are optional and can be skipped.
 
 ### 11. Download the manifest file.
 
@@ -469,7 +469,7 @@ Download the manifest file from your Secure Build Server instance by using the f
 # ./build.py get-manifest --env sbs-config.json  --verify-manifest
 ```
 
-The following snippet shows example output displayed by the command:
+The following snippet shows example output that is displayed by the command:
 ```
 INFO:__main__:get-manifest manifest_name: manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350
 INFO:__main__:verify_manifest: manifest_name=manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350 test=0
@@ -484,7 +484,7 @@ The command downloads and stores a set of files in your current working director
 
 ### 12. Extract the manifest file.
 
-Extract the archive file retrieved in the next step by running the following command:
+Extract the archive file that is retrieved in the next step by running the following command:
 ```
 # tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig.tbz
 ```
@@ -500,11 +500,11 @@ Extract the contents of the manifest file:
 # tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
 ```
 
-This creates a `git` directory (including the snapshot of the application's git repository used for the build), and a data directory including a file `build.json` (containing the build status) and the build.log.
+This creates a `git` directory (including the snapshot of the application's Git repository that is used for the build), and a data directory, which includes a file `build.json` (that contains the build status) and the build.log.
 
 ### Saving the state of your Secure Build Server instance
-As an optional additional step (which you can skip), you can download a state image from your Secure Build Server instance. You need the state image to recover the signing key and additional internal states of the Secure Build Server instance to build the image in another, new Secure Build Server instance (for example, after the original instance is deleted or corrupted). See [here](https://github.com/ibm-hyper-protect/secure-build-cli)
-for more detailed information about how you can restore the state image and how you can save a state image to Cloud Object Storage. In this tutorial, you only download the state image, so it is available in the current working directory for possible later use.
+As an optional step (which you can skip), you can download a state image from your Secure Build Server instance. To build the image in another, new Secure Build Server instance (for example, after the original instance is deleted or corrupted), you need the state image to recover the signing key and additional internal states of the Secure Build Server instance. See [here](https://github.com/ibm-hyper-protect/secure-build-cli)
+for information about how you can restore the state image and how you can save a state image to Cloud Object Storage. In this tutorial, you download the state image only, so it is available in the current working directory for possible later use.
 
 ### Step 13. Retrieve the state image.
 
@@ -518,7 +518,7 @@ This command creates an encrypted file in your current directory and prints the 
 INFO:__main__:state:name: us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350
 ```
 
-## Step 4: Deploy your application using Hyper Protect Virtual Servers BYOI and run the application in a secure environment
+## Step 4: Deploy your application by using Hyper Protect Virtual Servers BYOI and run the application in a secure environment
 {: #deploy_sbs}
 {: step}
 
@@ -531,7 +531,7 @@ First, download the encrypted registration file for your application container i
 # ./build.py get-config-json --env sbs-config.json --key-id secure-build-ad52e76-1
 ```
 
-The command creates a GPG key to sign the file. The parameter `key-id` is used to generate the key UID. Provide a unique value comprising the image tag retrieved in step 3, for example, `secure-build-ad52e76-1`:
+The command creates a GPG key to sign the file. The parameter `key-id` is used to generate the key UID. Provide a unique value that  comprises the image tag retrieved in step 3, for example, `secure-build-ad52e76-1`:
 
 While the command runs, you are asked multiple times for a passphrase. First, enter the passphrase twice for key creation, then again to sign the file.
 
@@ -552,7 +552,7 @@ image_tag=s390x-v1-ad52e76
 ibmcloud hpvs instance-create securewallet lite-s dal13 --rd-path sbs.enc -i $image_tag
 ```
 
-`securewallet` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different values for these parameters.
+`securewallet` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different value for these parameters.
 
 This command starts instance provisioning and displays the following output:
 
@@ -570,7 +570,7 @@ ibmcloud hpvs instance crn:v1:bluemix:public:hpvs:dal13:xxxxxxxxxxxxxxxxxxxxxxxx
 
 Wait until your service instance is successfully provisioned. After the {{site.data.keyword.hpvs}} instance is provisioned, you can view it in your IBM Cloud resource list.
 
-The `ibmcloud hpvs instance` command prints detailed information about the instance including its public IP address. Make a note of this IP address and proceed to the final step of our tutorial.
+The `ibmcloud hpvs instance` command prints detailed information about the instance that includes its public IP address. Make a note of this IP address and proceed to the final step of our tutorial.
 
 ### 3. Run and use the Secure Bitcoin Wallet application.
 
@@ -578,11 +578,11 @@ You can now use the Secure Bitcoin Wallet application: In a browser window, open
 
 Follow the description and instructions [here](https://github.com/IBM/secure-bitcoin-wallet) to use the wallet.
 
-Here's an example screenshot of the wallet:
+Here's an example screen capture of the wallet:
 <img src="https://raw.githubusercontent.com/IBM/secure-bitcoin-wallet/master/images/screenshot.png"/>
 
 ## Summary
-You have successfully used Secure Build Server to build the Secure Bitcoin wallet application. Your build runs in a secure enclave, which protects the build environment, the build process, and the build output from malicious internal or external actors. You have used the {{site.data.keyword.hpvs}} BYOI feature to set up your Secure Bitcoin Wallet instance in a secure enclave, which protects the wallet from threats and hackers.
+You successfully used Secure Build Server to build the Secure Bitcoin wallet application. Your build runs in a secure enclave, which protects the build environment, the build process, and the build output from malicious internal or external actors. You used the {{site.data.keyword.hpvs}} BYOI feature to set up your Secure Bitcoin Wallet instance in a secure enclave, which protects the wallet from threats and hackers.
 
 ## References
 - [Secure Build Server CLI](https://github.com/ibm-hyper-protect/secure-build-cli)

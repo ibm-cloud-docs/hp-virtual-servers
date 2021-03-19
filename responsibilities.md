@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2020-02-25"
+  years: 2019, 2020
+lastupdated: "2021-03-19"
 
 subcollection: hp-virtual-servers
 
@@ -29,6 +29,7 @@ Learn about management responsibilities and terms and conditions that you must o
 IBM provides you with an enterprise cloud platform to deploy your workload. You choose how to set up, integrate, back up, and operate your workloads in the cloud.
 
 ### Cloud Infrastructure
+{: #responsibilities_ci_hpvs}
 
 IBM's responsibilities:
 - Deploy a fully managed, highly available, secured, IBM-owned infrastructure.
@@ -39,6 +40,7 @@ Your responsibilities:
 - Design and deploy your workload in a way that achieves high availability by using multiple data centers.
 
 ### {{site.data.keyword.hpvs}}
+{: #responsibilities_hpvs_hpvs}
 
 IBM's responsibilities:
 - Set up virtual servers as requested.
@@ -50,6 +52,7 @@ Your responsibilities:
 - Monitor the health of your workload.
 
 ### Security-rich Environment
+{: #responsibilities_secenv_hpvs}
 
 IBM's responsibilities:
 - Maintain controls commensurate to current industry compliance standards.
@@ -63,15 +66,21 @@ Your responsibilities:
 - Restrict user access to the appropriate resources and resource groups.
 
 ### App Orchestration
+{: #responsibilities_app_hpvs}
 
 IBM's responsibilities:
 - None.
 
 Your responsibilities:
-- Use the tools and features provided to configure and deploy set up permissions, integrate with other services, externally serve, monitor the health, save, back up, and restore data, and to manage your highly available and resilient workloads.
+- Use the tools and features that are provided to:
+  - Configure and deploy setup permissions.
+  - Integrate with other services.
+  - Externally serve, monitor the health, save, back up, and restore data.
+  - Manage your highly available and resilient workloads.
 - Design and deploy your workload in a way that achieves high availability by using multiple data centers.
 
 ### Connecting clients
+{: #responsibilities_connect_hpvs}
 
 IBM's responsibilities:
 - None.
