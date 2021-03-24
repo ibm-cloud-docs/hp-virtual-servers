@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-11"
+  years: 2019, 2020
+lastupdated: "2021-03-23"
 
 subcollection: hp-virtual-servers
 
@@ -30,13 +30,14 @@ Example workloads that you can deploy this way are databases (PostgreSQL, MongoD
 If the latency requirements or types of workload do not allow to run an active-active configuration across data centers, you can perform regular backups from one virtual server to another instance in a different data center. In a disaster, the amount of lost data depends on the frequency of the backups and the time to restore a backup.  
 
 ## Backup
+{: #disaster_backup}
 
-Back up your data from business-relevant virtual servers (primary virtual servers) to recovery virtual server instances. A virtual server that is created with {{site.data.keyword.hpvs}} is configured with two disks. One for the operating system and the other one for your data (mounted as `/data/`). One possible way to back up the data disk is to set up a `cron job`, which copies content of the disk to a recovery virtual server instance. Choose the appropriate backup frequency for your workload. For example, if you accept a maximum loss of data changes of 1 hour, add the following text file (for example, cron_backup.sh) to `/etc/cron.hourly`:
+Back up your data from business-relevant virtual servers (primary virtual servers) to recovery virtual server instances. A virtual server that is created with {{site.data.keyword.hpvs}} is configured with two disks. One for the operating system and the other one for your data (mounted as `/data/`). One possible way to back up the data disk is to set up a `cron job`, which copies content of the disk to a recovery virtual server instance. Choose the appropriate backup frequency for your workload. For example, if you accept a maximum loss of data changes of 1 hour, add the following text file (for example, cron_backup) to `/etc/cron.hourly`:
 
 ```
 #!/bin/sh
 
-rsync /data <public HPVS IP>:/data
+rsync /data <public HPVS IP or internal HPVS IP>:/data
 ```
 {: codeblock}
 
@@ -56,7 +57,9 @@ apt-get install rsync
 ```
 {: codeblock}
 
-You must exchange the SSH keys so that the cron job script can run. If needed, quiesce the concerned application before the backup operation. If the primary and the recovery virtual servers are located in one region, use the internal IP address for the backup.  
+You must exchange the SSH keys so that the cron job script can run. How this works depends on the backup server's SSH server configuration. With the default configuration, you must place the public SSH key as a line in the `$HOME/.ssh/authorized_keys` file of the user that is used on the backup server. To make `rsync` use the private SSH key, you must place this key in the cron-jobs user's `$HOME/.ssh` and give it a default name, for example, for rsa keys, use the name  `id_rsa`. Other options are to configure the SSH client for this user or to adjust the `rsync` command accordingly.
+
+If needed, quiesce the concerned application before the backup operation. If the primary and the recovery virtual servers are located in one region, use the internal IP address for the backup.  
 
 If you want to maintain multiple backups outside virtual server instances created with {{site.data.keyword.hpvs}}, you can package the data with `tar`, encrypt it with `GnuPG` and store it in {{site.data.keyword.cloud}} Object Storage.
 
@@ -67,6 +70,7 @@ Finally, always access the application that should be recoverable by using a URL
 In a recovery scenario, you can then adjust the URL to point to the recovery virtual server).
 
 ## Recovery
+{: #disaster_recovery}
 
 To recover from a disaster by using the previously described backup environment, perform the following steps:
 
