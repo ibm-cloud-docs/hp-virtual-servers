@@ -43,14 +43,6 @@ Before you start with {{site.data.keyword.hpvs}}:
 - Check whether you are using the [required browser software](/docs/overview?topic=overview-prereqs-platform) for {{site.data.keyword.cloud_notm}}.
 - Have an SSH key pair ready, which you need for creating and connecting to your virtual server instance. Read [Generating SSH keys](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh) for more information.
 
-Watch the following video to find how to get started with {{site.data.keyword.hpvs}}, and to learn how to:
-- [Create a public key](/docs/hp-virtual-servers?topic=hp-virtual-servers-generate_ssh).
-- [Create a Hyper Protect virtual server](/docs/hp-virtual-servers?topic=hp-virtual-servers-provision).
-- [Connect to a Hyper Protect virtual server](/docs/hp-virtual-servers?topic=hp-virtual-servers-connect_vs).
-
-<iframe width="737" height="415" title="Getting Started with IBM Cloud Hyper Protect Virtual Servers" src="https://www.youtube.com/embed/GlP-w-vsPmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 
 ## Provisioning a {{site.data.keyword.hpvs}} instance
 {: #gs_provisioning}
