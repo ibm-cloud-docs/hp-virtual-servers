@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-26-02"
+lastupdated: "2021-21-05"
 
 ---
 
@@ -21,6 +21,9 @@ lastupdated: "2021-26-02"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 21 May 2021
+{: #May21-2021}
+You can now create a registration definition file by using the CLI, and also add Linux capabilities to the registration definition file.
 
 ## 26 February 2021
 {: #Feb26-2021}

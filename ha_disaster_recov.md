@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2021-03-23"
+  years: 2019, 2020, 2021
+lastupdated: "2021-04-21"
 
 subcollection: hp-virtual-servers
 
@@ -22,7 +22,7 @@ keywords: high availability, disaster, recovery
 # High availability and disaster recovery
 {: #disaster_hpvs}
 
-The {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service runs on a highly available and reliable IBM LinuxONE infrastructure with no single point of failure. However, a single virtual server can still have an outage in a disaster scenario. Therefore, deploy your workload in active-active mode across multiple virtual server instances, which are running in different data centers (for example, `Dallas 10`,`Dallas 12`, and `Dallas 13`). This setup ensures an operable workload with fault tolerance on the underlying virtual servers.
+The {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service runs on reliable IBM LinuxONE infrastructure. The {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service will not be available during regular maintenances. A single virtual server can still have an outage in a disaster scenario. Therefore, deploy your workload in active-active mode across multiple virtual server instances, which are running in different data centers (for example, `Dallas 10`,`Dallas 12`, and `Dallas 13`). This setup ensures an operable workload with fault tolerance on the underlying virtual servers.
 
 Example workloads that you can deploy this way are databases (PostgreSQL, MongoDB, or MySQL) or applications with no local state.
 {:shortdesc}
@@ -37,7 +37,7 @@ Back up your data from business-relevant virtual servers (primary virtual server
 ```
 #!/bin/sh
 
-rsync /data <public HPVS IP or internal HPVS IP>:/data
+rsync -a /data/ <public HPVS IP or internal HPVS IP>:/data
 ```
 {: codeblock}
 

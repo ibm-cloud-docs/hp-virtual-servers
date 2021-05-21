@@ -1,7 +1,7 @@
 ---
 copyright:
-  years:  2017, 2020
-lastupdated: "2020-04-14"
+  years:  2019, 2020, 2021
+lastupdated: "2021-04-20"
 
 subcollection: hp-virtual-servers
 
@@ -29,7 +29,7 @@ Review the following sample architecture for {{site.data.keyword.cloud}} {{site.
 
 The {{site.data.keyword.hpvs}} architecture is divided into two major areas:
 1. The **Z as a Service (ZaaS)** infrastructure as shown in Figrure 1 is used to host the {{site.data.keyword.hpvs}}. This infrastructure is deployed as multi-zone regions, where each region consists of three zones. In every region, you can deploy virtual servers on one of the many IBM LinuxONE systems available. These systems can be reached by way of SSH over the public network.
-2. The lower half of the picture shows the **{{site.data.keyword.hpvs}} Management** stack. The key component is the {{site.data.keyword.hpvs}} service broker, which is used to create and manage your virtual servers. You can use the {{site.data.keyword.cloud_notm}} catalog to interact with this component to provision a virtual server. After that you can use the {{site.data.keyword.hpvs}} dashboard to view details about the virtual server you created.
+2. The second part of the picture shows the **{{site.data.keyword.hpvs}} Management** stack. The key component is the {{site.data.keyword.hpvs}} service broker, which is used to create and manage your virtual servers. You can use the {{site.data.keyword.cloud_notm}} catalog to interact with this component to provision a virtual server. After that you can use the {{site.data.keyword.hpvs}} dashboard to view details about the virtual server you created.
 
 ## {{site.data.keyword.hpvs}} workload isolation
 As shown in Figure 2, the IBM LinuxONE systems which are used for the {{site.data.keyword.hpvs}} are partitioned into several Logical Partitions (LPARs). A host system, which is protected by the IBM Secure Service Container technology is installed on each partition. IBM Secure Service Container technology provides protection against insider threats, for example, IBM Cloud administrators. Protection achieved by the following features:
@@ -65,8 +65,3 @@ Review the list of third party services that {{site.data.keyword.hpvs}} connect 
 | Service name | Description|
 | -----------|-------------------------------|
 | Akamai, Cloudflare | Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall functionality in {{site.data.keyword.hpvs}}. |
-| {{site.data.keyword.ghe_short}} | {{site.data.keyword.ghe_short}} is used to track service enhancements, features, and customer issues. When a customer issue is identified, the CRN, the name, and the plan of the virtual server is documented here. This information is shared with the service team to start troubleshooting the issue. |
-| Slack | Slack is used as the IBM-internal communication medium to troubleshoot issues and bring together internal SMEs to resolve customer issues. Diagnostic information about virtual servers is sent to a private Slack channel and includes the CRN, customer account ID, and details about the virtual server. |
-| Dockerhub | Dockerhub is used to host some Docker images that are used by the service. |
-| ServiceNow | ServiceNow is used as Customer Support and Change Management Tool. It processes information that you provide in support tickets. |
-| PagerDuty | PagerDuty is used as duty management and call out system for customer incidents. Information from your support tickets is shared here. |

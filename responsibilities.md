@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2021-03-19"
+  years: 2019, 2020, 2021
+lastupdated: "2021-04-15"
 
 subcollection: hp-virtual-servers
 
@@ -32,10 +32,11 @@ IBM provides you with an enterprise cloud platform to deploy your workload. You 
 {: #responsibilities_ci_hpvs}
 
 IBM's responsibilities:
-- Deploy a fully managed, highly available, secured, IBM-owned infrastructure.
+- Deploy a fully managed, reliable, secured, IBM-owned infrastructure.
 - Fulfill requests for {{site.data.keyword.hpvs}} across multiple data centers.
 
 Your responsibilities:
+- Take the required actions on regular maintenance notification from IBM.
 - Use the provided UI console to provision compute and storage to meet the needs of your workload.
 - Design and deploy your workload in a way that achieves high availability by using multiple data centers.
 
