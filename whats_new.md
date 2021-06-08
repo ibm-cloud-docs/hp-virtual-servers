@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-21-05"
+lastupdated: "2021-07-06"
 
 ---
 
@@ -23,7 +23,7 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 
 ## 21 May 2021
 {: #May21-2021}
-You can now create a registration definition file by using the CLI, and also add Linux capabilities to the registration definition file.
+The {{site.data.keyword.cloud_notm}} command line interface can be used to create a registration definition file, and the gpg registration key. You can also manually add Linux capabilities to the registration definition file. The registration definition file for SBS is updated for security compliance.
 
 ## 26 February 2021
 {: #Feb26-2021}
@@ -56,7 +56,6 @@ The new {{site.data.keyword.hpvs}} command line interface is now available.
 ## 06 July 2020
 {: #Jul06-2020}
 Three new data centers are available for creating virtual servers: Washington 04, Washington 06, and Washington 07.
-
 
 
 ## 14 April 2020
