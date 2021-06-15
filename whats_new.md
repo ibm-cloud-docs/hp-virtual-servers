@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-15-06"
 
 ---
 
@@ -20,6 +20,10 @@ lastupdated: "2021-07-06"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 15 June 2021
+{: #Jun15-2021}
+You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances after you deploy LogDNA on the {{site.data.keyword.hpvs}} instance.
 
 ## 21 May 2021
 {: #May21-2021}
