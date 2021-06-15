@@ -2,7 +2,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="hp-virtual-servers" category="compute" audience="service" href="/docs/hp-virtual-servers?topic=hp-virtual-servers-getting-started" console-page="/catalog/services/hyper-protect-virtual-servers" product-page="https://www.ibm.com/cloud/hyper-protect-virtual-servers" path="hp-virtual-servers"}
+{: .toc subcollection="hp-virtual-servers" category="compute" audience="service" href="/docs/hp-virtual-servers" console-page="/catalog/services/hyper-protect-virtual-servers" product-page="https://www.ibm.com/cloud/hyper-protect-virtual-servers" path="hp-virtual-servers"}
 Hyper Protect Virtual Servers
 
     {: .navgroup id="learn"}

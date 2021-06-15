@@ -1,0 +1,55 @@
+{
+  "title": "IBM Cloud Hyper Protect Virtual Servers documentation",
+  "lastupdated": "2021-06-15",
+  "introduction": "Find useful information about Hyper Protect Virtual Servers.",
+  "section_devtools": {
+    "cli": "/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin"
+  },
+  "section_recommended": [
+    {
+      "title": "Creating a Hyper Protect virtual server with an IBM-provided image",
+      "description": "Use the Hyper Protect Virtual Servers service to create a virtual server from the IBM Cloud UI or from the CLI.",
+      "href": "/docs/hp-virtual-servers?topic=hp-virtual-servers-provision"
+    },
+    {
+      "title": "Creating a Hyper Protect virtual server with your own image",
+      "description": "Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.",
+      "href": "/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi"
+    },
+    {
+      "title": "Protecting your image build",
+      "description": "Use the Hyper Protect Virtual Servers Secure Build Server (SBS) functionality to sign your applications and also to sign and encrypt the registration definition for the deployment to securely build your own image.",
+      "href": "/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild"
+    }
+  ],
+  "section_videos": [
+    {
+      "title": "Getting started with IBM Cloud Hyper Protect Virtual Servers",
+      "href": "https://mediacenter.ibm.com/media/0_m4jeuhl6",
+      "thumbnail": "/image/thumbnail_getstarted-video.png"
+    }
+  ],
+  "section_learn": {
+    "developer": "https://developer.ibm.com/components/hyper-protect/"
+  },
+  "section_updates": {
+    "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
+    "tiles": [
+      {
+        "date": "21 May 2021",
+        "title": "Creating registration definition file with the CLI and adding Linux capabilities to it",
+        "description": "You can create a registration definition file by using the CLI, and also add Linux capabilities to the registration definition file."
+      },
+      {
+        "date": "26 February 2021",
+        "title": "Protecting your image build with Secure Build Server",
+        "description": "You can use the Hyper Protect Virtual Servers Secure Build Server to securely build an image, which you then can use to provision a virtual server."
+      },
+      {
+        "date": "24 February 2021",
+        "title": "Using the `outbound` parameter when provisioning a virtual server",
+        "description": "The new parameter `outbound` is now available when you provision a server."
+      }
+    ]
+  }
+}
