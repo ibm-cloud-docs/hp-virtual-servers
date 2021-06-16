@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-15-06"
+lastupdated: "2021-06-15"
 
 ---
 
@@ -20,6 +20,10 @@ lastupdated: "2021-15-06"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 16 June 2021
+{: #Jun16-2021}
+You can now add Linux capabilities by using the `hpvs registration-create` command.
 
 ## 15 June 2021
 {: #Jun15-2021}

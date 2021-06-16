@@ -36,19 +36,19 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
+        "date": "16 June 2021",
+        "title": "Adding Linux capabilities",
+        "description": "You can now add Linux capabilities by using the `hpvs registration-create` command."
+      },
+      {
+        "date": "15 June 2021",
+        "title": "Monitoring logs of the virtual server",
+        "description": "You can monitor logs of the Hyper Protect Virtual Server instances after you deploy LogDNA on the Hyper Protect Virtual Servers."
+      },
+      {
         "date": "21 May 2021",
         "title": "Creating registration definition file with the CLI and adding Linux capabilities to it",
         "description": "You can create a registration definition file by using the CLI, and also add Linux capabilities to the registration definition file."
-      },
-      {
-        "date": "26 February 2021",
-        "title": "Protecting your image build with Secure Build Server",
-        "description": "You can use the Hyper Protect Virtual Servers Secure Build Server to securely build an image, which you then can use to provision a virtual server."
-      },
-      {
-        "date": "24 February 2021",
-        "title": "Using the `outbound` parameter when provisioning a virtual server",
-        "description": "The new parameter `outbound` is now available when you provision a server."
       }
     ]
   }

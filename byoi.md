@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-15"
 
 subcollection: hp-virtual-servers
 
@@ -38,9 +38,8 @@ Learn more about IBM Cloud Hyper Protect Virtual Servers' Data usage and Certifi
 Before you provision a new server, check the [prerequisites](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_pre), then complete the following steps:
 
 1. [Create a custom image](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_create).
-2. [Adding Linux capabilities to the registration definition file](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_regdef).
-3. [Creating a registration definition file by using the CLI](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_regdef_cli).  
-4. [Use your OCI image to provision a Hyper Protect Virtual Server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_provision).
+2. [Creating a registration definition file by using the CLI](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_regdef_cli).  
+3. [Use your OCI image to provision a Hyper Protect Virtual Server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_provision).
 
 
 ## Prerequisites
@@ -112,7 +111,7 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 2. To create a registration file, run the `hpvs registration-create` command.
 
   ```
-  ibmcloud hpvs registration-create [--repository-name REPO-NAME] [--cr-username USER-NAME --cr-pwd-path FILE-PATH | --no-auth] [--allowed-env-keys ENV-KEYS | --no-env] [--image-key-id IMAGE-KEY-ID] [--image-key-public-path PUBLIC-KEY] [--registration-key-private-path PRIVATE-KEY-PATH] [--registration-key-public-path PUBLIC-KEY-PATH] [--gpg-passphrase-path PASS-PHRASE]
+  ibmcloud hpvs registration-create [--repository-name REPO-NAME] [--cr-username USER-NAME --cr-pwd-path FILE-PATH | --no-auth] [--allowed-env-keys ENV-KEYS | --no-env] [--image-key-id IMAGE-KEY-ID] [--image-key-public-path PUBLIC-KEY] [--registration-key-private-path PRIVATE-KEY-PATH] [--registration-key-public-path PUBLIC-KEY-PATH] [--gpg-passphrase-path PASS-PHRASE] --cap-add CAPABILITIES
   ```
   {: pre}
 
@@ -155,179 +154,9 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
   <dd>The path for the private key from the registration key pair.</dd>
   <dt>`--gpg-passphrase-path PASS-PHRASE` </dt>
   <dd>The path for the `gpg` pass phrase used for the private part of the registration key. The passphrase must consist of at least 6 characters. To make sure that a new line is not appended, use `echo` with `-n` or `cat` with EOF.</dd>
+  <dt>`--cap-add CAPABILITIES`</dt>
+  <dd>The Linux capabilities to be enabled are specified as a comma separated list.</dd>
   </dl>
-
-
-## Adding Linux capabilities to the registration definition file
-{: #byoi_regdef}
-The registration definition file contains metadata about the OCI image you want to use for your Hyper Protect Virtual Server, such as the repository name and the credentials to pull the image. Because it can contain secret information, you must encrypt and sign the file before you use it to create a new Virtual Server. You can encrypt and sign the file on any system on which `gpg` is installed. To use a Hyper Protect Virtual Server, install the `gpg` package by running `apt update && apt install -y gpg`.
-
-1. Create a file and copy this template for registration definition files into it:
-   ```
-   {
-         "repository_name": "",
-         "docker_username": "",
-         "docker_password": "",
-         "envs_whitelist": ["RUNQ_ROOTDISK", "RUNQ_RUNQENV", "RUNQ_SYSTEMD", "IMAGE_TAG", "REGION", "PHASE", "LPAR_NAME", "CPC", "RUNQ_CPU", "RUNQ_MEM", "POD"],
-         "public_key_id": "",
-         "public_key": "",
-         "vendor_key": "",
-         "cap_add": ["ALL"]
-   }
-   ```
-   {: codeblock}  
-
-   {:note}
-   Optionally, you can add Linux capabilities for your {{site.data.keyword.hpvs}} instance. The list of Linux capabilities are available at [Capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html). All the capabilities listed are supported except "CAP_PERFMON", "CAP_BPF", and CAP_CHECKPOINT_RESTORE". While adding the capabilities, you must remove the prefix "CAP". For example, CAP_AUDIT_CONTROL must be specified as AUDIT_CONTROL. To enable all privileges, you can use "cap_add": ["ALL"], but as a good security practice, provide the least possible privileges for your virtual server instance.
-1. Enter the value for the repository name in the `repository_name` field in the template. This parameter requires the full path to the OCI image without the tag, for example, `docker.io/library/ubuntu/` or `de.icr.io/hpvs/ubuntu`.
-1. Enter your credentials to authenticate on the registry in the `docker_username` and `docker_password` fields. If you use {{site.data.keyword.cloud_notm}} Container Registry, your username is `iamapikey` and the password is your API key. If your image does not require authentication, leave the values for `docker_username` and `docker_password` empty.
-1. Run `docker trust inspect <image>` and copy the Root key ID from the AdministrativeKeys that was used to sign the Docker Image on your build system.  Paste the ID into the `public_key_id` value field in the template, for example:
-   ```
-   DOCKER_CONTENT_TRUST_SERVER=https://<registry_region>.icr.io:4443 docker trust inspect <image>
-   ```
-   {: pre}
-   ```
-   [
-       {
-           "Name": "<image>",
-           "SignedTags": [
-               {
-                   "SignedTag": "<tag>",
-                   "Digest": "1e8d9dee88b7db28057ade6b870ef40f98bc67492588568520fa2ba5000b8fa0",
-                   "Signers": [
-                       "Repo Admin"
-                   ]
-               }
-            ],
-           "Signers": [],
-           "AdministrativeKeys": [
-               {
-                   "Name": "Root",
-                   "Keys": [
-                       {
-                           "ID": "c4a4088f868d2fd6f11686f7851e7166d7ef3e61c002ee990f5c68c21b038601"
-                       }
-                   ]
-               },
-               {
-                   "Name": "Repository",
-                   "Keys": [
-                       {
-                           "ID": "1b162fbf73a5baa9e59174b863a650a09a8752e89f67fc0548f83238183b1934"
-                       }
-                   ]
-               }
-           ]
-       }
-   ]
-   ```
-1. Open the Docker metadata file `~/.docker/trust/tuf/<image>/metadata/root.json` and locate the Key ID from the previous step. Copy the public key from that file and paste it in the `public_key` field. With that step, the content of the template is complete.
-1. Create a gpg batch file with the following content and add your own passphrase:
-   ```
-   %echo Generating registration definition key
-   Key-Type: RSA
-   Key-Length: 4096
-   Subkey-Type: RSA
-   Subkey-Length: 4096
-   Name-Real: isv_user
-   Expire-Date: 0
-   Passphrase: <passphrase>
-   # Do a commit here, so that we can later print "done" :-)
-   %commit
-   %echo done
-   ```
-   {: codeblock}
-1. Run `gpg -a --batch --generate-key <batchfile>` to create a new keypair as the `isv_user` identity, which is used for signing the registration file in a later step:
-   ```
-   gpg -a --batch --generate-key <batchfile>
-   ```
-   {: pre}
-   ```
-   gpg: Generating registration definition key
-   gpg: /root/.gnupg/trustdb.gpg: trustdb created
-   gpg: key DDEC881AEE6DD1F5 marked as ultimately trusted
-   gpg: directory '/root/.gnupg/openpgp-revocs.d' created
-   gpg: revocation certificate stored as '/root/.gnupg/openpgp-revocs.d/12B9EF207977393E334DDAD1DDEC881AEE6DD1F5.rev'
-   gpg: done
-   ```
-1. Export the public part of the key by running the following command:
-   ```
-   gpg --armor --export isv_user > isv_user.pub
-   ```
-   {: pre}
-
-1. To back up your private key, you can export it by running `gpg --armor --pinentry-mode=loopback --passphrase  <passphrase> --export-secret-keys isv_user > isv_user.private`. Store the exported private key somewhere else.
-   ```
-   gpg --armor --pinentry-mode=loopback --passphrase  <passphrase> --export-secret-keys isv_user > isv_user.private
-   ```
-   {: pre}
-
-1. Open the isv_user.pub and replace all newlines with `\n`. You can do this in vim, by running `:%s/\n/\\n/g`. Copy the complete content of the file and paste it in the `vendor_key` value in the template.
-1. Copy the following public key, which is used for encrypting the registration file, into a file:
-  ```
-  -----BEGIN PGP PUBLIC KEY BLOCK-----
-  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
-  8ty0LuCdUvbKsEuietRUgjEzuZ8FrA2q
-  =y8qG
-  -----END PGP PUBLIC KEY BLOCK-----
-  ```
-  {: codeblock}
-1. To import the public key from the previous step, run:  
-  ```
-  gpg --import <filename>
-  ```
-  {: pre}
-1. To encrypt and sign the registration definition file, run:
-  ```
-  gpg --encrypt --sign --local-user isv_user --armor -r rtoa_destination <registration_template>
-  ```
-  {: pre}
-
-  The signature is done with the private key you generated earlier and the file is encrypted by using the public key that you imported.
 
 
 ## Using your OCI Image to provision a Hyper Protect Virtual Server
