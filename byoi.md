@@ -172,7 +172,7 @@ The registration definition file contains metadata about the OCI image you want 
          "public_key_id": "",
          "public_key": "",
          "vendor_key": "",
-         "cap_add": ["ALL"],
+         "cap_add": ["ALL"]
    }
    ```
    {: codeblock}  
