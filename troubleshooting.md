@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-11-17"
+  years: 2019, 2020, 2021
+lastupdated: "2021-06-17"
 
 subcollection: hp-virtual-servers
 
@@ -27,6 +27,24 @@ subcollection: hp-virtual-servers
 
 If you run into problems while you're using {{site.data.keyword.hpvs}}, you can recover from these problems in many cases by following a few steps.
 {:shortdesc}
+
+## Updating the Secure Build Server (SBS) fails
+{: #sbsupdate_fail}
+{: troubleshoot}
+{: support}
+
+Updating the Secure build image fails and you can't update the SBS image from 1.3.0. to 1.3.0.1.
+{: troubleshoot}
+
+When you update the SBS image by running the `hpvs instance-update` command, the update task fails.
+{: tsSymptoms}
+
+The Docker images were moved to IBM Cloud Registry from DockerHub which results in the failure of the update task.
+{: tsCauses}
+
+This is a limitation. You will have to update to the new image by creating a new Hyper Protect Virtual Server instance.
+{: tsResolve}
+
 
 ## You can't see the details of your virtual server instance on its dashboard - or the dashboard seems to display incorrectly
 {: #no_details_hpvs}
