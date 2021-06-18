@@ -1,6 +1,6 @@
 {
   "title": "IBM Cloud Hyper Protect Virtual Servers documentation",
-  "lastupdated": "2021-06-15",
+  "lastupdated": "2021-06-16",
   "introduction": "Find useful information about Hyper Protect Virtual Servers.",
   "section_devtools": {
     "cli": "/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin"
@@ -36,6 +36,11 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
+        "date": "18 June 2021",
+        "title": "Registration definition file is updated",
+        "description": "You can use the repository definition file that is updated to pull images from the IBM Cloud Registry."
+      },
+      {
         "date": "16 June 2021",
         "title": "Adding Linux capabilities",
         "description": "You can now add Linux capabilities by using the `hpvs registration-create` command."
@@ -44,11 +49,6 @@
         "date": "15 June 2021",
         "title": "Monitoring logs of the virtual server",
         "description": "You can monitor logs of the Hyper Protect Virtual Server instances after you deploy LogDNA on the Hyper Protect Virtual Servers."
-      },
-      {
-        "date": "21 May 2021",
-        "title": "Creating registration definition file with the CLI and adding Linux capabilities to it",
-        "description": "You can create a registration definition file by using the CLI, and also add Linux capabilities to the registration definition file."
       }
     ]
   }

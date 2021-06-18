@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-18"
 
 ---
 
@@ -20,6 +20,10 @@ lastupdated: "2021-06-15"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 18 June 2021
+{: #Jun18-2021}
+The repository definition file is updated to pull images from the IBM Cloud Registry.
 
 ## 16 June 2021
 {: #Jun16-2021}
