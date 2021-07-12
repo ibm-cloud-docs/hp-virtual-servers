@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-12"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2021-06-18"
 {:tip: .tip}
 {:pre: .pre}
 
-# What's new
+# Release notes
 {: #whats-new}
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
@@ -23,25 +23,36 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 
 ## 18 June 2021
 {: #Jun18-2021}
-The repository definition file is updated to pull images from the IBM Cloud Registry.
+Updated: The repository definition file
+
+The repository definition file is updated to pull images from the IBM Cloud Registry. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 ## 16 June 2021
 {: #Jun16-2021}
-You can now add Linux capabilities by using the `hpvs registration-create` command.
+Updated: The `hpvs registration-create` command
+
+You can now add Linux capabilities by using the `hpvs registration-create` command. For more information, see [Using your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
 
 ## 15 June 2021
 {: #Jun15-2021}
-You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances after you deploy LogDNA on the {{site.data.keyword.hpvs}} instance.
+Added: Monitoring logs of {{site.data.keyword.hpvs}} instances.
+
+You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances by using IBM Log Analysis with LogDNA on the {{site.data.keyword.hpvs}} instance. For more information, see [Monitoring logs](/docs/hp-virtual-servers?topic=hp-virtual-servers-monitoring).
 
 ## 21 May 2021
 {: #May21-2021}
-The {{site.data.keyword.cloud_notm}} command line interface can be used to create a registration definition file, and the gpg registration key. You can also manually add Linux capabilities to the registration definition file. The registration definition file for SBS is updated for security compliance.
+Updated: Deploying the Secure Build Server as a Hyper Protect Virtual Server
+
+The {{site.data.keyword.cloud_notm}} command line interface can be used to create a registration definition file, and the gpg registration key. You can also manually add Linux capabilities to the registration definition file. The registration definition file for SBS is updated for security compliance.  For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 ## 26 February 2021
 {: #Feb26-2021}
-You can now use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to securely build an image, which you then can use to provision a virtual server.
 
-The tutorial "Using Secure Build Server with a digital wallet" is available.
+Added: {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server feature and the tutorial for using the Secure Build Server with a digital wallet
+
+You can now use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to securely build an image, which you then can use to provision a virtual server.  For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
+
+The tutorial "Using Secure Build Server with a digital wallet" is available. For more information, see [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 24 February 2021
 {: #Feb24-2021}

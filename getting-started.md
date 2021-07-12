@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-11-17"
+  years: 2019, 2020, 2021
+lastupdated: "2021-07-11"
 
 subcollection: hp-virtual-servers
 
@@ -21,7 +21,7 @@ keywords: hyper protect virtual servers, Hyper Protect Virtual Servers, getting 
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 
-# Getting started tutorial  
+# Getting started with  {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}
 {: #getting-started}
 
 Using the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service, you can provision virtual servers on a highly secure stack with an Ubuntu Linux operating system. On such a virtual server instance, you can run a myriad of Linux applications and containerized workloads.

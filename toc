@@ -5,6 +5,11 @@
 {: .toc subcollection="hp-virtual-servers" category="compute" audience="service" href="/docs/hp-virtual-servers" console-page="/catalog/services/hyper-protect-virtual-servers" product-page="https://www.ibm.com/cloud/hyper-protect-virtual-servers" path="hp-virtual-servers"}
 Hyper Protect Virtual Servers
 
+    {: .navgroup id="tutorial"}
+    tutorial-secure-build-server.md
+    tutorial-secure-network.md
+    {: .navgroup-end}
+
     {: .navgroup id="learn"}
     getting-started.md
     overview.md
@@ -41,21 +46,21 @@ Hyper Protect Virtual Servers
     {: .navgroup id="reference"}
     hpvs_responsibilities.md
     /hpvs-cli-plugin/hpvs-cli-plugin-hpvs_cli_plugin
-    tutorial-secure-build-server.md
+    certified_workloads.md
     [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
     [Hyper Protect Services tutorials and other resources](https://ibm-hyper-protect.github.io/)
     [Hyper Protect Crypto Services](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started)
     [Hyper Protect DBaaS for MongoDB](https://cloud.ibm.com/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted)
     [Hyper Protect DBaaS for PostgreSQL](https://cloud.ibm.com/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted)
+    open-source-licenses.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    get_help.md
+    FAQs.md
 
     {: .topicgroup}
     Troubleshooting
         troubleshooting.md
         supported_browsers.md
-    FAQs.md
-    open-source-licenses.md
+    get_help.md
     {: .navgroup-end}

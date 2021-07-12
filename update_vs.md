@@ -38,7 +38,7 @@ Check the information in [Updating the authorized_keys file](/docs/services/hp-v
 
 When you update your image, the server settings are updated, for example, the [hardening configuration](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs). The update also creates a new SSH host key (the old key is deleted).
 
-The following message is displayed the first time to you connect after the update because there is a new SSH host key..
+The following message is displayed the first time to you connect after the update because there is a new SSH host key.
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @

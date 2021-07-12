@@ -488,7 +488,7 @@ The command downloads and stores a set of files in your current working director
 
 ### 12. Extract the manifest file.
 
-Extract the archive file that is retrieved in the next step by running the following command:
+Extract the archive file that was retrieved in the previous step by running the following command:
 ```
 # tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig.tbz
 ```

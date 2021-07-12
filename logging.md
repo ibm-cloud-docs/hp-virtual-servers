@@ -23,7 +23,7 @@ keywords: virtual server instance, instance, logging, logs, logDNA, virtual serv
 # Monitoring logs
 {: #monitoring}
 
-You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances, for example, web server, or application logs. To enable the collection of such logs, you must deploy LogDNA on the {{site.data.keyword.hpvs}} instance.
+You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances, for example, web server, or application logs. To enable the collection of such logs, you must use IBM Log Analysis with LogDNA on the {{site.data.keyword.hpvs}} instance.
 
 {: shortdesc}
 

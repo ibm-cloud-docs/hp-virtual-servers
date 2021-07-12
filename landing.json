@@ -1,6 +1,6 @@
 {
-  "title": "IBM Cloud Hyper Protect Virtual Servers documentation",
-  "lastupdated": "2021-06-16",
+  "title": "IBM Cloud Hyper Protect Virtual Servers docs",
+  "lastupdated": "2021-07-11",
   "introduction": "Find useful information about Hyper Protect Virtual Servers.",
   "section_devtools": {
     "cli": "/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin"
