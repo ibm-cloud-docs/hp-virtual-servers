@@ -17,7 +17,7 @@ subcollection: hp-virtual-servers
 {:tip: .tip}
 {:pre: .pre}
 
-# Getting support
+# Getting help and support
 {: #support}
 
 If you have problems or questions when you use {{site.data.keyword.hpvs}}, you can check the {{site.data.keyword.cloud_notm}} status, or you can search for information or ask questions in a forum. You can also open a support ticket.
