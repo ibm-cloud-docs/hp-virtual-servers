@@ -1,6 +1,6 @@
 {
   "title": "IBM Cloud Hyper Protect Virtual Servers docs",
-  "lastupdated": "2021-07-11",
+  "lastupdated": "2021-07-29",
   "introduction": "Find useful information about Hyper Protect Virtual Servers.",
   "section_devtools": {
     "cli": "/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin"
@@ -36,6 +36,11 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
+        "date": "29 July 2021",
+        "title": "Secure network",
+        "description": "You can use the secure network which provides an end to end encrypted network communication for IBM Cloud Hyper Protect Virtual Server services"
+      },
+      {
         "date": "18 June 2021",
         "title": "Registration definition file is updated",
         "description": "You can use the repository definition file that is updated to pull images from the IBM Cloud Registry."
@@ -44,11 +49,6 @@
         "date": "16 June 2021",
         "title": "Adding Linux capabilities",
         "description": "You can now add Linux capabilities by using the `hpvs registration-create` command."
-      },
-      {
-        "date": "15 June 2021",
-        "title": "Monitoring logs of the virtual server",
-        "description": "You can monitor logs of the Hyper Protect Virtual Server instances after you deploy LogDNA on the Hyper Protect Virtual Servers."
       }
     ]
   }
