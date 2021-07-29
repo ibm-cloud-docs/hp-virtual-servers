@@ -46,7 +46,6 @@ Hyper Protect Virtual Servers
     {: .navgroup id="reference"}
     hpvs_responsibilities.md
     /hpvs-cli-plugin/hpvs-cli-plugin-hpvs_cli_plugin
-    certified_workloads.md
     [Hyper Protect Services](https://www.ibm.com/cloud/hyper-protect-services)
     [Hyper Protect Services tutorials and other resources](https://ibm-hyper-protect.github.io/)
     [Hyper Protect Crypto Services](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started)
