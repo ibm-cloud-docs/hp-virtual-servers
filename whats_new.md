@@ -25,7 +25,7 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 {: #Jul29-2021}
 Added: Secure network tutorial
 
-The tutorial "Secure network" is now available that describes how you can set up the secure network which provides an end to end encrypted network communication for {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} services. For more information, see [Tutorial: Setting up the secure network](/docs/hp-virtual-servers?topic=tutorial-secure-network).
+The tutorial "Secure network" is now available that describes how you can set up the secure network which provides an end to end encrypted network communication for {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} services. For more information, see [Tutorial: Setting up the secure network](docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_network).
 
 ## 18 June 2021
 {: #Jun18-2021}
