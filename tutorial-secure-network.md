@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-21"
 
 subcollection: hp-virtual-servers
 
@@ -392,7 +392,7 @@ The configuration of secure networking now complete.
 
 {:note}
 Be aware that after a VPN node is added as a trusted peer, it can connect to your applications running on the virtual server via the VPN IP, therefore you must ensure that the added VPN node can be trusted and the information about the node is correct. If the added node is malicious, your application might be exposed to potential attacks.
-Note
+
 
 ## End to end encryption via the VPN tunnel
 {: #vpn_tunnel}
