@@ -65,13 +65,13 @@ From your client workstation, you can connect to a virtual server that exists on
 {: #gs_useraccess}
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
-Access to the management of {{site.data.keyword.hpvs}} service instances is controlled by IBM Cloud Identity and Access Management (IAM) but the servers use standard Ubuntu user-access management. You can find more information [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-manage_access.
+Access to the management of {{site.data.keyword.hpvs}} service instances is controlled by IBM Cloud Identity and Access Management (IAM) but the servers use standard Ubuntu user-access management. You can find more information [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-manage_access){: external}.
 
 ## Securing your data
 {: #gs_secure}
-To securely manage your data when you use {{site.data.keyword.hpvs}}, you must know what data is stored and encrypted and how to delete any personal data. You can find more information about how to protect your data and the {{site.data.keyword.cloud_notm}} network architecture [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-mng-data).
+To securely manage your data when you use {{site.data.keyword.hpvs}}, you must know what data is stored and encrypted and how to delete any personal data. You can find more information about how to protect your data and the {{site.data.keyword.cloud_notm}} network architecture [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-mng-data){: external}.
 
 ## Protecting your {{site.data.keyword.hpvs}}
 {: #gs_protect}
 A {{site.data.keyword.hpvs}} server has two disks, "boot" and "data". The boot disk is always 25 GB. If your boot disk is full, the server can't start. You can't recover your instance because your boot disk can't be resized.
-The size of the data disk varies, and depends on your plan. Make sure that important data is persisted on the data disk. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and you can't log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+The size of the data disk varies, and depends on your plan. Make sure that important data is persisted on the data disk. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and you can't log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs){: external}.
