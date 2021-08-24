@@ -33,7 +33,7 @@ If you run into problems while you're using {{site.data.keyword.hpvs}}, you can 
 {: troubleshoot}
 {: support}
 
-Updating the Secure build image fails and you can't update the SBS image from 1.3.0. to 1.3.0.1.
+Updating the Secure build image fails when you are updating the SBS image from 1.3.0 to 1.3.0.1, or 1.3.0.2. However, you can update the SBS image from 1.3.0.1 to 1.3.0.2.
 {: troubleshoot}
 
 When you update the SBS image by running the `hpvs instance-update` command, the update task fails.
