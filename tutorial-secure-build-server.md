@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-08-24"
 
 subcollection: hp-virtual-servers
 
