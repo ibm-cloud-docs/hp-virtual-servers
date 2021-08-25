@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-19"
 
 ---
 
@@ -20,6 +20,12 @@ lastupdated: "2021-07-29"
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 19 August 2021
+{: #Aug19-2021}
+
+The provided Ubuntu operating system is now partwisely hardened according to CIS Ubuntu Linux 20.04 LTS Benchmark, Level 1 - Server profile.
+This operating system update will be provided only to new instances.
 
 ## 29 July 2021
 {: #Jul29-2021}

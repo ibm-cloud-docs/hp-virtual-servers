@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-08-19"
 
 subcollection: hp-virtual-servers
 
@@ -65,8 +65,8 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 Answer `yes` to allow SSH to add your server to the list of known hosts:
 
-`Warning: Permanently added '198.51.100.21' (ECDSA) to the list of known hosts.`
-`Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-47-generic s390x)`
+`Warning: Permanently added '52.116.6.26' (ECDSA) to the list of known hosts.`
+`Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-74-generic s390x)`
 
 ## Logging-in from Windows by using **PuTTY Configuration**
 {: #connect_vs_with_putty}

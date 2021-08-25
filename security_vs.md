@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2021-08-19"
 
 subcollection: hp-virtual-servers
 
@@ -32,7 +32,7 @@ Learn more about IBM Cloud Hyper Protect Virtual Servers' Data usage and Certifi
 
 For Ubuntu, different **System Hardening Guide** documents are available.
 
-The Ubuntu operating system that is provided for your virtual servers is part wisely hardened according to the CIS Ubuntu Linux 18.04 LTS Benchmark, Level 1- Server profile, which means that the operating system is more secure than the standard Ubuntu image. However, it still might not be secure enough to meet to your requirements.
+The Ubuntu operating system that is provided for your virtual servers is part wisely hardened according to the CIS Ubuntu Linux 20.04 LTS Benchmark, Level 1- Server profile, which means that the operating system is more secure than the standard Ubuntu image. However, it still might not be secure enough to meet to your requirements.
 Select a **System Hardening Guide** depending on your companies’ location and policies.
 
 The subsequent description presents an overview of the features that are implemented for the Ubuntu OS offered with {{site.data.keyword.hpvs}}.   
