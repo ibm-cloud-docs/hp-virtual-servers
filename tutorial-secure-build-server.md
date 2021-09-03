@@ -49,7 +49,7 @@ To build a container image with Secure Build Server, you must complete these ste
 - Set up a Secure Build Server instance, then use the CLI to start the build on this instance.
 - Secure Build Server pulls the source code from a GitHub repository, in this case from the Digital Wallet repository.
 - Secure Build Server uses the source code's Dockerfile to build a container image.
-- Secure Build Server signs the container image and pushes the container image to a container registry, such as IBM Container Registry or Docker Hub.
+- Secure Build Server signs the container image and pushes the container image to the IBM Container Registry or Docker Hub.
 - Secure Build Server creates a manifest file and signs it. The manifest file is used to verify the source of the image and the integrity of the build. It contains the source code from which the image was built as well as the build log. You can download the manifest file from the Secure Build Server, and, for example, use it for audit purposes or pass it to an auditor. The manifest file is signed by signing keys that are kept inside the secure enclave.
 -	Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
 
