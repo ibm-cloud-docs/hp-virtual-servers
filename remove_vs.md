@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-08-25"
 
 subcollection: hp-virtual-servers
 
@@ -22,7 +22,7 @@ keywords: deleting virtual server, resource reclamations
 {: #remove_vs}
 
 You can use the {{site.data.keyword.hpvs}} UI or the CLI to delete virtual servers. Deleted servers that belong to paid plans can also be restored before the reclamation period expires.
-{:shortdesc}
+{: shortdesc}
 
 ## Deleting a virtual server in the UI
 
@@ -37,19 +37,20 @@ You can use the {{site.data.keyword.hpvs}} UI or the CLI to delete virtual serve
 
 To delete {{site.data.keyword.hpvs}} from the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin):
 
-1. Make sure you know the Cloud resource name (CRN) of the server you want to delete. To find the CRN, run:
+1. Make sure you know the Cloud resource name (CRN) of the server you want to delete. To find the CRN,  run:
 
-```
-ibmcloud hpvs instances
-```
-{:pre}
+   ```
+   ibmcloud hpvs instances
+   ```
+   {: pre}
 
 2. To delete the server, run the following command:
 
-```
-ibmcloud hpvs instance-delete CRN --force
-```
-{:pre}
+   ```
+   ibmcloud hpvs instance-delete CRN --force
+   ```
+   {: pre}
+
 Where `CRN` is Cloud resource name of the server you want to delete. Use `--force` to force the deletion of the {{site.data.keyword.hpvs}} instance without showing a confirmation prompt.
 
 
@@ -70,4 +71,4 @@ Servers that belong to a paid plans do not expire, and that's why they can be re
 
 After the server is deleted, only metadata, which isn't considered to be personal data is kept for 6 months.
 Make sure you back up important data for future use because you can't recover data after the virtual server has been deleted.
-{:important}
+{: important}

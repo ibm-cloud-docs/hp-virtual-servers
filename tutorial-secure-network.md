@@ -47,8 +47,9 @@ Some of the key features of the secure network are listed here:
 - An end-to-end encrypted network.
 - Controlled by the user rather than the cloud provider. The secure network configuration for a virtual server is managed by the user who creates the Hyper Protect Virtual Server instance, and this configuration cannot be modified by the IBM Cloud IAM user, nor by the IBM Cloud operator.
 
-{:note}
+
 A user with administrator access to the Hyper Protect Virtual Server must set up the entire secure network and can configure multiple users to this role, who have access to the capabilities to manage the secure network and deploy solutions on the secure network. Be aware that currently the secure network does not provide audit logs for commands that are sent by different users. Therefore, do not enable multiple users to access the same virtual server if it's not required.
+{: note}
 
 
 ![Secure network architecture diagram](image/secure_network_arch.png "Secure network architecture")
@@ -83,6 +84,7 @@ Complete the following steps:
      openssl dgst -sha256 -verify dap-public.pem -signature encryptedNetworkCli-1.0.0.tar.gz.sig encryptedNetworkCli-1.0.0.tar.gz
      ```
      {: pre}
+
      The following snippet shows an example output.
      ```
      encryptedNetworkCli-1.0.0.tar.gz Verified OK
@@ -92,6 +94,7 @@ Complete the following steps:
      tar -zxvf encryptedNetworkCli-1.0.0.tar.gz
      ```
      {: pre}
+
      After you successfully extract the compressed file, the folder 'encryptedNetworkCli' contains a list of the CLI files that are provided for different operating systems or architecture. Choose the one suits your environment, and rename it to `hpnet`. For example, to rename the file on macOS, you can run the following command.
      ```
      mv ./hpnet-cli.mac.amd64.1.0.0 ./hpnet
@@ -103,6 +106,7 @@ Complete the following steps:
    export APIKEY=<your_apikey>
    ```
    {: pre}
+
 3. For more details about each command that is supported by the secure network management CLI, see [Command reference](#ref_sn).
 
 
@@ -125,6 +129,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
    apt-get update && apt-get install -y ca-certificates
    ```
    {: pre}
+
 2. Create the `authorized_user` file and save it at `/data/hpagent_store/authorized_user`, with a list of {{site.data.keyword.cloud_notm}} user IDs. The secure network management agent uses this list to approve a request and rejects any request that is not in this list.
    To create the `authorized_user` file, run the following commands:    
    ```
@@ -135,6 +140,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
    EOF
    ```
    {: codeblock}
+
 3. You must configure iptables rules for the Hyper Protect Virtual Server to open ports for the agent and WireGuard, otherwise the secure network management agent CLI will not be able to connect to the secure network management agent, or other nodes will not be able to connect the virtual server via the WireGuard VPN IP. The default port for the secure network management agent is 5566, which cannot be changed. The port value for WireGuard should be a value between 1024 - 65535. This tutorial uses a value of 6666 for both HPVS_A and HPVS_B.
    To configure the iptables rules, run the following command:      
    ```
@@ -143,6 +149,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
    iptables -A INPUT -p tcp --dport ${WGPORT} -j ACCEPT
    ```
    {: pre}
+
    If the secure network management agent is deployed in a Hyper Protect Virtual Server instance which is in the staging environment (you should not run this command in the production environment), then you must export the following variable:
    ```
    export isProduction=false
@@ -155,6 +162,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
      openssl dgst -sha256 -verify dap-public.pem -signature encryptednetwork-1.0.0.tar.gz.sig encryptednetwork-1.0.0.tar.gz
      ```
      {: pre}
+
      The following snippet shows an example output.
      ```
      encryptednetwork-1.0.0.tar.gz Verified OK
@@ -164,12 +172,14 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
      tar -zxvf encryptednetwork-1.0.0.tar.gz
      ```
      {: pre}
+
      After you successfully extract the compressed file, the folder 'encryptednetwork' contains a file `encryptednetwork`
    - To install and launch the secure network management agent, run the following command:
      ```
      nohup ./encryptednetwork > log.txt 2>&1 &
      ```
-     {: pre}   
+     {: pre}
+
      The secure network management agent is now running.
      The following network configuration files are mounted at `/data/hpagent_store`:
      ```
@@ -212,6 +222,7 @@ See [Parameter specification](#param_limit) for details about some specification
      export AGENT_URL_A=<HPVS_A_IP>:5566
      ```
      {: pre}
+
      where `HPVS_A_IP` is the IP address of 'HPVS_A'.
    - To set the `adminkey`, run the following command.
      ```
@@ -238,6 +249,7 @@ See [Parameter specification](#param_limit) for details about some specification
      export ADMIN_PRIV_KEY_A=<PrivateKey_Path_for_HPVS_A>
      ```
      {: pre}
+
      where `PrivateKey_Path_for_HPVS_A` is the path to the file for the private key, which is displayed in the result of the `hpnet adminkey set` command.
 
 2. To set the `adminkey` by using an auto-generated admin keypair on {{site.data.keyword.hpvs}} instance 'HPVS_B', complete the following steps:
@@ -246,6 +258,7 @@ See [Parameter specification](#param_limit) for details about some specification
      export AGENT_URL_B=<HPVS_B_IP>:5566
      ```
      {: pre}
+
      where `HPVS_B_IP` is the IP address of 'HPVS_B'.
    - To set the `adminkey`, run the following command.
      ```
@@ -272,6 +285,7 @@ See [Parameter specification](#param_limit) for details about some specification
      export ADMIN_PRIV_KEY_B=<PrivateKey_Path_for_HPVS_B>
      ```
      {: pre}
+
      where `PrivateKey_Path_for_HPVS_B` is the path to the file for the private key, which is displayed in the result of the `hpnet adminkey set` command.
 
 
@@ -300,6 +314,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      export WGPORT_A=6666
      ```
      {: codeblock}
+
      The WireGuard port value is set when you configure the iptables rules for the Hyper Protect Virtual Server. This tutorial uses a value of 6666.
    - To set up the VPN Node, run the following command:
      ```
@@ -326,6 +341,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      export WGPORT_B=6666
      ```
      {: codeblock}
+
      The WireGuard port value is set when you configure the iptables rules for the Hyper Protect Virtual Server. This tutorial uses a value of 6666.
    - To set up the VPN Node, run the following command:
      ```
@@ -357,6 +373,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      export PEER_VPN_PUBLIC_KEY_A=<VPNPublicKey_of_VPN_node_for_HPVS_B>
      ```
      {: codeblock}
+
      where `peer-endpoint` should be `<HPVS_B_IP>:wgport`, and `peer-vpn-pub-key` is `VPNPublicKey` of the trusted peer, which is displayed in result of the `hpnet node set` command for HPVS_B.
    - To set 'HPVS_B' as the VPN trusted peer for 'HPVS_A', run the following command:
      ```
@@ -376,6 +393,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      export PEER_VPN_PUBLIC_KEY_B=<VPNPublicKey_of_VPN_node_for_HPVS_A>
      ```
      {: codeblock}
+
      where `peer-endpoint` should be `<HPVS_A_IP>:wgport`, and `peer-vpn-pub-key` is `VPNPublicKey` of the trusted peer, which is displayed in result of the `hpnet node set` command for HPVS_A.
    - To set 'HPVS_A' as the VPN trusted peer for 'HPVS_B', run the following command:
      ```
@@ -390,8 +408,9 @@ Now a new VPN virtual network interface is created on the virtual server and con
 
 The configuration of secure networking now complete.  
 
-{:note}
+
 Be aware that after a VPN node is added as a trusted peer, it can connect to your applications running on the virtual server via the VPN IP, therefore you must ensure that the added VPN node can be trusted and the information about the node is correct. If the added node is malicious, your application might be exposed to potential attacks.
+{: note}
 
 
 ## End to end encryption via the VPN tunnel
@@ -407,162 +426,173 @@ After setting up the admin key, the VPN node, and the VPN trusted peers, complet
 ## Command reference
 {: #ref_sn}
 
-{:note}
+
 Ensure that you have exported the appropriate parameters before you run these commands.
+{: note}
 
 - To view the details of the commands and their parameters, type the command you want view with the `--help` option, for example the following command shows you details about the `hpnet peer add` command:
-  ```
-  ./hpnet peer add --help
-  ```
-  {: pre}
-  The following snippet shows the output.
-  ```
-  to add a peer on a node
-  Usage:
-  hpnet peer add [flags]
+   ```
+   ./hpnet peer add --help
+   ```
+   {: pre}
 
-  Flags:
-        --admin-priv-key string     The the private key used to sign the request
-        --apikey string             The APIKEY of the user
-    -h, --help                      help for add
-        --peer-endpoint string      The <peerip:wgport> for wireguard link
-        --peer-vpn-ip string        The ipaddress (a.b.c.d) or CIDR format ipaddress (a.b.c.d/n) configured on the peer is used for wireguard link
-        --peer-vpn-pub-key string   The base64 format of ed25519 public key which is used for wireguard link
-        --url string                The url of the server
-  ```
+   The following snippet shows the output.
+   ```
+   to add a peer on a node
+   Usage:
+   hpnet peer add [flags]
+
+   Flags:
+         --admin-priv-key string     The the private key used to sign the request
+         --apikey string             The APIKEY of the user
+     -h, --help                      help for add
+         --peer-endpoint string      The <peerip:wgport> for wireguard link
+         --peer-vpn-ip string        The ipaddress (a.b.c.d) or CIDR format ipaddress (a.b.c.d/n) configured on the peer is used for wireguard link
+         --peer-vpn-pub-key string   The base64 format of ed25519 public key which is used for wireguard link
+         --url string                The url of the server
+   ```
 
 
 - The `adminkey get` command
-  ```
-  ./hpnet adminkey get --apikey ${APIKEY} --url ${AGENT_URL}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  +------------+----------------------------------------------+
-  | PROPERTIES | VALUES                                       |
-  +------------+----------------------------------------------+
-  | PublicKey  | HnPEmF1YP8S820M5iAfNvIdjT+y9X15iOkfl4+nQVYw= |
-  +------------+----------------------------------------------+
+   ```
+   ./hpnet adminkey get --apikey ${APIKEY} --url ${AGENT_URL}
+   ```
+   {: pre}
 
-  command completed successfully.
-  ```
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   +------------+----------------------------------------------+
+   | PROPERTIES | VALUES                                       |
+   +------------+----------------------------------------------+
+   | PublicKey  | HnPEmF1YP8S820M5iAfNvIdjT+y9X15iOkfl4+nQVYw= |
+   +------------+----------------------------------------------+
+
+   command completed successfully.
+   ```
 
 - The `adminkey delete` command
-  ```
-  ./hpnet adminkey delete --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  command completed successfully.
-  ```
+   ```
+   ./hpnet adminkey delete --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY}
+   ```
+   {: pre}
+
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   command completed successfully.
+   ```
 
 - The `vpn node get` command
-  ```
-  ./hpnet node get --apikey ${APIKEY} --url ${AGENT_URL}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  +-----------------+----------------------------------------------+
-  | NODE-PROPERTIES | VALUES                                       |
-  +-----------------+----------------------------------------------+
-  | VPNPublicKey    | ryKzTUEHcOy6b2CGSbK8zOpqTl/eTlpQZgIxH7R3twY= |
-  | VPNIp           | 10.10.10.2/24                                |
-  | WGPort          | 6666                                         |
-  +-----------------+----------------------------------------------+
+   ```
+   ./hpnet node get --apikey ${APIKEY} --url ${AGENT_URL}
+   ```
+   {: pre}
 
-  command completed successfully.
-  ```
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   +-----------------+----------------------------------------------+
+   | NODE-PROPERTIES | VALUES                                       |
+   +-----------------+----------------------------------------------+
+   | VPNPublicKey    | ryKzTUEHcOy6b2CGSbK8zOpqTl/eTlpQZgIxH7R3twY= |
+   | VPNIp           | 10.10.10.2/24                                |
+   | WGPort          | 6666                                         |
+   +-----------------+----------------------------------------------+
+
+   command completed successfully.
+   ```
 
 - The `vpn node delete` command
-  ```
-  ./hpnet node delete --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  command completed successfully.
-  ```
+   ```
+   ./hpnet node delete --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY}
+   ```
+   {: pre}
+
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   command completed successfully.
+   ```
 
 - The `vpn peer list` command
-  ```
-  ./hpnet peer list --apikey ${APIKEY} --url ${AGENT_URL}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  +--------------------------------------------------------------+---------------+------------------+
-  | PUBLICKEY                                                    | VPNIP         | ENDPOINT         |
-  +--------------------------------------------------------------+---------------+------------------+
-  | ckZCVkZwaVpxUmtVZ2JWQUVPdy9kNTRqcHhOenk3TG1Nazh0WDVaYmJFOD0= | 10.10.10.2/32 | 172.17.0.2:6666  |
-  +--------------------------------------------------------------+---------------+------------------+
+   ```
+   ./hpnet peer list --apikey ${APIKEY} --url ${AGENT_URL}
+   ```
+   {: pre}
 
-  command completed successfully.
-  ```
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   +--------------------------------------------------------------+---------------+------------------+
+   | PUBLICKEY                                                    | VPNIP         | ENDPOINT         |
+   +--------------------------------------------------------------+---------------+------------------+
+   | ckZCVkZwaVpxUmtVZ2JWQUVPdy9kNTRqcHhOenk3TG1Nazh0WDVaYmJFOD0= | 10.10.10.2/32 | 172.17.0.2:6666  |
+   +--------------------------------------------------------------+---------------+------------------+
+
+   command completed successfully.
+   ```
 
 - The `vpn peer delete` command
-  ```
-  ./hpnet peer delete --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY} --peer-vpn-ip ${PEER_VPN_IP}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  command completed successfully.
-  ```
+   ```
+   ./hpnet peer delete --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY} --peer-vpn-ip ${PEER_VPN_IP}
+   ```
+   {: pre}
+
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   command completed successfully.
+   ```
 
 - To refresh the admin key pair (update the adminkey with an auto-generated admin keypair), run the following command.
-  ```
-  ./hpnet adminkey update --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  +------------+--------------------------------------------------------------------+
-  | KEYTYPE    | FILE                                                               |
-  +------------+--------------------------------------------------------------------+
-  | PrivateKey | /Users/sheryl/.hpnet-cfg/b8a10ea5-0b62-24a5-09b8-48d011c0c75b.priv |
-  | PublicKey  | /Users/sheryl/.hpnet-cfg/b8a10ea5-0b62-24a5-09b8-48d011c0c75b.pub  |
-  +------------+--------------------------------------------------------------------+
+   ```
+   ./hpnet adminkey update --apikey ${APIKEY} --url ${AGENT_URL} --admin-priv-key ${ADMIN_PRIV_KEY}
+   ```
+   {: pre}
 
-  An automatically generated keypair is stored locally and configured to node remotely, please keep the keypair carefully!!!
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   +------------+--------------------------------------------------------------------+
+   | KEYTYPE    | FILE                                                               |
+   +------------+--------------------------------------------------------------------+
+   | PrivateKey | /Users/sheryl/.hpnet-cfg/b8a10ea5-0b62-24a5-09b8-48d011c0c75b.priv |
+   | PublicKey  | /Users/sheryl/.hpnet-cfg/b8a10ea5-0b62-24a5-09b8-48d011c0c75b.pub  |
+   +------------+--------------------------------------------------------------------+
 
-  command completed successfully.
-  ```
-  Note: Once you refresh the admin key pair, you must use the new admin private key which is displayed as `PrivateKey` in the result table, as the value of `--admin-priv-key` to execute secure network agent CLI commands.
+   An automatically generated keypair is stored locally and configured to node remotely, please keep the keypair carefully!!!
+
+   command completed successfully.
+   ```
+   Note: Once you refresh the admin key pair, you must use the new admin private key which is displayed as `PrivateKey` in the result table, as the value of `--admin-priv-key` to execute secure network agent CLI commands.
 
 
 - To refresh the VPN node key pair for HPVS_A, run the following command.
-  ```
-  ./hpnet node set --apikey ${APIKEY} --url ${AGENT_URL_A} --admin-priv-key ${ADMIN_PRIV_KEY_A} --generate-keypair
-  ```
-  {: pre}
-  where `--generate-keypair` is used to generate a new keypair for the node.
+   ```
+   ./hpnet node set --apikey ${APIKEY} --url ${AGENT_URL_A} --admin-priv-key ${ADMIN_PRIV_KEY_A} --generate-keypair
+   ```
+   {: pre}
 
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  +-----------------+----------------------------------------------+
-  | NODE-PROPERTIES | VALUES                                       |
-  +-----------------+----------------------------------------------+
-  | VPNPublicKey    | ryKzTUEHcOy6b2CGSbK8zOpqTl/eTlpQZgIxH7R3twY= |
-  | VPNIp           | 10.10.10.2/24                                |
-  | WGPort          | 6666                                         |
-  +-----------------+----------------------------------------------+
+   where `--generate-keypair` is used to generate a new keypair for the node.
 
-  command completed successfully.
-  ```
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   +-----------------+----------------------------------------------+
+   | NODE-PROPERTIES | VALUES                                       |
+   +-----------------+----------------------------------------------+
+   | VPNPublicKey    | ryKzTUEHcOy6b2CGSbK8zOpqTl/eTlpQZgIxH7R3twY= |
+   | VPNIp           | 10.10.10.2/24                                |
+   | WGPort          | 6666                                         |
+   +-----------------+----------------------------------------------+
+
+   command completed successfully.
+   ```
 
 - To update the VPN public key in trusted peer list for HPVS_B, run the following command.
-  ```
-  export PEER_VPN_PUBLIC_KEY_B=<updated_VPNPublicKey_of_VPN_node_for_HPVS_A>
-  ./hpnet peer update --apikey ${APIKEY} --url ${AGENT_URL_B} --admin-priv-key ${ADMIN_PRIV_KEY_B} --peer-vpn-ip ${PEER_VPN_IP_B} --peer-endpoint ${PEER_ENDPOINT_B} --peer-vpn-pub-key ${PEER_VPN_PUBLIC_KEY_B}
-  ```
-  {: pre}
-  The following snippet shows an example output when the command has completed successfully.
-  ```
-  command completed successfully.
-  ```
+   ```
+   export PEER_VPN_PUBLIC_KEY_B=<updated_VPNPublicKey_of_VPN_node_for_HPVS_A>
+   ./hpnet peer update --apikey ${APIKEY} --url ${AGENT_URL_B} --admin-priv-key ${ADMIN_PRIV_KEY_B} --peer-vpn-ip ${PEER_VPN_IP_B} --peer-endpoint ${PEER_ENDPOINT_B} --peer-vpn-pub-key ${PEER_VPN_PUBLIC_KEY_B}
+   ```
+   {: pre}
+
+   The following snippet shows an example output when the command has completed successfully.
+   ```
+   command completed successfully.
+   ```
 
 ## Parameter specification
 {: #param_limit}
@@ -576,8 +606,17 @@ The following table lists the specifications that apply to some of the parameter
 | wgport (wireguard port)   | A value between 1024 - 65535          |
 | peer-vpn-ip    | An ip address (a.b.c.d) or CIDR format ip address (a.b.c.d/n). If subnet is not specified, by default it is /32 |
 | peer-endpoint    |  A valid endpoint < hpvs-ip >:< wgport >   |
-{: caption="Table 3. Parameter specification" caption-side="top"}
+{: caption="Table 1. Parameter specification" caption-side="bottom"}
 
 
-{:note}
+
 Ensure that you specify the correct secure network management agent URL when you run the command to avoid inadvertent security breaches and potential attacks if an incorrect URL is used. To get the correct IP address of the virtual server instance, follow these [instructions](https://test.cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs).
+{: note}  
+
+
+
+
+
+
+
+

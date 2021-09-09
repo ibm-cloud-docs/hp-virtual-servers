@@ -146,8 +146,9 @@ sudo apt-get update
 sudo apt-get install python3 python3-pip
 python3 -m pip install -U pip
 ```
-{:Note}
+
 Note: This tutorial shows the commands for Ubuntu. On other platforms, use the equivalent commands to install or update python3 and pip3.
+{: note}
 
 ### 3. Use the following commands to install the Secure Build Server CLI on your workstation:
 ```

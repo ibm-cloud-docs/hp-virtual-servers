@@ -21,14 +21,15 @@ subcollection: hp-virtual-servers
 {: #protect_vs}
 
 {{site.data.keyword.hpvs}} is a service that is used to provide highly secure virtual servers. The difference to common virtual servers from a security perspective is that an instance that is created from this {{site.data.keyword.cloud}} service runs on a secured stack. Even {{site.data.keyword.cloud_notm}} system administrators can't access your data nor track your usage. They don't have an insight into the security status of your virtual server. They are also limited in how they can set up or change for your virtual server configuration.
-{:shortdesc}
+{: shortdesc}
 
 
 However, the virtual server is still a virtual server, which is accessible from the internet. From a security perspective, you need to protect the virtual server instance itself.
 
-{:note}
+
 Do not use personal information, for example, your name, as the instance name or as part of the instance name. The data that you provide when you provision an instance or interact with the hpvs cli is not considered to be personal data or credentials.
 Learn more about IBM Cloud Hyper Protect Virtual Servers' Data usage and Certifications [here](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=165C6EF0FFDA11E8BABD512A6952EE1F)
+{: note}
 
 For Ubuntu, different **System Hardening Guide** documents are available.
 
@@ -68,6 +69,7 @@ Another part of the hardening is that the server is configured in such a way tha
 
 ## Monitoring a virtual server
 {: #monitor_a_vs}
+
 It is best practice to:
 - Monitor your virtual server instance resource usage, such as CPU, memory, and storage.
 - Configure alerts that warn you if a resource is exhausted or almost exhausted.

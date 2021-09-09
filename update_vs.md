@@ -54,7 +54,7 @@ Offending ECDSA key in /Users/username/.ssh/known_hosts:5
 ECDSA host key for 52.116.29.107 has changed and you have requested strict checking.
 Host key verification failed.
 ```
-{:note}
+
 
 To update your image, run:
 ```
@@ -73,24 +73,24 @@ If you update your virtual server and the file is not in the correct directory, 
 To place the `authorized_keys` file images in the `data/.ssh` directory, complete the following steps:
 
 1. Create the directory .ssh within `/data`:
-```
-mkdir /data/.ssh
-```
+   ```
+   mkdir /data/.ssh
+   ```
 2. Copy the `authorized_keys` file:
-```
-cp /home/root/.ssh/authorized_keys /data/.ssh/authorized_keys
-```
+   ```
+   cp /home/root/.ssh/authorized_keys /data/.ssh/authorized_keys
+   ```
 3. Make sure the owner of `/data/.ssh` and `/data/.ssh` is `root:root`.
 4. Make sure the file permissions for `/data.ssh` are `drwxr-xr-x`.
 5. Make sure the file permissions for `/data/.ssh/authorized_keys` are `-rw-r--r--`.
 6. Rename the original file:
-```
-mv /home/root/.ssh/authorized_keys /home/root/.ssh/authorized_keys.backup
-```
+   ```
+   mv /home/root/.ssh/authorized_keys /home/root/.ssh/authorized_keys.backup
+   ```
 7. Create a symlink as the one within the current image:
-```
-ln -s /data/.ssh/authorized_keys /home/root/.ssh/authorized_keys
-```
+   ```
+   ln -s /data/.ssh/authorized_keys /home/root/.ssh/authorized_keys
+   ```
 8. Important: Don't disconnect unless you verified that you can connect with the new setup.
 9. Open a new terminal and verify that you can connect with your private key (close the new terminal afterward and continue in the old one).
 10. Optionally delete `/home/root/.ssh/authorized_keys.backup`.
@@ -122,20 +122,22 @@ Use this description for configurations that are not considered credentials or p
 
 When you update an image, you must provide all environment variables (including the variables that you set previously).
 
-{:note}
+
 In this description "environment variables" are not set as environment variables, instead they provided within `/.runqenv`.
 For information about environment variables, see [Configuring your server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_config).
+{: note}
+
 
 **Example with one environment variable:**
 
 ```
 ibmcloud hpvs instance-update (NAME | CRN) -i latest -e name=value
 ```
-{:pre}
+{: pre}
 
 **Example with multiple environment variables:**
 
 ```
 ibmcloud hpvs instance-update (NAME | CRN) -i latest -e name1=value1 -e name2=value2`
 ```
-{:pre}
+{: pre}

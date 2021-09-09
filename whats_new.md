@@ -21,6 +21,7 @@ lastupdated: "2021-08-19"
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+
 ## 19 August 2021
 {: #Aug19-2021}
 

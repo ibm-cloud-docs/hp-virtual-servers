@@ -22,7 +22,7 @@ subcollection: hp-virtual-servers
 
 The {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service provides you with virtual servers on a highly
 secure stack with an Ubuntu Linux operating system.
-{:shortdesc}
+{: shortdesc}
 
 A good practice is to have different operating-system-based users for each person or application, which is using the virtual server, having different permissions. Investigate which is the most suitable way for you to manage users and permissions.
 

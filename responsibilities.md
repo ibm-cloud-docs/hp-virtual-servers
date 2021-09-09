@@ -21,7 +21,7 @@ subcollection: hp-virtual-servers
 {: #responsibilities_hpvs}
 
 Learn about management responsibilities and terms and conditions that you must observe when you use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Management responsibilities
 {: #responsibilities_mgmt_hpvs}
@@ -73,11 +73,11 @@ IBM's responsibilities:
 - None.
 
 Your responsibilities:
-- Use the tools and features that are provided to:
-  - Configure and deploy setup permissions.
-  - Integrate with other services.
-  - Externally serve, monitor the health, save, back up, and restore data.
-  - Manage your highly available and resilient workloads.
+- Use the tools and features that are provided to:  
+   - Configure and deploy setup permissions.
+   - Integrate with other services.
+   - Externally serve, monitor the health, save, back up, and restore data.
+   - Manage your highly available and resilient workloads.
 - Design and deploy your workload in a way that achieves high availability by using multiple data centers.
 
 ### Connecting clients

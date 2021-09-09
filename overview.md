@@ -2,9 +2,10 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-13"
+lastupdated: "2020-08-21"
 
 subcollection: hp-virtual-servers
+
 ---
 
 {:external: target="_blank" .external}
@@ -20,11 +21,12 @@ subcollection: hp-virtual-servers
 {: #overview}
 
 <!-- {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} is in the **Beta** phase and is for tryout and test purpose only. The virtual server that you create with {{site.data.keyword.hpvs}} will be deleted after 30 days. To prevent data loss, use only test data in the current service. This restriction also applies to using {{site.data.keyword.hpvs}} with other {{site.data.keyword.cloud_notm}} services.
-{:important} -->
+{: important} -->
 
 {{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud}} service that provides highly secure virtual servers that can run Linux applications and containerized workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual servers.
-{:shortdesc}
+{: shortdesc}
 
+For more information about how to get started, take a look at the [tutorial](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-getting-started).
 
 ## Why {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}?  
 {: #hp-virtual-servers-benefits}
@@ -32,16 +34,16 @@ subcollection: hp-virtual-servers
 {{site.data.keyword.hpvs}} offers the following benefits:
 
 - **Security** -
-  Using {{site.data.keyword.hpvs}}, you can deploy a virtual server in a **Secure Service Container**, which ensures confidentiality of your data and code that you run within the virtual server. No external access to your data is allowed, including privileged users such as cloud administrators.
+Using {{site.data.keyword.hpvs}}, you can deploy a virtual server in a **Secure Service Container**, which ensures confidentiality of your data and code that you run within the virtual server. No external access to your data is allowed, including privileged users such as cloud administrators.
 
 - **{{site.data.keyword.IBM_notm}} Z capabilities on the cloud** -
-  {{site.data.keyword.hpvs}} brings IBM Z capabilities into the cloud, from where you can use them to deploy workload into the most secure, highly performant Linux virtual server.
+{{site.data.keyword.hpvs}} brings IBM Z capabilities into the cloud, from where you can use them to deploy workload into the most secure, highly performant Linux virtual server.
 
 - **No IBM Z hardware and skills required** -
-  By deploying {{site.data.keyword.hpvs}}, you can access IBM Z technology without having to purchase, install, and maintain the required hardware.
+By deploying {{site.data.keyword.hpvs}}, you can access IBM Z technology without having to purchase, install, and maintain the required hardware.
 
 - **Easy to use, open, and flexible** -
-  Embracing the openness and flexibility of a public cloud, {{site.data.keyword.hpvs}} offers user experience at parity with market leaders who apply IBM Z capabilities in an enterprise environment.
+Embracing the openness and flexibility of a public cloud, {{site.data.keyword.hpvs}} offers user experience at parity with market leaders who apply IBM Z capabilities in an enterprise environment.
 
 
 ## Key features

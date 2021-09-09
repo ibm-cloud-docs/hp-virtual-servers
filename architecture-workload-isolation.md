@@ -45,9 +45,9 @@ As shown in Figure 2, the IBM LinuxONE systems which are used for the {{site.dat
 
 Figure 2. shows that every host system is shared between multiple {{site.data.keyword.hpvs}} that are owned by multiple tenants. The KVM hypervisor isolates the virtual servers, and each virtual server has its own virtualized network connection.
 
-## Dependencies to other {{site.data.keyword.cloud_notm}} services
+## Dependencies on other {{site.data.keyword.cloud_notm}} services
 | Service name | Description|
-| -----------|-------------------------------|
+| -------------|-------------------------------|
 | Business Support Services for {{site.data.keyword.cloud_notm}} (BSS) | BSS is used to access information about the {{site.data.keyword.cloud_notm}} account, service subscription, service usage, and billing. |
 | {{site.data.keyword.cloudcerts_full}} | This service manages the TLS certificates that are used for the service broker. |
 | {{site.data.keyword.loganalysisfull}} with LogDNA | The {{site.data.keyword.hpvs}} service broker sends service logs to {{site.data.keyword.loganalysisfull_notm}} with LogDNA. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. |
@@ -56,7 +56,7 @@ Figure 2. shows that every host system is shared between multiple {{site.data.ke
 | {{site.data.keyword.iamlong}} | To authenticate requests to the service and authorize user actions, {{site.data.keyword.hpvs}} uses {{site.data.keyword.iamshort}} (IAM) operating system and service access roles. For more information about the IAM permissions that are required to work with the service, see [Managing access for {{site.data.keyword.hpvs}}](/docs/hp-virtual-servers?topic=hp-virtual-servers-iam-hpvs). |
 | {{site.data.keyword.containerlong}} | {{site.data.keyword.hpvs}} is using the {{site.data.keyword.containerlong_notm}} to host the service broker and the dashboard UI. |
 | {{site.data.keyword.databases-for-mongodb_full}} | {{site.data.keyword.hpvs}} uses the {{site.data.keyword.databases-for-mongodb_full_notm}} to store the metadata about virtual servers to manage those containers. |
-
+{: caption="Table 1. Dependencies to other IBM Cloud services" caption-side="bottom"}
 
 ## Dependencies on third party services
 
@@ -65,3 +65,4 @@ Review the list of third party services that {{site.data.keyword.hpvs}} connect 
 | Service name | Description|
 | -----------|-------------------------------|
 | Akamai, Cloudflare | Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall functionality in {{site.data.keyword.hpvs}}. |
+{: caption="Table 2. Dependencies on third party services" caption-side="bottom"}

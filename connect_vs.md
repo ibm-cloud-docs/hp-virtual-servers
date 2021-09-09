@@ -22,9 +22,8 @@ keywords: connect, logging in, OpenSSH
 {: #connect_vs}
 
 For a successfully provisioned virtual server, you can log in to this instance by using your preferred method.
-{:shortdesc}
+{: shortdesc}
 
-{:note}
 - Due to configuration processes, you need to wait up to 30 minutes until you can connect to a new virtual server for the first time.
 
 - The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and you can't log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
@@ -76,9 +75,9 @@ A convenient method to connect to a server is to use the **PuTTY Configuration**
 You can ease the logon and authentication to your virtual server with your private SSH key.
 
 1. Define the virtual server in the **Session** category of **PuTTY Configuration**.
-   * Enter the server's hostname or public IP address as shown.
-   * Enter a name into the **Saved Sessions** field. In the shown example, this session name is the service name as specified during provisioning.
-   * Click **Save**.
+    - Enter the server's hostname or public IP address as shown.
+    - Enter a name into the **Saved Sessions** field. In the shown example, this session name is the service name as specified during provisioning.
+    - Click **Save**.
 
    ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance")
 

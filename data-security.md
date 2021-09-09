@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-10-13"
 
 subcollection: hp-virtual-servers
 

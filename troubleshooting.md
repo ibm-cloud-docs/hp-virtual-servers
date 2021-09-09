@@ -26,7 +26,7 @@ subcollection: hp-virtual-servers
 {: #troubleshooting}
 
 If you run into problems while you're using {{site.data.keyword.hpvs}}, you can recover from these problems in many cases by following a few steps.
-{:shortdesc}
+{: shortdesc}
 
 ## Updating the Secure Build Server (SBS) fails
 {: #sbsupdate_fail}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-05"
+  years: 2019, 2020
+lastupdated: "2020-08-21"
 
 subcollection: hp-virtual-servers
 
@@ -23,12 +23,13 @@ keywords: ssh public keys, OpenSSH, add ssh key, ssh key, manage ssh key, virtua
 {: #generate_ssh}
 
 Before you can create a virtual server, you must have a pair of private and public SSH keys available. You can either reuse an existing SSH key pair or generate a new one. You can also reuse an existing OpenSSH key pair for use in **PuTTY**.
+{: shortdesc}
 
 * You need the public key as input during the creation of a new virtual server.
 * You need the private key when you log in to the virtual server. Keep it as a secret on your client workstation.
 
 This pair of SSH keys is then used for authentication between your client and your new server.
-{:shortdesc}
+
 
 The following cryptographic algorithms are supported by {{site.data.keyword.hpvs}} for generating SSH keys:
 
@@ -87,10 +88,11 @@ You can select from the supported cryptographic algorithms by using the `-t` par
 |`ecdsa-sha2-nistp384`|`ssh-keygen -t ecdsa -b 384`|
 |`ecdsa-sha2-nistp521`|`ssh-keygen -t ecdsa -b 521`|
 
-{:note}
+
 If you do not specify a file name to save the key, a default name is used.
 The private and public SSH key pair is stored in two files with the same name. The public SSH key, which is required for creating a virtual server is saved in the file with extension `.pub`.
 The generated keys can vary in format when generated with different methods or on different operating systems. Valid formats are recognized when entered as input during the creation of a virtual server.
+{: note}
 
 ### Saving the SSH private key to the SSH agent
 {: #saving_ssh_agent}
@@ -125,7 +127,7 @@ In the **PuTTY Key Generator**, select the type of key and the key size (for exa
 You can select one of the supported cryptographic algorithms from the **PuTTY Key Generator** by clicking an appropriate option for the **Type of key to generate**. For the ECDSA option, a pull-down choice appears where you must additionally select a **Curve to use for generating this key** (either `nistp256`, `nistp384`, or `nistp521`).
 
 You must then save the private, and optionally the public key, into separate files by pressing the appropriate buttons (**Save public key**, **Save private key**). To reuse the public key saved this way for creating a virtual server, ensure that you use the OpenSSH public key format that is recognized by {{site.data.keyword.hpvs}}.
-{:important}
+{: important}
 
 To create a virtual server with a **PuTTY** public SSH key, you have the following choices:
 

@@ -24,7 +24,6 @@ keywords: virtual server instance, instance, logging, logs, logDNA, virtual serv
 {: #monitoring}
 
 You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances, for example, web server, or application logs. To enable the collection of such logs, you must use IBM Log Analysis with LogDNA on the {{site.data.keyword.hpvs}} instance.
-
 {: shortdesc}
 
 ## Prerequisites
@@ -34,7 +33,7 @@ You must deploy a {{site.data.keyword.hpvs}} instance on IBM Cloud. Follow these
 
 
 ## Deploying IBM Log Analysis with LogDNA
-{: dep_dna}
+{: #dep_dna}
 
 In general, to deploy IBM Log Analysis with LogDNA, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-provision). You can configure platform logs when logging is active. If you want to configure a LogDNA agent for each log source that you want to monitor, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-config_agent_linux) for configuring a logging agent on Linux Ubuntu or Debian. 
 
@@ -46,37 +45,45 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
    apt-get update
    ```
    {: pre}
+
    ```
    apt-get install -y git npm curl wget
    ```
    {: pre}
+
    ```
    npm install -g n
    ```
    {: pre}
+
    ```
    n lts
    ```
    {: pre}
+
    ```
    PATH="$PATH"
    ```
    {: pre}
+
    ```
    node -v
    ```
    {: pre}
+
 2. Get the source code for the logging agent from [this GitHub repository](https://github.com/logdna/logdna-agent).
    - To clone the repository, run:
      ```
      git clone https://github.com/logdna/logdna-agent.git
      ```
      {: pre}
+
    - To install the agent from the source, run:
      ```
      cd logdna-agent && npm install
      ```
      {: pre}
+
 3. Complete the following steps to configure the LogDNA agent:    
    - To get the ingestion key, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-ingestion_key), where the `INGESTION_KEY` contains the ingestion key that is active for the IBM Log Analysis with the LogDNA instance that you are configuring to forward logs.
    - To get the values of `APIHOST` and `LOGHOST`, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-config_agent_linux). You also can open the logging service by using the dashboard to get the values of `APIHOST` and `LOGHOST`. Run the following commands:
@@ -84,28 +91,33 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
      node index.js -k <YOUR LOGDNA INGESTION KEY>
      ```
      {: pre}
+
      ```
      node index.js -d /var/log
      ```
      {: pre}
+
      ```
      node index.js -t logging
      ```
      {: pre}
+
      ```
      node index.js -s <APIHOST>   
      ```
      {: pre}
 
-     {:note}
      For example, `node index.js -s LOGDNA_APIHOST=api.us-south.logging.cloud.ibm.com`
+     {: note}
+
      ```
      node index.js -s <LOGHOST>
      ```
      {: pre}
 
-     {:note}
      For example, `node index.js -s LOGDNA_LOGHOST=logs.us-south.logging.cloud.ibm.com`
+     {: note}
+     
 4. To start the LogDNA agent, run:
    ```
    node index.js
@@ -130,4 +142,5 @@ You can configure the logs that you want to monitor with the agent so that the l
 
    ```
    {: codeblock}
+
 2. Open the logging web user interface to check the log information, and then log in or log out of the {{site.data.keyword.hpvs}} instance many times, and update with the live button. You can view the logs by using the web user interface. You can follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-view_logs) for information about how to view the logs by using the web user interface.
