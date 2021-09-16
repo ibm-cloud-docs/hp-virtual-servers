@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-16"
 
 subcollection: hp-virtual-servers
 
@@ -198,7 +198,7 @@ Notes:
 - Specify the value of the API key that is created in step 1 for both properties `DOCKER_PASSWORD` and `DOCKER_RO_PASSWORD`.
 - Specify the value of your personal access token for the property `ACCESS_TOKEN`. The build process uses a personal access token for github.com to avoid a build failure due to its access rate limit. For more information, see [Creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure-build-cli).
+For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure-build-cli#preparing-the-configuration).
 
 ### 5. Create the client certificate and client CA by running the following command:
 ```
