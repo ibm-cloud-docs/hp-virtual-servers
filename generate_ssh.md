@@ -56,17 +56,17 @@ The shown sample instructions can be entered from either
 - A Windows 10 session
 - A Linux session
 
-```
+```sh
 ssh-keygen
 ```
 {: codeblock}
 
-```
+```sh
 ssh-keygen -t rsa
 ```
 {: codeblock}
 
-```
+```sh
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 {: codeblock}
@@ -104,7 +104,7 @@ This task is optional.
 * Run the following command: `eval "$(ssh-agent -s)"`
 * Note: If your system is macOS Sierra 10.12.2 or later, you need to modify your `~/.ssh/config` file to enable adding keys to the agent and that uses your keychain to store passphrases:
 
- ```
+ ```sh
  Host *    
    AddKeysToAgent yes
    UseKeychain yes
@@ -119,8 +119,7 @@ This task is optional.
 
 In the **PuTTY Key Generator**, select the type of key and the key size (for example, 2048 or 4096).
 
-
-<img src="image/hpvs_puttygen.gif" alt="Generating an SSH key pair with the PuTTY Key Generator" width="450" style="width: 450px; border-style: none"/>
+![Generating an SSH key pair with the PuTTY Key Generator](image/hpvs_puttygen.gif "Generating an SSH key pair with the PuTTY Key Generator")
 
 *Figure 1. Generating an SSH key pair with the **PuTTY Key Generator***
 
@@ -134,7 +133,8 @@ To create a virtual server with a **PuTTY** public SSH key, you have the followi
 - To create the virtual server directly after the key pair generation, copy the public key from the **Key** box. Include the string 'ssh-rsa' at the beginning, but delete the key comment at the end as shown in Figure 2.
 - To create the virtual server after the **PuTTY Key Generator** dialog is already closed, you can use the public key from a saved file in the OpenSSH public key format.
 
-<img src="image/hpvs_putty_pubkey.gif" alt="SSH key pair from the PuTTY Key Generator ready for use" width="450" style="width: 450px; border-style: none"/>
+
+![SSH key pair from the PuTTY Key Generator ready for use](image/hpvs_putty_pubkey.gif "SSH key pair from the PuTTY Key Generator ready for use")
 
 *Figure 2. SSH key pair from the **PuTTY Key Generator** ready for use*
 
@@ -143,23 +143,19 @@ To create a virtual server with a **PuTTY** public SSH key, you have the followi
 
 Imagine you have an existing virtual server, which you want to configure in the **PuTTY Configuration** utility for a convenient log-in to this server. You created this virtual server by using an existing OpenSSH key pair. This scenario describes how to convert the existing OpenSSH private key for a comfortable logging-in to this virtual server from **PuTTY Configuration**. For this purpose, you learn how to convert the pertaining OpenSSH private key into the  **PuTTY** format.
 
-<ol>
-<li>Select **Import key** from **Conversions**. Browse for and open the existing OpenSSH private key file.   
 
+1. Select **Import key** from **Conversions**. Browse for and open the existing OpenSSH private key file.   
 
-<img src="image/hpvs_convert_privkey.jpg" alt="Import OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>   
-
+![Import OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey.jpg "Import OpenSSH private key to **PuTTY**")
 
 Figure 3. Import OpenSSH private key to **PuTTY**
-</li>
-<li>Save the private key in the **PuTTY** format by using the file type `.ppk`.   
 
+2. Save the private key in the **PuTTY** format by using the file type `.ppk`.   
 
-<img src="image/hpvs_convert_privkey_save.jpg" alt="Convert OpenSSH private key to **PuTTY**" width="450" style="width: 450px; border-style: none"/>   
-
+![Convert OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey_save.jpg "Convert OpenSSH private key to **PuTTY**")
 
 *Figure 4. Convert OpenSSH private key to **PuTTY***
-</li>
-<li>Configure your virtual server in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
-</li>
-</ol>
+
+3. Configure your virtual server in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
+
+

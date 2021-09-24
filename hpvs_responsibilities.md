@@ -23,6 +23,7 @@ keywords: disaster recovery
 
 # Understanding your responsibilities when you use {{site.data.keyword.hpvs}}
 {: #resphpvs}
+
 <!-- The title of your H1 should be Understanding your responsibilities with using _service-name_, where _service-name_ is the non-trademarked short version conref. -->
 
 Find out more about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.hpvs}}.

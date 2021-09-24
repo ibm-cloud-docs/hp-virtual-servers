@@ -36,7 +36,7 @@ To deploy the SBS:
 
 1. Install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
 2. Copy the following registration definition for the SBS into a file named `secure_build.asc`. This file is an encrypted and signed registration definition file. It contains metadata such as the repository name and the credentials to pull and deploy the SBS image on a {{site.data.keyword.hpvs}} instance:
-      ```
+      ```sh
       -----BEGIN PGP MESSAGE-----
 
       hQIMAxpkEC0f/4+uARAAkKLRBZzbWvY2mwzGkrC1sR1DE1HDneq2VaLoFYmiAfiW

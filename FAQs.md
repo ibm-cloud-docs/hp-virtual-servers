@@ -81,6 +81,7 @@ This information is visible on both the **{{site.data.keyword.hpvs}} dashboard**
 
 ## Can I rearrange a server to another data center?    
 {: #faq7a}
+
 This action is not possible.  
 
 ## Can I provide a custom image, derive a custom image from a virtual server, or clone a virtual server?

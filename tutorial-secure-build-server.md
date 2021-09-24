@@ -54,6 +54,7 @@ To build a container image with Secure Build Server, you must complete these ste
 -	Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
 
 ![The Secure Build Server](image/secure-build.png "The Secure Build Server")
+
 *Figure 1. The Secure Build Server*
 
 The registration file specifies the container registry, the application image, and the credentials that are required to access the container registry. The registration file is encrypted and can be decrypted by {{site.data.keyword.hpvs}} only.
@@ -95,15 +96,17 @@ During this task flow, you create two {{site.data.keyword.hpvs}} instances: One 
 For this tutorial you need to set up IBM Container Registry and create a new namespace. The container registry is used to store the built application container image in the new namespace.
 
 ### 1. Use the following commands to log in to IBM Cloud
-```
+```sh
 ibmcloud login --sso
 ibmcloud target -g default
 ```
+{: pre}
 
 ### 2. Run the following command to create an API key for your user ID.
-```
+```sh
 ibmcloud iam api-key-create myapikey -d "API key for SBS tutorial"
 ```
+{: pre}
 
 The output displays the created API key. Make a note of the `API Key` value, you need it later to provide the API Key when you set up the Secure Build Server. The following snippet shows example output:
 ```
@@ -120,13 +123,15 @@ Created At    2021-...
 API Key       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Locked        false
 ```
+{: screen}
 
 ### 3. Run the following commands to install the container registry CLI plug-in and to create a new namespace `secureimages` in your container registry.
-```
+```sh
 ibmcloud plugin install container-registry
 ibmcloud cr region-set us-south
 ibmcloud cr namespace-add secureimages
 ```
+{: pre}
 
 ## Step 2: Set up the Secure Build Server
 {: #setupsbs_sbs}
@@ -135,33 +140,36 @@ ibmcloud cr namespace-add secureimages
 Complete the steps in this procedure to set up the Secure Build Server.
 
 ### 1. Install the IBM Cloud CLI HPVS plug-in by running the following command:
-```
+```sh
 ibmcloud plugin install hpvs
 ```
+{: pre}
 
 The Secure Build Server is written in Python and is tested with Python 3.6.9. To set up the Secure Build Server, you need to install python3, pip3, and the Secure Build Server on your workstation.
 
 ### 2. Install python3 and pip3, by running the following commands:
-```
+```sh
 sudo apt-get update
 sudo apt-get install python3 python3-pip
 python3 -m pip install -U pip
 ```
+{: pre}
 
 Note: This tutorial shows the commands for Ubuntu. On other platforms, use the equivalent commands to install or update python3 and pip3.
 {: note}
 
 ### 3. Use the following commands to install the Secure Build Server CLI on your workstation:
-```
+```sh
 git clone git@github.com:ibm-hyper-protect/secure-build-cli.git
 cd secure-build-cli
 pip3 install -r requirements.txt
 ```
+{: pre}
 
 ### 4. Create the Secure Build Server configuration.
 Create file `sbs-config.json` in your current working directory (this is the directory that you created in the previous step, `secure-build-cli`), then add the following content:
 
-```
+```json
 {
   "CICD_PUBLIC_IP": "",
   "CICD_PORT": "443",
@@ -189,6 +197,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
   }
 }
 ```
+{: codeblock}
 
 This file defines the configuration for your Secure Build Server instance, which you create in the next steps.
 
@@ -202,15 +211,17 @@ Notes:
 For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure-build-cli#preparing-the-configuration).
 
 ### 5. Create the client certificate and client CA by running the following command:
-```
+```sh
 # ./build.py create-client-cert --env sbs-config.json
 ```
+{: pre}
 
 The following snippet shows example output:
 ```
 INFO:__main__:parameter file sbs-config.json renamed to sbs-config.json.2021-02-10_14-55-19.806993
 INFO:root:client_certificate: generating client CA and certificate
 ```
+{: screen}
 
 The client certificate and CA are used for secure communication between the Secure Build Server CLI on your workstation and the Secure Build Server instance.
 
@@ -230,15 +241,17 @@ The following snippet shows example output, including the base64-encoded values 
 INFO:root:client_certificate: using supplied pem files client_crt_key=.SBContainer-5f2bda44-b3f6-47d2-87d1-39e351ef9705 capath=./.SBContainer-5f2bda44-b3f6-47d2-87d1-39e351ef9705.d/client-ca.pem cakeypath=./.SBContainer-5f2bda44-b3f6-47d2-87d1-39e351ef9705.d/client-ca-key.pem
 INFO:__main__:env="-e CLIENT_CRT=...  -e CLIENT_CA=..."
 ```
+{: screen}
 
 ### 7. Provision the Secure Build Server instance
 
 First, copy the encrypted registration definition for the Secure Build image into a new file named `secure_build.asc`. The content of the encrypted registration definition is located [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 Then, use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA` taken from the output of the preceding command.
-```
+```sh
 # ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.3 -e CLIENT_CRT=... -e CLIENT_CA=...
 ```
+{: pre}
 
 `SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Be sure to use the image tag `1.3.0.3` because this tag references the up-to-date version of the Secure Build Server.
 For more information about available pricing plans and regions and datacenters, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
@@ -246,9 +259,11 @@ For more information about available pricing plans and regions and datacenters, 
 ### 8. Display your Secure Build Server instance.
 
 To view information about the Secure Build Server instance and other {{site.data.keyword.hpvs}} instances that you have provisioned, use the following command line:
-```
+```sh
 # ibmcloud hpvs instances
 ```
+{: pre}
+
 The command displays detailed information about the {{site.data.keyword.hpvs}} instances you have provisioned.
 
 The following snippet shows example output for a Secure Build Server instance that is being provisioned:
@@ -263,6 +278,7 @@ Last operation           create in progress
 Last image update        not available
 Created                  not available
 ```
+{: screen}
 
 The following snippet shows example output for a Secure Build Server instance that is successfully provisioned and can be used for the next steps. Make a note of the value of the property `Public IP address`:
 ```
@@ -288,13 +304,15 @@ Last operation        create succeeded
 Last image update     -
 Created               2021-...
 ```
+{: screen}
 
 ### 9. Complete the configuration file.
 
 Edit the configuration file `sbs-config.json` to add the public IP address of your Secure Build Server instance as a value for property `CICD_PUBLIC_IP`:
-```
+```sh
 "CICD_PUBLIC_IP": "<public IP Address>"
 ```
+{: pre}
 
 ## Step 3: Build the application image by using the Secure Build Server
 {: #buildimage_sbs}
@@ -305,9 +323,10 @@ Now, build the application container image.
 ### 1. Check the status of your Secure Build Server instance.
 
 Run the following command to check the status of your Secure Build Server instance:
-```
+```sh
 # ./build.py status --env sbs-config.json --noverify
 ```
+{: pre}
 
 The following snippet shows example output. Here, the command completes successfully, and the `status` field is empty.
 ```
@@ -315,18 +334,21 @@ INFO:__main__:status: response={
     "status": ""
 }
 ```
+{: screen}
 
 The following snippet shows example output for the case where the command does not complete successfully. This message typically indicates that the property `CICD_PUBLIC_IP` is not correctly set in the configuration file:
 ```
 INFO:__main__:build: status e=Invalid URL 'https://:443/image': No host supplied
 ```
+{: screen}
 
 ### 2. Get the server CSR.
 
 Run the following command to get the server CSR:
-```
+```sh
 # ./build.py get-server-csr --env sbs-config.json --noverify
 ```
+{: pre}
 
 The following snippet shows example output that includes the server CSR:
 ```
@@ -334,12 +356,15 @@ INFO:__main__:get-server-csr: response={
     "csr": "-----BEGIN CERTIFICATE REQUEST-----\n...\n-----END CERTIFICATE REQUEST-----\n"
 }
 ```
+{: screen}
+
 ### 3. Sign the server CSR.
 
 Use the following command to sign the server CSR:
-```
+```sh
 # ./build.py sign-csr --env sbs-config.json
 ```
+{: pre}
 
 This command does not display any output.
 
@@ -347,9 +372,10 @@ This command does not display any output.
 ### 4. Post the signed server certificate to your Secure Build Server instance.
 
 To post the signed server certificate to your Secure Build Server instance, run the following command:
-```
+```sh
 # ./build.py post-server-cert --env sbs-config.json --noverify
 ```
+{: pre}
 
 The following command shows example output, which indicates that the command completed successfully:
 ```
@@ -357,13 +383,15 @@ INFO:__main__:post-server-cert: response={
     "status": "OK"
 }
 ```
+{: screen}
 
 ### 5. Check the status of your Secure Build Server instance.
 
 To check and verify the status for your Secure Build Server instance, run the following command:
-```
+```sh
 # ./build.py status --env sbs-config.json
 ```
+{: pre}
 
 The following command shows example output that contains the latest status message of your Secure Build Server instance:
 ```
@@ -371,13 +399,15 @@ INFO:__main__:status: response={
     "status": "restarted nginx"
 }
 ```
+{: screen}
 
 ### 6. Initialize the configuration for your Secure Build Server instance.
 
 Use the following command to initialize the configuration for your Secure Build Server instance:
-```
+```sh
 # ./build.py init --env sbs-config.json
 ```
+{: pre}
 
 The following command shows example output of the command:
 ```
@@ -385,13 +415,15 @@ INFO:__main__:init: response={
     "status": "OK"
 }
 ```
+{: screen}
 
 ### 7. Build the application image.
 
 To build the application image, run the following command:
-```
+```sh
 # ./build.py build --env sbs-config.json
 ```
+{: pre}
 
 This command starts the build on your Secure Build Server instance. It displays the following output:
 ```
@@ -399,13 +431,15 @@ INFO:__main__:build: response={
     "status": "OK: async build started"
 }
 ```
+{: screen}
 
 ### 8. Check the status of your build.
 
 Use the following command to display the status of your build:
-```
+```sh
 # ./build.py status --env sbs-config.json
 ```
+{: pre}
 
 You can repeat this command to update the latest build status.
 
@@ -420,6 +454,8 @@ INFO:__main__:status: response={
     "status": "github cloned"
 }
 ```
+{: screen}
+
 The following example output is for a build, which failed due to a container registry login problem:
 ```
 INFO:__main__:status: response={
@@ -432,22 +468,25 @@ INFO:__main__:status: response={
     "status": "exiting due to a non-zero return value: 1, cmd: docker login --username <USERNAME> --password <PASSWORD> docker.io"
 }
 ```
+{: screen}
 
 ### 9. Check the build log.
 
 To display the build log, run the following command:
-```
+```sh
 # ./build.py log --log build --env sbs-config.json
 ```
+{: pre}
 
 This command displays the build log. You can repeatedly run this command during the build to see the latest updates to the build log.
 
 ### 10. Wait until the build completes.
 
 Run the following command again to display the status of your build:
-```
+```sh
 # ./build.py status --env sbs-config.json
 ```
+{: pre}
 
 The following is example output for a build that completed successfully (indicated by the `success` status):
 ```
@@ -460,6 +499,7 @@ INFO:__main__:status: response={
     "status": "success"
 }
 ```
+{: screen}
 
 Make a note of the `image_tag` property. The image tag that was generated by the build based on the image tag prefix you defined in the configuration file. You use this image tag later to provision your application instance.
 
@@ -471,9 +511,10 @@ The Secure Build Server creates a signed manifest file for each successful build
 ### 11. Download the manifest file.
 
 Download the manifest file from your Secure Build Server instance by using the following command:
-```
+```sh
 # ./build.py get-manifest --env sbs-config.json  --verify-manifest
 ```
+{: pre}
 
 The following snippet shows example output that is displayed by the command:
 ```
@@ -481,30 +522,35 @@ INFO:__main__:get-manifest manifest_name: manifest.us.icr.io.secureimages.secure
 INFO:__main__:verify_manifest: manifest_name=manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350 test=0
 INFO:__main__:verify=OK
 ```
+{: screen}
 
 The command downloads and stores a set of files in your current working directory, for example:
-```
+```sh
 -rwxrwxrwx 1 user user 3021932 Feb 10 16:37 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
 -rwxrwxrwx 1 user user     512 Feb 10 16:37 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig
 ```
+{: pre}
 
 ### 12. Extract the manifest file.
 
 Extract the archive file that was retrieved in the previous step by running the following command:
-```
+```sh
 # tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig.tbz
 ```
+{: pre}
 
 This extracts the following expected output:
 ```
 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig
 ```
+{: screen}
 
 Extract the contents of the manifest file:
-```
+```sh
 # tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
 ```
+{: pre}
 
 This creates a `git` directory (including the snapshot of the application's Git repository that is used for the build), and a data directory, which includes a file `build.json` (that contains the build status) and the build.log.
 
@@ -515,14 +561,16 @@ for information about how you can restore the state image and how you can save a
 ### Step 13. Retrieve the state image.
 
 To download the state image, run the following command:
-```
+```sh
 # ./build.py get-state-image --env sbs-config.json
 ```
+{: pre}
 
 This command creates an encrypted file in your current directory and prints the file name in the output, for example:
 ```
 INFO:__main__:state:name: us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350
 ```
+{: screen}
 
 ## Step 4: Deploy your application by using Hyper Protect Virtual Servers BYOI and run the application in a secure environment
 {: #deploy_sbs}
@@ -533,18 +581,20 @@ Now it's time to deploy and run your newly built application. To do so, you down
 ### 1. Retrieve the encrypted registration file
 
 First, download the encrypted registration file for your application container image:
-```
+```sh
 # ./build.py get-config-json --env sbs-config.json --key-id secure-build-ad52e76-1
 ```
+{: pre}
 
 The command creates a GPG key to sign the file. The parameter `key-id` is used to generate the key UID. Provide a unique value that  comprises the image tag retrieved in step 3, for example, `secure-build-ad52e76-1`:
 
 While the command runs, you are asked multiple times for a passphrase. First, enter the passphrase twice for key creation, then again to sign the file.
 
 The command creates the file `sbs.enc` file in your current directory and prints the following output:
-```
+```sh
 INFO:__main__:a json config file has been written to sbs.enc.
 ```
+{: pre}
 
 The encrypted registration file `sbs.enc` contains the information that is used by {{site.data.keyword.hpvs}} to provision a server instance with your application's container image. The file includes the repository_name as well as the container registry credentials. As the file is encrypted, you can pass it on to a cloud administrator (for example to provision the service instance) without exposing this information.
 
@@ -553,10 +603,11 @@ The encrypted registration file `sbs.enc` contains the information that is used 
 Use the {{site.data.keyword.hpvs}} BYOI feature to provision a {{site.data.keyword.hpvs}} instance for your application container image. To do so, you need the image tag from step 10.
 
 Run the following command to provision the {{site.data.keyword.hpvs}} instance:
-```
+```sh
 image_tag=s390x-v1-ad52e76
 ibmcloud hpvs instance-create securewallet lite-s dal13 --rd-path sbs.enc -i $image_tag
 ```
+{: pre}
 
 `securewallet` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different value for these parameters.
 
@@ -568,11 +619,13 @@ Provisioning request for service instance 'crn:v1:bluemix:public:hpvs:dal13:xxxx
  To check the provisioning status run:
  ibmcloud hpvs instance crn:v1:bluemix:public:hpvs:dal13:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx::
 ```
+{: screen}
 
 Use the command listed in the output to check the provisioning status of your service instance:
-```
+```sh
 ibmcloud hpvs instance crn:v1:bluemix:public:hpvs:dal13:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx::
 ```
+{: pre}
 
 Wait until your service instance is successfully provisioned. After the {{site.data.keyword.hpvs}} instance is provisioned, you can view it in your IBM Cloud resource list.
 
@@ -585,7 +638,9 @@ You can now use the Secure Bitcoin Wallet application: In a browser window, open
 Follow the description and instructions [here](https://github.com/IBM/secure-bitcoin-wallet) to use the wallet.
 
 Here's an example screen capture of the wallet:
-<img src="https://raw.githubusercontent.com/IBM/secure-bitcoin-wallet/master/images/screenshot.png"/>
+
+![Secure Bitcoin Wallet on IBM LinuxONE](https://raw.githubusercontent.com/IBM/secure-bitcoin-wallet/master/images/screenshot.png "Secure Bitcoin Wallet on IBM LinuxONE")
+
 
 ## Summary
 {: #summary_sbs}

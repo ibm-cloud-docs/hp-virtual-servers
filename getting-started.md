@@ -63,6 +63,7 @@ From your client workstation, you can connect to a virtual server that exists on
 
 ## Managing user access
 {: #gs_useraccess}
+
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 

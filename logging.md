@@ -41,45 +41,45 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
 
 
 1. To install dependencies and update node, run:
-   ```
+   ```sh
    apt-get update
    ```
    {: pre}
 
-   ```
+   ```sh
    apt-get install -y git npm curl wget
    ```
    {: pre}
 
-   ```
+   ```sh
    npm install -g n
    ```
    {: pre}
 
-   ```
+   ```sh
    n lts
    ```
    {: pre}
 
-   ```
+   ```sh
    PATH="$PATH"
    ```
    {: pre}
 
-   ```
+   ```sh
    node -v
    ```
    {: pre}
 
 2. Get the source code for the logging agent from [this GitHub repository](https://github.com/logdna/logdna-agent).
    - To clone the repository, run:
-     ```
+     ```sh
      git clone https://github.com/logdna/logdna-agent.git
      ```
      {: pre}
 
    - To install the agent from the source, run:
-     ```
+     ```sh
      cd logdna-agent && npm install
      ```
      {: pre}
@@ -87,22 +87,22 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
 3. Complete the following steps to configure the LogDNA agent:    
    - To get the ingestion key, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-ingestion_key), where the `INGESTION_KEY` contains the ingestion key that is active for the IBM Log Analysis with the LogDNA instance that you are configuring to forward logs.
    - To get the values of `APIHOST` and `LOGHOST`, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-config_agent_linux). You also can open the logging service by using the dashboard to get the values of `APIHOST` and `LOGHOST`. Run the following commands:
-     ```
+     ```sh
      node index.js -k <YOUR LOGDNA INGESTION KEY>
      ```
      {: pre}
 
-     ```
+     ```sh
      node index.js -d /var/log
      ```
      {: pre}
 
-     ```
+     ```sh
      node index.js -t logging
      ```
      {: pre}
 
-     ```
+     ```sh
      node index.js -s <APIHOST>   
      ```
      {: pre}
@@ -110,7 +110,7 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
      For example, `node index.js -s LOGDNA_APIHOST=api.us-south.logging.cloud.ibm.com`
      {: note}
 
-     ```
+     ```sh
      node index.js -s <LOGHOST>
      ```
      {: pre}
@@ -119,7 +119,7 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
      {: note}
      
 4. To start the LogDNA agent, run:
-   ```
+   ```sh
    node index.js
    ```
    {: pre}
@@ -131,7 +131,7 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
 You can configure the logs that you want to monitor with the agent so that the logs can be captured by using the web user interface.
 
 1. To check the settings of the agent, run:
-   ```
+   ```sh
    node index.js -l
    hostname       = af65e44fb2e6
    logdir         = [ /var/log, /var/log/audit.log ]

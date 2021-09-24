@@ -48,19 +48,17 @@ Or for older Windows versions, you can open a Git Bash session and log-in as *ro
 
 `$ ssh root@<public_ip_address> -i <path_to_priv_key_file>`
 
-```
-$ ssh root@198.51.100.21 -i id_rsa
+```sh
+ssh root@198.51.100.21 -i id_rsa
 ```
 {: codeblock}
 
 
 If you log in for the first time, the new server is not yet known to SSH, and therefore, you receive the following message:  
 
-`
-The authenticity of host '198.51.100.21 (198.51.100.21)' can't be established.
+`The authenticity of host '198.51.100.21 (198.51.100.21)' can't be established.
 ECDSA key fingerprint is SHA256:dVaFv4slDyiYZcUV5F6MKqhxIo4SuucWkXVQoc4MTIk.
-Are you sure you want to continue connecting (yes/no/[fingerprint])?
-`
+Are you sure you want to continue connecting (yes/no/[fingerprint])?`
 
 Answer `yes` to allow SSH to add your server to the list of known hosts:
 
@@ -91,7 +89,7 @@ You can ease the logon and authentication to your virtual server with your priva
    For SSH key pairs generated other than using **PuTTY**, you can use **Conversions -> Import key** of the **PuTTY Key Generator** to convert the private key into the **PuTTY** format of the same length.
 3. Define the **root** default username under **Connection -> Data**.
 
-   <img src="image/hpvs_root.jpg" alt="Defining the auto-login user name" width="450" style="width: 450px; border-style: none"/>
+   ![Defining the auto-login user name](image/hpvs_root.jpg "Defining the auto-login user name")
 
    *Figure 3. Defining the auto-login username*
 4. Go back to the session configuration shown in Figure 1 and click **Save** again. Otherwise, you lose your changes.

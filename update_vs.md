@@ -54,12 +54,15 @@ Offending ECDSA key in /Users/username/.ssh/known_hosts:5
 ECDSA host key for 52.116.29.107 has changed and you have requested strict checking.
 Host key verification failed.
 ```
+{: screen}
 
 
 To update your image, run:
-```
+```sh
 ibmcloud hpvs instance-update (NAME | CRN)
 ```
+{: pre}
+
 For information about the update command, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvsinstanceupdate).
 
 ### Updating the authorized_keys file
@@ -73,25 +76,33 @@ If you update your virtual server and the file is not in the correct directory, 
 To place the `authorized_keys` file images in the `data/.ssh` directory, complete the following steps:
 
 1. Create the directory .ssh within `/data`:
-   ```
+   ```sh
    mkdir /data/.ssh
    ```
+   {: pre}
+
 2. Copy the `authorized_keys` file:
-   ```
+   ```sh
    cp /home/root/.ssh/authorized_keys /data/.ssh/authorized_keys
    ```
+   {: pre}
+
 3. Make sure the owner of `/data/.ssh` and `/data/.ssh` is `root:root`.
 4. Make sure the file permissions for `/data.ssh` are `drwxr-xr-x`.
 5. Make sure the file permissions for `/data/.ssh/authorized_keys` are `-rw-r--r--`.
 6. Rename the original file:
-   ```
+   ```sh
    mv /home/root/.ssh/authorized_keys /home/root/.ssh/authorized_keys.backup
    ```
+   {: pre}
+
 7. Create a symlink as the one within the current image:
-   ```
+   ```sh
    ln -s /data/.ssh/authorized_keys /home/root/.ssh/authorized_keys
    ```
-8. Important: Don't disconnect unless you verified that you can connect with the new setup.
+   {: pre}
+
+8. Important: Do not disconnect unless you verified that you can connect with the new setup.
 9. Open a new terminal and verify that you can connect with your private key (close the new terminal afterward and continue in the old one).
 10. Optionally delete `/home/root/.ssh/authorized_keys.backup`.
 
@@ -102,14 +113,17 @@ If you use a self-provided server, you generally don't have access to the virtua
 When you update the server you can update the installed packages.
 The update resets everything to the state of a new server except for the content within `/data`. Before you update your server, copy any data that you want to be available after the update to `/data`.
 To update a self-provided server, run the following command and include the image tag (`-i mytag`).
-```
+```sh
 ibmcloud hpvs instance-update (NAME | CRN) -i mytag
 ```
+{: pre}
+
 You can also update the registration definition:
 
-```
+```sh
 ibmcloud hpvs instance-update (NAME | CRN) -i mytag --rd-path my-rd
 ```
+{: pre}
 
 An update the registration definition does not allow you to update `repository_name`.
 
@@ -130,14 +144,14 @@ For information about environment variables, see [Configuring your server](https
 
 **Example with one environment variable:**
 
-```
+```sh
 ibmcloud hpvs instance-update (NAME | CRN) -i latest -e name=value
 ```
 {: pre}
 
 **Example with multiple environment variables:**
 
-```
+```sh
 ibmcloud hpvs instance-update (NAME | CRN) -i latest -e name1=value1 -e name2=value2`
 ```
 {: pre}

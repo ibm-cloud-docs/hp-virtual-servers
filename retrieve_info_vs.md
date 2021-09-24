@@ -68,7 +68,7 @@ ssh-keygen -E sha256 -lf id_rsa.pub
 
 To list all of your {{site.data.keyword.hpvs}} service instances in your resource list from the CLI, enter the following command:
 
-```
+```sh
 ibmcloud hpvs instances
 ```
 {: pre}
@@ -77,7 +77,7 @@ The output displays a list of details for each instance. If you have no instance
 
 To display details about a server instance, you need the cloud resource name (CRN) for the server instance. To get the CRN, run  `ibmcloud hpvs service instances`. Then, run the following command:
 
-```
+```sh
 ibmcloud hpvs instance CRN [--output json]
 ```
 {: pre}

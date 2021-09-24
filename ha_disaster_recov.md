@@ -34,7 +34,7 @@ If the latency requirements or types of workload do not allow to run an active-a
 
 Back up your data from business-relevant virtual servers (primary virtual servers) to recovery virtual server instances. A virtual server that is created with {{site.data.keyword.hpvs}} is configured with two disks. One for the operating system and the other one for your data (mounted as `/data/`). One possible way to back up the data disk is to set up a `cron job`, which copies content of the disk to a recovery virtual server instance. Choose the appropriate backup frequency for your workload. For example, if you accept a maximum loss of data changes of 1 hour, add the following text file (for example, cron_backup) to `/etc/cron.hourly`:
 
-```
+```sh
 #!/bin/sh
 
 rsync -a /data/ <public HPVS IP or internal HPVS IP>:/data
@@ -45,14 +45,14 @@ On Ubuntu, you install the file-copying tool `rsync` on the primary virtual serv
 
 Initially, on the primary virtual server, use the following command to synchronize the package index files from their sources. This is required to retrieve information about available packages, versions, and dependencies.
 
-```
+```sh
 apt-get update
 ```
 {: codeblock}
 
 Then install the file-copying tool `rsync` on the primary virtual server:
 
-```
+```sh
 apt-get install rsync
 ```
 {: codeblock}

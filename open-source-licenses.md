@@ -152,7 +152,7 @@ END OF NOTICE FILE
 ## Hosting Appliance notices and information
 {: #host-appliance-notices}
 
-```
+```sh
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 CREATIVE COMMONS BY SA 2.5
@@ -191,3 +191,5 @@ END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 4.0 GENERIC NOTICES AND
 INFORMATION
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 ```
+{: codeblock}
+

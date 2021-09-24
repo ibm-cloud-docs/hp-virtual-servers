@@ -53,6 +53,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 
 ## Creating a custom image
 {: #byoi_create}
+
 1. Choose a base for your OCI Image. Either use one of the [publicly available images from Docker Hub](https://hub.docker.com/search?q=&type=image&image_filter=&architecture=s390x) or build one from scratch.
 2. Use a build tool such as `docker build` to make your required modifications to the base. You can use Ubuntu to install these tools on a Hyper Protect Virtual Server if you don't have access to a system that runs on the IBM Z platform (s390x architecture), or you can't cross build your image. To install Docker on your Hyper Protect Virtual Server, run `apt update && apt install -y docker.io`. Be aware of these hints when you build your image:
     - The maximum allowed image size is 5 GB.
@@ -62,7 +63,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
     - If you want to use `systemd` in your image, make sure you set the start command to `/sbin/init` and configure the environment variable `RUNQ_SYSTEMD=1`.
     - The virtual server gets its own IP address, which means that all open ports are automatically mapped on the internal and public network. Make sure you restrict network access in your image to only the ports you require. `EXPOSE` rules from the image build are not applied.
     - The image must be tagged according to the following format to later “push” the image to the registry:
-     ` <registry url>/<namespace>/<name>:<tag>`
+     `<registry url>/<namespace>/<name>:<tag>`
      where:
       - registry url: Within ICR: An example is `de.icr.io`, or for DockerHub: `docker.io`.
       - namespace: Is the [namespace created](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in the {{site.data.keyword.cloud_notm}} Container Registry, see also step 4 of this procedure.
@@ -73,13 +74,13 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
     - Follow the [instructions to create an API key](https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key).
     - Follow the [instructions to create a namespace](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in {{site.data.keyword.cloud_notm}} Container Registry.
     - To log in to the registry on your console, run:
-      ```
+      ```sh
       echo "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io
       ```
       {: pre}
 
     - Push the image by running:
-      ```
+      ```sh
       DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://notary.<registry_region>.icr.io docker push <image>
       ```
       {: pre}
@@ -89,13 +90,14 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 
 ## Creating a registration definition file by using the CLI
 {: #byoi_regdef_cli}
+
 The registration definition file contains metadata about the OCI image you want to use for your Hyper Protect Virtual Server, such as the repository name and the credentials to pull the image. Because it can contain secret information, the file is  automatically encrypted and signed by the CLI before you can use it to create a new Virtual Server. Use the following commands to create an encrypted registration definition file.
 
 Before you call the `hpvs registration-key-create` command, `gpg` must be installed on your system.
 
 1. To create a `gpg` registration key, run the `hpvs registration-key-create` command. The resulting output files are the required inputs for the `hpvs registration-create` command.
 
-   ```
+   ```sh
    ibmcloud hpvs registration-key-create ID [--gpg-passphrase-path FILE-PATH] [-v VERBOSE]
    ```
    {: pre}
@@ -113,14 +115,14 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 
 2. To create a registration file, run the `hpvs registration-create` command.
 
-   ```
+   ```sh
    ibmcloud hpvs registration-create [--repository-name REPO-NAME] [--cr-username USER-NAME --cr-pwd-path FILE-PATH | --no-auth] [--allowed-env-keys ENV-KEYS | --no-env] [--image-key-id IMAGE-KEY-ID] [--image-key-public-path PUBLIC-KEY] [--registration-key-private-path PRIVATE-KEY-PATH] [--registration-key-public-path PUBLIC-KEY-PATH] [--gpg-passphrase-path PASS-PHRASE] [--cap-add  CAPABILITIES]
    ```
    {: pre}
 
    If you enter the command without any parameters:
 
-   ```
+   ```sh
    ibmcloud hpvs registration-create
    ```
    {: pre}
@@ -129,7 +131,7 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 
    If the container registry does not require authentication, set the `-no-auth` parameter to prevent prompting. If no environment parameters are required, set the `-no-env` parameter, for example:
 
-   ```
+   ```sh
    ibmcloud hpvs registration-create --no-env --no-auth
    ```
    {: pre}
@@ -175,12 +177,13 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 
 ## Using your OCI Image to provision a Hyper Protect Virtual Server
 {: #byoi_provision}
+
 You must use the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin) `ibmcloud hpvs instance-create` command to use your own OCI Image to provision a Hyper Protect Virtual Server, as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-provision#provision-cli).
 
 ### Example
 {: #byoi_example}
 
-```
+```sh
 ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path "C:\MyRegistrationDefinitions\registration.json.asc" -i latest
 ```
 
@@ -209,10 +212,12 @@ Variable names can have up to 64 characters and can consist of numbers, chars, a
 ```
 ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name=value
 ```
+{: screen}
 
 **An Example with multiple environment variables:**
 ```
 ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name1=value1 -e name2=value2
 ```
+{: screen}
 
 The initial user has the corresponding environment variable set within the container.

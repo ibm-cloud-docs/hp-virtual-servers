@@ -38,7 +38,7 @@ As shown in Figure 2, the IBM LinuxONE systems which are used for the {{site.dat
 * All disks, which are attached to the IBM Secure Service Container host system are automatically encrypted according to AES256. The encryption keys are stored in the protected host.
 * IBM LinuxONE Hardware Management Console functions, which examine the processor or memory state are not available for partitions that are protected by the IBM Secure Service Container technology.
 
-![**{{site.data.keyword.hpvs}}** architecture](image/hpvs_architecture-isolation.svg "**{{site.data.keyword.hpvs}}**  architecture compute isolation")<br>
+![**{{site.data.keyword.hpvs}}** architecture](image/hpvs_architecture-isolation.svg "**{{site.data.keyword.hpvs}}**  architecture compute isolation")  
 
 *Figure 2. **{{site.data.keyword.hpvs}}** architecture compute isolation*
 

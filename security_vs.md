@@ -48,7 +48,7 @@ For firewall configurations based on **IPtables**, IBM provided an `systemd-serv
 
 To adjust the firewall, configure your **IPtables** and override the existing configuration file by using the following command:
 
-```
+```sh
 iptables-save > /etc/iptables/iptables.conf
 ```
 {: codeblock}

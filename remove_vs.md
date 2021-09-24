@@ -39,14 +39,14 @@ To delete {{site.data.keyword.hpvs}} from the [CLI](https://cloud.ibm.com/docs/h
 
 1. Make sure you know the Cloud resource name (CRN) of the server you want to delete. To find the CRN,  run:
 
-   ```
+   ```sh
    ibmcloud hpvs instances
    ```
    {: pre}
 
 2. To delete the server, run the following command:
 
-   ```
+   ```sh
    ibmcloud hpvs instance-delete CRN --force
    ```
    {: pre}
