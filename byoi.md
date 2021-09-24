@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-09-24"
 
 subcollection: hp-virtual-servers
 
@@ -80,7 +80,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 
     - Push the image by running:
       ```
-      DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://<registry_region>.icr.io:4443 docker push <image>
+      DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://notary.<registry_region>.icr.io docker push <image>
       ```
       {: pre}
 
@@ -107,7 +107,7 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 
    `--gpg-passphrase-path FILE-PATH`
    :   Is the path for the file that contains the passphrase for the registration key. The passphrase must consist of at least 6 characters. To make sure that a new line is not appended, use `echo` with `-n` or cat with EOF. If the path is not specified, you are prompted for the passphrase.
-   
+
    `-v, --verbose`
    :   Set to true for verbose output.
 
@@ -137,37 +137,37 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
    Where:
    `--repository-name REPO-NAME`
    :   Is the fully qualified name for the repository.
-   
+
    `--cr-username USER-NAME`
    :   Is the username for the login on the container repository. It can be any string of 4 - 30 characters.
-   
+
    `--cr-pwd-path FILE-PATH`
    :   Is the path for the file that contains the container repository password.
-   
+
    `--no-auth`
    :   Is the parameter that must be set if the image does not require authorization to download. In this case,  you don't need to provide `cr-username` and `cr-pwd-path` parameters. If you do, these parameters are ignored.
-   
+
    `--allowed-env-keys ENV-KEYS`
    :   Specifies the allowed environment variable keys as a comma-separated list. The keys must be strings of 1 - 64 characters.
-   
+
    `--no-env`
    :   This parameter can be set if the image does not require any allowed environment variables. In this case,  you don't need to provide the `allowed-env-keys` parameter. If you do, it is ignored.
-   
+
    `--image-key-id IMAGE-KEY-ID`
    :   The ID of the root key that was used to sign the image. It must contain 64 characters. If the image-key-id is not specified, the command first tries to determine the ID automatically by requesting the container registry notary service. Optional.
-   
+
    `--image-key-public-path PUBLIC-KEY`
    :   The path for the file that contains the public part of the key that is used to sign the image.  The public part of the key must be a minimum of 20 characters and base64 encoded. If the path is not specified, the command first tries to determine the public part of the key automatically by requesting the container registry notary service. Optional.
-   
+
    `--registration-key-public-path PRIVATE-KEY-PATH`
    :   The path for the public key from the registration key pair.
-   
+
    `--registration-key-private-path PUBLIC-KEY-PATH`
    :   The path for the private key from the registration key pair.
-   
+
    `--gpg-passphrase-path PASS-PHRASE`
    :   The path for the `gpg` pass phrase used for the private part of the registration key. The passphrase must consist of at least 6 characters. To make sure that a new line is not appended, use `echo` with `-n` or `cat` with EOF.
-   
+
    `--cap-add CAPABILITIES`
    :   The Linux capabilities to be enabled are specified as a comma separated list.
 

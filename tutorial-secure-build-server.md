@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-24"
 
 subcollection: hp-virtual-servers
 
@@ -75,6 +75,7 @@ The Digital Wallet application, Secure Bitcoin Wallet, is available [here](https
 To complete this tutorial, you need to meet the following prerequisites:
 - Create an IBM Cloud account.
 - Download and install the IBM Cloud CLI on your workstation.
+- Install [GPG](https://www.gnupg.org/index.html).
 
 ## Task flow
 {: #taskflow_sbs}
@@ -164,7 +165,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
 {
   "CICD_PUBLIC_IP": "",
   "CICD_PORT": "443",
-  "IMAGE_TAG": "1.3.0.2",
+  "IMAGE_TAG": "1.3.0.3",
   "CONTAINER_NAME": "SBContainer",
   "GITHUB_KEY_FILE": "~/.ssh/id_rsa",
   "GITHUB_URL": "git@github.com:IBM/secure-bitcoin-wallet.git",
@@ -180,7 +181,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
   "DOCKER_CONTENT_TRUST_BASE_SERVER": "",
   "DOCKER_BASE_SERVER": "us.icr.io",
   "DOCKER_PUSH_SERVER": "us.icr.io",
-  "DOCKER_CONTENT_TRUST_PUSH_SERVER": "https://us.icr.io:4443",
+  "DOCKER_CONTENT_TRUST_PUSH_SERVER": "https://notary.us.icr.io",
   "ENV_WHITELIST":  ["ZHSM", "APIKEY", "INSTANCE_ID", "IAM_ENDPOINT"],
   "ARG": {
     "NO_GRPC_BUILD": "1",
@@ -236,10 +237,10 @@ First, copy the encrypted registration definition for the Secure Build image int
 
 Then, use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA` taken from the output of the preceding command.
 ```
-# ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.2 -e CLIENT_CRT=... -e CLIENT_CA=...
+# ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.3 -e CLIENT_CRT=... -e CLIENT_CA=...
 ```
 
-`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Be sure to use the image tag `1.3.0.2` because this tag references the up-to-date version of the Secure Build Server.
+`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Be sure to use the image tag `1.3.0.3` because this tag references the up-to-date version of the Secure Build Server.
 For more information about available pricing plans and regions and datacenters, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
 
 ### 8. Display your Secure Build Server instance.
@@ -280,7 +281,7 @@ Memory                2048 MiB
 Processors            1 vCPUs
 Image type            self-provided
 Image OS              self-defined
-Image name            ibmzcontainers/secure-docker-build:1.3.0.2
+Image name            ibmzcontainers/secure-docker-build:1.3.0.3
 Environment           CLIENT_CA=...
                       CLIENT_CRT=...
 Last operation        create succeeded
@@ -411,7 +412,7 @@ You can repeat this command to update the latest build status.
 The following example output is displayed for a build that is in progress:
 ```
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.2",
+    "build_image_tag": "1.3.0.3",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -422,7 +423,7 @@ INFO:__main__:status: response={
 The following example output is for a build, which failed due to a container registry login problem:
 ```
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.2",
+    "build_image_tag": "1.3.0.3",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -451,7 +452,7 @@ Run the following command again to display the status of your build:
 The following is example output for a build that completed successfully (indicated by the `success` status):
 ```
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.2",
+    "build_image_tag": "1.3.0.3",
     "build_name": "us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350",
     "image_tag": "s390x-v1-ad52e76",
     "manifest_key_gen": "soft_crypto",
