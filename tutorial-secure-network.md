@@ -449,11 +449,11 @@ Ensure that you have exported the appropriate parameters before you run these co
 - To view the details of the commands and their parameters, type the command you want view with the `--help` option, for example the following command shows you details about the `hpnet peer add` command:
    ```sh
    ./hpnet peer add --help
-   ```sh
+   ```
    {: pre}
 
    The following snippet shows the output.
-   ```
+   ```sh
    to add a peer on a node
    Usage:
    hpnet peer add [flags]

@@ -77,9 +77,8 @@ You can ease the logon and authentication to your virtual server with your priva
     - Enter a name into the **Saved Sessions** field. In the shown example, this session name is the service name as specified during provisioning.
     - Click **Save**.
 
-   ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance")
+   ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance"){: caption="Figure 1. Defining a new virtual server instance" caption-side="bottom"}
 
-   *Figure 1. Defining a new virtual server instance*
 2. In the **SSH->Auth** category, specify the file that contains the private SSH key.  
 
    ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication")
