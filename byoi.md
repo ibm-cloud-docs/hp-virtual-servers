@@ -209,13 +209,13 @@ The following variables cannot be set: “RUNQ_ROOTDISK”, “RUNQ_RUNQENV”, 
 Variable names can have up to 64 characters and can consist of numbers, chars, and underscore. Variable values can have up to 4096 characters and can consist of base64 character set characters (uppercase letters, lowercase letters, and +, /).
 
 **An example with one environment variable:**
-```
+```sh
 ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name=value
 ```
 {: screen}
 
 **An Example with multiple environment variables:**
-```
+```sh
 ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name1=value1 -e name2=value2
 ```
 {: screen}

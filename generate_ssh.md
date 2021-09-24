@@ -144,17 +144,17 @@ To create a virtual server with a **PuTTY** public SSH key, you have the followi
 Imagine you have an existing virtual server, which you want to configure in the **PuTTY Configuration** utility for a convenient log-in to this server. You created this virtual server by using an existing OpenSSH key pair. This scenario describes how to convert the existing OpenSSH private key for a comfortable logging-in to this virtual server from **PuTTY Configuration**. For this purpose, you learn how to convert the pertaining OpenSSH private key into the  **PuTTY** format.
 
 
-1. Select **Import key** from **Conversions**. Browse for and open the existing OpenSSH private key file.   
+1. Select **Import key** from **Conversions**. Browse for and open the existing OpenSSH private key file.
 
-![Import OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey.jpg "Import OpenSSH private key to **PuTTY**")
+   ![Import OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey.jpg "Import OpenSSH private key to **PuTTY**")
 
-Figure 3. Import OpenSSH private key to **PuTTY**
+   Figure 3. Import OpenSSH private key to **PuTTY**
 
-2. Save the private key in the **PuTTY** format by using the file type `.ppk`.   
+2. Save the private key in the **PuTTY** format by using the file type `.ppk`.
 
-![Convert OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey_save.jpg "Convert OpenSSH private key to **PuTTY**")
+   ![Convert OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey_save.jpg "Convert OpenSSH private key to **PuTTY**")
 
-*Figure 4. Convert OpenSSH private key to **PuTTY***
+   *Figure 4. Convert OpenSSH private key to **PuTTY***
 
 3. Configure your virtual server in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
 

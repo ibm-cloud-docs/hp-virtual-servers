@@ -51,11 +51,9 @@ To build a container image with Secure Build Server, you must complete these ste
 - Secure Build Server uses the source code's Dockerfile to build a container image.
 - Secure Build Server signs the container image and pushes the container image to the IBM Container Registry or Docker Hub.
 - Secure Build Server creates a manifest file and signs it. The manifest file is used to verify the source of the image and the integrity of the build. It contains the source code from which the image was built as well as the build log. You can download the manifest file from the Secure Build Server, and, for example, use it for audit purposes or pass it to an auditor. The manifest file is signed by signing keys that are kept inside the secure enclave.
--	Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
+- Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
 
-![The Secure Build Server](image/secure-build.png "The Secure Build Server")
-
-*Figure 1. The Secure Build Server*
+![The Secure Build Server](image/secure-build.png "The Secure Build Server"){: caption="Figure 1. The Secure Build Server" caption-side="bottom"}
 
 The registration file specifies the container registry, the application image, and the credentials that are required to access the container registry. The registration file is encrypted and can be decrypted by {{site.data.keyword.hpvs}} only.
 
@@ -109,7 +107,7 @@ ibmcloud iam api-key-create myapikey -d "API key for SBS tutorial"
 {: pre}
 
 The output displays the created API key. Make a note of the `API Key` value, you need it later to provide the API Key when you set up the Secure Build Server. The following snippet shows example output:
-```
+```sh
 Creating API key myapikey under <your account id> as <your user id>...
 OK
 API key myapikey was created
@@ -217,7 +215,7 @@ For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure
 {: pre}
 
 The following snippet shows example output:
-```
+```sh
 INFO:__main__:parameter file sbs-config.json renamed to sbs-config.json.2021-02-10_14-55-19.806993
 INFO:root:client_certificate: generating client CA and certificate
 ```
@@ -237,7 +235,7 @@ If the file `sbs-config.json` is open in an editor when you run this command, re
 ```
 
 The following snippet shows example output, including the base64-encoded values for `CLIENT_CRT` and `CLIENT_CA`, which you need in the next step:
-```
+```sh
 INFO:root:client_certificate: using supplied pem files client_crt_key=.SBContainer-5f2bda44-b3f6-47d2-87d1-39e351ef9705 capath=./.SBContainer-5f2bda44-b3f6-47d2-87d1-39e351ef9705.d/client-ca.pem cakeypath=./.SBContainer-5f2bda44-b3f6-47d2-87d1-39e351ef9705.d/client-ca-key.pem
 INFO:__main__:env="-e CLIENT_CRT=...  -e CLIENT_CA=..."
 ```
@@ -267,7 +265,7 @@ To view information about the Secure Build Server instance and other {{site.data
 The command displays detailed information about the {{site.data.keyword.hpvs}} instances you have provisioned.
 
 The following snippet shows example output for a Secure Build Server instance that is being provisioned:
-```
+```sh
 Name                     SBContainer
 CRN                      crn:v1:bluemix:public:hpvs:dal13:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx::
 Location                 dal13
@@ -281,7 +279,7 @@ Created                  not available
 {: screen}
 
 The following snippet shows example output for a Secure Build Server instance that is successfully provisioned and can be used for the next steps. Make a note of the value of the property `Public IP address`:
-```
+```sh
 Name                  SBContainer
 CRN                   crn:v1:bluemix:public:hpvs:dal13:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx::
 Location              dal13
@@ -329,7 +327,7 @@ Run the following command to check the status of your Secure Build Server instan
 {: pre}
 
 The following snippet shows example output. Here, the command completes successfully, and the `status` field is empty.
-```
+```sh
 INFO:__main__:status: response={
     "status": ""
 }
@@ -337,7 +335,7 @@ INFO:__main__:status: response={
 {: screen}
 
 The following snippet shows example output for the case where the command does not complete successfully. This message typically indicates that the property `CICD_PUBLIC_IP` is not correctly set in the configuration file:
-```
+```sh
 INFO:__main__:build: status e=Invalid URL 'https://:443/image': No host supplied
 ```
 {: screen}
@@ -351,7 +349,7 @@ Run the following command to get the server CSR:
 {: pre}
 
 The following snippet shows example output that includes the server CSR:
-```
+```sh
 INFO:__main__:get-server-csr: response={
     "csr": "-----BEGIN CERTIFICATE REQUEST-----\n...\n-----END CERTIFICATE REQUEST-----\n"
 }
@@ -378,7 +376,7 @@ To post the signed server certificate to your Secure Build Server instance, run 
 {: pre}
 
 The following command shows example output, which indicates that the command completed successfully:
-```
+```sh
 INFO:__main__:post-server-cert: response={
     "status": "OK"
 }
@@ -394,7 +392,7 @@ To check and verify the status for your Secure Build Server instance, run the fo
 {: pre}
 
 The following command shows example output that contains the latest status message of your Secure Build Server instance:
-```
+```sh
 INFO:__main__:status: response={
     "status": "restarted nginx"
 }
@@ -410,7 +408,7 @@ Use the following command to initialize the configuration for your Secure Build 
 {: pre}
 
 The following command shows example output of the command:
-```
+```sh
 INFO:__main__:init: response={
     "status": "OK"
 }
@@ -426,7 +424,7 @@ To build the application image, run the following command:
 {: pre}
 
 This command starts the build on your Secure Build Server instance. It displays the following output:
-```
+```sh
 INFO:__main__:build: response={
     "status": "OK: async build started"
 }
@@ -444,7 +442,7 @@ Use the following command to display the status of your build:
 You can repeat this command to update the latest build status.
 
 The following example output is displayed for a build that is in progress:
-```
+```sh
 INFO:__main__:status: response={
     "build_image_tag": "1.3.0.3",
     "build_name": "",
@@ -457,7 +455,7 @@ INFO:__main__:status: response={
 {: screen}
 
 The following example output is for a build, which failed due to a container registry login problem:
-```
+```sh
 INFO:__main__:status: response={
     "build_image_tag": "1.3.0.3",
     "build_name": "",
@@ -489,7 +487,7 @@ Run the following command again to display the status of your build:
 {: pre}
 
 The following is example output for a build that completed successfully (indicated by the `success` status):
-```
+```sh
 INFO:__main__:status: response={
     "build_image_tag": "1.3.0.3",
     "build_name": "us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350",
@@ -517,7 +515,7 @@ Download the manifest file from your Secure Build Server instance by using the f
 {: pre}
 
 The following snippet shows example output that is displayed by the command:
-```
+```sh
 INFO:__main__:get-manifest manifest_name: manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350
 INFO:__main__:verify_manifest: manifest_name=manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350 test=0
 INFO:__main__:verify=OK
@@ -540,7 +538,7 @@ Extract the archive file that was retrieved in the previous step by running the 
 {: pre}
 
 This extracts the following expected output:
-```
+```sh
 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig
 ```
@@ -567,7 +565,7 @@ To download the state image, run the following command:
 {: pre}
 
 This command creates an encrypted file in your current directory and prints the file name in the output, for example:
-```
+```sh
 INFO:__main__:state:name: us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350
 ```
 {: screen}
@@ -613,7 +611,7 @@ ibmcloud hpvs instance-create securewallet lite-s dal13 --rd-path sbs.enc -i $im
 
 This command starts instance provisioning and displays the following output:
 
-```
+```sh
 OK
 Provisioning request for service instance 'crn:v1:bluemix:public:hpvs:dal13:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx::' was accepted.
  To check the provisioning status run:

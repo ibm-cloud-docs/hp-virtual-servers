@@ -85,7 +85,7 @@ Complete the following steps:
      {: pre}
 
      The following snippet shows an example output.
-     ```
+     ```sh
      encryptedNetworkCli-1.0.0.tar.gz Verified OK
      ```
      {: screen}
@@ -167,7 +167,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
      {: pre}
 
      The following snippet shows an example output.
-     ```
+     ```sh
      encryptednetwork-1.0.0.tar.gz Verified OK
      ```
      {: screen}
@@ -187,7 +187,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
 
      The secure network management agent is now running.
      The following network configuration files are mounted at `/data/hpagent_store`:
-     ```
+     ```sh
      /data/hpagent_store/authorized_user
      /data/hpagent_store/public.pem
      /data/hpagent_store/private.key
@@ -238,7 +238,7 @@ See [Parameter specification](#param_limit) for details about some specification
      {: pre}
 
      The following snippet shows an example output when the command has completed successfully.
-     ```
+     ```sh
      +------------+--------------------------------------------------------------------+
      | KEYTYPE    | FILE                                                               |
      +------------+--------------------------------------------------------------------+
@@ -275,7 +275,7 @@ See [Parameter specification](#param_limit) for details about some specification
      {: pre}
 
      The following snippet shows an example output when the command has completed successfully.
-     ```
+     ```sh
      +------------+--------------------------------------------------------------------+
      | KEYTYPE    | FILE                                                               |
      +------------+--------------------------------------------------------------------+
@@ -332,7 +332,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      {: pre}
 
      The following snippet shows an example output when the command has completed successfully.
-     ```
+     ```sh
      +-----------------+----------------------------------------------+
      | NODE-PROPERTIES | VALUES                                       |
      +-----------------+----------------------------------------------+
@@ -361,7 +361,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      {: pre}
 
      The following snippet shows an example output when the command has completed successfully.
-     ```
+     ```sh
      +-----------------+----------------------------------------------+
      | NODE-PROPERTIES | VALUES                                       |
      +-----------------+----------------------------------------------+
@@ -395,7 +395,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      {: pre}
 
      The following snippet shows an example output when the command has completed successfully.
-     ```
+     ```sh
      command completed successfully.
      ```
      {: screen}
@@ -417,7 +417,7 @@ Now a new VPN virtual network interface is created on the virtual server and con
      {: pre}
 
      The following snippet shows an example output when the command has completed successfully.
-     ```
+     ```sh
      command completed successfully.
      ```
      {: screen}
@@ -449,7 +449,7 @@ Ensure that you have exported the appropriate parameters before you run these co
 - To view the details of the commands and their parameters, type the command you want view with the `--help` option, for example the following command shows you details about the `hpnet peer add` command:
    ```sh
    ./hpnet peer add --help
-   ```
+   ```sh
    {: pre}
 
    The following snippet shows the output.
@@ -477,7 +477,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    +------------+----------------------------------------------+
    | PROPERTIES | VALUES                                       |
    +------------+----------------------------------------------+
@@ -495,7 +495,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    command completed successfully.
    ```
    {: screen}
@@ -507,7 +507,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    +-----------------+----------------------------------------------+
    | NODE-PROPERTIES | VALUES                                       |
    +-----------------+----------------------------------------------+
@@ -527,7 +527,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    command completed successfully.
    ```
    {: screen}
@@ -539,7 +539,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    +--------------------------------------------------------------+---------------+------------------+
    | PUBLICKEY                                                    | VPNIP         | ENDPOINT         |
    +--------------------------------------------------------------+---------------+------------------+
@@ -557,7 +557,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    command completed successfully.
    ```
    {: screen}
@@ -569,7 +569,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    +------------+--------------------------------------------------------------------+
    | KEYTYPE    | FILE                                                               |
    +------------+--------------------------------------------------------------------+
@@ -595,7 +595,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    where `--generate-keypair` is used to generate a new keypair for the node.
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    +-----------------+----------------------------------------------+
    | NODE-PROPERTIES | VALUES                                       |
    +-----------------+----------------------------------------------+
@@ -616,7 +616,7 @@ Ensure that you have exported the appropriate parameters before you run these co
    {: pre}
 
    The following snippet shows an example output when the command has completed successfully.
-   ```
+   ```sh
    command completed successfully.
    ```
    {: screen}

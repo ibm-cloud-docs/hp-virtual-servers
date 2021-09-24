@@ -35,7 +35,7 @@ Note: This Notices file may identify information that is not used by, or that wa
 ## {{site.data.keyword.hpvs}} notices and information
 {: #hpvs-notice}
 
-```
+```sh
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 NOTICES AND INFORMATION
 
@@ -148,6 +148,7 @@ END OF NOTICE FILE
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ```
+{: codeblock}
 
 ## Hosting Appliance notices and information
 {: #host-appliance-notices}

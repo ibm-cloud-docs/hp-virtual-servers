@@ -80,7 +80,7 @@ You can ease the logon and authentication to your virtual server with your priva
    ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance")
 
    *Figure 1. Defining a new virtual server instance*
-2. In the **SSH -> Auth** category, specify the file that contains the private SSH key.  
+2. In the **SSH->Auth** category, specify the file that contains the private SSH key.  
 
    ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication")
 

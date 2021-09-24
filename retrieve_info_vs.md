@@ -55,7 +55,7 @@ This method works, if you produced the private key by using the default settings
 The dashboard also displays the fingerprint of the SSH public key, with which the virtual server was created.
 This fingerprint is displayed with the `ssh-keygen` command when you generate a pair of SSH keys. Or you can reproduce the fingerprint of a public SSH key by entering a command similar to the following one:
 
-```
+```sh
 ssh-keygen -E sha256 -lf id_rsa.pub
 ```
 {: codeblock}
