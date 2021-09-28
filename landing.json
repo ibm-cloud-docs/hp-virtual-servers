@@ -36,6 +36,11 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
+        "date": "30 September 2021",
+        "title": "The hpvs cli on s390x",
+        "description": "The hpvs cli is now supported on the IBM Z platform (s390x architecture)."
+      },
+      {
         "date": "19 August 2021",
         "title": "Ubuntu Linux 20.04",
         "description": "Ubuntu Linux 20.04 is now supported."
@@ -44,11 +49,6 @@
         "date": "29 July 2021",
         "title": "Secure network",
         "description": "You can use the secure network which provides an end to end encrypted network communication for IBM Cloud Hyper Protect Virtual Server services"
-      },
-      {
-        "date": "18 June 2021",
-        "title": "Registration definition file is updated",
-        "description": "You can use the repository definition file that is updated to pull images from the IBM Cloud Registry."
       }
     ]
   }

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-28"
 
 keywords: release note, what's new
 
@@ -28,6 +28,13 @@ content-type: release-note
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 30 Sep 2021
+{: #Sep30-2021}
+{: release-note}
+
+Updated: The hpvs cli is now supported on s390x.
+:   The hpvs cli is now supported on the IBM Z platform (s390x architecture). For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin).
 
 
 ## 19 August 2021
