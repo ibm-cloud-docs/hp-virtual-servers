@@ -87,6 +87,8 @@ The {{site.data.keyword.hpvs}} do not come with swap space configured, and it is
 Within `/tmp` is a `tmpfs`, which can use a large volume of RAM. Use `/var/tmp` for your applications when you need large volumes of temporary storage. Insufficient RAM can cause your system to behave unpredictably.
 
 ### Configuring logging for the Ubuntu server
+{: #configuring_logging}
+
 You must manually configure `logrotate` and `journald` to leave a small percentage of the file systems free. To do this, configure `SystemKeepFree=15%` in `/etc/systemd/journald.conf`.
 
 Check regularly that a percentage of the file system is still free. For the `logrotatation` configuration, make sure that your log files do not get too large. Compress and remove log files (or move them to your data volume) before they break your system.

@@ -33,12 +33,15 @@ keywords: secure build, secure build server, image, virtual server instance, ins
 In this tutorial, you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to build a digital wallet application, then you use {{site.data.keyword.hpvs}} to deploy the resulting application in the public cloud.
 
 ## Contents
+{: #contents_tutorial}
+
+The following information is provided in this tutorial:
+
 - [Basic concepts](#basicconcept_sbs)
 - [Digital wallets](#digwall_sbs)
 - [Before you begin](#prerequisites_sbs)
 - [Task flow](#taskflow_sbs)
 - [Summary](#summary_sbs)
-<!-- - [Next steps](#nextsteps_sbs) -->
 
 ## Secure Build Server basic concepts
 {: #basicconcept_sbs}
@@ -94,6 +97,8 @@ During this task flow, you create two {{site.data.keyword.hpvs}} instances: One 
 For this tutorial you need to set up IBM Container Registry and create a new namespace. The container registry is used to store the built application container image in the new namespace.
 
 ### 1. Use the following commands to log in to IBM Cloud
+{: #step_1}
+
 ```sh
 ibmcloud login --sso
 ibmcloud target -g default
@@ -101,6 +106,8 @@ ibmcloud target -g default
 {: pre}
 
 ### 2. Run the following command to create an API key for your user ID.
+{: #step_2}
+
 ```sh
 ibmcloud iam api-key-create myapikey -d "API key for SBS tutorial"
 ```
@@ -124,6 +131,8 @@ Locked        false
 {: screen}
 
 ### 3. Run the following commands to install the container registry CLI plug-in and to create a new namespace `secureimages` in your container registry.
+{: #step_3}
+
 ```sh
 ibmcloud plugin install container-registry
 ibmcloud cr region-set us-south
@@ -138,6 +147,8 @@ ibmcloud cr namespace-add secureimages
 Complete the steps in this procedure to set up the Secure Build Server.
 
 ### 1. Install the IBM Cloud CLI HPVS plug-in by running the following command:
+{: #step_one}
+
 ```sh
 ibmcloud plugin install hpvs
 ```
@@ -146,6 +157,8 @@ ibmcloud plugin install hpvs
 The Secure Build Server is written in Python and is tested with Python 3.6.9. To set up the Secure Build Server, you need to install python3, pip3, and the Secure Build Server on your workstation.
 
 ### 2. Install python3 and pip3, by running the following commands:
+{: #step_two}
+
 ```sh
 sudo apt-get update
 sudo apt-get install python3 python3-pip
@@ -157,6 +170,8 @@ Note: This tutorial shows the commands for Ubuntu. On other platforms, use the e
 {: note}
 
 ### 3. Use the following commands to install the Secure Build Server CLI on your workstation:
+{: #step_three}
+
 ```sh
 git clone git@github.com:ibm-hyper-protect/secure-build-cli.git
 cd secure-build-cli
@@ -165,6 +180,8 @@ pip3 install -r requirements.txt
 {: pre}
 
 ### 4. Create the Secure Build Server configuration.
+{: #step_four}
+
 Create file `sbs-config.json` in your current working directory (this is the directory that you created in the previous step, `secure-build-cli`), then add the following content:
 
 ```json
@@ -209,6 +226,8 @@ Notes:
 For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure-build-cli#preparing-the-configuration).
 
 ### 5. Create the client certificate and client CA by running the following command:
+{: #step_five}
+
 ```sh
 # ./build.py create-client-cert --env sbs-config.json
 ```
@@ -230,6 +249,8 @@ This command does the following:
 If the file `sbs-config.json` is open in an editor when you run this command, reload the updated file. Do not modify the new properties `UUID` and `SECRET`.
 
 ### 6. Run the following command to display the client certificate and CA in base64-encoding:
+{: #step_six}
+
 ```buildoutcfg
 # ./build.py instance-env --env sbs-config.json
 ```
@@ -242,6 +263,7 @@ INFO:__main__:env="-e CLIENT_CRT=...  -e CLIENT_CA=..."
 {: screen}
 
 ### 7. Provision the Secure Build Server instance
+{: #step_seven}
 
 First, copy the encrypted registration definition for the Secure Build image into a new file named `secure_build.asc`. The content of the encrypted registration definition is located [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
@@ -255,6 +277,7 @@ Then, use the following command line to provision a new instance of the Secure B
 For more information about available pricing plans and regions and datacenters, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
 
 ### 8. Display your Secure Build Server instance.
+{: #step_eight}
 
 To view information about the Secure Build Server instance and other {{site.data.keyword.hpvs}} instances that you have provisioned, use the following command line:
 ```sh
@@ -305,6 +328,7 @@ Created               2021-...
 {: screen}
 
 ### 9. Complete the configuration file.
+{: #step_nine}
 
 Edit the configuration file `sbs-config.json` to add the public IP address of your Secure Build Server instance as a value for property `CICD_PUBLIC_IP`:
 ```sh
@@ -319,6 +343,7 @@ Edit the configuration file `sbs-config.json` to add the public IP address of yo
 Now, build the application container image.
 
 ### 1. Check the status of your Secure Build Server instance.
+{: #check_status}
 
 Run the following command to check the status of your Secure Build Server instance:
 ```sh
@@ -341,6 +366,7 @@ INFO:__main__:build: status e=Invalid URL 'https://:443/image': No host supplied
 {: screen}
 
 ### 2. Get the server CSR.
+{: #get_csr}
 
 Run the following command to get the server CSR:
 ```sh
@@ -357,6 +383,7 @@ INFO:__main__:get-server-csr: response={
 {: screen}
 
 ### 3. Sign the server CSR.
+{: #sign_csr}
 
 Use the following command to sign the server CSR:
 ```sh
@@ -368,6 +395,7 @@ This command does not display any output.
 
 
 ### 4. Post the signed server certificate to your Secure Build Server instance.
+{: #post_csr}
 
 To post the signed server certificate to your Secure Build Server instance, run the following command:
 ```sh
@@ -384,6 +412,7 @@ INFO:__main__:post-server-cert: response={
 {: screen}
 
 ### 5. Check the status of your Secure Build Server instance.
+{: #check_sbs_instance}
 
 To check and verify the status for your Secure Build Server instance, run the following command:
 ```sh
@@ -400,6 +429,7 @@ INFO:__main__:status: response={
 {: screen}
 
 ### 6. Initialize the configuration for your Secure Build Server instance.
+{: #init_config}
 
 Use the following command to initialize the configuration for your Secure Build Server instance:
 ```sh
@@ -416,6 +446,7 @@ INFO:__main__:init: response={
 {: screen}
 
 ### 7. Build the application image.
+{: #build_app_image}
 
 To build the application image, run the following command:
 ```sh
@@ -432,6 +463,7 @@ INFO:__main__:build: response={
 {: screen}
 
 ### 8. Check the status of your build.
+{: #check_build_status}
 
 Use the following command to display the status of your build:
 ```sh
@@ -469,6 +501,7 @@ INFO:__main__:status: response={
 {: screen}
 
 ### 9. Check the build log.
+{: #check_build_log}
 
 To display the build log, run the following command:
 ```sh
@@ -479,6 +512,7 @@ To display the build log, run the following command:
 This command displays the build log. You can repeatedly run this command during the build to see the latest updates to the build log.
 
 ### 10. Wait until the build completes.
+{: #build_complete}
 
 Run the following command again to display the status of your build:
 ```sh
@@ -504,9 +538,12 @@ Make a note of the `image_tag` property. The image tag that was generated by the
 The Secure Build Server builds successfully, signed your application's container image, and pushed it to the container registry (you can see the image with the image tag in your container registry `secureimages`). The Secure Build Server has also created a manifest file and an encrypted registration file, which you can use to provision the application instance.
 
 ### The manifest file
+{: #manifest_file}
+
 The Secure Build Server creates a signed manifest file for each successful build for audit purposes. You can verify the source and integrity of the build and the built image or can pass the manifest file to an auditor to do so. For the purposes of this tutorial,  this is discretionary, and the next two steps are optional and can be skipped.
 
 ### 11. Download the manifest file.
+{: #download_manifest_file}
 
 Download the manifest file from your Secure Build Server instance by using the following command:
 ```sh
@@ -530,6 +567,7 @@ The command downloads and stores a set of files in your current working director
 {: pre}
 
 ### 12. Extract the manifest file.
+{: #extract_manifest_file}
 
 Extract the archive file that was retrieved in the previous step by running the following command:
 ```sh
@@ -553,10 +591,13 @@ Extract the contents of the manifest file:
 This creates a `git` directory (including the snapshot of the application's Git repository that is used for the build), and a data directory, which includes a file `build.json` (that contains the build status) and the build.log.
 
 ### Saving the state of your Secure Build Server instance
+{: #save_sbs_state}
+
 As an optional step (which you can skip), you can download a state image from your Secure Build Server instance. To build the image in another, new Secure Build Server instance (for example, after the original instance is deleted or corrupted), you need the state image to recover the signing key and additional internal states of the Secure Build Server instance. See [here](https://github.com/ibm-hyper-protect/secure-build-cli)
 for information about how you can restore the state image and how you can save a state image to Cloud Object Storage. In this tutorial, you download the state image only, so it is available in the current working directory for possible later use.
 
 ### Step 13. Retrieve the state image.
+{: #retrieve_state_image}
 
 To download the state image, run the following command:
 ```sh
@@ -577,6 +618,7 @@ INFO:__main__:state:name: us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-
 Now it's time to deploy and run your newly built application. To do so, you download the encrypted registration file that was created during the build and use the {{site.data.keyword.hpvs}} BYOI feature to provision a {{site.data.keyword.hpvs}} instance for your application.
 
 ### 1. Retrieve the encrypted registration file
+{: #retrieve_encrypted_ regfile}
 
 First, download the encrypted registration file for your application container image:
 ```sh
@@ -597,6 +639,7 @@ INFO:__main__:a json config file has been written to sbs.enc.
 The encrypted registration file `sbs.enc` contains the information that is used by {{site.data.keyword.hpvs}} to provision a server instance with your application's container image. The file includes the repository_name as well as the container registry credentials. As the file is encrypted, you can pass it on to a cloud administrator (for example to provision the service instance) without exposing this information.
 
 ### 2. Create the Hyper Protect Virtual Servers instance for your application.
+{: #create_hpvs}
 
 Use the {{site.data.keyword.hpvs}} BYOI feature to provision a {{site.data.keyword.hpvs}} instance for your application container image. To do so, you need the image tag from step 10.
 
@@ -630,6 +673,7 @@ Wait until your service instance is successfully provisioned. After the {{site.d
 The `ibmcloud hpvs instance` command prints detailed information about the instance that includes its public IP address. Make a note of this IP address and proceed to the final step of our tutorial.
 
 ### 3. Run and use the Secure Bitcoin Wallet application.
+{: #run_secure_bitcoin}
 
 You can now use the Secure Bitcoin Wallet application: In a browser window, open URL `https://<your instance's public IP address>/electrum`.
 
@@ -637,7 +681,7 @@ Follow the description and instructions [here](https://github.com/IBM/secure-bit
 
 Here's an example screen capture of the wallet:
 
-![Secure Bitcoin Wallet on IBM LinuxONE](https://raw.githubusercontent.com/IBM/secure-bitcoin-wallet/master/images/screenshot.png "Secure Bitcoin Wallet on IBM LinuxONE")
+![Secure Bitcoin Wallet on IBM LinuxONE](https://raw.githubusercontent.com/IBM/secure-bitcoin-wallet/master/images/screenshot.png "Secure Bitcoin Wallet on IBM LinuxONE"){: caption="Figure 2. Secure Bitcoin Wallet on IBM LinuxONE" caption-side="bottom"}
 
 
 ## Summary
@@ -646,6 +690,8 @@ Here's an example screen capture of the wallet:
 You successfully used Secure Build Server to build the Secure Bitcoin wallet application. Your build runs in a secure enclave, which protects the build environment, the build process, and the build output from malicious internal or external actors. You used the {{site.data.keyword.hpvs}} BYOI feature to set up your Secure Bitcoin Wallet instance in a secure enclave, which protects the wallet from threats and hackers.
 
 ## References
+{: #references}
+
 - [Secure Build Server CLI](https://github.com/ibm-hyper-protect/secure-build-cli)
 - [Protecting your image build](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild), in particular: [Deploying the Secure Build Server as a Hyper Protect Virtual Server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild)
 - [Using your own image](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi)

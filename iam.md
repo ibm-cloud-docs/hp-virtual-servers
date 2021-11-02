@@ -47,15 +47,18 @@ The following table details actions that are mapped to service access roles. Ser
 Consider the following guidelines:
 
 * **Enable user access to the resources in your account by assigning Cloud IAM roles.** -
+
 Rather than sharing your administrator credentials, create new policies for users who
 need access to virtual servers in your accounts within IBM.
 
 * **Grant roles and permissions at the smallest scope needed.** -
+
 For example, if a user needs to access only information about virtual servers within one resource group,
 grant the **Reader** role for {{site.data.keyword.hpvs}} to the user for that resource
 group.
 
 * **Regularly audit who has access and what permissions are provided.** -
+
 Granting too many permissions might unintentionally allow someone else to
 provide access to other users, or to delete and create resources.
 

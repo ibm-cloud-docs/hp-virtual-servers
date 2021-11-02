@@ -49,8 +49,8 @@ The data that you store in {{site.data.keyword.hpvs}} is encrypted securely at r
 
 The IBM LinuxONE infrastructure components for the {{site.data.keyword.hpvs}} service are situated in colocation with the data centers. This means that these components are placed in the same data centers as the {{site.data.keyword.cloud_notm}} infrastructure but have their own network setup, which affects the network connection.
 
-![**{{site.data.keyword.hpvs}}** architecture network isolation](image/hpvs_architecture-vs_network_overview.svg "**{{site.data.keyword.hpvs}}** architecture network isolation")
-*Figure 1. **{{site.data.keyword.hpvs}}** Architecture network isolation*
+![{{site.data.keyword.hpvs}}** architecture network isolation](image/hpvs_architecture-vs_network_overview.svg "{{site.data.keyword.hpvs}} architecture network isolation"){: caption="Figure 1. {{site.data.keyword.hpvs}} Architecture network isolation" caption-side="bottom"}
+
 
 It is your responsibility to protect the connection for any application that runs in your {{site.data.keyword.cloud_notm}} and it is recommended that you follow these guidelines:
 * You can either use the public route or a private route through [{{site.data.keyword.cloud_notm}} Service Endpoints](https://cloud.ibm.com/docs/account?topic=account-service-endpoints-overview){: external} if you want to connect any other service to a {{site.data.keyword.hpvs}} instance. You can find a list of all {{site.data.keyword.cloud_notm}} services, which support {{site.data.keyword.cloud_notm}} Service Endpoints [here](https://cloud.ibm.com/docs/account?topic=account-vrf-service-endpoint#use-service-endpoint){: external}. It is recommended that you use a protected connection if you use the public route, for example, a VPN.

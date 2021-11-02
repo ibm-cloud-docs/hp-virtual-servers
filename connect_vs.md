@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2020, 2021
+  years: 2019, 2021
 lastupdated: "2021-08-19"
 
 subcollection: hp-virtual-servers
@@ -81,16 +81,15 @@ You can ease the logon and authentication to your virtual server with your priva
 
 2. In the **SSH->Auth** category, specify the file that contains the private SSH key.  
 
-   ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication")
+   ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication"){: caption="Figure 2. Providing the private SSH key for authentication" caption-side="bottom"}
 
-   *Figure 2. Providing the private SSH key for authentication*
-
+   
    For SSH key pairs generated other than using **PuTTY**, you can use **Conversions -> Import key** of the **PuTTY Key Generator** to convert the private key into the **PuTTY** format of the same length.
 3. Define the **root** default username under **Connection -> Data**.
 
-   ![Defining the auto-login user name](image/hpvs_root.jpg "Defining the auto-login user name")
+   ![Defining the auto-login user name](image/hpvs_root.jpg "Defining the auto-login user name"){: caption="Figure 3. Defining the auto-login username" caption-side="bottom"}
 
-   *Figure 3. Defining the auto-login username*
+   
 4. Go back to the session configuration shown in Figure 1 and click **Save** again. Otherwise, you lose your changes.
 
 From now on, you can open and log in to this server as **root** user without the need to specify your private SSH key.

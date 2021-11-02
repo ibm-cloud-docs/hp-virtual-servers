@@ -29,7 +29,8 @@ content-type: release-note
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
-## 30 Sep 2021
+
+## 30 September 2021
 {: #Sep30-2021}
 {: release-note}
 

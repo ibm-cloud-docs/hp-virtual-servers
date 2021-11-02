@@ -24,7 +24,6 @@ keywords: disaster recovery
 # Understanding your responsibilities when you use {{site.data.keyword.hpvs}}
 {: #resphpvs}
 
-<!-- The title of your H1 should be Understanding your responsibilities with using _service-name_, where _service-name_ is the non-trademarked short version conref. -->
 
 Find out more about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.hpvs}}.
 
@@ -38,7 +37,6 @@ Review the following sections for the specific responsibilities for you and for 
 {: #disaster-recovery}
 
 Data is stored on a high available storage unit within the data center only.
-<!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|

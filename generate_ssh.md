@@ -87,7 +87,7 @@ You can select from the supported cryptographic algorithms by using the `-t` par
 |`ecdsa-sha2-nistp256`|`ssh-keygen -t ecdsa -b 256`|
 |`ecdsa-sha2-nistp384`|`ssh-keygen -t ecdsa -b 384`|
 |`ecdsa-sha2-nistp521`|`ssh-keygen -t ecdsa -b 521`|
-
+{: caption="Table 1. Supported cryptographic algorithms" caption-side="bottom"}
 
 If you do not specify a file name to save the key, a default name is used.
 The private and public SSH key pair is stored in two files with the same name. The public SSH key, which is required for creating a virtual server is saved in the file with extension `.pub`.
@@ -119,9 +119,8 @@ This task is optional.
 
 In the **PuTTY Key Generator**, select the type of key and the key size (for example, 2048 or 4096).
 
-![Generating an SSH key pair with the PuTTY Key Generator](image/hpvs_puttygen.gif "Generating an SSH key pair with the PuTTY Key Generator")
+![Generating an SSH key pair with the PuTTY Key Generator](image/hpvs_puttygen.gif "Generating an SSH key pair with the PuTTY Key Generator"){: caption="Figure 1. Generating an SSH key pair with the **PuTTY Key Generator**" caption-side="bottom"}
 
-*Figure 1. Generating an SSH key pair with the **PuTTY Key Generator***
 
 You can select one of the supported cryptographic algorithms from the **PuTTY Key Generator** by clicking an appropriate option for the **Type of key to generate**. For the ECDSA option, a pull-down choice appears where you must additionally select a **Curve to use for generating this key** (either `nistp256`, `nistp384`, or `nistp521`).
 
@@ -134,9 +133,7 @@ To create a virtual server with a **PuTTY** public SSH key, you have the followi
 - To create the virtual server after the **PuTTY Key Generator** dialog is already closed, you can use the public key from a saved file in the OpenSSH public key format.
 
 
-![SSH key pair from the PuTTY Key Generator ready for use](image/hpvs_putty_pubkey.gif "SSH key pair from the PuTTY Key Generator ready for use")
-
-*Figure 2. SSH key pair from the **PuTTY Key Generator** ready for use*
+![SSH key pair from the PuTTY Key Generator ready for use](image/hpvs_putty_pubkey.gif "SSH key pair from the PuTTY Key Generator ready for use"){: caption="Figure 2. SSH key pair from the **PuTTY Key Generator** ready for use" caption-side="bottom"}
 
 ## Converting an OpenSSH key pair for logging-in to a virtual server from **PuTTY**
 {: #reusing_ssh_keypair_putty}
@@ -146,16 +143,14 @@ Imagine you have an existing virtual server, which you want to configure in the 
 
 1. Select **Import key** from **Conversions**. Browse for and open the existing OpenSSH private key file.
 
-   ![Import OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey.jpg "Import OpenSSH private key to **PuTTY**")
+   ![Import OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey.jpg "Import OpenSSH private key to **PuTTY**"){: caption="Figure 3. Import OpenSSH private key to **PuTTY**" caption-side="bottom"}
 
-   Figure 3. Import OpenSSH private key to **PuTTY**
-
+   
 2. Save the private key in the **PuTTY** format by using the file type `.ppk`.
 
-   ![Convert OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey_save.jpg "Convert OpenSSH private key to **PuTTY**")
+   ![Convert OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey_save.jpg "Convert OpenSSH private key to **PuTTY**"){: caption="Figure 4. Convert OpenSSH private key to **PuTTY**" caption-side="bottom"}
 
-   *Figure 4. Convert OpenSSH private key to **PuTTY***
-
+ 
 3. Configure your virtual server in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
 
 

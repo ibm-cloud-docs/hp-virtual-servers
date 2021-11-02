@@ -22,13 +22,11 @@ toc:
           - responsibilities.md
           - whats_new.md
 
-
   - navgroup:
       id: tutorial
       topics:
       - tutorial-secure-build-server.md
       - tutorial-secure-network.md
-
 
   - navgroup:
       id: howto
@@ -54,7 +52,6 @@ toc:
           - architecture-workload-isolation.md
           - data-security.md
 
-
   - navgroup:
       id: reference
       topics:
@@ -62,22 +59,21 @@ toc:
       - ha_disaster_recov.md
       - /hpvs-cli-plugin/hpvs-cli-plugin-hpvs_cli_plugin
       - link:
-        label: Hyper Protect Services
-        href: https://www.ibm.com/cloud/hyper-protect-services
+          label: Hyper Protect Services
+          href: https://www.ibm.com/cloud/hyper-protect-services
       - link:
-        label: Hyper Protect Services tutorials and other resources
-        href: https://ibm-hyper-protect.github.io/
+          label: Hyper Protect Services tutorials and other resources
+          href: https://ibm-hyper-protect.github.io/
       - link:
-        label: Hyper Protect Crypto Services
-        href: https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started
+          label: Hyper Protect Crypto Services
+          href: https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started
       - link:
-        label: Hyper Protect DBaaS for MongoDB
-        href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted
+          label: Hyper Protect DBaaS for MongoDB
+          href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted
       - link:
-        label: Hyper Protect DBaaS for PostgreSQL
-        href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted
+          label: Hyper Protect DBaaS for PostgreSQL
+          href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted
       - open-source-licenses.md
-
 
   - navgroup:
       id: help

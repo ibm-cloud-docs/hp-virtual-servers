@@ -34,6 +34,8 @@ This tutorial describes how you can set up the secure network which provides an 
 {: shortdesc}
 
 ## Contents
+{: #contents}
+
 - [Basic concepts](#basicconcept_sn)
 - [Before you begin](#prerequisites_sn)
 - [Configuring your desktop](#download_cli)
@@ -52,8 +54,8 @@ A user with administrator access to the Hyper Protect Virtual Server must set up
 {: note}
 
 
-![Secure network architecture diagram](image/secure_network_arch.png "Secure network architecture")
-*Figure 1. The Secure network architecture*
+![Secure network architecture diagram](image/secure_network_arch.png "Secure network architecture"){: caption="Figure 1. The Secure network architecture" caption-side="bottom"}
+
 
 1. The secure network management agent that runs on the {{site.data.keyword.hpvs}} receives commands from the secure network management agent CLI and updates the Virtual Private Network (VPN)  configuration on the {{site.data.keyword.hpvs}}, as requested.
 2. The secure network management agent CLI receives the user command inputs and updates the VPN configuration of the {{site.data.keyword.hpvs}} by sending  requests to the secure network management agent that is running on the {{site.data.keyword.hpvs}}.
@@ -222,6 +224,7 @@ After this is complete, the secure network management agent is ready to accept r
 See [Parameter specification](#param_limit) for details about some specifications that apply to some of the parameters of the secure network management CLI commands.
 
 ### Setting up a new admin key pair
+{: #setting_admin_key}
 
 1. To set the `adminkey` by using an auto-generated admin keypair on {{site.data.keyword.hpvs}} instance 'HPVS_A', complete the following steps:
    - To export the agent URL which you will use in the following sections, run the following command.

@@ -34,15 +34,17 @@ The Ubuntu servers are preconfigured in such a way that the passwords expire aft
    - Go to the [Resource list](https://cloud.ibm.com/resources){: external}, then look for your virtual server instance under the **Services** entry in the **Name** column.
    - From the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} **Navigation Menu**, select **View all** within the **Resource summary** area to open the **Resource list**. The column **Location** displays the data center where your instance was created. Use the filter to search for virtual server instances in certain regions or data centers. See also Figure 2 from [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-provision).
 2. Click your virtual server instance to open the **{{site.data.keyword.hpvs}} dashboard**.
+
 In this dashboard:
-   - The **Locate** map shows you in which region your instance was created.
-   - You can find the public IP address, which you use to connect to the virtual server.
+- The **Locate** map shows you in which region your instance was created.
+- You can find the public IP address, which you use to connect to the virtual server.
+   
 You must use the internal IP address when you connect to a virtual server from another virtual server, which is in the same virtual LAN (VLAN). VLANs span across all data centers within their region.
 
 You must also work with the internal IP addresses, when you connect to other {{site.data.keyword.cloud_notm}} Cloud services that are located within the same data center.
 
-![**{{site.data.keyword.hpvs}}** dashboard](image/hpvs_instance.jpg "**{{site.data.keyword.hpvs}}** dashboard")
-*Figure 1. **{{site.data.keyword.hpvs}}** dashboard*
+![**{{site.data.keyword.hpvs}}** dashboard](image/hpvs_instance.jpg "**{{site.data.keyword.hpvs}}** dashboard"){: caption="Figure 1. {{site.data.keyword.hpvs}} dashboard" caption-side="bottom"}
+
 
 In the **Connect** area, the dashboard offers a comfortable feature to log in to the virtual server:
 1. Open **How to connect**.
@@ -91,6 +93,5 @@ Where:
 :   Displays results as JSON. The only valid value is `json`.
 
 
-{: codeblock}
-
 You can find example output [here](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_list).
+
