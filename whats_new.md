@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-11-16"
 
 keywords: release note, what's new
 
@@ -28,6 +28,20 @@ content-type: release-note
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+
+## 17 November 2021
+{: #Nov17-2021}
+{: release-note}
+
+Updated: The 'hpvs instance-create' command now supports the '--hostname' parameter.
+:   You can now use the `--hostname` parameter to specify the hostname that will be set within the Hyper Protect Virtual Servers container. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance), and [Provisioning a virtual server](/docs/hp-virtual-servers?topic=hp-virtual-servers-provision#provision-cli).
+
+Updated: The 'hpvs registration-create' command now supports the '--isv-secrets' and '--no-isv-secrets' parameters.
+:   You can now use the `--isv-secrets` or `--no-isv-secrets` parameters. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#hpvsregistrationfilecreate), and [Using your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_regdef_cli).   
+
+Updated: The length of the environment variable value.
+:   You can now specify environment variable values that can have a maximum length of 12288. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).   
 
 
 ## 30 September 2021
@@ -56,7 +70,7 @@ Added: Secure network tutorial
 {: #Jun18-2021}
 {: release-note}
 
-Updated: The repository definition file. 
+Updated: The repository definition file.
 :   The repository definition file is updated to pull images from the IBM Cloud Registry. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 ## 16 June 2021
@@ -84,9 +98,10 @@ Updated: Deploying the Secure Build Server as a Hyper Protect Virtual Server.
 {: #Feb26-2021}
 {: release-note}
 
-Added: {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server feature and the tutorial for using the Secure Build Server with a digital wallet.
+Added: {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server feature.
 :   You can now use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to securely build an image, which you then can use to provision a virtual server.  For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
+Added: The tutorial about using the Secure Build Server with a digital wallet
 :   The tutorial "Using Secure Build Server with a digital wallet" is available. For more information, see [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 

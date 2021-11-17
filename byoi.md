@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-11-16"
 
 subcollection: hp-virtual-servers
 
@@ -116,7 +116,7 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 2. To create a registration file, run the `hpvs registration-create` command.
 
    ```sh
-   ibmcloud hpvs registration-create [--repository-name REPO-NAME] [--cr-username USER-NAME --cr-pwd-path FILE-PATH | --no-auth] [--allowed-env-keys ENV-KEYS | --no-env] [--image-key-id IMAGE-KEY-ID] [--image-key-public-path PUBLIC-KEY] [--registration-key-private-path PRIVATE-KEY-PATH] [--registration-key-public-path PUBLIC-KEY-PATH] [--gpg-passphrase-path PASS-PHRASE] [--cap-add  CAPABILITIES]
+   ibmcloud hpvs registration-create [--repository-name REPO-NAME] [--cr-username USER-NAME --cr-pwd-path FILE-PATH | --no-auth] [--allowed-env-keys ENV-KEYS | --no-env] [--image-key-id IMAGE-KEY-ID] [--image-key-public-path PUBLIC-KEY] [--registration-key-private-path PRIVATE-KEY-PATH] [--registration-key-public-path PUBLIC-KEY-PATH] [--gpg-passphrase-path PASS-PHRASE] [--cap-add  CAPABILITIES] [--isv-secrets ISV-SECRETS | --no-isv-secrets]
    ```
    {: pre}
 
@@ -173,6 +173,14 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
    `--cap-add CAPABILITIES`
    :   The Linux capabilities to be enabled are specified as a comma separated list.
 
+   `--isv-secrets ISV-SECRETS`
+   :   The Linux secrets to be used in BYOI. The secrets are added in the `/isv_secrets/secrets.json` file, within the container.
+
+   The ISV secrets is a key value pair that is separated by a colon, and you can specify a list secrets that are separated by a comma. Avoid adding spaces after the comma when you are specifying multiple secrets. If the size of the secret is large, it is recommended that you specify it by using the `--isv-secrets` command parameter. To update ISV secrets, you must create a new registration definition file with the updated ISV secrets and use the same registration definition file when running the `hpvs instance-update` command to update the instance.
+   {: note}
+
+   `--no-isv-secrets`
+   :   If the image does not require any isv secrets, this parameter can be set. You need not provide the isv-secrets parameter, and if you do, it will be ignored.
 
 
 ## Using your OCI Image to provision a Hyper Protect Virtual Server
