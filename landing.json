@@ -36,6 +36,11 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
+        "date": "08 December 2021",
+        "title": "A new parameter is now supported on hpvs cli commands ",
+        "description": "The `hpvs instance-update` command now supports a new parameter"
+      },
+      {
         "date": "17 November 2021",
         "title": "New parameters are now supported on hpvs cli commands ",
         "description": "The `hpvs instance-create` and the `hpvs registration-create` commands now support a new parameter"
@@ -44,11 +49,6 @@
         "date": "30 September 2021",
         "title": "The hpvs cli on s390x",
         "description": "The hpvs cli is now supported on the IBM Z platform (s390x architecture)."
-      },
-      {
-        "date": "19 August 2021",
-        "title": "Ubuntu Linux 20.04",
-        "description": "Ubuntu Linux 20.04 is now supported."
       }
     ]
   }
