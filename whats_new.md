@@ -35,7 +35,7 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 {: release-note}
 
 Updated: The 'hpvs instance-update' command now supports the '--hostname' parameter.
-:   You can now use the `--hostname` parameter when you update a {{site.data.keyword.hpvs} instance. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#hpvsinstanceupdate).
+:   You can now use the `--hostname` parameter when you update a {{site.data.keyword.hpvs}} instance. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#hpvsinstanceupdate).
 
 
 ## 17 November 2021
