@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-13"
 
 keywords: release note, what's new
 
@@ -29,6 +29,15 @@ content-type: release-note
 Stay up-to-date with the new features that are available for {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
+## 13 December 2021
+{: #Dec13-2021}
+{: release-note}
+
+Updated: The repository definition file.
+:   The repository definition file is updated. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
+
+Updated: Secure Build Server version
+:   The Secure Build Server image is updated to 1.3.0.4, and the Secure Build CLI code is also updated. The security of the communication between the SBS server and client has been enhanced to prevent malicious attacks. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 08 December 2021
 {: #Dec08-2021}
