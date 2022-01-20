@@ -36,7 +36,7 @@ The IBM-provided Ubuntu image is generally updated thru the standard Ubuntu pack
 Older instances did set the public SSH key in a way, which is not compatible with the image update.
 Check the information in [Updating the authorized_keys file](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-update_vs#update_authkey) to ensure that your configuration is compatible with the image update. Otherwise, you  irretrievably lose access to the virtual server.  
 
-When you update your image, the server settings are updated, for example, the [hardening configuration](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs). The update also creates a new SSH host key (the old key is deleted).
+When you update your image, the server settings are updated, for example, the [hardening configuration](/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs). The update also creates a new SSH host key (the old key is deleted).
 
 The following message is displayed the first time to you connect after the update because there is a new SSH host key.
 ```sh
@@ -127,7 +127,7 @@ ibmcloud hpvs instance-update (NAME | CRN) -i mytag --rd-path my-rd
 
 An update the registration definition does not allow you to update `repository_name`.
 
-For information about the update command options, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_iu).
+For information about the update command options, see [hpvs-update-instance](/docs/hpvs-cli-plugin#details_iu).
 
 ### Setting environment variables
 {: #envvar_update}
@@ -138,7 +138,7 @@ When you update an image, you must provide all environment variables (including 
 
 
 In this description "environment variables" are not set as environment variables, instead they provided within `/.runqenv`.
-For information about environment variables, see [Configuring your server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_config).
+For information about environment variables, see [Configuring your server](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_config).
 {: note}
 
 

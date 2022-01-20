@@ -23,7 +23,7 @@ subcollection: hp-virtual-servers
 {{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud}} service that provides highly secure virtual servers that can run Linux applications and containerized workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual servers.
 {: shortdesc}
 
-For more information about how to get started, take a look at the [tutorial](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-getting-started).
+For more information about how to get started, take a look at the [tutorial](/docs/hp-virtual-servers?topic=hp-virtual-servers-getting-started).
 
 ## Why {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}?  
 {: #hp-virtual-servers-benefits}

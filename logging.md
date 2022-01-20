@@ -29,7 +29,7 @@ You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances, 
 ## Prerequisites
 {: #log_pre}
 
-You must deploy a {{site.data.keyword.hpvs}} instance on IBM Cloud. Follow these [instructions](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-provision) to provision a virtual server. To log in to the virtual server, follow these [instructions](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-connect_vs).
+You must deploy a {{site.data.keyword.hpvs}} instance on IBM Cloud. Follow these [instructions](/docs/hp-virtual-servers?topic=hp-virtual-servers-provision) to provision a virtual server. To log in to the virtual server, follow these [instructions](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-connect_vs).
 
 
 ## Deploying IBM Log Analysis with LogDNA
@@ -117,7 +117,7 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
 
      For example, `node index.js -s LOGDNA_LOGHOST=logs.us-south.logging.cloud.ibm.com`
      {: note}
-     
+
 4. To start the LogDNA agent, run:
    ```sh
    node index.js

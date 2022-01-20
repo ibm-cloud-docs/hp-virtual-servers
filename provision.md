@@ -28,7 +28,7 @@ You can use the {{site.data.keyword.hpvs}} service to create a virtual server fr
 You can use an IBM-provided image or your own image to provision a server.
 
 Use the CLI to provision a server if you want to:
-- [Use your own image](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi). You need to create an image file and registration definition file as described [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
+- [Use your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi). You need to create an image file and registration definition file as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
 -  [Create servers](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance) without a public inbound address.
 
 
@@ -107,7 +107,7 @@ Where:
 :   File path to the file that contains the public half of the SSH key to access the virtual server later. `--ssh` or `--ssh-path` is required when you use an IBM-provided image.
 
 `--rd REGISTRATION-DEFINITION`
-:   The encrypted and signed registration definition that is used for [Bring your own server image (BYOI)](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi). `--rd` or `--rd-path` is required when you use a self-provided image.
+:   The encrypted and signed registration definition that is used for [Bring your own server image (BYOI)](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi). `--rd` or `--rd-path` is required when you use a self-provided image.
 
 `--rd-path REGISTRATION-DEFINITION-PATH`
 :   File path to the file that contains the encrypted and signed registration definition that is used for BYOI. `--rd` or `--rd-path` is required when you use a self-provided image.

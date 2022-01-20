@@ -21,7 +21,7 @@ keywords: image, virtual server instance, instance, virtual server
 # Protecting your image build
 {: #imagebuild}
 
-You can securely build your own image, which you can then use with [bring your own image](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
+You can securely build your own image, which you can then use with [bring your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
 {: shortdesc}
 
 To do this you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server (SBS) functionality to sign your applications and also to sign and

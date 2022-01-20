@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2022-01-19"
 
 subcollection: hp-virtual-servers
 
@@ -22,14 +22,14 @@ keywords: image, virtual server instance, instance, virtual server
 # Using your own image
 {: #byoi}
 
-Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.
+Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server. This feature is available by using the {{site.data.keyword.cloud}} CLI.
 {: shortdesc}
 
 
 The {{site.data.keyword.cloud}} CLI can be used only on the officially supported operating systems or architectures. It is recommended that you use the {{site.data.keyword.cloud}} Shell if your system is not supported.
 {: note}
 
-If you want to use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to provision a server, refer to [Protecting your image build](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild).
+If you want to use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to provision a server, refer to [Protecting your image build](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild).
 
 
 Do not use personal information, for example, your name, as the instance name or as part of the instance name. The data that you provide when you provision an instance or interact with the hpvs cli is not considered to be personal data or credentials.

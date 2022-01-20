@@ -32,6 +32,8 @@ keywords: secure build, secure build server, image, virtual server instance, ins
 
 In this tutorial, you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to build a digital wallet application, then you use {{site.data.keyword.hpvs}} to deploy the resulting application in the public cloud.
 
+For information about securely building your own image, see [Protecting your image build](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild).
+
 ## Contents
 {: #contents_tutorial}
 
@@ -290,7 +292,7 @@ INFO:__main__:
 ### 8. Provision the Secure Build Server instance
 {: #step_eight}
 
-First, copy the encrypted registration definition for the Secure Build image into a new file named `secure_build.asc`. The content of the encrypted registration definition is located [here](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
+First, copy the encrypted registration definition for the Secure Build image into a new file named `secure_build.asc`. The content of the encrypted registration definition is located [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 Then, use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA`, `SERVER_CRT` and `SERVER_KEY` taken from the output of the preceding command.
 ```buildoutcfg
@@ -653,6 +655,6 @@ You successfully used Secure Build Server to build the Secure Bitcoin wallet app
 {: #references}
 
 - [Secure Build Server CLI](https://github.com/ibm-hyper-protect/secure-build-cli)
-- [Protecting your image build](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild), in particular: [Deploying the Secure Build Server as a Hyper Protect Virtual Server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild)
-- [Using your own image](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi)
+- [Protecting your image build](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild), in particular: [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild)
+- [Using your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi)
 - [Secure Bitcoin Wallet](https://github.com/IBM/secure-bitcoin-wallet)

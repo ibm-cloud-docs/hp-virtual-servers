@@ -24,7 +24,7 @@ After you create a virtual server instance by using the {{site.data.keyword.hpvs
 {: shortdesc}
 
 
-The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in with SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and it is no longer possible to log in with SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 {: note}
 
 ## Retrieving information in the UI
@@ -38,7 +38,7 @@ The Ubuntu servers are preconfigured in such a way that the passwords expire aft
 In this dashboard:
 - The **Locate** map shows you in which region your instance was created.
 - You can find the public IP address, which you use to connect to the virtual server.
-   
+
 You must use the internal IP address when you connect to a virtual server from another virtual server, which is in the same virtual LAN (VLAN). VLANs span across all data centers within their region.
 
 You must also work with the internal IP addresses, when you connect to other {{site.data.keyword.cloud_notm}} Cloud services that are located within the same data center.
@@ -87,11 +87,10 @@ ibmcloud hpvs instance CRN [--output json]
 Where:
 
 `CRN`
-:   Is the server's cloud resource name (CRN). 
+:   Is the server's cloud resource name (CRN).
 
 `--output`
 :   Displays results as JSON. The only valid value is `json`.
 
 
 You can find example output [here](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_list).
-

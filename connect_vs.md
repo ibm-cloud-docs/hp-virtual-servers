@@ -26,7 +26,7 @@ For a successfully provisioned virtual server, you can log in to this instance b
 
 - Due to configuration processes, you need to wait up to 30 minutes until you can connect to a new virtual server for the first time.
 
-- The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and you can't log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
+- The Ubuntu servers are preconfigured in such a way that the passwords expire after 90 days. After the user password expires, you have 30 days to change your password. If you don't change your password within the 30 days, your account becomes inactive and you can't log in by way of SSH even if you are using SSH-keys. For more information, see [Protecting a virtual server](/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs).
 
 - If the `outbound-only` parameter is set when the Virtual Server is created, it is not possible to connect to this server's public IP address. In this case, connect to another server created by the same account in the same region with an inbound IP address, and then connect from this server to the "outbound-only" server via its' private IP address.
 
@@ -83,13 +83,13 @@ You can ease the logon and authentication to your virtual server with your priva
 
    ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication"){: caption="Figure 2. Providing the private SSH key for authentication" caption-side="bottom"}
 
-   
+
    For SSH key pairs generated other than using **PuTTY**, you can use **Conversions -> Import key** of the **PuTTY Key Generator** to convert the private key into the **PuTTY** format of the same length.
 3. Define the **root** default username under **Connection -> Data**.
 
    ![Defining the auto-login user name](image/hpvs_root.jpg "Defining the auto-login user name"){: caption="Figure 3. Defining the auto-login username" caption-side="bottom"}
 
-   
+
 4. Go back to the session configuration shown in Figure 1 and click **Save** again. Otherwise, you lose your changes.
 
 From now on, you can open and log in to this server as **root** user without the need to specify your private SSH key.
