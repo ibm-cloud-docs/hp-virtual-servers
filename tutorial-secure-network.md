@@ -208,7 +208,7 @@ To prevent any malicious access, consider the following recommendations to contr
 - It is your responsibility to keep the SSH private key secure, if SSH is enabled for the Hyper Protect Virtual Server.  
 
 To prevent malicious access to the desktop that you used to set up and configure the secure network, consider the following recommendations:
-- You must download and install the secure network management CLI only from this [Github repository](placeholder for link), with the correct signature provided by IBM. Do not install any programs from any other address that does not have the correct signature from IBM, as it might be malicious and can cause potential attacks on the virtual server.
+- You must download and install the secure network management CLI only from this [Github repository](https://github.com/ibm-hyper-protect/secure-network), with the correct signature provided by IBM. Do not install any programs from any other address that does not have the correct signature from IBM, as it might be malicious and can cause potential attacks on the virtual server.
 - It is your responsibility to keep your desktop and the secure network management CLI binary secure.
 - It is your responsibility to encrypt the admin private key and keep it secure.
 
