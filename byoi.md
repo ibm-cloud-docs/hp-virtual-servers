@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2022-01-19"
+  years: 2020, 2022
+lastupdated: "2022-02-03"
 
 subcollection: hp-virtual-servers
 
@@ -145,6 +145,9 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 
    `--cr-pwd-path FILE-PATH`
    :   Is the path for the file that contains the container repository password.
+
+   To ensure there are no trailing spaces in the file path, you can specify it as `vi -b file_name , :set noeol, :wq`.
+   {: note}
 
    `--no-auth`
    :   Is the parameter that must be set if the image does not require authorization to download. In this case,  you don't need to provide `cr-username` and `cr-pwd-path` parameters. If you do, these parameters are ignored.
