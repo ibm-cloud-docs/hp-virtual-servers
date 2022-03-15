@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-15"
 
 subcollection: hp-virtual-servers
 
@@ -48,7 +48,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 
 - Your custom Linux-based image must meet these requirements:
     - In the OCI Image format. {{site.data.keyword.hpvs}} supports only Linux-based OCI Images, which are built for the IBM LinuxONE and IBM Z platform (s390x architecture)
-    - Available either in the [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry) or [Docker Hub](https://hub.docker.com/) and signed by using [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/).
+    - Available either in the [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry) (only the http://us.icr.io, http://de.icr.io, and http://au.icr.io regions are currently supported), or [Docker Hub](https://hub.docker.com/) and signed by using [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/).
 - You must install the {{site.data.keyword.cloud_notm}} CLI. Follow these [instructions](https://cloud.ibm.com/docs/cli?topic=cli-getting-started) to install and configure the {{site.data.keyword.cloud_notm}} CLI.
 
 ## Creating a custom image
