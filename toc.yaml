@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: hp-virtual-servers
+    service-name: hpvs
     version: 2
     category: compute
     audience: service
