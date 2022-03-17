@@ -15,13 +15,10 @@ toc:
   - navgroup:
       id: learn
       topics:
-      - topicgroup:
-          label: Getting started
-          topics:
-          - getting-started.md
-          - overview.md
-          - responsibilities.md
-          - whats_new.md
+      - getting-started.md
+      - overview.md
+      - responsibilities.md
+      - whats_new.md
 
   - navgroup:
       id: tutorial
