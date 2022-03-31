@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-31"
 
 keywords: release note, what's new
 
@@ -28,6 +28,15 @@ content-type: release-note
 
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+
+## 31 March 2022
+{: #hp-virtual-servers-mar3122}
+{: release-note}
+
+Updated: Tutorial on setting up the secure network
+:   The secure network is updated to version 2.0.0. You can now use the CLI tool as an {{site.data.keyword.cloud}} CLI plugin. All actions are recorded as audit logs and are forwarded to LogDNA. For more information, see [Tutorial: Setting up the secure network](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_network).
+
 
 ## 15 March 2022
 {: #hp-virtual-servers-mar1522}
@@ -88,7 +97,7 @@ Updated: Ubuntu Linux 20.04 is now supported.
 {: release-note}
 
 Added: Secure network tutorial
-:   The tutorial "Secure network" is now available that describes how you can set up the secure network which provides an end to end encrypted network communication for {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} services. For more information, see [Tutorial: Setting up the secure network](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_network).
+:   The tutorial "Secure network" is now available that describes how you can set up the secure network which provides an end to end encrypted network communication for IBM Cloud {{site.data.keyword.hpvs}} services. For more information, see [Tutorial: Setting up the secure network](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_network).
 
 ## 18 June 2021
 {: #hp-virtual-servers-jun1821}
