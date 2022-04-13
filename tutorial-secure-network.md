@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-13"
 
 subcollection: hp-virtual-servers
 
@@ -143,7 +143,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
     {: pre}
 
     ```buildoutcfg
-    nohup ./encryptednetwork > /data/log/log.txt 2>&1 &
+    nohup ./encryptednetwork > /data/log/log.log 2>&1 &
     ```
     {: pre}
 
