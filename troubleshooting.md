@@ -28,12 +28,6 @@ subcollection: hp-virtual-servers
 If you run into problems while you're using {{site.data.keyword.hpvs}}, you can recover from these problems in many cases by following a few steps.
 {: shortdesc}
 
-## Updating the Secure Build Server (SBS) fails
-{: #sbsupdate_fail}
-{: troubleshoot}
-{: support}
-
-
 
 ## You can't see the details of your virtual server instance on its dashboard - or the dashboard seems to display incorrectly
 {: #no_details_hpvs}
