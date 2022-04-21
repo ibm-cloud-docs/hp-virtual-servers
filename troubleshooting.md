@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-03-15"
+lastupdated: "2022-04-21"
 
 subcollection: hp-virtual-servers
 
@@ -27,6 +27,23 @@ subcollection: hp-virtual-servers
 
 If you run into problems while you're using {{site.data.keyword.hpvs}}, you can recover from these problems in many cases by following a few steps.
 {: shortdesc}
+
+## Installion of the {{site.data.keyword.cloud_notm}} CLI fails
+{: #install_cli_hpvs}
+{: troubleshoot}
+{: support}
+
+I can't install the {{site.data.keyword.cloud_notm}} CLI on the virtual server.
+{: troubleshoot}
+
+You see an error message indicating that you do not have the permission to install the CLI.
+{: tsSymptoms}
+
+This error occurs because the `/tmp` file system does not have execute permission.
+{: tsCauses}
+
+Run the `mount -i -o remount,exec /tmp/` command to remount the `/tmp` file system with execute permission.
+{: tsResolve}
 
 
 ## You can't see the details of your virtual server instance on its dashboard - or the dashboard seems to display incorrectly
