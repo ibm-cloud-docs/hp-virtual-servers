@@ -1,6 +1,6 @@
 {
   "title": "IBM Cloud Hyper Protect Virtual Servers docs",
-  "lastupdated": "2021-07-29",
+  "lastupdated": "2022-06-29",
   "introduction": "Find useful information about Hyper Protect Virtual Servers.",
   "section_devtools": {
     "cli": "/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin"
@@ -36,6 +36,11 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
+        "date": "30 June 2022",
+        "title": "Secure Build is updated",
+        "description": "The Secure Build Server image is updated to 1.3.0.6."
+      },
+      {
         "date": "31 March 2022",
         "title": "Secure network is updated",
         "description": "Secure network is updated to version 2.0.0."
@@ -44,11 +49,6 @@
         "date": "15 March 2022",
         "title": "Secure Build is updated",
         "description": "The Secure Build Server image is updated to 1.3.0.5."
-      },
-      {
-        "date": "13 December 2021",
-        "title": "Secure Build CLI and repository definition file",
-        "description": "The Secure Build Server image is updated to 1.3.0.4, the repository definition file and the Secure Build CLI code is also updated."
       }
     ]
   }

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-06-21"
 
 subcollection: hp-virtual-servers
 
@@ -190,7 +190,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
 {
   "HOSTNAME": "sbs.example.com",  
   "CICD_PORT": "443",
-  "IMAGE_TAG": "1.3.0.5",
+  "IMAGE_TAG": "1.3.0.6",
   "CONTAINER_NAME": "SBContainer",
   "GITHUB_KEY_FILE": "~/.ssh/id_rsa",
   "GITHUB_URL": "git@github.com:IBM/secure-bitcoin-wallet.git",
@@ -296,11 +296,11 @@ First, copy the encrypted registration definition for the Secure Build image int
 
 Then, use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA`, `SERVER_CRT` and `SERVER_KEY` taken from the output of the preceding command.
 ```buildoutcfg
-ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.5 --hostname sbs.example.com -e CLIENT_CRT=... -e CLIENT_CA=... -e SERVER_CRT=... -e SERVER_KEY=...
+ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.6 --hostname sbs.example.com -e CLIENT_CRT=... -e CLIENT_CA=... -e SERVER_CRT=... -e SERVER_KEY=...
 ```
 {: pre}
 
-`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Be sure to use the image tag `1.3.0.5` because this tag references the up-to-date version of the Secure Build Server.
+`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Ensure that you use the image tag `1.3.0.6` because this tag references the up-to-date version of the Secure Build Server.
 `sbs.example.com` is the server hostname that was specified in the `sbs-config.json` file. For more information about available pricing plans and regions and datacenters, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
 
 ### 9. Display your Secure Build Server instance.
@@ -345,7 +345,7 @@ Memory                2048 MiB
 Processors            1 vCPUs
 Image type            self-provided
 Image OS              self-defined
-Image name            de.icr.io/zaas-hpvsop-prod/secure-docker-build:1.3.0.5
+Image name            de.icr.io/zaas-hpvsop-prod/secure-docker-build:1.3.0.6
 Environment           CLIENT_CA=...
                       CLIENT_CRT=...
                       SERVER_CRT=...
@@ -438,7 +438,7 @@ You can repeat this command to update the latest build status.
 The following example output is displayed for a build that is in progress:
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.5",
+    "build_image_tag": "1.3.0.6",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -451,7 +451,7 @@ INFO:__main__:status: response={
 The following example output is for a build, which failed due to a container registry login problem:
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.5",
+    "build_image_tag": "1.3.0.6",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -485,7 +485,7 @@ Run the following command again to display the status of your build:
 The following is example output for a build that completed successfully (indicated by the `success` status):
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.5",
+    "build_image_tag": "1.3.0.6",
     "build_name": "us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350",
     "image_tag": "s390x-v1-ad52e76",
     "manifest_key_gen": "soft_crypto",
