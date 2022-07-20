@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-07-20"
 
 subcollection: hp-virtual-servers
 
@@ -73,7 +73,6 @@ To complete this tutorial, you need to meet the following prerequisites:
 - Install the IBM Cloud CLI.
 * Install the `HPVS CLI plugin` version 1.4.17, of IBM Cloud. The `HPVS CLI plugin` is a dependency of the `hpnet CLI plugin`.
 * Install the secure network CLI plugin by running the command `ibmcloud plugin install hpnet`. To install the plugin in the staging environment, complete the following steps:
-   - Add the staging repository by running the `ibmcloud plugin repo-add stage1 https://plugins.test.cloud.ibm.com` command.
    - Install from staging environment by running the `ibmcloud plugin install hpnet -r stage1` command.
    - To install plugin on production environment by running the `ibmcloud plugin install hpnet` command.   
 * Log in to IBM Cloud by using the CLI. If you have multiple accounts, select the account that your service instance is created with. Make sure that you log in to the correct region and resource group where the service instance is located by running the  command `ibmcloud target -r <region> -g <resource_group>`

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-11-17"
+  years: 2019, 2022
+lastupdated: "2022-07-20"
 
 subcollection: hp-virtual-servers
 
@@ -140,4 +140,4 @@ In general, all offerings work with Hyper Protect Virtual Servers except for off
 {: #faq15}
 {: faq}
 
-You can't recover your server because the boot disk is not resizable. You need to create a new server and restore your backups to them. Consider monitoring your server resource usage to prevent the same problem in the future. Verify that your file system usage is according to the recommendations in [{{site.data.keyword.hpvs}} file system characteristics](https://test.cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs#hpvs_fs).
+You can't recover your server because the boot disk is not resizable. You need to create a new server and restore your backups to them. Consider monitoring your server resource usage to prevent the same problem in the future. Verify that your file system usage is according to the recommendations in [{{site.data.keyword.hpvs}} file system characteristics](/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs#hpvs_fs).
