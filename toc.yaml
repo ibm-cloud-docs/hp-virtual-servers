@@ -63,6 +63,9 @@ toc:
           label: Hyper Protect Services tutorials and other resources
           href: https://ibm-hyper-protect.github.io/
       - link:
+          label: Confidential computing with LinuxONE
+          href: https://cloud.ibm.com/docs/vpc?topic=vpc-about-se
+      - link:
           label: Hyper Protect Crypto Services
           href: https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started
       - link:
