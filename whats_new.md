@@ -26,7 +26,7 @@ content-type: release-note
 # Release notes
 {: #whats-new}
 
-Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
+Use the release notes to learn about the latest updates to {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
 ## 30 September 2022
