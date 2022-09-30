@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-09-30"
 
 keywords: release note, what's new
 
@@ -28,6 +28,13 @@ content-type: release-note
 
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 30 September 2022
+{: #hp-virtual-servers-sep3022}
+{: release-note}
+
+Updated: Secure Build Server version
+:   The Secure Build Server image is updated to 1.3.0.7. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 30 June 2022
 {: #hp-virtual-servers-jun3022}
