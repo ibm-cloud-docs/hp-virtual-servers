@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-12-09"
 
 subcollection: hp-virtual-servers
 
@@ -54,7 +54,7 @@ To build a container image with Secure Build Server, you must complete these ste
 - Set up a Secure Build Server instance, then use the CLI to start the build on this instance.
 - Secure Build Server pulls the source code from a GitHub repository, in this case from the Digital Wallet repository.
 - Secure Build Server uses the source code's Dockerfile to build a container image.
-- Secure Build Server signs the container image and pushes the container image to the IBM Container Registry or Docker Hub.
+- Secure Build Server signs the container image and pushes the container image to the IBM Container Registry or Docker Hub. Only docker.io images are signed by using DCT, and you must use Red Hat signing when using  {{site.data.keyword.cloud}} Container Registry (ICR) because ICR supports only Red Hat signing of the images. Follow the steps listed in [Signing images for trusted content](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent).
 - Secure Build Server creates a manifest file and signs it. The manifest file is used to verify the source of the image and the integrity of the build. It contains the source code from which the image was built as well as the build log. You can download the manifest file from the Secure Build Server, and, for example, use it for audit purposes or pass it to an auditor. The manifest file is signed by signing keys that are kept inside the secure enclave.
 - Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
 
@@ -190,7 +190,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
 {
   "HOSTNAME": "sbs.example.com",  
   "CICD_PORT": "443",
-  "IMAGE_TAG": "1.3.0.7",
+  "IMAGE_TAG": "1.3.0.8",
   "CONTAINER_NAME": "SBContainer",
   "GITHUB_KEY_FILE": "~/.ssh/id_rsa",
   "GITHUB_URL": "git@github.com:IBM/secure-bitcoin-wallet.git",
@@ -204,9 +204,9 @@ Create file `sbs-config.json` in your current working directory (this is the dir
   "DOCKER_RO_PASSWORD": "<your api key>",
   "DOCKER_CONTENT_TRUST_BASE": "False",
   "DOCKER_CONTENT_TRUST_BASE_SERVER": "",
-  "DOCKER_BASE_SERVER": "us.icr.io",
+  "DOCKER_BASE_SERVER": "docker.io",
   "DOCKER_PUSH_SERVER": "us.icr.io",
-  "DOCKER_CONTENT_TRUST_PUSH_SERVER": "https://notary.us.icr.io",
+  "DOCKER_CONTENT_TRUST_PUSH_SERVER": "https://us.icr.io",
   "ENV_WHITELIST":  ["ZHSM", "APIKEY", "INSTANCE_ID", "IAM_ENDPOINT"],
   "ARG": {
     "NO_GRPC_BUILD": "1",
@@ -296,11 +296,11 @@ First, copy the encrypted registration definition for the Secure Build image int
 
 Then, use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA`, `SERVER_CRT` and `SERVER_KEY` taken from the output of the preceding command.
 ```buildoutcfg
-ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.7 --hostname sbs.example.com -e CLIENT_CRT=... -e CLIENT_CA=... -e SERVER_CRT=... -e SERVER_KEY=...
+ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.8 --hostname sbs.example.com -e CLIENT_CRT=... -e CLIENT_CA=... -e SERVER_CRT=... -e SERVER_KEY=...
 ```
 {: pre}
 
-`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Ensure that you use the image tag `1.3.0.7` because this tag references the up-to-date version of the Secure Build Server.
+`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Ensure that you use the image tag `1.3.0.8` because this tag references the up-to-date version of the Secure Build Server.
 `sbs.example.com` is the server hostname that was specified in the `sbs-config.json` file. For more information about available pricing plans and regions and datacenters, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
 
 ### 9. Display your Secure Build Server instance.
@@ -345,14 +345,14 @@ Memory                2048 MiB
 Processors            1 vCPUs
 Image type            self-provided
 Image OS              self-defined
-Image name            de.icr.io/zaas-hpvsop-prod/secure-docker-build:1.3.0.7
+Image name            de.icr.io/zaas-hpvsop-prod/secure-docker-build:1.3.0.8
 Environment           CLIENT_CA=...
                       CLIENT_CRT=...
                       SERVER_CRT=...
                       SERVER_KEY=...
 Last operation        create succeeded
 Last image update     -
-Created               2021-...
+Created               2022-...
 ```
 {: screen}
 
@@ -438,7 +438,7 @@ You can repeat this command to update the latest build status.
 The following example output is displayed for a build that is in progress:
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.7",
+    "build_image_tag": "1.3.0.8",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -451,7 +451,7 @@ INFO:__main__:status: response={
 The following example output is for a build, which failed due to a container registry login problem:
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.7",
+    "build_image_tag": "1.3.0.8",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -485,7 +485,7 @@ Run the following command again to display the status of your build:
 The following is example output for a build that completed successfully (indicated by the `success` status):
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.7",
+    "build_image_tag": "1.3.0.8",
     "build_name": "us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350",
     "image_tag": "s390x-v1-ad52e76",
     "manifest_key_gen": "soft_crypto",

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-12-13"
 
 keywords: release note, what's new
 
@@ -26,8 +26,22 @@ content-type: release-note
 # Release notes
 {: #whats-new}
 
-Use the release notes to learn about the latest updates to {{site.data.keyword.hpvs}}.
+Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 16 December 2022
+{: #hp-virtual-servers-dec1622}
+{: release-note}
+
+Updated: Secure Build Server version
+:   The Secure Build Server image is updated to 1.3.0.8. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. Also, you can specify ISV secrets when you are building your applications securely. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+
+Updated: Red Hat simple signing of images
+:   Use Red Hat simple signing when using the IBM Cloud Container Registry (ICR) because there is no support for images that are signed by using Docker Content trust. For more information about using Red Hat signing, see [Using your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi), and [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
+
+Updated: SUSE registry support
+:   You can pull images from the SUSE registry when you deploy a SUSE Linux Enterprise (SLE) base container image, or building your applications securely based on one.
+
 
 ## 30 September 2022
 {: #hp-virtual-servers-sep3022}
@@ -35,6 +49,7 @@ Use the release notes to learn about the latest updates to {{site.data.keyword.h
 
 Updated: Secure Build Server version
 :   The Secure Build Server image is updated to 1.3.0.7. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+
 
 ## 30 June 2022
 {: #hp-virtual-servers-jun3022}

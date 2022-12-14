@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-12-13"
 
 subcollection: hp-virtual-servers
 
@@ -29,6 +29,8 @@ Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.
 The {{site.data.keyword.cloud}} CLI can be used only on the officially supported operating systems or architectures. It is recommended that you use the {{site.data.keyword.cloud}} Shell if your system is not supported.
 {: note}
 
+Trial of the schema file. See [json schema](/docs/hp-virtual-servers?topic=hp-virtual-servers-schema.md).
+
 If you want to use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to provision a server, refer to [Protecting your image build](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild).
 
 
@@ -39,7 +41,7 @@ Learn more about IBM Cloud Hyper Protect Virtual Servers' Data usage and Certifi
 Before you provision a new server, check the [prerequisites](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_pre), then complete the following steps:
 
 1. [Create a custom image](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_create).
-2. [Creating a registration definition file by using the CLI](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_regdef_cli).  
+2. [Creating a registration definition file by using the CLI](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_regdef_cli).
 3. [Use your OCI image to provision a Hyper Protect Virtual Server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-byoi#byoi_provision).
 
 
@@ -47,9 +49,19 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 {: #byoi_pre}
 
 - Your custom Linux-based image must meet these requirements:
-    - In the OCI Image format. {{site.data.keyword.hpvs}} supports only Linux-based OCI Images, which are built for the IBM LinuxONE and IBM Z platform (s390x architecture)
-    - Available either in the [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry) (only the http://us.icr.io, http://de.icr.io, and http://au.icr.io regions are currently supported), or [Docker Hub](https://hub.docker.com/) and signed by using [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/).
+    - In the OCI Image format. {{site.data.keyword.hpvs}} supports only Linux-based OCI Images, which are built for the IBM LinuxONE and IBM Z platform (s390x architecture).
+    - Upload the OCI image to a container registry. You can use the following container registries:
+      - The [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry). You must use Red Hat signing when using {{site.data.keyword.cloud}} Container Registry (ICR). Follow the steps listed in [Signing images for trusted content](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent).
+
+        The Notary v1 service that supports Docker Content Trust and docker trust commands in Container Registry is discontinued from 1 November 2021. For more information, see [Release notes for Container Registry](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021). Any existing ICR images that were signed by using DCT, must be re-signed by using Red Hat.
+        {: note}
+
+      - [Docker Hub](https://hub.docker.com/) where the images are and signed by using [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/).
+      - Pull images from the [SUSE registry](https://registry.suse.com/), where you must first sign the image and push it to either Docker Hub, or ICR.
+
 - You must install the {{site.data.keyword.cloud_notm}} CLI. Follow these [instructions](https://cloud.ibm.com/docs/cli?topic=cli-getting-started) to install and configure the {{site.data.keyword.cloud_notm}} CLI.
+
+- You must install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
 
 ## Creating a custom image
 {: #byoi_create}
@@ -70,23 +82,48 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
       - name: Is the unique name for the repository (one repository can have multiple images that differ by the tag).
       - tag: Is the unique tag for the image.
 3. After you create your image, check for vulnerable components. Most containers are built by using a collection of open source components that can suffer from known vulnerabilities. It is your responsibility to use scanning tools to identify if any of the components you include in the build are vulnerable. Scan the components before you distribute the image, for example, with [Vulnerability Advisor](https://cloud.ibm.com/docs/Registry?topic=va-va_index).
-4. Push the image to either the {{site.data.keyword.cloud_notm}} Registry or Docker Hub with Docker Content Trust enabled. To do this using the {{site.data.keyword.cloud_notm}} Container Registry, follow these steps:
-    - Follow the [instructions to create an API key](https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key).
-    - Follow the [instructions to create a namespace](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in {{site.data.keyword.cloud_notm}} Container Registry.
-    - To log in to the registry on your console, run:
-      ```sh
-      echo "<API_Key>" | docker login -u "iamapikey" --password-stdin <registry_region>.icr.io
-      ```
-      {: pre}
-
-    - Push the image by running:
-      ```sh
-      DOCKER_CONTENT_TRUST=1 DOCKER_CONTENT_TRUST_SERVER=https://notary.<registry_region>.icr.io docker push <image>
-      ```
-      {: pre}
+4. Push the image to the container registry you choose. You can use Docker Hub (with Docker Content Trust enabled), or ICR. To push the image to ICR, you must first sign the image using Red Hat signing. For more information, see [Sign your image by using Red Hat simple signing](#sign_image_redhat).
 
 5. Follow the [backup instructions](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_backupkeys) to back up your keys after you push the image.
 
+## Sign your image by using Red Hat simple signing
+{: #sign_image_redhat}
+
+You must provide the "Fingerprint" and the "Path to the public key" that you used when you signed the image by using Red Hat signing when you run the `hpvs registration-create` command, and are prompted for the "Fingerprint", and the "Path to the file containing the image public key".
+
+Complete the following steps to sign the images:
+1. Create a batch file.
+   ```sh
+   Key-Type: RSA
+   Key-Length: 4096
+   Subkey-Type: RSA
+   Subkey-Length: 4096
+   Name-Real: latestnewkey
+   Name-Email: latestnewkey@example.com
+   Expire-Date: 472
+   ```
+   {: codeblock}
+
+2. Create the keys.
+   ```sh
+   gpg --pinentry-mode loopback --passphrase="" --generate-key --batch <batchfile>
+   ```
+   {: pre}
+
+3. Export the public key.
+   ```sh
+   gpg --armor --export <name> > <filename>.pub
+   ```
+   {: pre}
+
+4. Sign the image using `skopeo` and push the image to ICR.
+   ```sh
+   export IAM_API_KEY=[your IBM Cloud API KEY]
+   skopeo copy docker-daemon:xx.icr.io/yournamespace/hello-world:base_signed
+   docker://xx.icr.io/yournamespace/hello-world:base_signed
+   --sign-by latestnewkey@example.com --dest-creds iamapikey:${IAM_API_KEY}
+   ```
+   {: codeblock}
 
 ## Creating a registration definition file by using the CLI
 {: #byoi_regdef_cli}
@@ -129,6 +166,8 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 
    You are prompted to enter all the parameters.
 
+   If image is in ICR, the fingerprint of the gpg key that was used to sign the image must be provided when you are prompted for the "Fingerprint", and path to the public key with which it is signed needs to be provided when you are prompted for the "Path to the file containing the image public key".
+
    If the container registry does not require authentication, set the `-no-auth` parameter to prevent prompting. If no environment parameters are required, set the `-no-env` parameter, for example:
 
    ```sh
@@ -159,10 +198,10 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
    :   This parameter can be set if the image does not require any allowed environment variables. In this case,  you don't need to provide the `allowed-env-keys` parameter. If you do, it is ignored.
 
    `--image-key-id IMAGE-KEY-ID`
-   :   The ID of the root key that was used to sign the image. It must contain 64 characters. If the image-key-id is not specified, the command first tries to determine the ID automatically by requesting the container registry notary service. Optional.
+   :   The ID of the root key that was used to sign the image. It must contain 64 characters. If the image-key-id is not specified, the command first tries to determine the ID automatically by requesting the container registry notary service.  You are prompted for this parameter for Docker Hub images. If the image is in ICR, the fingerprint of the gpg key that is used to sign the image has to be mandatorily provided. It is optional for DCT signed image in Docker Hub.
 
    `--image-key-public-path PUBLIC-KEY`
-   :   The path for the file that contains the public part of the key that is used to sign the image.  The public part of the key must be a minimum of 20 characters and base64 encoded. If the path is not specified, the command first tries to determine the public part of the key automatically by requesting the container registry notary service. Optional.
+   :   The path for the file that contains the public part of the key that is used to sign the image. The public part of the key must be a minimum of 20 characters and base64 encoded. If the path is not specified, the command first tries to determine the public part of the key automatically by requesting the container registry notary service. If the image is present in ICR, path to the gpg public key that is used to sign the image should be mandatorily provided. It is optional for DCT signed image in Docker Hub.
 
    `--registration-key-public-path PRIVATE-KEY-PATH`
    :   The path for the public key from the registration key pair.
