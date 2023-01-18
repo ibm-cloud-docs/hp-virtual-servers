@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-13"
+  years: 2020, 2023
+lastupdated: "2022-01-16"
 
 subcollection: hp-virtual-servers
 
@@ -63,6 +63,8 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 
 - You must install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
 
+- You must install [Skopeo](https://github.com/containers/skopeo/blob/main/install.md).
+
 ## Creating a custom image
 {: #byoi_create}
 
@@ -92,7 +94,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 You must provide the "Fingerprint" and the "Path to the public key" that you used when you signed the image by using Red Hat signing when you run the `hpvs registration-create` command, and are prompted for the "Fingerprint", and the "Path to the file containing the image public key".
 
 Complete the following steps to sign the images:
-1. Create a batch file.
+1. Create a batch file and add the following content to it:
    ```sh
    Key-Type: RSA
    Key-Length: 4096
@@ -124,6 +126,9 @@ Complete the following steps to sign the images:
    --sign-by latestnewkey@example.com --dest-creds iamapikey:${IAM_API_KEY}
    ```
    {: codeblock}
+
+The "docker-daemon" parameter is used when the image is present locally. The "docker" parameter is used when the image is present in a registry. In the skopeo copy example shown above, the image that is present locally is tagged with "xx.icr.io/yournamespace/hello-world:base_signed". It is signed and pushed to the destination "docker://xx.icr.io/yournamespace/hello-world:base_signed".
+{: note}
 
 ## Creating a registration definition file by using the CLI
 {: #byoi_regdef_cli}
@@ -198,7 +203,17 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
    :   This parameter can be set if the image does not require any allowed environment variables. In this case,  you don't need to provide the `allowed-env-keys` parameter. If you do, it is ignored.
 
    `--image-key-id IMAGE-KEY-ID`
-   :   The ID of the root key that was used to sign the image. It must contain 64 characters. If the image-key-id is not specified, the command first tries to determine the ID automatically by requesting the container registry notary service.  You are prompted for this parameter for Docker Hub images. If the image is in ICR, the fingerprint of the gpg key that is used to sign the image has to be mandatorily provided. It is optional for DCT signed image in Docker Hub.
+   :   The ID of the root key that was used to sign the image. It must contain 64 characters. If the image-key-id is not specified, the command first tries to determine the ID automatically by requesting the container registry notary service.  You are prompted for this parameter for Docker Hub images. If the image is in ICR, the fingerprint of the gpg key that is used to sign the image must be provided. This parameter is optional for a DCT signed image in Docker Hub. You can get the fingerprint by using the `gpg --list-keys name_of_the_key` command. For example, when you run the `gpg --list-keys latestnewkey` command, the following snippet is an example of the output:
+       ```buildoutcfg
+       pub   rsa4096 2023-01-12 [SCEA] [expires: 2024-04-28]
+             322A65D5B50BF16F5FDB6D7173943217FCD72F51
+       uid           [ultimate] latestnewkey
+       <latestnewkey@example.com>
+       sub   rsa4096 2023-01-12 [SEA] [expires: 2024-04-28]
+       ```
+       {: screen}
+
+       In this example, "322A65D5B50BF16F5FDB6D7173943217FCD72F51" is the  fingerprint.
 
    `--image-key-public-path PUBLIC-KEY`
    :   The path for the file that contains the public part of the key that is used to sign the image. The public part of the key must be a minimum of 20 characters and base64 encoded. If the path is not specified, the command first tries to determine the public part of the key automatically by requesting the container registry notary service. If the image is present in ICR, path to the gpg public key that is used to sign the image should be mandatorily provided. It is optional for DCT signed image in Docker Hub.
