@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-12-07"
+  years: 2021, 2023
+lastupdated: "2022-02-13"
 
 subcollection: hp-virtual-servers
 
@@ -20,6 +20,9 @@ keywords: image, virtual server instance, instance, virtual server
 
 # Protecting your image build
 {: #imagebuild}
+
+You can now use Hyper Protect Secure Build to build a trusted container image within a secure enclave that is provided by {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC. For more information, see [Hyper Protect Secure Build](/docs/vpc?topic=vpc-about-hpsb).
+{: tip}
 
 You can securely build your own image, which you can then use with [bring your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
 {: shortdesc}
@@ -329,4 +332,4 @@ To deploy the SBS:
       {: codeblock}
 
 
-3. Follow the steps in these [instructions](https://github.com/ibm-hyper-protect/secure-build-cli) to provision a Hyper Protect Virtual Server that uses the SBS and to perform your first build.
+3. Follow the steps in these [instructions](https://github.com/ibm-hyper-protect/secure-build-cli/blob/master/SBS-HPVScloud.md) to provision a Hyper Protect Virtual Server that uses the SBS and to perform your first build.

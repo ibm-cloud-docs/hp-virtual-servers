@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2022-02-14"
 
 subcollection: hp-virtual-servers
 
@@ -158,7 +158,7 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 2. To create a registration file, run the `hpvs registration-create` command.
 
    ```sh
-   ibmcloud hpvs registration-create [--repository-name REPO-NAME] [--cr-username USER-NAME --cr-pwd-path FILE-PATH | --no-auth] [--allowed-env-keys ENV-KEYS | --no-env] [--image-key-id IMAGE-KEY-ID] [--image-key-public-path PUBLIC-KEY] [--registration-key-private-path PRIVATE-KEY-PATH] [--registration-key-public-path PUBLIC-KEY-PATH] [--gpg-passphrase-path PASS-PHRASE] [--cap-add  CAPABILITIES] [--isv-secrets ISV-SECRETS | --no-isv-secrets]
+   ibmcloud hpvs registration-create [--repository-name REPO-NAME] [--cr-username USER-NAME --cr-pwd-path FILE-PATH | --no-auth] [--allowed-env-keys ENV-KEYS | --no-env] [--image-key-id IMAGE-KEY-ID] [--fingerprint FINGERPRINT] [--image-key-public-path PUBLIC-KEY] [--registration-key-private-path PRIVATE-KEY-PATH] [--registration-key-public-path PUBLIC-KEY-PATH] [--gpg-passphrase-path PASS-PHRASE] [--cap-add  CAPABILITIES] [--isv-secrets ISV-SECRETS | --no-isv-secrets]
    ```
    {: pre}
 
@@ -203,13 +203,16 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
    :   This parameter can be set if the image does not require any allowed environment variables. In this case,  you don't need to provide the `allowed-env-keys` parameter. If you do, it is ignored.
 
    `--image-key-id IMAGE-KEY-ID`
-   :   The ID of the root key that was used to sign the image. It must contain 64 characters. If the image-key-id is not specified, the command first tries to determine the ID automatically by requesting the container registry notary service.  You are prompted for this parameter for Docker Hub images. If the image is in ICR, the fingerprint of the gpg key that is used to sign the image must be provided. This parameter is optional for a DCT signed image in Docker Hub. You can get the fingerprint by using the `gpg --list-keys name_of_the_key` command. For example, when you run the `gpg --list-keys latestnewkey` command, the following snippet is an example of the output:
+   :   The ID of the root key that was used to sign the image. It must contain 64 characters long. If the image-key-id is not specified, the command first tries to determine the ID automatically by requesting the container registry notary service. You are prompted for this parameter for Docker Hub images.
+
+   `--fingerprint FINGERPRINT`
+   :   If the image is in ICR, the fingerprint of the gpg key that is used to sign the image must be provided. You can get the fingerprint by using the `gpg --list-keys name_of_the_key` command. For example, when you run the `gpg --list-keys latestnewkey` command, the following snippet is an example of the output:
        ```buildoutcfg
        pub   rsa4096 2023-01-12 [SCEA] [expires: 2024-04-28]
              322A65D5B50BF16F5FDB6D7173943217FCD72F51
        uid           [ultimate] latestnewkey
        <latestnewkey@example.com>
-       sub   rsa4096 2023-01-12 [SEA] [expires: 2024-04-28]
+       sub   rsa4096 2023-01-1--fingerprint FINGERPRINT2 [SEA] [expires: 2024-04-28]
        ```
        {: screen}
 
