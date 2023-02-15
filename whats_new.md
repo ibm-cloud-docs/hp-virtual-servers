@@ -36,9 +36,6 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
 Updated: Secure Build Server version
 :   The Secure Build Server image is updated to 1.3.0.9. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
-Updated: The 'hpvs instance-update' command now supports the '--hostname' parameter.
-:   You can now use the `--fingerprint` parameter when you use the `ibmcloud hpvs registration-create` command, when the image is in ICR. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#regfiledetails).
-
 ## 16 December 2022
 {: #hp-virtual-servers-dec1622}
 {: release-note}
