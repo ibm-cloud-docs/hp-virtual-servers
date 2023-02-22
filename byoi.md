@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-22"
 
 subcollection: hp-virtual-servers
 
@@ -120,10 +120,14 @@ Complete the following steps to sign the images:
 
 4. Sign the image using `skopeo` and push the image to ICR.
    ```sh
-   export IAM_API_KEY=[your IBM Cloud API KEY]
-   skopeo copy docker-daemon:xx.icr.io/yournamespace/hello-world:base_signed
-   docker://xx.icr.io/yournamespace/hello-world:base_signed
-   --sign-by latestnewkey@example.com --dest-creds iamapikey:${IAM_API_KEY}
+   copy docker-daemon:us.icr.io/<namespace>/nginx1:latest docker://us.icr.io/<namespace>/nginx1:latest --sign-by E8C9E90........D9F3 --dest-creds=iamapikey:*****************
+
+   Getting image source signatures
+   Copying blob 226117031573 done  
+   .........
+   Writing manifest to image destination
+   Signing manifest using simple signing
+   Storing signatures
    ```
    {: codeblock}
 
@@ -222,10 +226,10 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
    :   The path for the file that contains the public part of the key that is used to sign the image. The public part of the key must be a minimum of 20 characters and base64 encoded. If the path is not specified, the command first tries to determine the public part of the key automatically by requesting the container registry notary service. If the image is present in ICR, path to the gpg public key that is used to sign the image should be mandatorily provided. It is optional for DCT signed image in Docker Hub.
 
    `--registration-key-public-path PRIVATE-KEY-PATH`
-   :   The path for the public key from the registration key pair.
+   :   The path for the public key from the registration key pair. You must save these keys in a safe and secure location for future use.
 
    `--registration-key-private-path PUBLIC-KEY-PATH`
-   :   The path for the private key from the registration key pair.
+   :   The path for the private key from the registration key pair. You must save these keys in a safe and secure location for future use.
 
    `--gpg-passphrase-path PASS-PHRASE`
    :   The path for the `gpg` pass phrase used for the private part of the registration key. The passphrase must consist of at least 6 characters. To make sure that a new line is not appended, use `echo` with `-n` or `cat` with EOF.
@@ -252,7 +256,7 @@ You must use the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin) `ibmcloud hpv
 {: #byoi_example}
 
 ```sh
-ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path "C:\MyRegistrationDefinitions\registration.json.asc" -i latest
+ibmcloud hpvs instance-create myServerName lite-s <location> --rd-path "C:\MyRegistrationDefinitions\registration.json.asc" -i latest
 ```
 
 ## Configuring your server
@@ -278,13 +282,13 @@ Variable names can have up to 64 characters and can consist of numbers, chars, a
 
 **An example with one environment variable:**
 ```sh
-ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name=value
+ibmcloud hpvs instance-create myServerName lite-s <location> --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name=value
 ```
 {: screen}
 
 **An Example with multiple environment variables:**
 ```sh
-ibmcloud hpvs instance-create myServerName lite-s dal13 --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name1=value1 -e name2=value2
+ibmcloud hpvs instance-create myServerName lite-s <location> --rd-path “C:\MyRegistrationDefinitions\registration.json.asc ” -i latest -e name1=value1 -e name2=value2
 ```
 {: screen}
 

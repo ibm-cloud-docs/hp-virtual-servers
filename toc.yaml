@@ -30,6 +30,7 @@ toc:
       id: howto
       topics:
       - generate_ssh.md
+      - dct-redhatsigning.md
       - topicgroup:
           label: Provisioning
           topics:
