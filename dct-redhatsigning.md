@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-27"
 
 subcollection: hp-virtual-servers
 
@@ -22,7 +22,7 @@ keywords: public keys, private keys, Red Hat simple signing, update virtual serv
 # Switching from DCT to Red Hat simple signing and updating the virtual server
 {: #switchdct_toicr}
 
-The Notary v1 service that supports Docker Content Trust (DCT) and docker trust commands (including the alternative URLs) in {{site.data.keyword.cloud}} Container Registry is discontinued. Any existing ICR images that were signed by using DCT, must be re-signed by using Red Hat. For more information, see [Release notes for Container Registry](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021). 
+The Notary v1 service that supports Docker Content Trust (DCT) and docker trust commands (including the alternative URLs) in {{site.data.keyword.cloud}} Container Registry is discontinued. Any existing ICR images that were signed by using DCT, must be re-signed by using Red Hat. For more information, see [Release notes for Container Registry](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021).
 {: note}
 
 
@@ -33,6 +33,7 @@ The Notary v1 service that supports Docker Content Trust (DCT) and docker trust 
 - Not applicable if the image is Red Hat simple signed and present in {{site.data.keyword.cloud}} Container Registry (ICR), and the virtual sever instance is already deployed with a Red Hat Simple Signed Image.
 - Not applicable if your virtual server is already running and you do not plan to update the virtual server.
 - Applicable only when the image is signed by using Docker Content Trust (DCT) and the image is present in ICR, and you plan to update the virtual server to the latest version. In this scenario, follow [these](#proc_migratedct_icr) instructions.
+- You must install [Skopeo](https://github.com/containers/skopeo/blob/main/install.md).
 
 
 ## Procedure
@@ -125,7 +126,7 @@ The Notary v1 service that supports Docker Content Trust (DCT) and docker trust 
       skopeo copy docker-daemon:us.icr.io/yournamespace/nginx1:latest docker://us.icr.io/yournamespace/nginx1:latest --sign-by E8C9E90........D9F3 --dest-creds=iamapikey:*****************
 
       Getting image source signatures
-      Copying blob 226117031573 done  
+      Copying blob 226117031573 done
       .........
       Writing manifest to image destination
       Signing manifest using simple signing
@@ -208,7 +209,7 @@ The Notary v1 service that supports Docker Content Trust (DCT) and docker trust 
    `--cr-pwd-path FILE-PATH`
    :   Is the path to the file that contains the container repository password.
 
-   To ensure there are no trailing spaces in the file path, you can specify it as `vi -b file_name , :set noeol, :wq`.
+   To ensure there are no trailing spaces in the file path, you can specify it as `vi -b file_name, :set noeol, :wq`.
    {: note}
 
    `--no-auth`
@@ -237,7 +238,7 @@ The Notary v1 service that supports Docker Content Trust (DCT) and docker trust 
     In this example, "E8C9E...........61A927D9F3" is the  fingerprint.
 
    `--image-key-public-path PUBLIC-KEY`
-   :   The path for the file that contains the public part of the key that was used to sign the image. The public part of the key must be a minimum of 20 characters and base64 encoded. If the path is not specified, the command first tries to determine the public part of the key automatically by requesting the container registry notary service. If the image is present in ICR, path to the gpg public key that is used to sign the image should be mandatorily provided. It is optional for DCT signed image in Docker Hub.
+   :   The path for the file that contains the public part of the key that was used to sign the image. The public part of the key must be a minimum of 20 characters and base64 encoded. If the image is present in ICR, path to the gpg public key that is used to sign the image and push to ICR should be mandatorily provided.
 
    `--registration-key-public-path PRIVATE-KEY-PATH`
    :   The path for the public key from the registration key pair. Ensure that you use the same key that you had used when you created the  virtual instance the first time. You must save these keys in a safe and secure location for future use.
