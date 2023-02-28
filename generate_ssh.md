@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-08-21"
+  years: 2019, 2023
+lastupdated: "2023-02-28"
 
 subcollection: hp-virtual-servers
 
@@ -127,6 +127,9 @@ You can select one of the supported cryptographic algorithms from the **PuTTY Ke
 You must then save the private, and optionally the public key, into separate files by pressing the appropriate buttons (**Save public key**, **Save private key**). To reuse the public key saved this way for creating a virtual server, ensure that you use the OpenSSH public key format that is recognized by {{site.data.keyword.hpvs}}.
 {: important}
 
+You must store the keys in a safe location and take a backup of the keys. Virtual Server upgrade scenarios require signing with the original keys that were used to create the virtual server.
+{: important}
+
 To create a virtual server with a **PuTTY** public SSH key, you have the following choices:
 
 - To create the virtual server directly after the key pair generation, copy the public key from the **Key** box. Include the string 'ssh-rsa' at the beginning, but delete the key comment at the end as shown in Figure 2.
@@ -145,12 +148,10 @@ Imagine you have an existing virtual server, which you want to configure in the 
 
    ![Import OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey.jpg "Import OpenSSH private key to **PuTTY**"){: caption="Figure 3. Import OpenSSH private key to **PuTTY**" caption-side="bottom"}
 
-   
+
 2. Save the private key in the **PuTTY** format by using the file type `.ppk`.
 
    ![Convert OpenSSH private key to **PuTTY**](image/hpvs_convert_privkey_save.jpg "Convert OpenSSH private key to **PuTTY**"){: caption="Figure 4. Convert OpenSSH private key to **PuTTY**" caption-side="bottom"}
 
- 
+
 3. Configure your virtual server in **PuTTY** as described in [Logging-in from Windows by using **PuTTY Configuration**](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-connect_vs#connect_vs_with_putty).
-
-
