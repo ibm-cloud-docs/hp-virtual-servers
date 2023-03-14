@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-04-15"
+  years: 2019, 2023
+lastupdated: "2023-03-14"
 
 subcollection: hp-virtual-servers
 
@@ -65,6 +65,7 @@ Your responsibilities:
 - Use security groups and network ACLs to secure your virtual server instances, such as restricting what IP addresses can SSH into the instance.
 - Choose how to connect your workload to the public internet.
 - Restrict user access to the appropriate resources and resource groups.
+- Recommend to enable the SSH Host key checking or specify the `StrictHostKeyChecking = yes` in the `ssh_config` file for additional security to allow only verified known hosts to connect to the instance.
 
 ### App Orchestration
 {: #responsibilities_app_hpvs}
