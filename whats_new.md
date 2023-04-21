@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-02-03"
+lastupdated: "2022-04-21"
 
 keywords: release note, what's new
 
@@ -28,6 +28,13 @@ content-type: release-note
 
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+## 21 April 2023
+{: #hp-virtual-servers-apr2123}
+{: release-note}
+
+Updated: Secure Build Server version
+:   The Secure Build Server image is updated to 1.3.0.10. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 15 February 2023
 {: #hp-virtual-servers-feb1523}
