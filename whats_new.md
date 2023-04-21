@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-04-21"
+lastupdated: "2023-04-21"
 
 keywords: release note, what's new
 
