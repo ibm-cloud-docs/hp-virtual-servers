@@ -10,14 +10,7 @@ keywords: IAM access for {{site.data.keyword.hpvs}}, permissions for {{site.data
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing access for {{site.data.keyword.hpvs}}

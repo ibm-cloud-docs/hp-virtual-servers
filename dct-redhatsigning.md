@@ -10,14 +10,8 @@ keywords: public keys, private keys, Red Hat simple signing, update virtual serv
 
 ---
 
-{:external: target="_blank".external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Switching from DCT to Red Hat simple signing and updating the virtual server
 {: #switchdct_toicr}

@@ -10,14 +10,8 @@ keywords: ssh public keys, OpenSSH, add ssh key, ssh key, manage ssh key, virtua
 
 ---
 
-{:external: target="_blank".external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Generating SSH keys
 {: #generate_ssh}

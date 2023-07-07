@@ -9,17 +9,7 @@ subcollection: hp-virtual-servers
 keywords: disaster recovery
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:download: .download}
-{:preview: .preview}
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding your responsibilities when you use {{site.data.keyword.hpvs}}
 {: #resphpvs}

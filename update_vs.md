@@ -9,14 +9,7 @@ subcollection: hp-virtual-servers
 keywords: update, image
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Updating a virtual server
 {: #update_vs}

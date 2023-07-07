@@ -8,14 +8,8 @@ subcollection: hp-virtual-servers
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Retrieving information about a virtual server
 {: #retrieve-info-vs}

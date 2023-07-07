@@ -14,15 +14,8 @@ completion-time: 1h
 keywords: secure build, secure build server, image, virtual server instance, instance, virtual server,  secure CI/CD, confidential computing, confidential computing build, confidential computing CI/CD
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
 
+{{site.data.keyword.attribute-definition-list}}
 
 # Tutorial: Using Secure Build Server with a digital wallet
 {: #tutorial_secure_build_server}

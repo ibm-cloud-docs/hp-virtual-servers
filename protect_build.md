@@ -9,14 +9,8 @@ subcollection: hp-virtual-servers
 keywords: image, virtual server instance, instance, virtual server
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Protecting your image build
 {: #imagebuild}

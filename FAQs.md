@@ -10,17 +10,7 @@ keywords: troubleshooting, support, help, virtual servers help
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
-{:faq: data-hd-content-type='faq'}
-{:support: data-reuse='support'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs
 {: #faqs}

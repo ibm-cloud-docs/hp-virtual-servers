@@ -10,13 +10,8 @@ keywords: data encryption in {{site.data.keyword.hpvs}}, data storage for {{site
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Securing your data in {{site.data.keyword.hpvs}}
 {: #mng-data}

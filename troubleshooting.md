@@ -8,19 +8,8 @@ subcollection: hp-virtual-servers
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsSymptoms: .tsSymptoms}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:support: data-reuse='support'}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Solving problems
 {: #troubleshooting}

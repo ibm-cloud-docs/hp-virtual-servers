@@ -14,15 +14,8 @@ completion-time: 1h
 keywords: secure networking, secure network, virtual server instance, instance, virtual server, VPN, secure CI/CD, confidential computing, confidential computing build, confidential computing CI/CD
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
 
+{{site.data.keyword.attribute-definition-list}}
 
 # Tutorial: Setting up the secure network
 {: #tutorial_network}

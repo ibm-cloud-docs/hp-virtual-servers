@@ -10,16 +10,7 @@ keywords: hyper protect virtual servers, Hyper Protect Virtual Servers, getting 
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
-{:help: data-hd-content-type='help'}
-{:support: data-reuse='support'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with  {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}
 {: #getting-started}

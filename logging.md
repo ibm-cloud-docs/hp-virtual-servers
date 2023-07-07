@@ -9,15 +9,8 @@ subcollection: hp-virtual-servers
 keywords: virtual server instance, instance, logging, logs, logDNA, virtual server
 
 ---
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:note: .note}
-{:tip: .tip}
-{:important: .important}
+
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Monitoring logs

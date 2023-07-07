@@ -9,12 +9,7 @@ keywords: public isolation for {{site.data.keyword.hpvs}}, compute isolation for
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:table: .aria-labeledby="caption"}
-{:tip: .tip}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Learning about {{site.data.keyword.hpvs}} architecture and workload isolation
 {: #learn-architecture}

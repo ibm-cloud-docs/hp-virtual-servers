@@ -10,14 +10,8 @@ keywords: browser, safari, plug-in
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:note: .note}
-{:important: .important}
-{:tip: .tip}
-{:pre: .pre}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Supported browsers
 {: #help-support-browsers}
