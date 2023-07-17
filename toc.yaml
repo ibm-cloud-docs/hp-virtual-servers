@@ -56,7 +56,7 @@ toc:
       topics:
       - hpvs_responsibilities.md
       - ha_disaster_recov.md
-      - /hpvs-cli-plugin/hpvs-cli-plugin-hpvs_cli_plugin
+      - include: ../hpvs-cli-plugin/hpvs_cli.md
       - link:
           label: Hyper Protect Services
           href: https://www.ibm.com/cloud/hyper-protect-services
