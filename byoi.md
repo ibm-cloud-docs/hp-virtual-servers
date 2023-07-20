@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-20"
 
 subcollection: hp-virtual-servers
 
@@ -87,7 +87,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 You must provide the "Fingerprint" and the "Path to the public key" that you used when you signed the image by using Red Hat signing when you run the `hpvs registration-create` command, and are prompted for the "Fingerprint", and the "Path to the file containing the image public key".
 
 Complete the following steps to sign the images:
-1. Create a batch file and add the following content to it. Note that the maximum key length can be used to create a gpg key is 4096.
+1. Create a batch file and add the following content to it. Note that the maximum key length can be used to create a gpg key is 4096 and the version of [GnuPG](https://www.gnupg.org/ftp/gcrypt/gnupg/) must be 2.4.0 or earlier.
    ```sh
    Key-Type: RSA
    Key-Length: 4096
