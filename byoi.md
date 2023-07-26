@@ -22,8 +22,6 @@ Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server.
 The {{site.data.keyword.cloud}} CLI can be used only on the officially supported operating systems or architectures. It is recommended that you use the {{site.data.keyword.cloud}} Shell if your system is not supported.
 {: note}
 
-Trial of the schema file. See [json schema](/docs/hp-virtual-servers?topic=hp-virtual-servers-schema.md).
-
 If you want to use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to provision a server, refer to [Protecting your image build](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild).
 
 
