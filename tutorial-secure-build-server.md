@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2022-02-14"
+lastupdated: "2023-07-28"
 
 subcollection: hp-virtual-servers
 
@@ -32,18 +32,18 @@ For information about securely building your own image, see [Protecting your ima
 
 The following information is provided in this tutorial:
 
-- [Basic concepts](#basicconcept_sbs)
-- [Digital wallets](#digwall_sbs)
-- [Before you begin](#prerequisites_sbs)
-- [Task flow](#taskflow_sbs)
-- [Summary](#summary_sbs)
+- [Basic concepts](#basicconcept_hpsb)
+- [Digital wallets](#digwall_hpsb)
+- [Before you begin](#prerequisites_hpsb)
+- [Task flow](#taskflow_hpsb)
+- [Summary](#summary_hpsb)
 
 ## Secure Build Server basic concepts
-{: #basicconcept_sbs}
+{: #basicconcept_hpsb}
 
 You use the Secure Build Server to build a trusted container image within a secure enclave, which is provided by IBM Cloud {{site.data.keyword.hpvs}}. The enclave is highly isolated, which means that software developers must use a specific API to access the Secure Build Server. Cloud administrators and the cloud provider do not have access to the Secure Build Server in the secure enclave or its contents, such as built container images. The application image created by the Secure Build Server (together with the other relevant build output such as the manifest file and the encrypted registration file) is highly trusted. It is highly trusted because the Secure Build Server cryptographically signs the application image and the manifest file and the signing keys are kept inside the secure enclaves.
 
-To build a container image with Secure Build Server, you must complete these steps:
+To build a container image with Hyper Protect Secure Build server, you must complete these steps:
 - Set up a Secure Build Server instance, then use the CLI to start the build on this instance.
 - Secure Build Server pulls the source code from a GitHub repository, in this case from the Digital Wallet repository.
 - Secure Build Server uses the source code's Dockerfile to build a container image.
@@ -51,7 +51,7 @@ To build a container image with Secure Build Server, you must complete these ste
 - Secure Build Server creates a manifest file and signs it. The manifest file is used to verify the source of the image and the integrity of the build. It contains the source code from which the image was built as well as the build log. You can download the manifest file from the Secure Build Server, and, for example, use it for audit purposes or pass it to an auditor. The manifest file is signed by signing keys that are kept inside the secure enclave.
 - Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
 
-![The Secure Build Server](image/secure-build.png "The Secure Build Server"){: caption="Figure 1. The Secure Build Server" caption-side="bottom"}
+![The Secure Build Server](image/secure-build.png "The Hyper Protect Secure Build server"){: caption="Figure 1. The Hyper Protect Secure Build server" caption-side="bottom"}
 
 The registration file specifies the container registry, the application image, and the credentials that are required to access the container registry. The registration file is encrypted and can be decrypted by {{site.data.keyword.hpvs}} only.
 
@@ -59,7 +59,7 @@ You can download and use the encrypted registration file yourself, or you can pa
 
 
 ## Digital wallets
-{: #digwall_sbs}
+{: #digwall_hpsb}
 
 As digital wallets are targeted by hackers, it is important that the digital assets be protected in an environment that is also easily accessible by the user (known as a "hot wallet"). A protected environment is an environment where both privileged admins and external threats cannot compromise the data, thru encryption and other mechanisms. In addition, the application must be built in a secure environment that uses a Secure Build process that prevents malicious actors from tampering the application code and application image. Without a Secure Build process, a malicious insider or external actor could try to manipulate the build process or the build environment.
 
@@ -67,7 +67,7 @@ The Digital Wallet application, Secure Bitcoin Wallet, is available [here](https
 
 
 ## Before you begin
-{: #prerequisites_sbs}
+{: #prerequisites_hpsb}
 
 To complete this tutorial, you need to meet the following prerequisites:
 - Create an IBM Cloud account.
@@ -75,18 +75,18 @@ To complete this tutorial, you need to meet the following prerequisites:
 - Install [GPG](https://www.gnupg.org/index.html).
 
 ## Task flow
-{: #taskflow_sbs}
+{: #taskflow_hpsb}
 
 To complete this solution, you walk through the following steps:
-1. [Set up the IBM Container Registry](#setupconreg_sbs).
-2. [Set up the Secure Build Server](#setupsbs_sbs).
-3. [Build the application image by using the Secure Build Server](#buildimage_sbs).
-4. [Deploy the image by using {{site.data.keyword.hpvs}} BYOI and run the application in a secure environment](#deploy_sbs).
+1. [Set up the IBM Container Registry](#setupconreg_hpsb).
+2. [Set up the Hyper Protect Secure Build server](#setupsbs_hpsb).
+3. [Build the application image by using the Hyper Protect Secure Build server](#buildimage_hpsb).
+4. [Deploy the image by using {{site.data.keyword.hpvs}} BYOI and run the application in a secure environment](#deploy_hpsb).
 
 During this task flow, you create two {{site.data.keyword.hpvs}} instances: One instance for the Secure Build Server and one instance for your application.
 
 ## Step 1: Set up the IBM Container Registry
-{: #setupconreg_sbs}
+{: #setupconreg_hpsb}
 {: step}
 
 For this tutorial you need to set up IBM Container Registry and create a new namespace. The container registry is used to store the built application container image in the new namespace.
@@ -104,7 +104,7 @@ ibmcloud target -g default
 {: #step_2}
 
 ```sh
-ibmcloud iam api-key-create myapikey -d "API key for SBS tutorial"
+ibmcloud iam api-key-create myapikey -d "API key for HPSB tutorial"
 ```
 {: pre}
 
@@ -118,7 +118,7 @@ Please preserve the API key! It cannot be retrieved after it is created.
 
 ID            ApiKey-...
 Name          myapikey
-Description   API key for SBS tutorial
+Description   API key for HPSB tutorial
 Created At    2021-...
 API Key       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Locked        false
@@ -135,8 +135,8 @@ ibmcloud cr namespace-add secureimages
 ```
 {: pre}
 
-## Step 2: Set up the Secure Build Server
-{: #setupsbs_sbs}
+## Step 2: Set up the Hyper Protect Secure Build server
+{: #setupsbs_hpsb}
 {: step}
 
 Complete the steps in this procedure to set up the Secure Build Server.
@@ -212,7 +212,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
 This file defines the configuration for your Secure Build Server instance, which you create in the next steps.
 
 Notes:
-- The property `HOSTNAME` of the SBS server which will be used while generating certificates and communicating with the secure build server.
+- The property `HOSTNAME` of the HPSB server which will be used while generating certificates and communicating with the secure build server.
 - The property `GITHUB_KEY_FILE` specifies the key file (on your workstation) that contains the SSH key for your GitHub account.
 - The property `DOCKER_REPO` identifies the namespace (which you created in step 1) and the container image name to be used. Specify a value that is not used or allocated in your container registry.
 - Specify the value of the API key that is created in step 1 for both properties `DOCKER_PASSWORD` and `DOCKER_RO_PASSWORD`.
@@ -355,7 +355,7 @@ Created               2022-...
 Update with the new hostname (in the case of certificate expiration, you need not update the hostname).
 
 ## Step 3: Build the application image by using the Secure Build Server
-{: #buildimage_sbs}
+{: #buildimage_hpsb}
 {: step}
 
 Now, build the application container image.
@@ -545,8 +545,8 @@ tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.
 
 This creates a `git` directory (including the snapshot of the application's Git repository that is used for the build), and a data directory, which includes a file `build.json` (that contains the build status) and the build.log.
 
-### Saving the state of your Secure Build Server instance
-{: #save_sbs_state}
+### Saving the state of your Hyper Protect Secure Build server instance
+{: #save_hpsb_state}
 
 As an optional step (which you can skip), you can download a state image from your Secure Build Server instance. To build the image in another, new Secure Build Server instance (for example, after the original instance is deleted or corrupted), you need the state image to recover the signing key and additional internal states of the Secure Build Server instance. See [here](https://github.com/ibm-hyper-protect/secure-build-cli)
 for information about how you can restore the state image and how you can save a state image to Cloud Object Storage. In this tutorial, you download the state image only, so it is available in the current working directory for possible later use.
@@ -567,7 +567,7 @@ INFO:__main__:state:name: us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-
 {: screen}
 
 ## Step 4: Deploy your application by using Hyper Protect Virtual Servers BYOI and run the application in a secure environment
-{: #deploy_sbs}
+{: #deploy_hpsb}
 {: step}
 
 Now it's time to deploy and run your newly built application. To do so, you download the encrypted registration file that was created during the build and use the {{site.data.keyword.hpvs}} BYOI feature to provision a {{site.data.keyword.hpvs}} instance for your application.
@@ -640,7 +640,7 @@ Here's an example screen capture of the wallet:
 
 
 ## Summary
-{: #summary_sbs}
+{: #summary_hpsb}
 
 You successfully used Secure Build Server to build the Secure Bitcoin wallet application. Your build runs in a secure enclave, which protects the build environment, the build process, and the build output from malicious internal or external actors. You used the {{site.data.keyword.hpvs}} BYOI feature to set up your Secure Bitcoin Wallet instance in a secure enclave, which protects the wallet from threats and hackers.
 

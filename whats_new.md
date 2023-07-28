@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-21"
+lastupdated: "2023-07-28"
 
 keywords: release note, what's new
 
@@ -20,6 +20,14 @@ content-type: release-note
 
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
 {: shortdesc}
+
+
+## 28 July 2023
+{: #hp-virtual-servers-jul2823}
+{: release-note}
+
+Updated: Hyper Protect Secure Build server version
+:   The Hyper Protect Secure Build server image is updated to 1.3.0.11. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 21 April 2023
 {: #hp-virtual-servers-apr2123}
@@ -87,7 +95,7 @@ Updated: The repository definition file.
 :   The repository definition file is updated. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 Updated: Secure Build Server version
-:   The Secure Build Server image is updated to 1.3.0.4, and the Secure Build CLI code is also updated. The security of the communication between the SBS server and client has been enhanced to prevent malicious attacks. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+:   The Secure Build Server image is updated to 1.3.0.4, and the Secure Build CLI code is also updated. The security of the communication between the HPSB server and client has been enhanced to prevent malicious attacks. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 08 December 2021
 {: #hp-virtual-servers-dec0821}
@@ -158,8 +166,8 @@ Added: Monitoring logs of {{site.data.keyword.hpvs}} instances.
 {: #hp-virtual-servers-may2121}
 {: release-note}
 
-Updated: Deploying the Secure Build Server as a Hyper Protect Virtual Server.
-:   The {{site.data.keyword.cloud_notm}} command line interface can be used to create a registration definition file, and the gpg registration key. You can also manually add Linux capabilities to the registration definition file. The registration definition file for SBS is updated for security compliance.  For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
+Updated: Deploying the Hyper Protect Secure Build server as a Hyper Protect Virtual Server.
+:   The {{site.data.keyword.cloud_notm}} command line interface can be used to create a registration definition file, and the gpg registration key. You can also manually add Linux capabilities to the registration definition file. The registration definition file for HPSB is updated for security compliance.  For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 ## 26 February 2021
 {: #hp-virtual-servers-feb2621}
