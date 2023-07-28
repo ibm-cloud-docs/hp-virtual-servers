@@ -18,7 +18,7 @@
     },
     {
       "title": "Protecting your image build",
-      "description": "Use the Hyper Protect Virtual Servers Secure Build Server (SBS) functionality to sign your applications and also to sign and encrypt the registration definition for the deployment to securely build your own image.",
+      "description": "Use the Hyper Protect Secure Build (HPSB) server functionality to sign your applications and also to sign and encrypt the registration definition for the deployment to securely build your own image.",
       "href": "/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild"
     }
   ],

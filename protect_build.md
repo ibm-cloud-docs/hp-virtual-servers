@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-28"
 
 subcollection: hp-virtual-servers
 
@@ -21,17 +21,17 @@ You can now use Hyper Protect Secure Build to build a trusted container image wi
 You can securely build your own image, which you can then use with [bring your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
 {: shortdesc}
 
-To do this you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server (SBS) functionality to sign your applications and also to sign and encrypt the registration definition for the deployment.
+To do this you use the Hyper Protect Secure Build (HPSB) server functionality to sign your applications and also to sign and encrypt the registration definition for the deployment.
 
 When you build your image securely, you can validate your build code and reassure your users of the integrity level of their applications.
 
 ## Deploying the Secure Build Server as a Hyper Protect Virtual Server
 {: #deploysecurebuild}
 
-To deploy the SBS:
+To deploy the HPSB:
 
 1. Install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
-2. Copy the following registration definition for the SBS into a file named `secure_build.asc`. This file is an encrypted and signed registration definition file. It contains metadata such as the repository name and the credentials to pull and deploy the SBS image on a {{site.data.keyword.hpvs}} instance:
+2. Copy the following registration definition for the HPSB into a file named `secure_build.asc`. This file is an encrypted and signed registration definition file. It contains metadata such as the repository name and the credentials to pull and deploy the HPSB image on a {{site.data.keyword.hpvs}} instance:
       ```sh
       -----BEGIN PGP MESSAGE-----
       Comment: https://gopenpgp.org
@@ -342,4 +342,4 @@ To deploy the SBS:
       {: codeblock}
 
 
-3. Follow the steps in these [instructions](https://github.com/ibm-hyper-protect/secure-build-cli/blob/master/SBS-HPVScloud.md) to provision a Hyper Protect Virtual Server that uses the SBS and to perform your first build.
+3. Follow the steps in these [instructions](https://github.com/ibm-hyper-protect/secure-build-cli/blob/master/HPSB-HPVScloud.md) to provision a Hyper Protect Virtual Server that uses the HPSB and to perform your first build.
