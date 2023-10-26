@@ -44,6 +44,7 @@ toc:
       - update_vs.md
       - remove_vs.md
       - logging.md
+      - migrating.md
       - topicgroup:
           label: Enhancing security for Hyper Protect Virtual Servers
           topics:
