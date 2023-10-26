@@ -56,5 +56,6 @@ Customers will not incur any cost for migration. IBM will provide all the needed
 
 
 ## Get started today
+{: #get-started}
 
 For {{site.data.keyword.hpvs}} for VPC, the provisioning, deployment, and management all occur through the [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}](https://cloud.ibm.com/vpc-ext/provision/vs?architecture=s390x&secureExecution=true) page. For more details, refer to the [product page](https://www.ibm.com/products/hyper-protect-virtual-servers) or [documentation](/docs/vpc?topic=vpc-about-se).
