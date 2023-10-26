@@ -45,6 +45,11 @@ toc:
       - remove_vs.md
       - logging.md
       - topicgroup:
+          label : Migrating to Hyper Protect Virtual Servers for VPC
+          topics:
+          - why-migrate.md
+          - migrating.md
+      - topicgroup:
           label: Enhancing security for Hyper Protect Virtual Servers
           topics:
           - iam.md
