@@ -27,7 +27,7 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}}.
 {: release-note}
 
 Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Sydney
-:   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and {{site.data.keyword.hpvs}} for Classic will be deprecated
+:   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic) will be deprecated
 from the IBM Cloud data center in `Sydney`. New instances of Hyper Protect Services can no
 longer be deployed in the IBM Cloud data center in `Sydney` after **30 November 2023**, and
 existing Hyper Protect services and support in the IBM Cloud data center in Sydney will be
@@ -70,7 +70,7 @@ in IBM Cloud VPC data centers). The recommended region for migration within APAC
     {: caption="Table 1. Supported {{site.data.keyword.cloud_notm}} VPC data centers" caption-side="bottom"}
 
 Updated: Migration from {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC
-: If you want to migrate your existing workloads on the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC, refer to [Migrating to IBM Cloud Hyper Protect Virtual Server for VPC](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
+: {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC, refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
 
 ## 28 July 2023
 {: #hp-virtual-servers-jul2823}

@@ -13,20 +13,17 @@ keywords: virtual server instance, instance, migrating, migration, virtual serve
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Migrating to IBM Cloud Hyper Protect Virtual Server for VPC
+# Migrating scenarios
 {: #migrating}
 
-IBM Cloud Hyper Protect Virtual Server for VPC is based on the [IBM Secure Execution for Linux](https://www.ibm.com/docs/en/linux-on-systems?topic=virtualization-introducing-secure-execution-linux){: external} technology and provided as a compute option in [IBM Virtual Private Cloud (VPC)](https://www.ibm.com/topics/vpc){: external}. By migrating your existing workload to IBM Cloud Hyper Protect Virtual Server instances on VPC, you can make full use of scalable isolation of workloads with hardware-based Secure Execution technoglogy and the flexibility of the VPC architecture. 
+
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC is based on the [IBM Secure Execution for Linux](https://www.ibm.com/docs/en/linux-on-systems?topic=virtualization-introducing-secure-execution-linux){: external} technology and provided as a compute option in [IBM Virtual Private Cloud (VPC)](https://www.ibm.com/topics/vpc){: external}. By migrating your existing workload to IBM Cloud Hyper Protect Virtual Server instances on VPC, you can make full use of scalable isolation of workloads with hardware-based Secure Execution technoglogy and the flexibility of the VPC architecture. For more information, see [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate).
 
 
 Depending on how you provision and deploy your workloads in the IBM Cloud Hyper Protect Virtual Server instance, you can refer to the following migration guide in order to deploy the same workloads to the Hyper Protect Virtual Server instance in VPC. 
 
 In the following context, the `classic instance` refers to the current IBM Cloud Hyper Protect Virtual Server instance that has your workloads, and the `VPC instance` refers to the IBM Cloud Hyper Protect Virtual Server instance on VPC that you will migrate to. 
 {: note}
-
-
-## Migration scenarios
-{: #scenarios}
 
 * [The classic instance provisioned by using an IBM-provided image](#hpvs_instance)
 * [The classic instance provisioned by using your own image that does not need data migration](#byoi_no_data)
@@ -123,7 +120,7 @@ If your database workloads do not support live migration, complete the following
 
 1. Update the classic instance to support `rsync` utility and connect to the VPC environment.
 
-   1. Reserve a floating IP address in the VPC environment, and specify a port such as `873` for the `rsync` utility to connect to. For more information, see [Creating network interfaces with floating IP addresses](/docs/vpc?topic=vpc-fip-working) and [Updating a VPC's default security group rules](docs/vpc?topic=vpc-updating-the-default-security-group). 
+   1. Reserve a floating IP address in the VPC environment, and specify a port such as `873` for the `rsync` utility to connect to. For more information, see [Creating network interfaces with floating IP addresses](/docs/vpc?topic=vpc-fip-working) and [Updating a VPC's default security group rules](/docs/vpc?topic=vpc-updating-the-default-security-group). 
 
    2. Use the container image that the classic instance is provisioned as the parent image, update its dockerfile to install the `rsync` utility when the new container starts.  
       ```yaml
