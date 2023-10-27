@@ -34,8 +34,7 @@ existing Hyper Protect services and support in the IBM Cloud data center in Sydn
 decommissioned and discontinued on **31 March 2024**.
 
 :   This announcement does not impact any other services running in the IBM Cloud
-data center in Sydney, nor any other Hyper Protect Services, including support, running in other
-any other data centers where Hyper Protect is supported.
+data center in Sydney, nor any other Hyper Protect Services, including support, running in any other data centers where Hyper Protect is supported.
 {: note}
 
 :   Review the following details for this deprecation:
