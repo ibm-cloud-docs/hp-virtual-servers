@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-07-28"
+lastupdated: "2023-11-10"
 
 subcollection: hp-virtual-servers
 
@@ -17,11 +17,12 @@ keywords: secure build, secure build server, image, virtual server instance, ins
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Tutorial: Using Secure Build Server with a digital wallet
+# Tutorial: Using Hyper Protect Secure Build Server with a digital wallet
 {: #tutorial_secure_build_server}
 {: toc-content-type="tutorial"}
 {: toc-services="hp-virtual-servers"}
 {: toc-completion-time="1h"}
+
 
 In this tutorial, you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to build a digital wallet application, then you use {{site.data.keyword.hpvs}} to deploy the resulting application in the public cloud.
 
@@ -181,9 +182,10 @@ Create file `sbs-config.json` in your current working directory (this is the dir
 
 ```json
 {
-  "HOSTNAME": "sbs.example.com",  
+  "HOSTNAME": "sbs.example.com",
+  "RUNTIME_TYPE": "classic"
   "CICD_PORT": "443",
-  "IMAGE_TAG": "1.3.0.10",
+  "IMAGE_TAG": "1.3.0.12",
   "CONTAINER_NAME": "SBContainer",
   "GITHUB_KEY_FILE": "~/.ssh/id_rsa",
   "GITHUB_URL": "git@github.com:IBM/secure-bitcoin-wallet.git",
@@ -205,7 +207,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
     "NO_GRPC_BUILD": "1",
     "ACCESS_TOKEN": "********"
   }
-}
+} 
 ```
 {: codeblock}
 
@@ -230,7 +232,7 @@ For a list of properties, see [here](https://github.com/ibm-hyper-protect/secure
 
 The following snippet shows example output:
 ```sh
-INFO:__main__:parameter file sbs-config.json renamed to sbs-config.json.2021-02-10_14-55-19.806993
+INFO:__main__:parameter file sbs-config.json renamed to sbs-config.json.2023-11-10_14-55-19.806993
 INFO:root:client_certificate: generating client CA and certificate
 ```
 {: screen}
@@ -289,11 +291,11 @@ First, copy the encrypted registration definition for the Secure Build image int
 
 Then, use the following command line to provision a new instance of the Secure Build Server. Insert the values for the environment variables `CLIENT_CRT` and `CLIENT_CA`, `SERVER_CRT` and `SERVER_KEY` taken from the output of the preceding command.
 ```buildoutcfg
-ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.10 --hostname sbs.example.com -e CLIENT_CRT=... -e CLIENT_CA=... -e SERVER_CRT=... -e SERVER_KEY=...
+ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.asc" -i 1.3.0.12 --hostname sbs.example.com -e CLIENT_CRT=... -e CLIENT_CA=... -e SERVER_CRT=... -e SERVER_KEY=...
 ```
 {: pre}
 
-`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Ensure that you use the image tag `1.3.0.10` because this tag references the up-to-date version of the Secure Build Server.
+`SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Ensure that you use the image tag `1.3.0.12` because this tag references the up-to-date version of the Secure Build Server.
 `sbs.example.com` is the server hostname that was specified in the `sbs-config.json` file. For more information about available pricing plans and regions and datacenters, see [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance).
 
 ### 9. Display your Secure Build Server instance.
@@ -338,7 +340,7 @@ Memory                2048 MiB
 Processors            1 vCPUs
 Image type            self-provided
 Image OS              self-defined
-Image name            de.icr.io/zaas-hpvsop-prod/secure-docker-build:1.3.0.10
+Image name            de.icr.io/zaas-hpvsop-prod/secure-docker-build:1.3.0.12
 Environment           CLIENT_CA=...
                       CLIENT_CRT=...
                       SERVER_CRT=...
@@ -431,7 +433,7 @@ You can repeat this command to update the latest build status.
 The following example output is displayed for a build that is in progress:
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.10",
+    "build_image_tag": "1.3.0.12",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -444,7 +446,7 @@ INFO:__main__:status: response={
 The following example output is for a build, which failed due to a container registry login problem:
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.9",
+    "build_image_tag": "1.3.0.12",
     "build_name": "",
     "image_tag": "",
     "manifest_key_gen": "",
@@ -478,11 +480,11 @@ Run the following command again to display the status of your build:
 The following is example output for a build that completed successfully (indicated by the `success` status):
 ```sh
 INFO:__main__:status: response={
-    "build_image_tag": "1.3.0.10",
-    "build_name": "us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350",
+    "build_image_tag": "1.3.0.12",
+    "build_name": "us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350",
     "image_tag": "s390x-v1-ad52e76",
     "manifest_key_gen": "soft_crypto",
-    "manifest_public_key": "manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350-public.pem",
+    "manifest_public_key": "manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350-public.pem",
     "status": "success"
 }
 ```
@@ -508,16 +510,16 @@ Download the manifest file from your Secure Build Server instance by using the f
 
 The following snippet shows example output that is displayed by the command:
 ```sh
-INFO:__main__:get-manifest manifest_name: manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350
-INFO:__main__:verify_manifest: manifest_name=manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350 test=0
+INFO:__main__:get-manifest manifest_name: manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350
+INFO:__main__:verify_manifest: manifest_name=manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350 test=0
 INFO:__main__:verify=OK
 ```
 {: screen}
 
 The command downloads and stores a set of files in your current working directory, for example:
 ```sh
--rwxrwxrwx 1 user user 3021932 Feb 10 16:37 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
--rwxrwxrwx 1 user user     512 Feb 10 16:37 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig
+-rwxrwxrwx 1 user user 3021932 Feb 10 16:37 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350.tbz
+-rwxrwxrwx 1 user user     512 Feb 10 16:37 manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350.sig
 ```
 {: pre}
 
@@ -526,20 +528,20 @@ The command downloads and stores a set of files in your current working director
 
 Extract the archive file that was retrieved in the previous step by running the following command:
 ```sh
-tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig.tbz
+tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350.sig.tbz
 ```
 {: pre}
 
 This extracts the following expected output:
 ```sh
-manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
-manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.sig
+manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350.tbz
+manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350.sig
 ```
 {: screen}
 
 Extract the contents of the manifest file:
 ```buildoutcfg
-tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350.tbz
+tar -xvf manifest.us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350.tbz
 ```
 {: pre}
 
@@ -562,7 +564,7 @@ To download the state image, run the following command:
 
 This command creates an encrypted file in your current directory and prints the file name in the output, for example:
 ```sh
-INFO:__main__:state:name: us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2021-02-10_15-37-37.178350
+INFO:__main__:state:name: us.icr.io.secureimages.secure-bitcoin-wallet.s390x-v1-ad52e76.2023-11-10_15-37-37.178350
 ```
 {: screen}
 
