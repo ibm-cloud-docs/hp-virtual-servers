@@ -83,7 +83,7 @@ Where:
 :   Is the name or ID of your service plan, for example, the plan name for a free plan is `lite-s`. The possible values for plan name are: `lite-s`, `entry`, `small`, and `medium`.
 
 `LOCATION`
-:   Is the target location to create the service instance. The possible values are: `dal10`, `dal12`, `dal13`, `fra02`, `fra04`, `fra05`, `syd01`, `syd04`, `syd05`, `wdc04`, `wdc06`, `wdc07`.
+:   Is the target location to create the service instance. The possible values are: `dal10`, `dal12`, `dal13`, `fra02`, `fra04`, `fra05`,  `wdc04`, `wdc06`, `wdc07`.
 
 
 ### Command options
