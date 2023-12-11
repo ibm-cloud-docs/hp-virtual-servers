@@ -42,7 +42,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 - Your custom Linux-based image must meet these requirements:
     - In the OCI Image format. {{site.data.keyword.hpvs}} supports only Linux-based OCI Images, which are built for the IBM LinuxONE and IBM Z platform (s390x architecture).
     - Upload the OCI image to a container registry. You can use the following container registries:
-      - The [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry). You must use Red Hat signing when using {{site.data.keyword.cloud}} Container Registry (ICR). Follow the steps listed in [Signing images for trusted content](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent).
+      - The [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/registry/overview). You must use Red Hat signing when using {{site.data.keyword.cloud}} Container Registry (ICR). Follow the steps listed in [Signing images for trusted content](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent).
 
         The Notary v1 service that supports Docker Content Trust and docker trust commands in Container Registry is discontinued from 1 November 2021. For more information, see [Release notes for Container Registry](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021). Any existing ICR images that were signed by using DCT, must be re-signed by using Red Hat.
         {: note}
