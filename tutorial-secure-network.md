@@ -108,7 +108,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
    ```
    {: pre}
 
-4. To install the secure network management agent, download the files `dap-public.pem`, `encryptednetwork-2.0.0.tar.gz`, and  `encryptednetwork-2.0.0.tar.gz.sig` from this [GitHub repository](https://github.com/ibm-hyper-protect/secure-network/releases/tag/v2.0.0). After you save the files to `/root`, or `/data`, and complete the following steps:
+4. To install the secure network management agent, download the files `dap-public.pem`, `encryptednetwork-2.0.0.tar.gz`, and  `encryptednetwork-2.0.0.tar.gz.sig` from this [GitHub repository](https://github.com/ibm-hyper-protect/secure-network/releases/tag/v2.0.0). Note that the secure network management agent and its repository are for allowlisted accounts. To get added to the allowlist, open a [case](https://cloud.ibm.com/unifiedsupport/cases/form){:external} with support. After you save the files to `/root`, or `/data`, and complete the following steps:
    - To verify secure network management agent's signature, run the following command.
      ```buildoutcfg
      openssl dgst -sha256 -verify dap-public.pem -signature encryptednetwork-2.0.0.tar.gz.sig encryptednetwork-2.0.0.tar.gz
