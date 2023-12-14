@@ -74,12 +74,6 @@ toc:
       - link:
           label: Hyper Protect Crypto Services
           href: https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started
-      - link:
-          label: Hyper Protect DBaaS for MongoDB
-          href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted
-      - link:
-          label: Hyper Protect DBaaS for PostgreSQL
-          href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted
       - open-source-licenses.md
 
   - navgroup:
