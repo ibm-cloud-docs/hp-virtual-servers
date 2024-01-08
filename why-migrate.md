@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-6"
+  years: 2023, 2024
+lastupdated: "2024-01-08"
 
 subcollection: hp-virtual-servers
 
@@ -37,6 +37,7 @@ In addition, the LinuxONE systems in the Classic Infrastructure are only colloca
 | Instance profiles | 4 T-shirt sizes   | 13 profiles     | 
 | Pricing/Billing granuality | Monthly (starting $170/month)  | Hourly (starting $110/month)    | 
 | Workload integrity  | Docker Content Trust   |  Docker Content Trust, Digest, and RedHat Simple Signing   |  
+| Multi-volume support | Only one data volume   |  Yes     |
 {: caption="Table 1. Key differences between {{site.data.keyword.hpvs}} for Classic and for VPC" caption-side="bottom"}
 
 
