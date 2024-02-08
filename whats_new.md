@@ -22,6 +22,13 @@ content-type: release-note
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} for Classic.
 {: shortdesc}
 
+## 07 February 2024
+{: #hp-virtual-servers-nov1023}
+{: release-note}
+
+Updated: Hyper Protect Secure Build server version
+:   The Hyper Protect Secure Build server image is updated to 1.3.0.13. Ensure that you update to the latest Secure Build CLI code. For more information, see [Tutorial: Using Hyper Protect Secure Build server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+
 ## 10 November 2023
 {: #hp-virtual-servers-nov1023}
 {: release-note}
