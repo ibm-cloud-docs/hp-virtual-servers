@@ -49,26 +49,6 @@
         "date": "28 July 2023",
         "title": "Hyper Protect Secure Build is updated",
         "description": "The Hyper Protect Secure Build base image is updated to 1.3.0.11."
-      },
-      {
-        "date": "21 April 2023",
-        "title": "Secure Build is updated",
-        "description": "The Secure Build Server image is updated to 1.3.0.10."
-      },
-      {
-        "date": "15 February 2023",
-        "title": "Secure Build is updated",
-        "description": "The Secure Build Server image is updated to 1.3.0.9."
-      },
-      {
-        "date": "16 December September 2022",
-        "title": "Red Hat signing, SUSE registry support, and Secure Build is updated",
-        "description": "Use Red Hat signing of images for ICR. The Secure Build Server image is updated to 1.3.0.8. You can use SUSE registry.."
-      },
-      {
-        "date": "30 September 2022",
-        "title": "Secure Build is updated",
-        "description": "The Secure Build Server image is updated to 1.3.0.7"
       }
     ]
   }
