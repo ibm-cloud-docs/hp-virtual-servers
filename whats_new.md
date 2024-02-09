@@ -23,7 +23,7 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 {: shortdesc}
 
 ## 07 February 2024
-{: #hp-virtual-servers-nov1023}
+{: #hp-virtual-servers-Feb0724}
 {: release-note}
 
 Updated: Hyper Protect Secure Build server version
