@@ -271,7 +271,7 @@ You provisioned a classic instance by using your own image and registration file
 
 The following diagram shows the workflow and tasks of each role in this scenario.
 
-![Migrating by not having ssh access](image/BYOI_workload_withoutSSHaccess_solution.png "Migrating by not having ssh access"){: caption="Figure 2. Migrating by not having ssh access" caption-side="bottom"}
+![Migrating by not having ssh access](image/BYOI_workload_withoutSSHaccess_solution.jpeg "Migrating by not having ssh access"){: caption="Figure 2. Migrating by not having ssh access" caption-side="bottom"}
 
 
 To migrate all your data and workloads to the VPC instance but without having ssh access, complete the following steps:
@@ -287,48 +287,34 @@ To migrate all your data and workloads to the VPC instance but without having ss
    **Note**: This pair consists of a private key (user_key) and a corresponding public key (user_key.pub). The private key should be kept confidential, while the public key will be shared with the servers.   
 
 5. Generate `SSH` host key on gen 1.
-   
-   a. Ensure secure and unique host identification for gen1 server. 
-   b. In the update workload Dockerfile of gen1, integrate `SSH` host key generation using `ssh-keygen`
-
-6.	Import Data Owner's Public Key to gen1.
-   a. Establish trust between the data owner and gen1 and verify the authenticity during SSH connections.
-
+   1. Ensure secure and unique host identification for gen1 server. 
+   2. In the update workload Dockerfile of gen1, integrate `SSH` host key generation using `ssh-keygen`
+6. Import Data Owner's Public Key to gen1.
+   1. Establish trust between the data owner and gen1 and verify the authenticity during SSH connections.
 7. Import the data owner's public key into gen1 using workload API's.
-   a. Get gen1 Public Host Key.
-   b. Create an API to retrieve the public host key of gen1 and use this key for verification by other servers connecting to gen1.
-
-8. Generate SSH Key on gen2 and import gen1 Public Key into gen2 through contract. For more information, see [About the contract](/docs/vpc?topic=vpc-about-contract_se#hpcr_contract).    
-   
+   1. Get gen1 Public Host Key.
+   2. Create an API to retrieve the public host key of gen1 and use this key for verification by other servers connecting to gen1.
+8. Generate SSH Key on gen2 and import gen1 Public Key into gen2 through contract. For more information, see [About the contract](/docs/vpc?topic=vpc-about-contract_se#hpcr_contract).
    **Note**: In the update workload Dockerfile of gen2, similar to gen1, gen2 generates its SSH key pair using the ssh-keygen command and import Gen1's public key into gen1 using env variable in contract and copied to known_host file from env file.
    
       ```
          "public-key" : "data-owner-public-key"
       ```
-   
-9.	Get gen2 Public Host Key.
-   a. Create an API to retrieve the public host key of gen2 and use this key for verification by other servers connecting to gen1.
-
-10. Sign gen2 Public Key with Data Owner's Private Key
+9. Get gen2 Public Host Key.
+   1. Create an API to retrieve the public host key of gen2 and use this key for verification by other servers connecting to gen1.
+10. Sign gen2 Public Key with Data Owner's Private Key.
     An API facilitates the signing of gen2's public key with the data owner's private key. This creates an SSH certificate `gen2_key-cert.pub` for gen2, signed by the data owner.
-
 11. Import Keys and Certificates.
-   a. Import SSH Certificate into gen2 using `API~/.ssh/ directory` of gen2.   
-   
-   **Note**: This ensures that gen2 can present its signed certificate during authentication.
-   
-   b. Import gen2 Public Key as Trusted Key for SSH Certificates into gen1.
-    An API is responsible for importing gen2's public key into gen1's `authorized_keys` file. This establishes gen2 as a trusted entity for SSH connections.
-
+    1. Import SSH Certificate into gen2 using `API~/.ssh/ directory` of gen2.
+     **Note**: This ensures that gen2 can present its signed certificate during authentication.
+    2. Import gen2 Public Key as Trusted Key for SSH Certificates into gen1.
+       An API is responsible for importing gen2's public key into gen1's `authorized_keys` file. This establishes gen2 as a trusted entity for SSH connections.
 12. Configure the connection and perform data migration.
-   a. Connect from gen2 to gen1 using the SSH certificate `gen2_key-cert.pub` and pin the remote host key to the gen1 public key.
-   
-   **Note**: This configured connection verifies the host key against gen1's public host key.
-   
-   b. Migrate data using rsync.
-      
-      ```
-            rsync -e "ssh -i /etc/ssh/ssh_host_rsa_key -o 'CertificateFile=/root/.ssh/gen2_key-cert.pub' -o 'UserKnownHostsFile=/root/.ssh/known_hosts' -o 'VerifyHostKeyDNS yes' -o StrictHostKeyChecking=yes" -avz root@source-ip:/root/temp/temp.data /root/
+    1. Connect from gen2 to gen1 using the SSH certificate `gen2_key-cert.pub` and pin the remote host key to the gen1 public key.
+    **Note**: This configured connection verifies the host key against gen1's public host key.
+    2. Migrate data using rsync.
+     ```   
+         rsync -e "ssh -i /etc/ssh/ssh_host_rsa_key -o 'CertificateFile=/root/.ssh/gen2_key-cert.pub' -o 'UserKnownHostsFile=/root/.ssh/known_hosts' -o 'VerifyHostKeyDNS yes' -o StrictHostKeyChecking=yes" -avz root@source-ip:/root/temp/temp.data /root/
       ```
 
 
