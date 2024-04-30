@@ -286,7 +286,8 @@ To migrate all your data and workloads to the VPC instance but without having ss
    - Ensure secure and unique host identification for gen1 server. 
    - In the update workload Dockerfile of gen1, integrate `SSH` host key generation using `ssh-keygen`
 6.	Import Data Owner's Public Key to gen1.
-   - Establish trust between the data owner and gen1 and verify the authenticity during SSH connections.   
+   - Establish trust between the data owner and gen1 and verify the authenticity during SSH connections.
+   
 7. Import the data owner's public key into gen1 using workload API's.
    - Get gen1 Public Host Key.
    - Create an API to retrieve the public host key of gen1 and use this key for verification by other servers connecting to gen1.
@@ -297,6 +298,7 @@ To migrate all your data and workloads to the VPC instance but without having ss
    ```
 9.	Get gen2 Public Host Key.
    - Create an API to retrieve the public host key of gen2 and use this key for verification by other servers connecting to gen1.
+
 10. Sign gen2 Public Key with Data Owner's Private Key
     An API facilitates the signing of gen2's public key with the data owner's private key. This creates an SSH certificate `gen2_key-cert.pub` for gen2, signed by the data owner.
 11. Import Keys and Certificates.
@@ -308,8 +310,8 @@ To migrate all your data and workloads to the VPC instance but without having ss
     - Connect from gen2 to gen1 using the SSH certificate `gen2_key-cert.pub` and pin the remote host key to the gen1 public key.
    **Note**: This configured connection verifies the host key against gen1's public host key.
     - Migrate data using rsync.
-         ```
-               rsync -e "ssh -i /etc/ssh/ssh_host_rsa_key -o 'CertificateFile=/root/.ssh/gen2_key-cert.pub' -o 'UserKnownHostsFile=/root/.ssh/known_hosts' -o 'VerifyHostKeyDNS yes' -o StrictHostKeyChecking=yes" -avz root@source-ip:/root/temp/temp.data /root/
-         ```
+      ```
+            rsync -e "ssh -i /etc/ssh/ssh_host_rsa_key -o 'CertificateFile=/root/.ssh/gen2_key-cert.pub' -o 'UserKnownHostsFile=/root/.ssh/known_hosts' -o 'VerifyHostKeyDNS yes' -o StrictHostKeyChecking=yes" -avz root@source-ip:/root/temp/temp.data /root/
+      ```
 
 
