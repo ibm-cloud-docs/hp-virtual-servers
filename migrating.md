@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-10-26"
+  years: 2023, 2024
+lastupdated: "2024-04-29"
 
 subcollection: hp-virtual-servers
 
@@ -25,10 +25,12 @@ Depending on how you provision and deploy your workloads in the IBM Cloud Hyper 
 In the following context, the `classic instance` refers to the current IBM Cloud Hyper Protect Virtual Server instance that has your workloads, and the `VPC instance` refers to the IBM Cloud Hyper Protect Virtual Server instance on VPC that you will migrate to. 
 {: note}
 
-* [The classic instance provisioned by using an IBM-provided image](#hpvs_instance)
-* [The classic instance provisioned by using your own image that does not need data migration](#byoi_no_data)
-* [The classic instance provisioned by using your own image that has database workloads](#byoi_db)
-* [The classic instance provisioned by using your own image that requires data migration and support data export or import feature](#byoi_dataex)
+- [Migrating scenarios](#migrating-scenarios)
+  - [The classic instance provisioned by using an IBM-provided image](#the-classic-instance-provisioned-by-using-an-ibm-provided-image)
+  - [The classic instance provisioned by using your own image that does need data migration](#the-classic-instance-provisioned-by-using-your-own-image-that-does-need-data-migration)
+  - [The classic instance provisioned by using your own image that has database workloads](#the-classic-instance-provisioned-by-using-your-own-image-that-has-database-workloads)
+  - [The classic instance provisioned by using your own image that requires data migration and support data export or import feature](#the-classic-instance-provisioned-by-using-your-own-image-that-requires-data-migration-and-support-data-export-or-import-feature)
+  - [The classic instance provisioned by using your own image that requires data migration and does not have ssh access](#the-classic-instance-provisioned-by-using-your-own-image-that-requires-data-migration-and-does-not-have-ssh-access)
 
 ## The classic instance provisioned by using an IBM-provided image
 {: #hpvs_instance}
@@ -93,7 +95,7 @@ To migrate all your data and workloads to the VPC instance, complete the followi
 ## The classic instance provisioned by using your own image that does need data migration
 {: #byoi_no_data}
 
-You provisioned a classic instance by using your own image and registartion file, and store the data on a persistent storage such as a block storage service. 
+You provisioned a classic instance by using your own image and registration file, and store the data on a persistent storage such as a block storage service. 
 
 To migrate the workloads to the VPC instance, complete the following steps:
 
@@ -111,7 +113,7 @@ To migrate the workloads to the VPC instance, complete the following steps:
 ## The classic instance provisioned by using your own image that has database workloads
 {: #byoi_db}
 
-You provisioned a classic instance by using your own image and registartion file, and your own image contains database workloads. Also, you have no SSH access to the classic instance.
+You provisioned a classic instance by using your own image and registration file, and your own image contains database workloads. Also, you have no SSH access to the classic instance.
 
 If your database workloads support live migration, you can create the VPC instance as described in the [previous scenario](#byoi_no_data), and then use the live migration for the migration.
 {: tip}
@@ -210,7 +212,7 @@ If your database workloads do not support live migration, complete the following
 ## The classic instance provisioned by using your own image that requires data migration and support data export or import feature
 {: #byoi_dataex}
 
-You provisioned a classic instance by using your own image and registartion file, and you can access to the classic instance in a secure manner such as `ssh`. Meanwhile, you can update your workloads to support data export and import features when the instance is running.
+You provisioned a classic instance by using your own image and registration file, and you can access to the classic instance in a secure manner such as `ssh`. Meanwhile, you can update your workloads to support data export and import features when the instance is running.
 
 The export and import features must be supported via REST APIs on the classic or VPC instance, therefore, the source code of your container image must be updated and built to support such features. If a secret is required during the build time, the secret must be recognized by such APIs.
 {: note}
@@ -261,4 +263,62 @@ To migrate all your data and workloads to the VPC instance, complete the followi
 4. Check your workloads on the VPC instance are running properly, and all your data exists.
 
 5. If everything works on the VPC instance, you can delete the classic instance. 
+
+## The classic instance provisioned by using your own image that requires data migration and does not have ssh access
+{: #byoi_dataex_ssh}
+
+You provisioned a classic instance by using your own image and registration file, and you can access to the classic instance in a secure manner such as `ssh`. 
+
+The following diagram shows the workflow and tasks of each role in this scenario.
+
+![Migrating by not having ssh access](image/BYOI_workload_withoutSSHaccess_solution.png "Migrating by not having ssh access"){: caption="Figure 1. Migrating by not having ssh access" caption-side="bottom"}
+
+
+To migrate all your data and workloads to the VPC instance but without having ssh access, complete the following steps:
+
+1. Ensure `SSH` and `rsync` packages are installed on top of workload container. 
+2. Update the workloads on the classic instance to install this package on workload container of gen1 and gen2.
+3. Establish a secure communication channel between the servers.
+4. Generate a strong `RSA` key pair using the `ssh-keygen` command.
+   
+   **Note**: This pair consists of a private key (user_key) and a corresponding public key (user_key.pub). The private key should be kept confidential, while the public key will be shared with the servers.
+   
+5. Generate `SSH` host key on gen 1.
+   1. Ensure secure and unique host identification for gen1 server. 
+   2. In the update workload Dockerfile of gen1, integrate `SSH` host key generation using `ssh-keygen`
+6.	Import Data Owner's Public Key to gen1.
+   1. Establish trust between the data owner and gen1 and verify the authenticity during SSH connections.
+   
+7. Import the data owner's public key into gen1 using workload API's.
+   1. Get gen1 Public Host Key.
+   2. Create an API to retrieve the public host key of gen1 and use this key for verification by other servers connecting to gen1.
+
+8. Generate SSH Key on gen2 and import gen1 Public Key into gen2 through contract. For more information, see [About the contract](/docs/vpc?topic=vpc-about-contract_se#hpcr_contract). 
+   
+   **Note**: In the update workload Dockerfile of gen2, similar to gen1, gen2 generates its SSH key pair using the ssh-keygen command and import Gen1's public key into gen1 using env variable in contract and copied to known_host file from env file.
+   ```
+      "public-key" : "data-owner-public-key"
+   ```
+9.	Get gen2 Public Host Key.
+   1. Create an API to retrieve the public host key of gen2 and use this key for verification by other servers connecting to gen1.
+10. Sign gen2 Public Key with Data Owner's Private Key
+    An API facilitates the signing of gen2's public key with the data owner's private key. This creates an SSH certificate `gen2_key-cert.pub` for gen2, signed by the data owner.
+11. Import Keys and Certificates.
+    1. Import SSH Certificate into gen2 using `API~/.ssh/ directory` of gen2. 
+   
+   **Note**: This ensures that gen2 can present its signed certificate during authentication.
+    2. Import gen2 Public Key as Trusted Key for SSH Certificates into gen1.
+    An API is responsible for importing gen2's public key into gen1's `authorized_keys` file. This establishes gen2 as a trusted entity for SSH connections.
+
+12. Configure the connection and perform data migration.
+    1.  Connect from gen2 to gen1 using the SSH certificate `gen2_key-cert.pub` and pin the remote host key to the gen1 public key.
+   
+   **Note**: This configured connection verifies the host key against gen1's public host key.
+   
+    2. Migrate data using rsync.
+   
+      ```
+         rsync -e "ssh -i /etc/ssh/ssh_host_rsa_key -o 'CertificateFile=/root/.ssh/gen2_key-cert.pub' -o 'UserKnownHostsFile=/root/.ssh/known_hosts' -o 'VerifyHostKeyDNS yes' -o StrictHostKeyChecking=yes" -avz root@source-ip:/root/temp/temp.data /root/
+      ```
+
 

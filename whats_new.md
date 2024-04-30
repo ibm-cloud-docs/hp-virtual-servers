@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-02-07"
+  years: 2019, 2024
+lastupdated: "2024-04-29"
 
 keywords: release note, what's new
 
@@ -22,8 +22,15 @@ content-type: release-note
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} for Classic.
 {: shortdesc}
 
+## 29 April 2024
+{: #hp-virtual-servers-apr2924}
+{: release-note}
+
+Updated: Migration from {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC that does not have ssh access
+: {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC, refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
+
 ## 07 February 2024
-{: #hp-virtual-servers-Feb0724}
+{: #hp-virtual-servers-feb0724}
 {: release-note}
 
 Updated: Hyper Protect Secure Build server version
@@ -86,12 +93,20 @@ in IBM Cloud VPC data centers). The recommended region for migration within APAC
 Updated: Migration from {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC
 : {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC, refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
 
+## 13 October 2023
+{: #hp-virtual-servers-oct1323}
+{: release-note}
+Updated: Location of the core dump file in the {{site.data.keyword.hpvs}}
+: If you need the core dumps for debugging or analysis, the default path of the core dumps is `/var/lib/systemd/coredump/` in the {{site.data.keyword.hpvs}} instance.
+
+
+
 ## 28 July 2023
 {: #hp-virtual-servers-jul2823}
 {: release-note}
 
 Updated: Hyper Protect Secure Build server version
-:   The Hyper Protect Secure Build server image is updated to 1.3.0.11. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+:   The Hyper Protect Secure Build server image is updated to 1.3.0.11. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Hyper Protect Secure Build server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 21 April 2023
 {: #hp-virtual-servers-apr2123}
@@ -100,12 +115,18 @@ Updated: Hyper Protect Secure Build server version
 Updated: Secure Build Server version
 :   The Secure Build Server image is updated to 1.3.0.10. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
+Updated: Upgrade the Secure Build Server image from 1.3.0.9 to 1.3.0.10
+:   To upgrade the Secure Build Server image from 1.3.0.9 to 1.3.0.10, you can run the 'ibmcloud hpvs instance-update' command directly to complete the update. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#regfiledetails).
+
 ## 15 February 2023
 {: #hp-virtual-servers-feb1523}
 {: release-note}
 
 Updated: Secure Build Server version
 :   The Secure Build Server image is updated to 1.3.0.9. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+
+Updated: The 'hpvs instance-update' command now supports the '--hostname' parameter.
+:   You can now use the `--fingerprint` parameter when you use the `ibmcloud hpvs registration-create` command, when the image is in ICR. For more information, see [IBM Cloud Hyper Protect Virtual Servers CLI](/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#regfiledetails).
 
 ## 16 December 2022
 {: #hp-virtual-servers-dec1622}
@@ -159,7 +180,7 @@ Updated: The repository definition file.
 :   The repository definition file is updated. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 Updated: Secure Build Server version
-:   The Secure Build Server image is updated to 1.3.0.4, and the Secure Build CLI code is also updated. The security of the communication between the HPSB server and client has been enhanced to prevent malicious attacks. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+:   The Secure Build Server image is updated to 1.3.0.4, and the Secure Build CLI code is also updated. The security of the communication between the Hyper Protect Secure Build server and client has been enhanced to prevent malicious attacks. Ensure that you update to the latest Secure Build CLI code and also use the latest `secure_build.asc` file. For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild), and [Tutorial: Using Secure Build Server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 ## 08 December 2021
 {: #hp-virtual-servers-dec0821}
@@ -230,7 +251,7 @@ Added: Monitoring logs of {{site.data.keyword.hpvs}} instances.
 {: #hp-virtual-servers-may2121}
 {: release-note}
 
-Updated: Deploying the Hyper Protect Secure Build server as a Hyper Protect Virtual Server.
+Updated: Deploying the Secure Build Server as a Hyper Protect Virtual Server.
 :   The {{site.data.keyword.cloud_notm}} command line interface can be used to create a registration definition file, and the gpg registration key. You can also manually add Linux capabilities to the registration definition file. The registration definition file for HPSB is updated for security compliance.  For more information, see [Deploying the Secure Build Server as a Hyper Protect Virtual Server](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild#deploysecurebuild).
 
 ## 26 February 2021
