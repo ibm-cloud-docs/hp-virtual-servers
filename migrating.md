@@ -277,43 +277,47 @@ The following diagram shows the workflow and tasks of each role in this scenario
 To migrate all your data and workloads to the VPC instance but without having ssh access, complete the following steps:
 
 1. Ensure `SSH` and `rsync` packages are installed on top of workload container. 
+   
 2. Update the workloads on the classic instance to install this package on workload container of gen1 and gen2.
+
 3. Establish a secure communication channel between the servers.
+
 4. Generate a strong `RSA` key pair using the `ssh-keygen` command.
    
    **Note**: This pair consists of a private key (user_key) and a corresponding public key (user_key.pub). The private key should be kept confidential, while the public key will be shared with the servers.   
 5. Generate `SSH` host key on gen 1.
-   - Ensure secure and unique host identification for gen1 server. 
-   - In the update workload Dockerfile of gen1, integrate `SSH` host key generation using `ssh-keygen`
+   a. Ensure secure and unique host identification for gen1 server. 
+   b. In the update workload Dockerfile of gen1, integrate `SSH` host key generation using `ssh-keygen`
+
 6.	Import Data Owner's Public Key to gen1.
-   - Establish trust between the data owner and gen1 and verify the authenticity during SSH connections.
+   a. Establish trust between the data owner and gen1 and verify the authenticity during SSH connections.
 
 7. Import the data owner's public key into gen1 using workload API's.
-   - Get gen1 Public Host Key.
-   - Create an API to retrieve the public host key of gen1 and use this key for verification by other servers connecting to gen1.
+   a. Get gen1 Public Host Key.
+   b. Create an API to retrieve the public host key of gen1 and use this key for verification by other servers connecting to gen1.
 
 8. Generate SSH Key on gen2 and import gen1 Public Key into gen2 through contract. For more information, see [About the contract](/docs/vpc?topic=vpc-about-contract_se#hpcr_contract).    
    **Note**: In the update workload Dockerfile of gen2, similar to gen1, gen2 generates its SSH key pair using the ssh-keygen command and import Gen1's public key into gen1 using env variable in contract and copied to known_host file from env file.
    ```
       "public-key" : "data-owner-public-key"
    ```
-
+   
 9.	Get gen2 Public Host Key.
-   - Create an API to retrieve the public host key of gen2 and use this key for verification by other servers connecting to gen1.
+   a. Create an API to retrieve the public host key of gen2 and use this key for verification by other servers connecting to gen1.
 
 10. Sign gen2 Public Key with Data Owner's Private Key
     An API facilitates the signing of gen2's public key with the data owner's private key. This creates an SSH certificate `gen2_key-cert.pub` for gen2, signed by the data owner.
 
 11. Import Keys and Certificates.
-    - Import SSH Certificate into gen2 using `API~/.ssh/ directory` of gen2.   
+    a. Import SSH Certificate into gen2 using `API~/.ssh/ directory` of gen2.   
    **Note**: This ensures that gen2 can present its signed certificate during authentication.
-    - Import gen2 Public Key as Trusted Key for SSH Certificates into gen1.
+    b. Import gen2 Public Key as Trusted Key for SSH Certificates into gen1.
     An API is responsible for importing gen2's public key into gen1's `authorized_keys` file. This establishes gen2 as a trusted entity for SSH connections.
 
 12. Configure the connection and perform data migration.
-    - Connect from gen2 to gen1 using the SSH certificate `gen2_key-cert.pub` and pin the remote host key to the gen1 public key.
+    a. Connect from gen2 to gen1 using the SSH certificate `gen2_key-cert.pub` and pin the remote host key to the gen1 public key.
    **Note**: This configured connection verifies the host key against gen1's public host key.
-    - Migrate data using rsync.
+    b. Migrate data using rsync.
       ```
             rsync -e "ssh -i /etc/ssh/ssh_host_rsa_key -o 'CertificateFile=/root/.ssh/gen2_key-cert.pub' -o 'UserKnownHostsFile=/root/.ssh/known_hosts' -o 'VerifyHostKeyDNS yes' -o StrictHostKeyChecking=yes" -avz root@source-ip:/root/temp/temp.data /root/
       ```
