@@ -271,7 +271,7 @@ You provisioned a classic instance by using your own image and registration file
 
 The following diagram shows the workflow and tasks of each role in this scenario.
 
-![Migrating by not having ssh access](image/BYOI_workload_withoutSSHaccess_solution.png "Migrating by not having ssh access"){: caption="Figure 1. Migrating by not having ssh access" caption-side="bottom"}
+![Migrating by not having ssh access](image/BYOI_workload_withoutSSHaccess_solution.png "Migrating by not having ssh access"){: caption="Figure 2. Migrating by not having ssh access" caption-side="bottom"}
 
 
 To migrate all your data and workloads to the VPC instance but without having ssh access, complete the following steps:
