@@ -271,7 +271,7 @@ You provisioned a classic instance by using your own image and registration file
 
 The following diagram shows the workflow and tasks of each role in this scenario.
 
-![Migrating by not having ssh access](image/Migrate_workload_withoutSSHacces.svg "Migrating by not having ssh access"){: caption="Figure 2. Migrating by not having ssh access" caption-side="bottom"}
+![Migrating by not having ssh access](image/Error%20while%20creating%20and%20adding%20transformation%20scenario.jpg "Migrating by not having ssh access"){: caption="Figure 2. Migrating by not having ssh access" caption-side="bottom"}
 
 
 To migrate all your data and workloads to the VPC instance but without having ssh access, complete the following steps:
