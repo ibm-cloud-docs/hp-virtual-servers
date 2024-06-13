@@ -9,6 +9,7 @@ subcollection: hp-virtual-servers
 keywords: update, image
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 # Updating a virtual server

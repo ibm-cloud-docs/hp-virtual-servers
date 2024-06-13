@@ -2,18 +2,26 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-07-26"
 
 subcollection: hp-virtual-servers
 
 keywords: image, virtual server instance, instance, virtual server
 
 ---
-
-{{site.data.keyword.attribute-definition-list}}
+{:external: target="_blank" .external}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:note: .note}
+{:tip: .tip}
+{:important: .important}
 
 # Using your own image
 {: #byoi}
+
 
 Use your own Linux-based OCI image to create a new Hyper Protect Virtual Server. This feature is available by using the {{site.data.keyword.cloud}} CLI.
 {: shortdesc}
@@ -42,7 +50,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 - Your custom Linux-based image must meet these requirements:
     - In the OCI Image format. {{site.data.keyword.hpvs}} supports only Linux-based OCI Images, which are built for the IBM LinuxONE and IBM Z platform (s390x architecture).
     - Upload the OCI image to a container registry. You can use the following container registries:
-      - The [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/registry/overview). You must use Red Hat signing when using {{site.data.keyword.cloud}} Container Registry (ICR). Follow the steps listed in [Signing images for trusted content](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent).
+      - The [{{site.data.keyword.cloud}} Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry). You must use Red Hat signing when using {{site.data.keyword.cloud}} Container Registry (ICR). Follow the steps listed in [Signing images for trusted content](https://cloud.ibm.com/docs/Registry?topic=Registry-registry_trustedcontent).
 
         The Notary v1 service that supports Docker Content Trust and docker trust commands in Container Registry is discontinued from 1 November 2021. For more information, see [Release notes for Container Registry](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021). Any existing ICR images that were signed by using DCT, must be re-signed by using Red Hat.
         {: note}
@@ -59,7 +67,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 ## Creating a custom image
 {: #byoi_create}
 
-1. Choose a base for your OCI Image. Either use one of the [publicly available images from Docker Hub](https://hub.docker.com/search?q=&type=image&image_filter=&architecture=s390x) or build one from scratch.
+1. Choose a base for your OCI Image. Either use one of the [publicly available images from Docker Hub](https://hub.docker.com/search?q=&type=image&image_filter=&architecture=s390x) or build one from scratch. 
 2. Use a build tool such as `docker build` to make your required modifications to the base. You can use Ubuntu to install these tools on a Hyper Protect Virtual Server if you don't have access to a system that runs on the IBM Z platform (s390x architecture), or you can't cross build your image. To install Docker on your Hyper Protect Virtual Server, run `apt update && apt install -y docker.io`. Be aware of these hints when you build your image:
     - The maximum allowed image size is 5 GB.
     - Set the entrypoint and command that is used to start the OCI image during the image build because these parameters can’t be configured afterward to provision your virtual server.
@@ -85,7 +93,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 You must provide the "Fingerprint" and the "Path to the public key" that you used when you signed the image by using Red Hat signing when you run the `hpvs registration-create` command, and are prompted for the "Fingerprint", and the "Path to the file containing the image public key".
 
 Complete the following steps to sign the images:
-1. Create a batch file and add the following content to it. Note that the maximum key length can be used to create a gpg key is 4096 and the version of [GnuPG](https://www.gnupg.org/ftp/gcrypt/gnupg/) must be 2.4.0 or earlier.
+1. Create a batch file and add the following content to it. Note that the maximum key length can be used to create a gpg key is 4096 and the version of [GnuPG](https://www.gnupg.org/ftp/gcrypt/gnupg/) must be 2.4.0 or earlier. 
    ```sh
    Key-Type: RSA
    Key-Length: 4096

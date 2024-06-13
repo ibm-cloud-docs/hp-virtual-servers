@@ -36,11 +36,6 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
-        "date": "29 April 2024",
-        "title": "Migrating scenarios is updated",
-        "description": "The classic instance provisioned by using your own image that requires data migration and does not have ssh access has been updated."
-      },
-      {
         "date": "07 February 2024",
         "title": "Hyper Protect Secure Build is updated",
         "description": "The Hyper Protect Secure Build base image is updated to 1.3.0.13."

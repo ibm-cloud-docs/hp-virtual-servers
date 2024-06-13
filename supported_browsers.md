@@ -10,11 +10,11 @@ keywords: browser, safari, plug-in
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Supported browsers
 {: #help-support-browsers}
+
 
 For a list of supported browsers, see [Required Browsers for {{site.data.keyword.cloud}}](/docs/overview?topic=overview-prereqs-platform#browsers-platform).
 {: shortdesc}

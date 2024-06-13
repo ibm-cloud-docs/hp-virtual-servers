@@ -1,18 +1,18 @@
 ---
 
 copyright:
-  years:  2019, 2023
+  years: 2019, 2023
 lastupdated: "2020-08-21"
 
 subcollection: hp-virtual-servers
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.hpvs}} overview
 {: #overview}
+
 
 {{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud}} service that provides highly secure virtual servers that can run Linux applications and containerized workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual servers.
 {: shortdesc}

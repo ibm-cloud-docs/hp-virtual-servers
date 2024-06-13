@@ -10,11 +10,11 @@ keywords: data encryption in {{site.data.keyword.hpvs}}, data storage for {{site
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Securing your data in {{site.data.keyword.hpvs}}
 {: #mng-data}
+
 
 To ensure that you can securely manage your data when you use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}, it is important that you know exactly what data is stored and encrypted and how you can delete any personal data. All data that is stored on {{site.data.keyword.hpvs}} disks is automatically encrypted and the encryption key is stored on a secure enclave.
 {: shortdesc}

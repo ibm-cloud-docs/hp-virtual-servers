@@ -2,17 +2,17 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-19"
 
 subcollection: hp-virtual-servers
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Solving problems
 {: #troubleshooting}
+
 
 If you run into problems while you're using {{site.data.keyword.hpvs}}, you can recover from these problems in many cases by following a few steps.
 {: shortdesc}

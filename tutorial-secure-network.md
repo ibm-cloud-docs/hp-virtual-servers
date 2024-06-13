@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2022-07-20"
 
 subcollection: hp-virtual-servers
 
@@ -22,6 +22,7 @@ keywords: secure networking, secure network, virtual server instance, instance, 
 {: toc-content-type="tutorial"}
 {: toc-services="hp-virtual-servers"}
 {: toc-completion-time="1h"}
+
 
 This tutorial describes how you can set up the secure network which provides an end to end encrypted network communication for {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} services. This tutorial is intended for IBM Cloud Hyper Protect Virtual Servers customers. Contact your IBM representative for access to the GitHub repository.
 {: shortdesc}
@@ -108,12 +109,7 @@ The {{site.data.keyword.hpvs}} instances are considered as 'HPVS_A', and 'HPVS_B
    ```
    {: pre}
 
-4. To install the secure network management agent, download the files `dap-public.pem`, `encryptednetwork-2.0.0.tar.gz`, and  `encryptednetwork-2.0.0.tar.gz.sig` from this [GitHub repository](https://github.com/ibm-hyper-protect/secure-network/releases/tag/v2.0.0). 
-
-   The secure network management agent and its repository are for allowlisted accounts. To get added to the allowlist, open a [case](https://cloud.ibm.com/unifiedsupport/cases/form){:external} with support.
-   {: note}
-
-   After you save the files to `/root`, or `/data`, and complete the following steps:
+4. To install the secure network management agent, download the files `dap-public.pem`, `encryptednetwork-2.0.0.tar.gz`, and  `encryptednetwork-2.0.0.tar.gz.sig` from this [GitHub repository](https://github.com/ibm-hyper-protect/secure-network/releases/tag/v2.0.0). After you save the files to `/root`, or `/data`, and complete the following steps:
    - To verify secure network management agent's signature, run the following command.
      ```buildoutcfg
      openssl dgst -sha256 -verify dap-public.pem -signature encryptednetwork-2.0.0.tar.gz.sig encryptednetwork-2.0.0.tar.gz

@@ -9,7 +9,6 @@ subcollection: hp-virtual-servers
 keywords: connect, logging in, OpenSSH
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Connecting to a virtual server
