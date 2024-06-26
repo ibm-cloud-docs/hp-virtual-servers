@@ -1,23 +1,14 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-07-26"
+  years: 2020, 2024
+lastupdated: "2024-06-26"
 
 subcollection: hp-virtual-servers
 
 keywords: image, virtual server instance, instance, virtual server
 
 ---
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:note: .note}
-{:tip: .tip}
-{:important: .important}
 
 # Using your own image
 {: #byoi}

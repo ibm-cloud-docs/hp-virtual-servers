@@ -36,6 +36,11 @@
     "view_more": "/docs/hp-virtual-servers?topic=hp-virtual-servers-whats-new",
     "tiles": [
       {
+        "date": "28 June 2024",
+        "title": "Hyper Protect Secure Build is updated",
+        "description": "The Hyper Protect Secure Build base image is updated to 1.3.0.14."
+      },
+      {
         "date": "07 February 2024",
         "title": "Hyper Protect Secure Build is updated",
         "description": "The Hyper Protect Secure Build base image is updated to 1.3.0.13."
