@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-06-26"
 
 keywords: release note, what's new
 
@@ -22,12 +22,14 @@ content-type: release-note
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} for Classic.
 {: shortdesc}
 
-## 29 April 2024
-{: #hp-virtual-servers-apr2924}
+## 28 June 2024
+{: #hp-virtual-servers-jun2824}
 {: release-note}
 
-Updated: Migration from {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC that does not have ssh access
-: {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC, refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
+Updated: Hyper Protect Secure Build server version
+:   The Hyper Protect Secure Build server image is updated to 1.3.0.14. Ensure that you update to the latest Secure Build CLI code. For more information, see [Tutorial: Using Hyper Protect Secure Build server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+
+
 
 ## 07 February 2024
 {: #hp-virtual-servers-feb0724}

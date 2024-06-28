@@ -2,7 +2,6 @@ toc:
   properties:
     subcollection: hp-virtual-servers
     service-name: hpvs
-    version: 2
     category: compute
     audience: service
     href: /docs/hp-virtual-servers
@@ -10,22 +9,22 @@ toc:
     product-page: https://www.ibm.com/cloud/hyper-protect-virtual-servers
     path: hp-virtual-servers
     label: Hyper Protect Virtual Servers
-
   entries:
   - navgroup:
       id: learn
       topics:
       - getting-started.md
+      - link:
+          label: IBM Cloud VPC docs
+          href: https://cloud.ibm.com/docs/vpc
       - overview.md
       - responsibilities.md
       - whats_new.md
-
   - navgroup:
       id: tutorial
       topics:
       - tutorial-secure-build-server.md
       - tutorial-secure-network.md
-
   - navgroup:
       id: howto
       topics:
@@ -35,7 +34,7 @@ toc:
           label: Provisioning
           topics:
           - provision.md
-          - byoi.md
+          - byoi.md          
       - protect_build.md
       - retrieve_info_vs.md
       - connect_vs.md
@@ -55,12 +54,12 @@ toc:
           - iam.md
           - architecture-workload-isolation.md
           - data-security.md
-
   - navgroup:
       id: reference
       topics:
       - hpvs_responsibilities.md
       - ha_disaster_recov.md
+      - certified_workloads.md
       - include: ../hpvs-cli-plugin/hpvs_cli.md
       - link:
           label: Hyper Protect Services
@@ -74,8 +73,13 @@ toc:
       - link:
           label: Hyper Protect Crypto Services
           href: https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started
+      - link:
+          label: Hyper Protect DBaaS for MongoDB
+          href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted
+      - link:
+          label: Hyper Protect DBaaS for PostgreSQL
+          href: https://cloud.ibm.com/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted
       - open-source-licenses.md
-
   - navgroup:
       id: help
       topics:

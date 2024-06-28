@@ -8,7 +8,6 @@ subcollection: hp-virtual-servers
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Responsibilities when you use {{site.data.keyword.hpvs}}
@@ -53,7 +52,7 @@ IBM's responsibilities:
 - Maintain controls commensurate to current industry compliance standards.
 - Enable security features, such as encrypted disks.
 - Continuously monitor stock images to detect vulnerability and security compliance issues.
-- Use the {{site.data.keyword.cloud}} user interface and CLI for authentication and authorization for the  {{site.data.keyword.hpvs}} offering.
+- Use the {{site.data.keyword.cloud}} user interface and CLI for authentication and authorization for the {{site.data.keyword.hpvs}} offering.
 
 Your responsibilities:
 - Use security groups and network ACLs to secure your virtual server instances, such as restricting what IP addresses can SSH into the instance.

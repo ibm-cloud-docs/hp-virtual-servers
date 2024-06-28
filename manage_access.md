@@ -13,6 +13,7 @@ subcollection: hp-virtual-servers
 # Managing user access
 {: #manage_access}
 
+
 The {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service provides you with virtual servers on a highly
 secure stack with an Ubuntu Linux operating system.
 {: shortdesc}

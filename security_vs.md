@@ -14,6 +14,7 @@ subcollection: hp-virtual-servers
 # Protecting a virtual server
 {: #protect_vs}
 
+
 {{site.data.keyword.hpvs}} is a service that is used to provide highly secure virtual servers. The difference to common virtual servers from a security perspective is that an instance that is created from this {{site.data.keyword.cloud}} service runs on a secured stack. Even {{site.data.keyword.cloud_notm}} system administrators can't access your data nor track your usage. They don't have an insight into the security status of your virtual server. They are also limited in how they can set up or change for your virtual server configuration.
 {: shortdesc}
 

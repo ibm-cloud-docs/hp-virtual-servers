@@ -8,11 +8,11 @@ subcollection: hp-virtual-servers
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Retrieving information about a virtual server
 {: #retrieve-info-vs}
+
 
 After you create a virtual server instance by using the {{site.data.keyword.hpvs}} service, you can view detailed information about your new instance.
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-07-13"
+lastupdated: "2023-10-10"
 
 subcollection: hp-virtual-servers
 
@@ -12,11 +12,13 @@ keywords: hyper protect virtual servers, Hyper Protect Virtual Servers, getting 
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting started with  {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}
+# Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic
 {: #getting-started}
+
 
 Try IBM Cloud Hyper Protect Virtual Server for {{site.data.keyword.vpc_full}}. For more information, see [Confidential computing with LinuxONE](/docs/vpc?topic=vpc-about-se).
 {: tip}
+
 
 Using the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} service, you can provision virtual servers on a highly secure stack with an Ubuntu Linux operating system. On such a virtual server instance, you can run a myriad of Linux applications and containerized workloads.
 

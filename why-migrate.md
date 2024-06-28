@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-08"
+  years: 2023
+lastupdated: "2023-12-06"
 
 subcollection: hp-virtual-servers
 
@@ -32,7 +32,7 @@ In addition, the LinuxONE systems in the Classic Infrastructure are only colloca
 | IBM Cloud Feature | {{site.data.keyword.hpvs}} for Classic | {{site.data.keyword.hpvs}} for VPC |
 |--------------|--------------|--------------|
 | Protection boundary | LPAR |  Virtual Machine   | 
-| Geographic availability | DAL, WDC, FRA | LON, TOR, TOK, SAO, WDC, MAD, and more to come | 
+| Geographic availability | DAL, WDC, FRA   | LON, TOR, TOK, SAO, WDC, MAD, and more to come | 
 | Logging/Monitorint | Integrated Logging and Monitoring     |  LogDNA and rsyslog  | 
 | Instance profiles | 4 T-shirt sizes   | 13 profiles     | 
 | Pricing/Billing granuality | Monthly (starting $170/month)  | Hourly (starting $110/month)    | 

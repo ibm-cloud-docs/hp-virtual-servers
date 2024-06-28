@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-02-22"
 
 subcollection: hp-virtual-servers
 
@@ -10,11 +10,11 @@ keywords: public keys, private keys, Red Hat simple signing, update virtual serv
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Switching from DCT to Red Hat simple signing and updating the virtual server
 {: #switchdct_toicr}
+
 
 The Notary v1 service that supports Docker Content Trust (DCT) and docker trust commands (including the alternative URLs) in {{site.data.keyword.cloud}} Container Registry is discontinued. Any existing ICR images that were signed by using DCT, must be re-signed by using Red Hat. For more information, see [Release notes for Container Registry](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021).
 {: note}
@@ -120,7 +120,7 @@ The Notary v1 service that supports Docker Content Trust (DCT) and docker trust 
       skopeo copy docker-daemon:us.icr.io/yournamespace/nginx1:latest docker://us.icr.io/yournamespace/nginx1:latest --sign-by E8C9E90........D9F3 --dest-creds=iamapikey:*****************
 
       Getting image source signatures
-      Copying blob 226117031573 done
+      Copying blob 226117031573 done  
       .........
       Writing manifest to image destination
       Signing manifest using simple signing

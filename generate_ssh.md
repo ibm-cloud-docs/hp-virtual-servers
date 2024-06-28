@@ -10,11 +10,11 @@ keywords: ssh public keys, OpenSSH, add ssh key, ssh key, manage ssh key, virtua
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Generating SSH keys
 {: #generate_ssh}
+
 
 Before you can create a virtual server, you must have a pair of private and public SSH keys available. You can either reuse an existing SSH key pair or generate a new one. You can also reuse an existing OpenSSH key pair for use in **PuTTY**.
 {: shortdesc}
@@ -27,10 +27,10 @@ This pair of SSH keys is then used for authentication between your client and yo
 
 The following cryptographic algorithms are supported by {{site.data.keyword.hpvs}} for generating SSH keys:
 
-* `ssh-rsa`   (the default)             
-* `ssh-ed25519`            
-* `ecdsa-sha2-nistp256`    
-* `ecdsa-sha2-nistp384`    
+* `ssh-rsa`   (the default)
+* `ssh-ed25519`
+* `ecdsa-sha2-nistp256`
+* `ecdsa-sha2-nistp384`
 * `ecdsa-sha2-nistp521`
 
 ## Generating SSH keys with a command
@@ -70,7 +70,7 @@ The `-t`, `-b`, and  `-C` parameters are optional.
 - `-b` Designates the key size in bits. The default size is 2048 bits.
 - `-C` Adds a comment.
 
-So if you invoke `ssh-keygen` without any arguments, the command generates an	RSA key pair with a size of 2048 bits for both keys.  
+So if you invoke `ssh-keygen` without any arguments, the command generates an	RSA key pair with a size of 2048 bits for both keys.
 
 You can select from the supported cryptographic algorithms by using the `-t` parameter in the **ssh-keygen** tool:
 
@@ -99,7 +99,7 @@ This task is optional.
 * Note: If your system is macOS Sierra 10.12.2 or later, you need to modify your `~/.ssh/config` file to enable adding keys to the agent and that uses your keychain to store passphrases:
 
  ```sh
- Host *    
+ Host *
    AddKeysToAgent yes
    UseKeychain yes
    IdentityFile ~/.ssh/id_rsa

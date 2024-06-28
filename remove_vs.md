@@ -9,7 +9,6 @@ subcollection: hp-virtual-servers
 keywords: deleting virtual server, resource reclamations
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Deleting a virtual server
