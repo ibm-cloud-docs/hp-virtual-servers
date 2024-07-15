@@ -41,7 +41,7 @@ Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Clas
 
 :  Key dates for this transition: 
     
-   - For HPCS in DAL and WDC, customer migration will be **August 05, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in DAL and WDC Co-Lo datacenters will be decommissioned and no longer available. All non-migrated instances and existing data still present in the DAL and WDC Co-Lo datacenters will be terminated after this date.
+   - For HPCS in `DAL` and `WDC`, customer migration will be **August 05, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in DAL and WDC Co-Lo datacenters will be decommissioned and no longer available. All non-migrated instances and existing data still present in the DAL and WDC Co-Lo datacenters will be terminated after this date.
 
    - For HPVS in `DAL` and `WDC`, customer migration will be **July 18, 2024** – **December 31, 2024**, with End of Service effective **December 31, 2024**. After **December 31, 2024**, Hyper Protect Virtual Servers for Classic in `DAL` and `WDC` Co-lo datacenters will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `DAL` and `WDC` Co-Lo datacenters will be terminated after this date.
 
