@@ -27,9 +27,8 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 {: #hp-virtual-servers-jul1824}
 {: release-note}
 
-Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Sydney
-:   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic) will be deprecated from the IBM Cloud data center in **Dallas** (`DAL`), **Washington D.C.** (`WDC`), and **Frankfurt* (`FRA`).
-    Hyper Protect Crypto Services and Hyper Protect Virtual Servers for Classic will be transitioning out of IBM Cloud Co-lo datacenters in `DAL`,` WDC`, and `FRA` to IBM Cloud VPC datacenters in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
+Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Washington D.C., and Frankfurt
+:   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic) will be transitioning out of IBM Cloud Co-lo datacenters in `DAL`,` WDC`, and `FRA` to IBM Cloud VPC datacenters in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
 
 :   Implications for current users of Hyper Protect Services:
     
