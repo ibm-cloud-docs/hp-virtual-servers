@@ -47,10 +47,7 @@ Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Clas
 
    - For HPCS in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in `FRA` Co-lo datacenter will be decommissioned and no longer available. All non-migrated instances and existing data still present in the `FRA` Co-Lo datacenter will be terminated after this date.
 
-   - For HPVS in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**, with End of Service effective **January 31, 2025**. After **January 31, 2025**, Hyper Protect Virtual Servers for Classic in `FRA` Co-lo will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `FRA` Co-Lo datacenter will be terminated after this date.
-
-   - To ask for the support for the customor migration to an IBM Cloud VPC data center, contact your local sales representative or send an email to
-[zaas.client.acceleration@ibm.com](mailto:zaas.client.acceleration@ibm.com) for more information.
+   - For HPVS in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**, with End of Service effective **January 31, 2025**. After **January 31, 2025**, Hyper Protect Virtual Servers for Classic in `FRA` Co-lo will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `FRA` Co-Lo datacenter will be terminated
 
 Updated: Migration from IBM Cloud Hyper Protect Virtual Servers for Classic to IBM Cloud Hyper Protect Virtual Servers for VPC
 
