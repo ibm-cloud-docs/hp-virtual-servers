@@ -27,7 +27,7 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 {: #hp-virtual-servers-jul1824}
 {: release-note}
 
-Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Washington D.C., and Frankfurt
+Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Frankfurt, and Washington D.C.
 :   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic) will be transitioning out of IBM Cloud Co-lo datacenters in `DAL`,` WDC`, and `FRA` to IBM Cloud VPC datacenters in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
 
 :   Implications for current users of Hyper Protect Services:
@@ -36,7 +36,7 @@ Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Clas
     
     - Hyper Protect Virtual Servers for Classic (HPVS Classic) – the transition from IBM Cloud Co-lo datacenter to VPC datacenter will be a migration and technology version upgrade from HPVS for Classic to HPVS for VPC. 
     
-    Support from the IBM Team is available to ensure the successful deployment of your HPS instances in the VPC datacenter. 
+    Support from the IBM Team is available to ensure the successful deployment of your HPS instances in the VPC datacenter, contact your local sales representative or send an email to [zaas.client.acceleration@ibm.com](mailto:zaas.client.acceleration@ibm.com) for more information.
     {: note}
 
 :  Key dates for this transition: 
