@@ -55,7 +55,7 @@ Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Clas
 
 Updated: Migration from IBM Cloud Hyper Protect Virtual Servers for Classic to IBM Cloud Hyper Protect Virtual Servers for VPC
 
-:   IBM Cloud Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the IBM Cloud Hyper Protect Virtual Servers for Classic to IBM Cloud Hyper Protect Virtual Servers for VPC, refer to refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
+:   IBM Cloud Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the IBM Cloud Hyper Protect Virtual Servers for Classic to IBM Cloud Hyper Protect Virtual Servers for VPC, refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
 
 ## 28 June 2024
 {: #hp-virtual-servers-jun2824}
