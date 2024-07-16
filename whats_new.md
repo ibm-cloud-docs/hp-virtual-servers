@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-16"
 
 keywords: release note, what's new
 
@@ -27,27 +27,27 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 {: #hp-virtual-servers-jul1824}
 {: release-note}
 
-Deprecated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Frankfurt, and Washington D.C.
-:   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic) will be transitioning out of IBM Cloud Co-lo datacenters in `DAL`,` WDC`, and `FRA` to IBM Cloud VPC datacenters in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
+Updated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Frankfurt, and Washington D.C.
+:   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} will be transitioning out of {{site.data.keyword.cloud_notm}} classic data centers in Dallas (`DAL`), Washington D.C (`WDC`), and Frankfurt (`FRA`) to {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) data centers in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
 
-:   Implications for current users of Hyper Protect Services:
+    Implications for current users of Hyper Protect Services:    
     
-    - Hyper Protect Crypto Services (HPCS) – the transition from IBM Cloud Co-lo datacenter to VPC datacenter will be a service/technology upgrade with the UX remaining unchanged (henceforth known as a “service action”).  Minimal customer interaction is required to complete this transition as this is a service/technology upgrade with the UX remaining unchanged; there is minimal impact to clients. 
+    - {{site.data.keyword.hscrypto}}: The transition to VPC data centers will be a service/technology upgrade with the user experience remaining unchanged. Minimal customer interaction is required to complete the transition. There is minimal impact to clients. 
     
-    - Hyper Protect Virtual Servers for Classic (HPVS Classic) – the transition from IBM Cloud Co-lo datacenter to VPC datacenter will be a migration and technology version upgrade from HPVS for Classic to HPVS for VPC. 
+    - {{site.data.keyword.hpvs}} for Classic: The transition to VPC data centers will be a migration and technology version upgrade from {{site.data.keyword.hpvs}} for Classic to [{{site.data.keyword.hpvs}} for VPC](https://cloud.ibm.com/vpc-ext/provision/vs?architecture=s390x&secureExecution=true){: external}. 
     
-    Support from the IBM Team is available to ensure the successful deployment of your HPS instances in the VPC datacenter, contact your local sales representative or send an email to [zaas.client.acceleration@ibm.com](mailto:zaas.client.acceleration@ibm.com) for more information.
+    Support from the IBM Team is available to ensure the successful deployment of your instances in the VPC data centers, contact your local sales representative or send an email to [zaas.client.acceleration@ibm.com](mailto:zaas.client.acceleration@ibm.com) for more information.
     {: note}
 
-:  Key dates for this transition: 
+    Key dates for this transition:
     
-   - For HPCS in `DAL` and `WDC`, customer migration will be **August 05, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in DAL and WDC Co-Lo datacenters will be decommissioned and no longer available. All non-migrated instances and existing data still present in the DAL and WDC Co-Lo datacenters will be terminated after this date.
+    - For {{site.data.keyword.hscrypto}} in `DAL` and `WDC`, customer migration will be **August 05, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in `DAL` and `WDC` data centers will be decommissioned and no longer available. All non-migrated instances and existing data still present in the `DAL` and `WDC` data centers will be terminated after this date.
 
-   - For HPVS in `DAL` and `WDC`, customer migration will be **July 18, 2024** – **December 31, 2024**, with End of Service effective **December 31, 2024**. After **December 31, 2024**, Hyper Protect Virtual Servers for Classic in `DAL` and `WDC` Co-lo datacenters will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `DAL` and `WDC` Co-Lo datacenters will be terminated after this date.
+    - For {{site.data.keyword.hpvs}} for Classic in `DAL` and `WDC`, customer migration will be **July 18, 2024** – **December 31, 2024**, with End of Service effective **December 31, 2024**. After **December 31, 2024**, {{site.data.keyword.hpvs}} for Classic in `DAL` and `WDC` data centers will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `DAL` and `WDC` data centers will be terminated after this date.
 
-   - For HPCS in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in `FRA` Co-lo datacenter will be decommissioned and no longer available. All non-migrated instances and existing data still present in the `FRA` Co-Lo datacenter will be terminated after this date.
+    - For {{site.data.keyword.hscrypto}} in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in `FRA` data center will be decommissioned and no longer available. All non-migrated instances and existing data still present in the `FRA` data center will be terminated after this date.
 
-   - For HPVS in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**, with End of Service effective **January 31, 2025**. After **January 31, 2025**, Hyper Protect Virtual Servers for Classic in `FRA` Co-lo will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `FRA` Co-Lo datacenter will be terminated
+    - For {{site.data.keyword.hpvs}} for Classic in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**, with End of Service effective **January 31, 2025**. After **January 31, 2025**, {{site.data.keyword.hpvs}} for Classic in `FRA` data center will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `FRA` data center will be terminated after this date.
 
 Updated: Migration from IBM Cloud Hyper Protect Virtual Servers for Classic to IBM Cloud Hyper Protect Virtual Servers for VPC
 
