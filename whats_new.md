@@ -30,11 +30,9 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 Updated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Frankfurt, and Washington D.C.
 :   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} will be transitioning out of {{site.data.keyword.cloud_notm}} classic data centers in Dallas (`DAL`), Washington D.C (`WDC`), and Frankfurt (`FRA`) to {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) data centers in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
 
-    Implications for current users of Hyper Protect Services:    
+    Implications for current users:     
     
-    - {{site.data.keyword.hscrypto}}: The transition to VPC data centers will be a service/technology upgrade with the user experience remaining unchanged. Minimal customer interaction is required to complete the transition. There is minimal impact to clients. 
-    
-    - {{site.data.keyword.hpvs}} for Classic: The transition to VPC data centers will be a migration and technology version upgrade from {{site.data.keyword.hpvs}} for Classic to [{{site.data.keyword.hpvs}} for VPC](https://cloud.ibm.com/vpc-ext/provision/vs?architecture=s390x&secureExecution=true){: external}. 
+    The transition to VPC data centers will be a migration and technology version upgrade from {{site.data.keyword.hpvs}} for Classic to [{{site.data.keyword.hpvs}} for VPC](https://cloud.ibm.com/vpc-ext/provision/vs?architecture=s390x&secureExecution=true){: external}. 
     
     Support from the IBM Team is available to ensure the successful deployment of your instances in the VPC data centers, contact your local sales representative or send an email to [zaas.client.acceleration@ibm.com](mailto:zaas.client.acceleration@ibm.com) for more information.
     {: note}
