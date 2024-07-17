@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-07-17"
 
 keywords: release note, what's new
 
@@ -40,12 +40,8 @@ Updated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic
     {: note}
 
     Key dates for this transition:
-    
-    - For {{site.data.keyword.hscrypto}} in `DAL` and `WDC`, customer migration will be **August 05, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in `DAL` and `WDC` data centers will be decommissioned and no longer available. All non-migrated instances and existing data still present in the `DAL` and `WDC` data centers will be terminated after this date.
 
     - For {{site.data.keyword.hpvs}} for Classic in `DAL` and `WDC`, customer migration will be **July 18, 2024** – **December 31, 2024**, with End of Service effective **December 31, 2024**. After **December 31, 2024**, {{site.data.keyword.hpvs}} for Classic in `DAL` and `WDC` data centers will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `DAL` and `WDC` data centers will be terminated after this date.
-
-    - For {{site.data.keyword.hscrypto}} in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**. Support remains uninterrupted throughout migration process. After **January 31, 2025**, the services in `FRA` data center will be decommissioned and no longer available. All non-migrated instances and existing data still present in the `FRA` data center will be terminated after this date.
 
     - For {{site.data.keyword.hpvs}} for Classic in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**, with End of Service effective **January 31, 2025**. After **January 31, 2025**, {{site.data.keyword.hpvs}} for Classic in `FRA` data center will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `FRA` data center will be terminated after this date.
 
