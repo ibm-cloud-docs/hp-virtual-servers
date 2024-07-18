@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-17"
 
 keywords: release note, what's new
 
@@ -21,6 +21,31 @@ content-type: release-note
 
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} for Classic.
 {: shortdesc}
+
+
+## 18 July 2024
+{: #hp-virtual-servers-jul1824}
+{: release-note}
+
+Updated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Frankfurt, and Washington D.C.
+:   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} will be transitioning out of {{site.data.keyword.cloud_notm}} classic data centers in Dallas (`DAL`), Washington D.C (`WDC`), and Frankfurt (`FRA`) to {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) data centers in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
+
+    Implications for current users:     
+    
+    The transition to VPC data centers will be a migration and technology version upgrade from {{site.data.keyword.hpvs}} for Classic to [{{site.data.keyword.hpvs}} for VPC](https://cloud.ibm.com/vpc-ext/provision/vs?architecture=s390x&secureExecution=true){: external}. 
+    
+    Support from the IBM Team is available to ensure the successful deployment of your instances in the VPC data centers, contact your local sales representative or send an email to [zaas.client.acceleration@ibm.com](mailto:zaas.client.acceleration@ibm.com) for more information.
+    {: note}
+
+    Key dates for this transition:
+
+    - For {{site.data.keyword.hpvs}} for Classic in `DAL` and `WDC`, customer migration will be **July 18, 2024** – **December 31, 2024**, with End of Service effective **December 31, 2024**. After **December 31, 2024**, {{site.data.keyword.hpvs}} for Classic in `DAL` and `WDC` data centers will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `DAL` and `WDC` data centers will be terminated after this date.
+
+    - For {{site.data.keyword.hpvs}} for Classic in `FRA`, customer migration will be **August 15, 2024** – **January 31, 2025**, with End of Service effective **January 31, 2025**. After **January 31, 2025**, {{site.data.keyword.hpvs}} for Classic in `FRA` data center will no longer be supported. This includes updates, bug fixes, and technical support for the product. All non-migrated instances and existing data still present in the `FRA` data center will be terminated after this date.
+
+Updated: Migration from IBM Cloud Hyper Protect Virtual Servers for Classic to IBM Cloud Hyper Protect Virtual Servers for VPC
+
+:   IBM Cloud Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the IBM Cloud Hyper Protect Virtual Servers for Classic to IBM Cloud Hyper Protect Virtual Servers for VPC, refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
 
 ## 28 June 2024
 {: #hp-virtual-servers-jun2824}
