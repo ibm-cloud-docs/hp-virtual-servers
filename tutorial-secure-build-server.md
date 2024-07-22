@@ -636,9 +636,7 @@ You can now use the Secure Bitcoin Wallet application: In a browser window, open
 
 Follow the description and instructions [here](https://github.com/IBM/secure-bitcoin-wallet) to use the wallet.
 
-Here's an example screen capture of the wallet:
-
-![Secure Bitcoin Wallet on IBM LinuxONE](https://raw.githubusercontent.com/IBM/secure-bitcoin-wallet/master/images/screenshot.png "Secure Bitcoin Wallet on IBM LinuxONE"){: caption="Figure 2. Secure Bitcoin Wallet on IBM LinuxONE" caption-side="bottom"}
+You can refer to the screenshot of the [Secure Bitcoin Wallet on IBM LinuxONE](https://raw.githubusercontent.com/IBM/secure-bitcoin-wallet/master/images/screenshot.png){: external}.
 
 
 ## Summary
