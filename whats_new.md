@@ -23,6 +23,12 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 {: shortdesc}
 
 
+## 20 August 2024
+{: #hp-virtual-servers-jul2224}
+{: release-note}
+
+Deprecated: IBM Cloud Hyper Protect Virtual Servers for Classic
+:  Customers can no longer provision [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} in Dallas and Washington, DC from 20 August 2024, and in Frankfurt from 20 September 2024. 
 
 ## 22 July 2024
 {: #hp-virtual-servers-jul2224}
@@ -32,8 +38,7 @@ Updated: Hyper Protect Secure Build server version
 :   The Hyper Protect Secure Build server image is updated to 1.3.0.15. Ensure that you update to the latest Secure Build CLI code. For more information, see [Tutorial: Using Hyper Protect Secure Build server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
 
 
-Deprecated: IBM Cloud Hyper Protect Virtual Servers for Classic
-:  Customers can no longer provision [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} in Dallas and Washington, DC from 20 August 2024, and in Frankfurt from 20 September 2024. 
+
 
 
 ## 18 July 2024
