@@ -23,7 +23,7 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 {: shortdesc}
 
 ## 20 August 2024
-{: #hp-virtual-servers-jul2224}
+{: #hp-virtual-servers-aug2024}
 {: release-note}
 
 Deprecated: IBM Cloud Hyper Protect Virtual Servers for Classic
