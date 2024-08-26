@@ -23,15 +23,14 @@ Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} 
 {: shortdesc}
 
 ## 20 August 2024
-{: #hp-virtual-servers-jul2224}
+{: #hp-virtual-servers-aug2024}
 {: release-note}
 
-Deprecated: IBM Cloud Hyper Protect Virtual Servers for Classic
-:  Customers can no longer provision [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} in Dallas and Washington, DC from 20 August 2024, and in Frankfurt from 20 September 2024. 
-
+Deprecated: IBM Cloud Hyper Protect Virtual Servers for Classic in Dallas, Frankfurt, and Washington D.C.
+:  After September 20, 2024, customers can no longer provision [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} in Dallas and Washington, DC, or [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} data centers in Frankfurt. 
 
 ## 22 July 2024
-{: #hp-virtual-servers-jul2224}
+{: #hp-virtual-servers-jul2024}
 {: release-note}
 
 Updated: Hyper Protect Secure Build server version
