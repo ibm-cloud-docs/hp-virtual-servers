@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2020-08-25"
+  years: 2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -24,7 +24,7 @@ You can use the {{site.data.keyword.hpvs}} UI or the CLI to delete virtual serve
 2. Select the instance from the **Services** list and apply the **Delete** from its action list.
 
 
-![Deleting a virtual server instance](image/hpvs_delete_instance.gif "Deleting a virtual server instance"){: caption="Figure 1. Deleting a virtual server instance" caption-side="bottom"}
+![Deleting a virtual server instance](image/hpvs_delete_instance.gif "Deleting a virtual server instance"){: caption="Deleting a virtual server instance" caption-side="bottom"}
 
 
 ## Deleting a virtual server from the CLI

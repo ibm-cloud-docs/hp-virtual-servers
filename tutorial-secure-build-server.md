@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-09-11"
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -52,7 +52,7 @@ To build a container image with Hyper Protect Secure Build server, you must comp
 - Secure Build Server creates a manifest file and signs it. The manifest file is used to verify the source of the image and the integrity of the build. It contains the source code from which the image was built as well as the build log. You can download the manifest file from the Secure Build Server, and, for example, use it for audit purposes or pass it to an auditor. The manifest file is signed by signing keys that are kept inside the secure enclave.
 - Secure Build Server creates an encrypted registration file, which can be used to provision an instance of the application on {{site.data.keyword.hpvs}} by using Bring Your Own Image (BYOI).
 
-![The Secure Build Server](image/secure-build.png "The Hyper Protect Secure Build server"){: caption="Figure 1. The Hyper Protect Secure Build server" caption-side="bottom"}
+![The Secure Build Server](image/secure-build.png "The Hyper Protect Secure Build server"){: caption="The Hyper Protect Secure Build server" caption-side="bottom"}
 
 The registration file specifies the container registry, the application image, and the credentials that are required to access the container registry. The registration file is encrypted and can be decrypted by {{site.data.keyword.hpvs}} only.
 

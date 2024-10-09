@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2019, 2023
-lastupdated: "2021-03-19"
+  years:  2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -36,7 +36,7 @@ The following table details actions that are mapped to service access roles. Ser
 | Reader | A reader can perform actions that are required to retrieve information only. | Retrieve information about virtual servers. |
 | Writer | A writer can perform the same actions as a reader – plus updating virtual servers. | Retrieve information about virtual servers. |
 | Manager | A manager can perform the same actions as a writer. | Retrieve information about virtual servers. |
-{: caption="Table 1. IAM service access roles and actions" caption-side="bottom"}
+{: caption="IAM service access roles and actions" caption-side="bottom"}
 
 Consider the following guidelines:
 

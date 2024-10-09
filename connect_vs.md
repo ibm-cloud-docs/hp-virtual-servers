@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-19"
+  years: 2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -70,17 +70,17 @@ You can ease the logon and authentication to your virtual server with your priva
     - Enter a name into the **Saved Sessions** field. In the shown example, this session name is the service name as specified during provisioning.
     - Click **Save**.
 
-   ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance"){: caption="Figure 1. Defining a new virtual server instance" caption-side="bottom"}
+   ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance"){: caption="Defining a new virtual server instance" caption-side="bottom"}
 
 2. In the **SSH->Auth** category, specify the file that contains the private SSH key.  
 
-   ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication"){: caption="Figure 2. Providing the private SSH key for authentication" caption-side="bottom"}
+   ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication"){: caption="Providing the private SSH key for authentication" caption-side="bottom"}
 
 
    For SSH key pairs generated other than using **PuTTY**, you can use **Conversions -> Import key** of the **PuTTY Key Generator** to convert the private key into the **PuTTY** format of the same length.
 3. Define the **root** default username under **Connection -> Data**.
 
-   ![Defining the auto-login user name](image/hpvs_root.jpg "Defining the auto-login user name"){: caption="Figure 3. Defining the auto-login username" caption-side="bottom"}
+   ![Defining the auto-login user name](image/hpvs_root.jpg "Defining the auto-login user name"){: caption="Defining the auto-login username" caption-side="bottom"}
 
 
 4. Go back to the session configuration shown in Figure 1 and click **Save** again. Otherwise, you lose your changes.

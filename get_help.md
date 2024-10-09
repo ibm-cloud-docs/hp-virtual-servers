@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2019-12-05"
+  years: 2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -31,7 +31,7 @@ If you have problems or questions when you use {{site.data.keyword.hpvs}}, you c
 - If your problem still exists, open an {{site.data.keyword.IBM_notm}} support case (ticket). Include your virtual server name and the cloud resource name (CRN) in the description of your issue. You can retrieve the CRN from your server entry in the **Resource list** (see [Retrieving virtual server information](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)). Click any of the columns (except **Name**, **Tags** or **Status**) to display a view from where you can  copy the CRN into the clipboard, as shown:
 
 
-![Retrieving the cloud resource name](image/hpvs_crn.jpg "Retrieving the cloud resource name"){: caption="Figure 1. Retrieving the cloud resource name" caption-side="bottom"}
+![Retrieving the cloud resource name](image/hpvs_crn.jpg "Retrieving the cloud resource name"){: caption="Retrieving the cloud resource name" caption-side="bottom"}
 
 
 For more information about {{site.data.keyword.IBM_notm}} support cases, or about support levels and severities, and for information about how to use the forums, access the Support Center:

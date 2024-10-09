@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-03-17"
+  years: 2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -37,7 +37,7 @@ You must use the internal IP address when you connect to a virtual server from a
 
 You must also work with the internal IP addresses, when you connect to other {{site.data.keyword.cloud_notm}} Cloud services that are located within the same data center.
 
-![**{{site.data.keyword.hpvs}}** dashboard](image/hpvs_instance.jpg "**{{site.data.keyword.hpvs}}** dashboard"){: caption="Figure 1. {{site.data.keyword.hpvs}} dashboard" caption-side="bottom"}
+![**{{site.data.keyword.hpvs}}** dashboard](image/hpvs_instance.jpg "**{{site.data.keyword.hpvs}}** dashboard"){: caption="{{site.data.keyword.hpvs}} dashboard" caption-side="bottom"}
 
 
 In the **Connect** area, the dashboard offers a comfortable feature to log in to the virtual server:

@@ -1,7 +1,7 @@
 ---
 copyright:
-  years:  2019, 2023
-lastupdated: "2021-04-21"
+  years:  2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -25,7 +25,7 @@ Review the following sample architecture for {{site.data.keyword.cloud}} {{site.
 ## {{site.data.keyword.hpvs}} architecture
 {: #overview-architecture}
 
-![{{site.data.keyword.hpvs}} architecture](image/hpvs_architecture-overview.svg "{{site.data.keyword.hpvs}} architecture overview"){: caption="Figure 1. {{site.data.keyword.hpvs}} architecture overview" caption-side="bottom"}
+![{{site.data.keyword.hpvs}} architecture](image/hpvs_architecture-overview.svg "{{site.data.keyword.hpvs}} architecture overview"){: caption="{{site.data.keyword.hpvs}} architecture overview" caption-side="bottom"}
 
 
 The {{site.data.keyword.hpvs}} architecture is divided into two major areas:
@@ -41,7 +41,7 @@ As shown in Figure 2, the IBM LinuxONE systems which are used for the {{site.dat
 * All disks, which are attached to the IBM Secure Service Container host system are automatically encrypted according to AES256. The encryption keys are stored in the protected host.
 * IBM LinuxONE Hardware Management Console functions, which examine the processor or memory state are not available for partitions that are protected by the IBM Secure Service Container technology.
 
-![{{site.data.keyword.hpvs}} architecture](image/hpvs_architecture-isolation.svg "{{site.data.keyword.hpvs}} architecture compute isolation"){: caption="Figure 2. {{site.data.keyword.hpvs}} architecture compute isolation" caption-side="bottom"}
+![{{site.data.keyword.hpvs}} architecture](image/hpvs_architecture-isolation.svg "{{site.data.keyword.hpvs}} architecture compute isolation"){: caption="{{site.data.keyword.hpvs}} architecture compute isolation" caption-side="bottom"}
 
 Figure 2. shows that every host system is shared between multiple {{site.data.keyword.hpvs}} that are owned by multiple tenants. The KVM hypervisor isolates the virtual servers, and each virtual server has its own virtualized network connection.
 
@@ -58,7 +58,7 @@ Figure 2. shows that every host system is shared between multiple {{site.data.ke
 | {{site.data.keyword.iamlong}} | To authenticate requests to the service and authorize user actions, {{site.data.keyword.hpvs}} uses {{site.data.keyword.iamshort}} (IAM) operating system and service access roles. For more information about the IAM permissions that are required to work with the service, see [Managing access for {{site.data.keyword.hpvs}}](/docs/hp-virtual-servers?topic=hp-virtual-servers-iam-hpvs). |
 | {{site.data.keyword.containerlong}} | {{site.data.keyword.hpvs}} is using the {{site.data.keyword.containerlong_notm}} to host the service broker and the dashboard UI. |
 | {{site.data.keyword.databases-for-mongodb_full}} | {{site.data.keyword.hpvs}} uses the {{site.data.keyword.databases-for-mongodb_full_notm}} to store the metadata about virtual servers to manage those containers. |
-{: caption="Table 1. Dependencies to other IBM Cloud services" caption-side="bottom"}
+{: caption="Dependencies to other IBM Cloud services" caption-side="bottom"}
 
 ## Dependencies on third party services
 {: #dependencies_thirdparty_services}
@@ -68,4 +68,4 @@ Review the list of third party services that {{site.data.keyword.hpvs}} connect 
 | Service name | Description|
 | -----------|-------------------------------|
 | Akamai, Cloudflare | Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall functionality in {{site.data.keyword.hpvs}}. |
-{: caption="Table 2. Dependencies on third party services" caption-side="bottom"}
+{: caption="Dependencies on third party services" caption-side="bottom"}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2020-08-24"
+  years: 2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -32,4 +32,4 @@ Data is stored on a high available storage unit within the data center only.
 |----------|-----------------------|--------|
 |Virtual Server|                   | Backup and restore strategy. |
 |Virtual Storage|                  | Backup and restore strategy. |
-{: caption="Table 1. Responsibilities for disaster recovery" caption-side="bottom"}
+{: caption="Responsibilities for disaster recovery" caption-side="bottom"}
