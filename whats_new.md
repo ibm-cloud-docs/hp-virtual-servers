@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-22"
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: release note, what's new
 
@@ -22,12 +22,20 @@ content-type: release-note
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} for Classic.
 {: shortdesc}
 
+## 29 October 2024
+{: #hp-virtual-servers-oct2924}
+{: release-note}
+
+Updated: Hyper Protect Secure Build
+:   Secure-Build-Cli and secure_build.asc have been updated. Clone the latest Secure-Build-Cli to create an Hyper Protect Secure Build server.
+
 ## 11 September 2024
-{: #hp-virtual-servers-sep2024}
+{: #hp-virtual-servers-sep1124}
 {: release-note}
 
 Updated: Hyper Protect Secure Build server version
 :   The Hyper Protect Secure Build server image is updated to 1.3.0.16. Ensure that you update to the latest Secure Build CLI code. For more information, see [Tutorial: Using Hyper Protect Secure Build server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+
 
 ## 20 August 2024
 {: #hp-virtual-servers-aug2024}
@@ -35,13 +43,17 @@ Updated: Hyper Protect Secure Build server version
 
 Deprecated: IBM Cloud Hyper Protect Virtual Servers for Classic in Dallas, Frankfurt, and Washington D.C.
 :  After September 20, 2024, customers can no longer provision [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} in Dallas, Washington, DC, and Frankfurt. 
+ 
 
 ## 22 July 2024
-{: #hp-virtual-servers-jul2024}
+{: #hp-virtual-servers-jul2224}
 {: release-note}
 
 Updated: Hyper Protect Secure Build server version
 :   The Hyper Protect Secure Build server image is updated to 1.3.0.15. Ensure that you update to the latest Secure Build CLI code. For more information, see [Tutorial: Using Hyper Protect Secure Build server with a digital wallet](/docs/hp-virtual-servers?topic=hp-virtual-servers-tutorial_secure_build_server).
+
+
+
 
 
 ## 18 July 2024
@@ -136,7 +148,7 @@ in IBM Cloud VPC data centers). The recommended region for migration within APAC
     | Toronto `ca-tor`   | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | 
     | Madrid `eu-es`     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | 
     | Washington DC `us-east`   | N/A    |  ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")    |  
-    {: caption="Table 1. Supported {{site.data.keyword.cloud_notm}} VPC data centers" caption-side="bottom"}
+    {: caption="Supported {{site.data.keyword.cloud_notm}} VPC data centers" caption-side="bottom"}
 
 Updated: Migration from {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC
 : {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) is the strategic direction from IBM Cloud. New services and capabilities are available in the VPC environment. If you want to migrate your existing workloads on the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC, refer to [Why migrate?](/docs/hp-virtual-servers?topic=hp-virtual-servers-why-migrate) and [Migrating scenarios](/docs/hp-virtual-servers?topic=hp-virtual-servers-migrating).
