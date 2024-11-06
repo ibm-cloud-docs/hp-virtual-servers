@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-11-06"
 
 keywords: release note, what's new
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} for Classic.
 {: shortdesc}
+
+## 29 October 2024
+{: #hp-virtual-servers-oct2924}
+{: release-note}
+
+Updated: Hyper Protect Secure Build
+:   Secure-Build-Cli and secure_build.asc have been updated. Clone the latest Secure-Build-Cli to create an Hyper Protect Secure Build server.
 
 ## 11 September 2024
 {: #hp-virtual-servers-sep1124}
