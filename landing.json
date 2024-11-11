@@ -2,7 +2,7 @@
   "version": 2,
   "title": "IBM Cloud Hyper Protect Virtual Servers docs",
   "introduction": "Find useful information about Hyper Protect Virtual Servers.",
-  "product_page": "https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic",
+  "product_page": "https://www.ibm.com/products/hyper-protect-virtual-servers/cloud",
   "console_page": "/catalog/services",
   "section_devtools": {
     "cli": "/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin"
