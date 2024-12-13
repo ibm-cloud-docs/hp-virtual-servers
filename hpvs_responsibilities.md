@@ -14,6 +14,8 @@ keywords: disaster recovery
 # Understanding your responsibilities when you use {{site.data.keyword.hpvs}}
 {: #resphpvs}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 Find out more about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.hpvs}}.
 

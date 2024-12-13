@@ -15,6 +15,8 @@ keywords: data encryption in {{site.data.keyword.hpvs}}, data storage for {{site
 # Securing your data in {{site.data.keyword.hpvs}}
 {: #mng-data}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 To ensure that you can securely manage your data when you use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}, it is important that you know exactly what data is stored and encrypted and how you can delete any personal data. All data that is stored on {{site.data.keyword.hpvs}} disks is automatically encrypted and the encryption key is stored on a secure enclave.
 {: shortdesc}

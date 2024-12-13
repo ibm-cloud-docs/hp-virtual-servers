@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023 
-lastupdated: "2021-06-26"
+  years: 2021, 2024
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 subcollection: hp-virtual-servers
 
@@ -15,6 +15,8 @@ keywords: workloads, certified workloads, virtual server
 # Hyper Protect Virtual Server certified workloads
 {: #workloads}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 {{site.data.keyword.IBM}} has validated certain workloads on {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}. These workloads run on the IBM Z platform (s390x architecture).
 {: shortdesc}

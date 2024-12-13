@@ -15,6 +15,9 @@ keywords: update, image
 # Updating a virtual server
 {: #update_vs}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
+
 You can update the OCI Image that is used for your Hyper Protect virtual server.
 
 To trigger an update, you must have the IAM editor role (platform access) on the server.
@@ -28,7 +31,7 @@ Before you update a server, back up all your data and make sure you can restore 
 The IBM-provided Ubuntu image is generally updated thru the standard Ubuntu package manager. Use the Ubuntu image provided to replace everything within your server with the new version. The Ubuntu image resets everything to the state of a new server except for the content within `/data`.
 
 Older instances did set the public SSH key in a way, which is not compatible with the image update.
-Check the information in [Updating the authorized_keys file](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-update_vs#update_authkey) to ensure that your configuration is compatible with the image update. Otherwise, you  irretrievably lose access to the virtual server.  
+Check the information in [Updating the authorized_keys file](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-update_vs#update_authkey) to ensure that your configuration is compatible with the image update. Otherwise, you  irretrievably lose access to the virtual server.
 
 When you update your image, the server settings are updated, for example, the [hardening configuration](/docs/hp-virtual-servers?topic=hp-virtual-servers-protect_vs). The update also creates a new SSH host key (the old key is deleted).
 

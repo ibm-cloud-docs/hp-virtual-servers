@@ -19,6 +19,9 @@ keywords: public isolation for {{site.data.keyword.hpvs}}, compute isolation for
 # Learning about {{site.data.keyword.hpvs}} architecture and workload isolation
 {: #learn-architecture}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
+
 Review the following sample architecture for {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}, and learn more about different isolation levels so that you can choose the solution that best meets the requirements of the workloads that you want to run in the cloud.
 {: shortdesc}
 
