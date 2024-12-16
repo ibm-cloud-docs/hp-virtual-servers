@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-07-20"
+  years: 2019, 2024
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -12,6 +12,9 @@ keywords: troubleshooting, support, help, virtual servers help
 
 
 {{site.data.keyword.attribute-definition-list}}
+
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 # FAQs
 {: #faqs}
@@ -64,17 +67,17 @@ maintenance schedules in advance. Service availability is defined within the [{{
 
 No, all of the data centers are of the same quality. For best availability, follow the hints in question [How do I provide my applications in high availability?](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-faqs#faq3).
 
-## How can I figure out in which data center a virtual server is located?    
+## How can I figure out in which data center a virtual server is located?
 {: #faq7}
 {: faq}
 {: support}
 
 This information is visible on both the **{{site.data.keyword.hpvs}} dashboard** and the **Resource list (**see [Provisioning a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-provision) and [Retrieving information about a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs)).
 
-## Can I rearrange a server to another data center?    
+## Can I rearrange a server to another data center?
 {: #faq7a}
 
-This action is not possible.  
+This action is not possible.
 
 ## Can I provide a custom image, derive a custom image from a virtual server, or clone a virtual server?
 {: #faq8}

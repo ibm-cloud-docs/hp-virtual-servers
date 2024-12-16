@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -15,6 +15,8 @@ keywords: ssh public keys, OpenSSH, add ssh key, ssh key, manage ssh key, virtua
 # Generating SSH keys
 {: #generate_ssh}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 Before you can create a virtual server, you must have a pair of private and public SSH keys available. You can either reuse an existing SSH key pair or generate a new one. You can also reuse an existing OpenSSH key pair for use in **PuTTY**.
 {: shortdesc}

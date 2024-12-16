@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -23,6 +23,8 @@ keywords: secure build, secure build server, image, virtual server instance, ins
 {: toc-services="hp-virtual-servers"}
 {: toc-completion-time="1h"}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 In this tutorial, you use the {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to build a digital wallet application, then you use {{site.data.keyword.hpvs}} to deploy the resulting application in the public cloud.
 
@@ -207,7 +209,7 @@ Create file `sbs-config.json` in your current working directory (this is the dir
     "NO_GRPC_BUILD": "1",
     "ACCESS_TOKEN": "********"
   }
-} 
+}
 ```
 {: codeblock}
 

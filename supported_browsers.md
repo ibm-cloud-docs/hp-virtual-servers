@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2019-12-05"
+  years: 2019, 2024
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -15,6 +15,8 @@ keywords: browser, safari, plug-in
 # Supported browsers
 {: #help-support-browsers}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 For a list of supported browsers, see [Required Browsers for {{site.data.keyword.cloud}}](/docs/overview?topic=overview-prereqs-platform#browsers-platform).
 {: shortdesc}

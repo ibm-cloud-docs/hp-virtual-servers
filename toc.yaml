@@ -5,6 +5,7 @@ toc:
     category: compute
     audience: service
     href: /docs/hp-virtual-servers
+    release-level: deprecated
     console-page: /catalog/services/hyper-protect-virtual-servers
     product-page: https://www.ibm.com/cloud/hyper-protect-virtual-servers
     path: hp-virtual-servers
@@ -34,7 +35,7 @@ toc:
           label: Provisioning
           topics:
           - provision.md
-          - byoi.md          
+          - byoi.md
       - protect_build.md
       - retrieve_info_vs.md
       - connect_vs.md

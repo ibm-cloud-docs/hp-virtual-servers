@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -13,6 +13,9 @@ keywords: connect, logging in, OpenSSH
 
 # Connecting to a virtual server
 {: #connect_vs}
+
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 For a successfully provisioned virtual server, you can log in to this instance by using your preferred method.
 {: shortdesc}
@@ -37,7 +40,7 @@ in all such operating systems. Examples for operating systems with an enabled Op
 For example, in Windows 10, you can connect to your virtual server from a command prompt or from a PowerShell window.
 Or for older Windows versions, you can open a Git Bash session and log-in as *root* user. Provide the following additional information:
 * Specify the public IP address of the created virtual server instance. You can find it on the {{site.data.keyword.hpvs}} dashboard as shown in Figure 1 of [Retrieving information about a virtual server](/docs/services/hp-virtual-servers?topic=hp-virtual-servers-retrieve-info-vs). In the shown command example, `198.51.100.21` is used as IP address.
-* Specify the file (name and location, if necessary) that contains your private key with the `-i` parameter. In the command example, the key file `id_rsa` must be located in the current directory.  
+* Specify the file (name and location, if necessary) that contains your private key with the `-i` parameter. In the command example, the key file `id_rsa` must be located in the current directory.
 
 `$ ssh root@<public_ip_address> -i <path_to_priv_key_file>`
 
@@ -47,7 +50,7 @@ ssh root@198.51.100.21 -i id_rsa
 {: codeblock}
 
 
-If you log in for the first time, the new server is not yet known to SSH, and therefore, you receive the following message:  
+If you log in for the first time, the new server is not yet known to SSH, and therefore, you receive the following message:
 
 `The authenticity of host '198.51.100.21 (198.51.100.21)' can't be established.
 ECDSA key fingerprint is SHA256:dVaFv4slDyiYZcUV5F6MKqhxIo4SuucWkXVQoc4MTIk.
@@ -72,7 +75,7 @@ You can ease the logon and authentication to your virtual server with your priva
 
    ![Defining a new virtual server instance](image/hpvs_define.jpg "Defining a new virtual server instance"){: caption="Defining a new virtual server instance" caption-side="bottom"}
 
-2. In the **SSH->Auth** category, specify the file that contains the private SSH key.  
+2. In the **SSH->Auth** category, specify the file that contains the private SSH key.
 
    ![Providing the private SSH key for authentication](image/hpvs_ssh_auth.jpg "Providing the private SSH key for authentication"){: caption="Providing the private SSH key for authentication" caption-side="bottom"}
 

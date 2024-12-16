@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-11-06"
+lastupdated: "2024-12-16"
 
 keywords: release note, what's new
 
@@ -18,6 +18,8 @@ content-type: release-note
 # Release notes
 {: #whats-new}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 Use the release notes to learn the latest updates to {{site.data.keyword.hpvs}} for Classic.
 {: shortdesc}
@@ -42,8 +44,8 @@ Updated: Hyper Protect Secure Build server version
 {: release-note}
 
 Deprecated: IBM Cloud Hyper Protect Virtual Servers for Classic in Dallas, Frankfurt, and Washington D.C.
-:  After September 20, 2024, customers can no longer provision [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} in Dallas, Washington, DC, and Frankfurt. 
- 
+:  After September 20, 2024, customers can no longer provision [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} in Dallas, Washington, DC, and Frankfurt.
+
 
 ## 22 July 2024
 {: #hp-virtual-servers-jul2224}
@@ -63,10 +65,10 @@ Updated: Hyper Protect Secure Build server version
 Updated: {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic in Dallas, Frankfurt, and Washington D.C.
 :   [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-what-new) and [{{site.data.keyword.hpvs}} for Classic](https://cloud.ibm.com/catalog/services/hyper-protect-virtual-server-for-classic){: external} will be transitioning out of {{site.data.keyword.cloud_notm}} classic data centers in Dallas (`DAL`), Washington D.C (`WDC`), and Frankfurt (`FRA`) to {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) data centers in those respective locations allowing clients to take advantage of the new product features and capabilities that VPC offers.
 
-    Implications for current users:     
-    
-    The transition to VPC data centers will be a migration and technology version upgrade from {{site.data.keyword.hpvs}} for Classic to [{{site.data.keyword.hpvs}} for VPC](https://cloud.ibm.com/vpc-ext/provision/vs?architecture=s390x&secureExecution=true){: external}. 
-    
+    Implications for current users:
+
+    The transition to VPC data centers will be a migration and technology version upgrade from {{site.data.keyword.hpvs}} for Classic to [{{site.data.keyword.hpvs}} for VPC](https://cloud.ibm.com/vpc-ext/provision/vs?architecture=s390x&secureExecution=true){: external}.
+
     Support from the IBM Team is available to ensure the successful deployment of your instances in the VPC data centers, contact your local sales representative or send an email to [zaas.client.acceleration@ibm.com](mailto:zaas.client.acceleration@ibm.com) for more information.
     {: note}
 
@@ -127,7 +129,7 @@ from the IBM Cloud data center in `Sydney`. It is recommended that all instances
 data be migrated to an IBM Cloud VPC data center.
    - Any Hyper Protect Services instances and data still present in the IBM Cloud data center
 in `Sydney` will be stopped and terminated on this date. The data center infrastructure will
-be decommissioned and data and services no longer available. To avoid the risk of data loss, ensure a backup or transfer of any required data is taken before the service is decommissioned on **31 March 2024**. 
+be decommissioned and data and services no longer available. To avoid the risk of data loss, ensure a backup or transfer of any required data is taken before the service is decommissioned on **31 March 2024**.
 
 :   For existing customers, migration to an IBM Cloud VPC data center is recommended:
    - To continue using {{site.data.keyword.hscrypto}}, it is recommended to migrate to an
@@ -142,12 +144,12 @@ in IBM Cloud VPC data centers). The recommended region for migration within APAC
 
     | Data center | {{site.data.keyword.hscrypto}} | {{site.data.keyword.hpvs}} for Classic |
     |--------------|--------------|--------------|
-    | Tokyo (Recommended region within APAC) `jp-tok` | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark") | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | 
-    | S&atilde;o-Paulo `br-sao` | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | 
-    | London `eu-gb`  | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | 
-    | Toronto `ca-tor`   | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | 
-    | Madrid `eu-es`     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | 
-    | Washington DC `us-east`   | N/A    |  ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")    |  
+    | Tokyo (Recommended region within APAC) `jp-tok` | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark") | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     |
+    | S&atilde;o-Paulo `br-sao` | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     |
+    | London `eu-gb`  | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     |
+    | Toronto `ca-tor`   | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     |
+    | Madrid `eu-es`     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     | ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")     |
+    | Washington DC `us-east`   | N/A    |  ![checkmark icon](../icons/checkmark-icon.svg "Checkmark")    |
     {: caption="Supported {{site.data.keyword.cloud_notm}} VPC data centers" caption-side="bottom"}
 
 Updated: Migration from {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for Classic to {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC

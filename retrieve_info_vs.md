@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -13,6 +13,8 @@ subcollection: hp-virtual-servers
 # Retrieving information about a virtual server
 {: #retrieve-info-vs}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 After you create a virtual server instance by using the {{site.data.keyword.hpvs}} service, you can view detailed information about your new instance.
 {: shortdesc}
