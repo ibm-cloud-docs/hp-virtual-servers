@@ -1,7 +1,7 @@
 ---
 copyright:
   years:  2019, 2024
-lastupdated: "2024-12-16"
+lastupdated: "2024-12-17"
 
 subcollection: hp-virtual-servers
 
@@ -9,12 +9,7 @@ keywords: public isolation for {{site.data.keyword.hpvs}}, compute isolation for
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:table: .aria-labeledby="caption"}
-{:tip: .tip}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Learning about {{site.data.keyword.hpvs}} architecture and workload isolation
 {: #learn-architecture}
