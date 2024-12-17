@@ -2,11 +2,12 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-12-16"
+lastupdated: "2024-12-17"
 
 subcollection: hp-virtual-servers
 
 keywords: connect, logging in, OpenSSH
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
