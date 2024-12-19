@@ -13,13 +13,15 @@ subcollection: hp-virtual-servers
 # {{site.data.keyword.hpvs}} overview
 {: #overview}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 {{site.data.keyword.hpvs}} is an {{site.data.keyword.cloud}} service that provides highly secure virtual servers that can run Linux applications and containerized workloads. It offers a flexible and scalable framework that you can use to quickly and easily provision and manage the created virtual servers.
 {: shortdesc}
 
 For more information about how to get started, take a look at the [tutorial](/docs/hp-virtual-servers?topic=hp-virtual-servers-getting-started).
 
-## Why {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}?  
+## Why {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}?
 {: #hp-virtual-servers-benefits}
 
 {{site.data.keyword.hpvs}} offers the following benefits:

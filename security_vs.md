@@ -14,6 +14,8 @@ subcollection: hp-virtual-servers
 # Protecting a virtual server
 {: #protect_vs}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
 
 {{site.data.keyword.hpvs}} is a service that is used to provide highly secure virtual servers. The difference to common virtual servers from a security perspective is that an instance that is created from this {{site.data.keyword.cloud}} service runs on a secured stack. Even {{site.data.keyword.cloud_notm}} system administrators can't access your data nor track your usage. They don't have an insight into the security status of your virtual server. They are also limited in how they can set up or change for your virtual server configuration.
 {: shortdesc}
@@ -31,7 +33,7 @@ For Ubuntu, different **System Hardening Guide** documents are available.
 The Ubuntu operating system that is provided for your virtual servers is part wisely hardened according to the CIS Ubuntu Linux 20.04 LTS Benchmark, Level 1- Server profile, which means that the operating system is more secure than the standard Ubuntu image. However, it still might not be secure enough to meet to your requirements.
 Select a **System Hardening Guide** depending on your companies’ location and policies.
 
-The subsequent description presents an overview of the features that are implemented for the Ubuntu OS offered with {{site.data.keyword.hpvs}}.   
+The subsequent description presents an overview of the features that are implemented for the Ubuntu OS offered with {{site.data.keyword.hpvs}}.
 
 As part of the hardening, IBM installed and configured AIDE (Advanced Intrusion Detection
 Environment), which is a file and directory integrity checker. With the implemented configuration, AIDE is

@@ -15,6 +15,9 @@ subcollection: hp-virtual-servers
 # Open source licenses
 {: #open-source-licenses}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
+
 The {{site.data.keyword.IBM}} license agreement and any applicable information on the web download page for {{site.data.keyword.IBM_notm}} products refers Licensee to this file for details that concern notices applicable to code, which is included in {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
@@ -41,9 +44,9 @@ TABLE OF CONTENTS
 THE REMAINDER OF THIS IBM NOTICES FILE CONSISTS OF THE FOLLOWING
 SECTIONS:
 
-CC-BY-2.5  
+CC-BY-2.5
 CC-BY-3.0
-CC-BY-4.0  
+CC-BY-4.0
 CC-BY-SA-3.0
 CC-BY-SA-4.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -183,7 +186,6 @@ GO-METRICS [containerd]
 
 END OF CREATIVE COMMONS ATTRIBUTION SHARE ALIKE 4.0 GENERIC NOTICES AND
 INFORMATION
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ```
 {: codeblock}
-

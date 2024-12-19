@@ -14,6 +14,9 @@ keywords: deleting virtual server, resource reclamations
 # Deleting a virtual server
 {: #remove_vs}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
+
 You can use the {{site.data.keyword.hpvs}} UI or the CLI to delete virtual servers. Deleted servers that belong to paid plans can also be restored before the reclamation period expires.
 {: shortdesc}
 

@@ -16,6 +16,9 @@ keywords: virtual server instance, instance, logging, logs, logDNA, virtual serv
 # Monitoring logs
 {: #monitoring}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
+
 You can monitor many kinds of logs of the {{site.data.keyword.hpvs}} instances, for example, web server, or application logs. To enable the collection of such logs, you must use IBM Log Analysis with LogDNA on the {{site.data.keyword.hpvs}} instance.
 {: shortdesc}
 
@@ -77,7 +80,7 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
      ```
      {: pre}
 
-3. Complete the following steps to configure the LogDNA agent:    
+3. Complete the following steps to configure the LogDNA agent:
    - To get the ingestion key, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-ingestion_key), where the `INGESTION_KEY` contains the ingestion key that is active for the IBM Log Analysis with the LogDNA instance that you are configuring to forward logs.
    - To get the values of `APIHOST` and `LOGHOST`, follow these [instructions](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-config_agent_linux). You also can open the logging service by using the dashboard to get the values of `APIHOST` and `LOGHOST`. Run the following commands:
      ```sh
@@ -96,7 +99,7 @@ For {{site.data.keyword.hpvs}}, to configure a LogDNA agent for the IBM Z platfo
      {: pre}
 
      ```sh
-     node index.js -s <APIHOST>   
+     node index.js -s <APIHOST> 
      ```
      {: pre}
 

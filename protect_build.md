@@ -14,6 +14,9 @@ keywords: image, virtual server instance, instance, virtual server
 # Protecting your image build
 {: #imagebuild}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
+
 You can now use Hyper Protect Secure Build to build a trusted container image within a secure enclave that is provided by {{site.data.keyword.cloud_notm}} {{site.data.keyword.hpvs}} for VPC. For more information, see [Hyper Protect Secure Build](/docs/vpc?topic=vpc-about-hpsb).
 {: tip}
 

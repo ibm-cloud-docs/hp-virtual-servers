@@ -13,6 +13,9 @@ subcollection: hp-virtual-servers
 # Responsibilities when you use {{site.data.keyword.hpvs}}
 {: #responsibilities_hpvs}
 
+{{site.data.keyword.hpvs}} is deprecated. As of 18 August 2024, you can’t create new instances, and access to free instances will be removed. Existing premium plan instances are supported until 31 January 2025. Any instances that still exist on that date will be deleted.
+{: deprecated}
+
 Learn about management responsibilities and terms and conditions that you must observe when you use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}}.
 {: shortdesc}
 
@@ -67,7 +70,7 @@ IBM's responsibilities:
 - None.
 
 Your responsibilities:
-- Use the tools and features that are provided to:  
+- Use the tools and features that are provided to:
    - Configure and deploy setup permissions.
    - Integrate with other services.
    - Externally serve, monitor the health, save, back up, and restore data.
