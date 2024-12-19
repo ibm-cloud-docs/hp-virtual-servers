@@ -10,6 +10,8 @@ keywords: image, virtual server instance, instance, virtual server
 
 ---
 
+{{site.data.keyword.attribute-definition-list}}
+
 # Using your own image
 {: #byoi}
 
