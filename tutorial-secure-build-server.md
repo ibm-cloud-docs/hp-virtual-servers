@@ -300,6 +300,7 @@ ibmcloud hpvs instance-create SBContainer lite-s dal13 --rd-path "secure_build.a
 `SBContainer` defines the name of the instance to be created, `lite-s` is the pricing plan, and `dal13` is the location - you can use a different one. Ensure that you use the image tag `1.3.0.16` because this tag references the up-to-date version of the Secure Build Server.
 `sbs.example.com` is the server hostname that was specified in the `sbs-config.json` file. For more information about available pricing plans and regions and datacenters, see [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#create_instance).
 
+
 ### 9. Display your Secure Build Server instance.
 {: #step_nine}
 
