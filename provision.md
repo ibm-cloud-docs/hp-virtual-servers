@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-12-16"
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -23,7 +23,7 @@ You can use an IBM-provided image or your own image to provision a server.
 
 Use the CLI to provision a server if you want to:
 - [Use your own image](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi). You need to create an image file and registration definition file as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-byoi).
--  [Create servers](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance) without a public inbound address.
+-  [Create servers](https://cloud.ibm.com/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#create_instance) without a public inbound address.
 
 
 Do not use personal information, for example, your name, as the instance name or as part of the instance name. The data that you provide when you provision an instance or interact with the hpvs cli is not considered to be personal data or credentials.
@@ -68,7 +68,7 @@ If the configuration fails, the instance status stays as **Inactive**, and if yo
 ## Creating a virtual server from the CLI
 {: #provision-cli}
 
-To create a virtual server from the CLI, you must first install the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin), then run the following command:
+To create a virtual server from the CLI, you must first install the [CLI](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin), then run the following command:
 
 ```sh
 ibmcloud hpvs instance-create NAME PLAN LOCATION [--hostname HOST-NAME] [(--ssh SSH-KEY | --ssh-path SSH-KEY-PATH)] [(--rd REGISTRATION-DEFINITION | --rd-path REGISTRATION-DEFINITION-PATH)] [-i IMAGE-TAG] [-e ENV-CONFIG1 -e ENV-CONFIG2 ...] [-g RESOURCE-GROUP-ID] [-t TAG1 -t TAG2 ...] [--outbound-only]
@@ -129,9 +129,9 @@ ibmcloud hpvs instance-create MyHPVS lite-s dal13 -g Default --ssh "ssh-rsa AAAA
 ```
 {: codeblock}
 
-You can find more information about the create command [here](https://cloud.ibm.com/docs/hpvs-cli-plugin?topic=hpvs-cli-plugin-hpvs_cli_plugin#create_instance){: external}.
+You can find more information about the create command [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#create_instance){: external}.
 
-The newly created instance is marked as `provisioning` until provisioning completes. Use the `ibmcloud hpvs instance <CRN>` [command](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_list) to list your new instance and check its current state. After provisioning completes, the instance is marked as active.
+The newly created instance is marked as `provisioning` until provisioning completes. Use the `ibmcloud hpvs instance <CRN>` [command](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#details_list) to list your new instance and check its current state. After provisioning completes, the instance is marked as active.
 
 ## Billing information
 {: #billing}

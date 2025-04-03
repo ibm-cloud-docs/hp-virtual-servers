@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-12-16"
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -89,4 +89,4 @@ Where:
 :   Displays results as JSON. The only valid value is `json`.
 
 
-You can find example output [here](https://cloud.ibm.com/docs/hpvs-cli-plugin#details_list).
+You can find example output [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#details_list).

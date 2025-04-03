@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-12-16"
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -57,6 +57,6 @@ It is your responsibility to protect the connection for any application that run
 ### Deleting {{site.data.keyword.hpvs}} instances
 {: #service-delete}
 
-Use the [web user interface](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs) or the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvs-instance-delete) to delete your instance. The virtual server and all the data that is stored in it is deleted after the 7-day reclamation period, as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs).
+Use the [web user interface](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs) or the [CLI](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#hpvs-instance-delete) to delete your instance. The virtual server and all the data that is stored in it is deleted after the 7-day reclamation period, as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs).
 
 The {{site.data.keyword.hpvs}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the IBM Cloud Hyper Protect Virtual Servers service description, which you can find in the [Terms and Notices](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8680-01).
