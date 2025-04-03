@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2022-07-20"
+  years: 2021, 2024
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -48,7 +48,7 @@ A user with administrator access to the Hyper Protect Virtual Server must set up
 {: note}
 
 
-![Secure network architecture diagram](image/secure_network_arch.png "Secure network architecture"){: caption="Figure 1. The Secure network architecture" caption-side="bottom"}
+![Secure network architecture diagram](image/secure_network_arch.png "Secure network architecture"){: caption="The Secure network architecture" caption-side="bottom"}
 
 
 1. The secure network management agent that runs on the {{site.data.keyword.hpvs}} receives commands from the secure network management agent CLI and updates the Virtual Private Network (VPN)  configuration on the {{site.data.keyword.hpvs}}, as requested.
@@ -1039,4 +1039,4 @@ The following table lists the specifications that apply to some of the parameter
 | Parameter     | Specification   |
 | ----- | --------- |
 | vpn-ip     |  An IP address (a.b.c.d) or CIDR format IP address (a.b.c.d/n). If the subnet is not specified, by default it is /24     |
-{: caption="Table 1. Parameter specification" caption-side="bottom"}
+{: caption="Parameter specification" caption-side="bottom"}

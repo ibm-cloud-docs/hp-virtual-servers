@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "[{LAST_UPDATED_DATE}]"
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -32,7 +32,7 @@ When you build your image securely, you can validate your build code and reassur
 
 To deploy the Hyper Protect Secure Build (HPSB) server:
 
-1. Install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
+1. Install the [CLI and the hpvs plug-in](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin).
 2. Copy the following registration definition for the HPSB into a file named `secure_build.asc`. This file is an encrypted and signed registration definition file. It contains metadata such as the repository name and the credentials to pull and deploy the HPSB image on a {{site.data.keyword.hpvs}} instance:
 ```sh
 -----BEGIN PGP MESSAGE-----

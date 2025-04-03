@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-06"
+  years: 2023, 2024
+lastupdated: "2024-10-09"
 
 subcollection: hp-virtual-servers
 
@@ -38,7 +38,7 @@ In addition, the LinuxONE systems in the Classic Infrastructure are only colloca
 | Pricing/Billing granuality | Monthly (starting $170/month)  | Hourly (starting $110/month)    | 
 | Workload integrity  | Docker Content Trust   |  Docker Content Trust, Digest, and RedHat Simple Signing   |  
 | Multi-volume support | Only one data volume   |  Yes     |
-{: caption="Table 1. Key differences between {{site.data.keyword.hpvs}} for Classic and for VPC" caption-side="bottom"}
+{: caption="Key differences between {{site.data.keyword.hpvs}} for Classic and for VPC" caption-side="bottom"}
 
 
 All new and key differentiated capabilities will be built only for {{site.data.keyword.hpvs}} for VPC.  The following list are a few examples and [a blog](https://www.ibm.com/blog/announcement/enhanced-security-and-scalability-enabled-for-hyper-protect-virtual-servers-hpvs-for-virtual-private-cloud-vpc/){: external} published recently: 

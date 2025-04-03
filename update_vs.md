@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-03-19"
+  years: 2019, 2024
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -21,7 +21,7 @@ keywords: update, image
 You can update the OCI Image that is used for your Hyper Protect virtual server.
 
 To trigger an update, you must have the IAM editor role (platform access) on the server.
-You can only update the server by way of the {{site.data.keyword.hpvs}} [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin).
+You can only update the server by way of the {{site.data.keyword.hpvs}} [CLI](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin).
 Before you update a server, back up all your data and make sure you can restore the data from your backups. IBM can't restore any data for you.
 
 
@@ -60,7 +60,7 @@ ibmcloud hpvs instance-update (NAME | CRN)
 ```
 {: pre}
 
-For information about the update command, see [hpvs-update-instance](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvsinstanceupdate).
+For information about the update command, see [hpvs-update-instance](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#hpvsinstanceupdate).
 
 ### Updating the authorized_keys file
 {: #update_authkey}
@@ -124,7 +124,7 @@ ibmcloud hpvs instance-update (NAME | CRN) -i mytag --rd-path my-rd
 
 An update the registration definition does not allow you to update `repository_name`.
 
-For information about the update command options, see [hpvs-update-instance](/docs/hpvs-cli-plugin#details_iu).
+For information about the update command options, see [hpvs-update-instance](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#details_iu).
 
 ### Setting environment variables
 {: #envvar_update}

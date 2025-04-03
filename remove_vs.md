@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2020-08-25"
+  years: 2019, 2024
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -27,13 +27,13 @@ You can use the {{site.data.keyword.hpvs}} UI or the CLI to delete virtual serve
 2. Select the instance from the **Services** list and apply the **Delete** from its action list.
 
 
-![Deleting a virtual server instance](image/hpvs_delete_instance.gif "Deleting a virtual server instance"){: caption="Figure 1. Deleting a virtual server instance" caption-side="bottom"}
+![Deleting a virtual server instance](image/hpvs_delete_instance.gif "Deleting a virtual server instance"){: caption="Deleting a virtual server instance" caption-side="bottom"}
 
 
 ## Deleting a virtual server from the CLI
 {: #delete_vs_cli}
 
-To delete {{site.data.keyword.hpvs}} from the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin):
+To delete {{site.data.keyword.hpvs}} from the [CLI](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin):
 
 1. Make sure you know the Cloud resource name (CRN) of the server you want to delete. To find the CRN,  run:
 
@@ -52,7 +52,7 @@ To delete {{site.data.keyword.hpvs}} from the [CLI](https://cloud.ibm.com/docs/h
 Where `CRN` is Cloud resource name of the server you want to delete. Use `--force` to force the deletion of the {{site.data.keyword.hpvs}} instance without showing a confirmation prompt.
 
 
-You can find more information and example output [here](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvs-instance-delete).
+You can find more information and example output [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#hpvs-instance-delete).
 
 ## What happens during the reclamation period
 {: #reclamation_period}

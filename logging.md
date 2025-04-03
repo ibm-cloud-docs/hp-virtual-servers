@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2021-06-04"
+  years: 2021, 2024
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 

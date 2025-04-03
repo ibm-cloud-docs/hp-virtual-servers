@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -26,7 +26,6 @@ The {{site.data.keyword.cloud}} CLI can be used only on the officially supported
 {: note}
 
 If you want to use {{site.data.keyword.cloud}} {{site.data.keyword.hpvs}} Secure Build Server to provision a server, refer to [Protecting your image build](/docs/hp-virtual-servers?topic=hp-virtual-servers-imagebuild).
-
 
 Do not use personal information, for example, your name, as the instance name or as part of the instance name. The data that you provide when you provision an instance or interact with the hpvs cli is not considered to be personal data or credentials.
 Learn more about IBM Cloud Hyper Protect Virtual Servers' Data usage and Certifications [here](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=165C6EF0FFDA11E8BABD512A6952EE1F).
@@ -55,7 +54,7 @@ Before you provision a new server, check the [prerequisites](/docs/services/hp-v
 
 - You must install the {{site.data.keyword.cloud_notm}} CLI. Follow these [instructions](https://cloud.ibm.com/docs/cli?topic=cli-getting-started) to install and configure the {{site.data.keyword.cloud_notm}} CLI.
 
-- You must install the [CLI and the hpvs plug-in](https://cloud.ibm.com/docs/hpvs-cli-plugin).
+- You must install the [CLI and the hpvs plug-in](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin).
 
 - You must install [Skopeo](https://github.com/containers/skopeo/blob/main/install.md).
 
@@ -244,7 +243,7 @@ Before you call the `hpvs registration-key-create` command, `gpg` must be instal
 ## Using your OCI Image to provision a Hyper Protect Virtual Server
 {: #byoi_provision}
 
-You must use the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin) `ibmcloud hpvs instance-create` command to use your own OCI Image to provision a Hyper Protect Virtual Server, as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-provision#provision-cli).
+You must use the [CLI](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin) `ibmcloud hpvs instance-create` command to use your own OCI Image to provision a Hyper Protect Virtual Server, as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-provision#provision-cli).
 
 ### Example
 {: #byoi_example}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2020-10-13"
+  years: 2020, 2024
+lastupdated: "2025-04-03"
 
 subcollection: hp-virtual-servers
 
@@ -46,7 +46,7 @@ The data that you store in {{site.data.keyword.hpvs}} is encrypted securely at r
 
 The IBM LinuxONE infrastructure components for the {{site.data.keyword.hpvs}} service are situated in colocation with the data centers. This means that these components are placed in the same data centers as the {{site.data.keyword.cloud_notm}} infrastructure but have their own network setup, which affects the network connection.
 
-![{{site.data.keyword.hpvs}}** architecture network isolation](image/hpvs_architecture-vs_network_overview.svg "{{site.data.keyword.hpvs}} architecture network isolation"){: caption="Figure 1. {{site.data.keyword.hpvs}} Architecture network isolation" caption-side="bottom"}
+![{{site.data.keyword.hpvs}}** architecture network isolation](image/hpvs_architecture-vs_network_overview.svg "{{site.data.keyword.hpvs}} architecture network isolation"){: caption="{{site.data.keyword.hpvs}} Architecture network isolation" caption-side="bottom"}
 
 
 It is your responsibility to protect the connection for any application that runs in your {{site.data.keyword.cloud_notm}} and it is recommended that you follow these guidelines:
@@ -57,6 +57,6 @@ It is your responsibility to protect the connection for any application that run
 ### Deleting {{site.data.keyword.hpvs}} instances
 {: #service-delete}
 
-Use the [web user interface](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs) or the [CLI](https://cloud.ibm.com/docs/hpvs-cli-plugin#hpvs-instance-delete) to delete your instance. The virtual server and all the data that is stored in it is deleted after the 7-day reclamation period, as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs).
+Use the [web user interface](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs) or the [CLI](/docs/hp-virtual-servers?topic=hp-virtual-servers-hpvs_cli_plugin#hpvs-instance-delete) to delete your instance. The virtual server and all the data that is stored in it is deleted after the 7-day reclamation period, as described [here](/docs/hp-virtual-servers?topic=hp-virtual-servers-remove_vs).
 
 The {{site.data.keyword.hpvs}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the IBM Cloud Hyper Protect Virtual Servers service description, which you can find in the [Terms and Notices](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8680-01).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2021-03-08"
+  years: 2020, 2024
+lastupdated: "2024-12-16"
 
 keywords: open source licenses
 

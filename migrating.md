@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-10-26"
+  years: 2023, 2024
+lastupdated: "2024-12-16"
 
 subcollection: hp-virtual-servers
 
@@ -219,7 +219,7 @@ The export and import features must be supported via REST APIs on the classic or
 
 The following diagram shows the workflow and tasks of each role in this scenario.
 
-![Migrating by adding export and import APIs](image/migration_export_import_api.svg "Migrating by adding export and import APIs"){: caption="Figure 1. Migrating by adding export and import APIs" caption-side="bottom"}
+![Migrating by adding export and import APIs](image/migration_export_import_api.svg "Migrating by adding export and import APIs"){: caption="Migrating by adding export and import APIs" caption-side="bottom"}
 
 
 To migrate all your data and workloads to the VPC instance, complete the following steps:
