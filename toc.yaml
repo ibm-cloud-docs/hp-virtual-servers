@@ -13,7 +13,7 @@ toc:
   - navgroup:
       id: learn
       topics:
-      - getting-started.md
+    #   - getting-started.md
       - link:
           label: IBM Cloud VPC docs
           href: https://cloud.ibm.com/docs/vpc
