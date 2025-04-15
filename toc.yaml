@@ -2,7 +2,6 @@ toc:
   properties:
     subcollection: hp-virtual-servers
     service-name: hpvs
-    category: compute
     audience: service
     href: /docs/hp-virtual-servers
     release-level: deprecated
